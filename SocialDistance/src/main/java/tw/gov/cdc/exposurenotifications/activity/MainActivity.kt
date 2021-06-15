@@ -460,19 +460,19 @@ class MainActivity : BaseActivity() {
                 try {
                     if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE) {
                         when {
-                            appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE) -> {
-                                appUpdateManager.startUpdateFlowForResult(
-                                    appUpdateInfo,
-                                    AppUpdateType.IMMEDIATE,
-                                    this,
-                                    RequestCode.REQUEST_UPDATE_APP
-                                )
-                            }
                             appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.FLEXIBLE) -> {
                                 appUpdateManager.registerListener(appUpdateListener)
                                 appUpdateManager.startUpdateFlowForResult(
                                     appUpdateInfo,
                                     AppUpdateType.FLEXIBLE,
+                                    this,
+                                    RequestCode.REQUEST_UPDATE_APP
+                                )
+                            }
+                            appUpdateInfo.isUpdateTypeAllowed(AppUpdateType.IMMEDIATE) -> {
+                                appUpdateManager.startUpdateFlowForResult(
+                                    appUpdateInfo,
+                                    AppUpdateType.IMMEDIATE,
                                     this,
                                     RequestCode.REQUEST_UPDATE_APP
                                 )
@@ -569,7 +569,7 @@ class MainActivity : BaseActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         when (requestCode) {
             RequestCode.REQUEST_RESOLUTION_EN_CLIENT_START -> {
-                if (resultCode == Activity.RESULT_OK) {
+                if (resultCode == RESULT_OK) {
                     // The resolution is solved (for example, the user gave consent).
                     // Start ExposureNotificationsClient again.
                     ExposureNotificationManager.start(this)
@@ -579,7 +579,7 @@ class MainActivity : BaseActivity() {
             }
             RequestCode.REQUEST_UPDATE_APP -> {
                 if (resultCode != RESULT_OK) {
-                    checkUpdate()
+                    // The resolution was rejected or cancelled.
                 }
             }
             else -> {
