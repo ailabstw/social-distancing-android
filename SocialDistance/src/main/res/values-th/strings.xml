@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appname "ระยะห่างทางสังคมไต้หวัน">]>
+
+<resources>
+
+    <string name="app_name">&appname;</string>
+
+    <string name="cdc_name_ch">衛生福利部疾病管制署</string>
+    <string name="cdc_name_translate">ศูนย์ควบคุมและป้องกันโรคไต้หวัน (Taiwan CDC)</string>
+
+    <string name="introduction_family_title">ปกป้องคุณและครอบครัวของคุณ</string>
+    <string name="introduction_family_description">แอปพลิเคชัน "ระยะห่างทางสังคมไต้หวัน" ที่ร่วมวิจัยและพัฒนาขึ้นมาโดยศูนย์ควบคุมและป้องกันโรคไต้หวัน (Taiwan CDC) และสถาบันวิจัย Taiwan AI Labs เพื่อลดทอนความเสี่ยงในการแพร่ระบาดของโรค และปกป้องครอบครัวของทุกคน</string>
+    <string name="introduction_privacy_title">นโยบายความเป็นส่วนตัวของข้อมูลส่วนบุคคล</string>
+    <string name="introduction_privacy_description">แอปพลิเคชัน "ระยะห่างทางสังคมไต้หวัน" ใช้งานได้โดยไม่ต้องลงทะเบียน ไม่มีการอัพโหลดข้อมูลส่วนตัว ระบบจะคำนวณระยะห่างทางสังคมจากความแรงของสัญญาณบลูทูธ\n\nระบบไร้ตัวกลางจะทำการจัดเก็บข้อมูลรหัสIDแบบสุ่มของอุปกรณ์มือถือไว้ในอูปกรณ์มือถือของผู้ใช้งานที่เคยมีการสัมผัสกัน และมีกระบวนการจัดการข้อมูลอย่างปลอดภัยโดยไม่ระบุตัวตน เพื่อรักษาความเป็นส่วนตัวของผู้ใช้งาน</string>
+    <string name="introduction_intro_title">ลดโอกาสการแพร่ระบาดของโรค</string>
+    <string name="introduction_intro_description">หากผู้ใช้งานแอปเป็นผู้ป่วยยืนยันติดเชื้อโควิด สามารถเลือกที่จะเปิดเผยข้อมูลรหัสIDแบบสุ่มของอุปกรณ์มือถือตนเอง (มีกระบวนการจัดการข้อมูลอย่างปลอดภัยโดยไม่ระบุตัวตน) บุคคลที่เคยอยู่ใกล้ชิดและมีการสัมผัสกันในช่วงระยะเวลาหนึ่งกับอุปกรณ์มือถือผู้ป่วยยืนยัน จะได้รับการแจ้งเตือน โดยไม่ทราบข้อมูลส่วนตัวของผู้ป่วยยืนยัน เพื่อรักษาความเป็นส่วนตัวของบุคคลและความปลอดภัยจากการเสี่ยงเป็นโรคของประชาชน</string>
+
+    <string name="start_using">เริ่มใช้งาน</string>
+
+    <string name="main_button_start">เปิดการแจ้งเตือน</string>
+    <string name="main_button_already_start">เปิดแจ้งเตือนความเสี่ยงสัมผัสเรียบร้อย</string>
+
+    <string name="main_info">%1$s\n%2$s\n%3$s</string>
+    <string name="main_info_first_launch_time">ระยะเวลาการเปิดการแจ้งเตือน %1$s</string>
+    <string name="main_info_enable_time_percent">อัตราการใช้งาน %1$d%%</string>
+    <string name="main_info_last_check_time">Last checked at %1$s</string>
+
+    <string name="dialog_low_storage_title">พื้นที่จัดเก็บในมือถือไม่เพียงพอ</string>
+    <string name="dialog_low_storage_message">หากต้องการรับการแจ้งเตือนความเสี่ยงสัมผัส กรุณาจัดการพื้นที่จัดเก็บในมือถือ</string>
+
+    <string name="risk_brief_unknown">มิได้เปิดรับการแจ้งเตือนความเสี่ยงสัมผัส</string>
+    <string name="risk_detail_unknown">กรุณากดปุ่ม "เปิดรับการแจ้งเตือนความเสี่ยงสัมผัส" เพื่อตรวจเช็คสถานะความเสี่ยงของคุณ</string>
+
+    <string name="risk_brief_normal">จากข้อมูลพบว่า คุณไม่ได้สัมผัสกับผู้ป่วยยืนยัน</string>
+    <string name="risk_detail_normal">โปรดเว้นระยะห่างทางสังคมเสมอ</string>
+
+    <string name="risk_brief_risky">จากข้อมูลพบว่า คุณได้สัมผัสกับผู้ป่วยยืนยัน</string>
+    <string-array name="risk_detail_risky">
+        <item>โปรดติดต่อหน่วยงานสาธารณสุขใกล้บ้านหรือติดต่อศูนย์ข้อมูลโควิด 1922 โปรดสังเกตอาการตนเอง หากมีอาการผิดปกติ ควรรีบพบแพทย์ทันที</item>
+
+
+    </string-array>
+
+
+
+    <string name="menu_about">เกี่ยวกับแอป</string>
+
+    <string name="menu_cancel_alert">ยกเลิกสถานะการเตือนภัย</string>
+    <string name="menu_upload">อัพโหลดIDสุ่มผู้ป่วยยืนยัน</string>
+    <string name="menu_privacy">เงื่อนไขและนโยบายความเป็นส่วนตัว</string>
+    <string name="menu_control">จัดการสิทธิ์เข้าถึงข้อมูล</string>
+
+
+    <string name="url_privacy">https://ailabs.tw/taiwan-social-distancing-apppersonal-data-protection-note/</string>
+
+
+
+
+
+
+
+    <string name="upload_confirm_title">คุณเป็นผู้ป่วยยืนยัน หรือไม่</string>
+    <string name="upload_confirm_message">ฟังก์ชันนี้เป็นการอัพโหลดรหัสIDแบบสุ่มของผู้ป่วยยืนยันโดยไม่ระบุตัวตน เพื่อลดการแพร่ระบาดของโรค</string>
+    <string name="upload_title">อัพโหลดIDสุ่ม</string>
+    <string name="upload_date">กรุณาเลือกวันที่เริ่มต้น</string>
+    <string name="upload_date_start_enter_hint">กรุณาเลือกวันที่เริ่มต้น</string>
+    <string name="upload_date_end_enter_hint">กรุณาเลือกอวันที่สิ้นสุด</string>
+    <string name="upload_date_start_hint">วันที่เริ่มต้น</string>
+    <string name="upload_date_end_hint">วันที่สิ้นสุด</string>
+    <string name="upload_tek_description">กรุณากรอกรหัสยืนยันที่ได้รับจากหน่วยงานสาธารณสุข จากนั้นจะแสดงรหัสIDแบบสุ่มของคุณ ข้อมูลของคุณจะถูกจัดเก็บไว้ในกระทรวงสาธารณสุข และจะทำการถูกลบออกโดยอัตโนมัติหลัง10วัน</string>
+    <string name="upload_success">อัพโหลดสำเร็จ</string>
+    <string name="upload_fail">อัพโหลดล้มเหลว</string>
+
+
+    <string name="enter_verification_code">กรุณากรอกรหัสยืนยัน</string>
+    <string name="enter_verification_code_hint">กรุณากรอกรหัสยืนยัน</string>
+    <string name="send_verification_code">ส่งออก</string>
+
+    <string name="cancel_alert_confirm_title">คุณต้องการยกเลิกสถานะการเตือนภัยหรือไม่</string>
+    <string name="cancel_alert_confirm_message">ฟังก์ชันนี้สำหรับการยกเลิกระบบเตือนภัยหลังได้รับการตรวจสอบเชื้อโควิด</string>
+    <string name="cancel_alert_test_date">กรุณาเลือกวันตรวจสอบความเสี่ยงโควิด</string>
+    <string name="cancel_alert_test_date_hint">กรุณาเลือกวัน</string>
+    <string name="cancel_alert_description">กรุณากรอกรหัสยืนยันที่ได้รับจากหน่วยงานสาธารณสุข หลังจากส่งออก จะทำการยกเลิกสถานะการเตือนภัยเสร็จสิ้น</string>
+
+
+
+
+
+
+
+    <string name="control_exposure">การแจ้งเตือนความเสี่ยงสัมผัส</string>
+    <string name="control_exposure_turn_off_title">คุณยืนยันที่จะปิดรับการแจ้งเตือนความเสี่ยงสัมผัสหรือไม่?</string>
+    <string name="control_exposure_turn_off_detail">หากคุณเคยสัมผัสผู้ป่วยยืนยัน ระบบจะไม่ทำการแจ้งเตือนคุณ</string>
+
+    <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
+
+    <string name="notification_channel_name_foreground_service">ระบบกำลังตรวจสอบความเสี่ยงสัมผัส</string>
+
+    <string name="notification_provide_diagnosis_keys_title">การแจ้งเตือนความเสี่ยงสัมผัส</string>
+    <string name="notification_provide_diagnosis_keys_message">ระบบกำลังตรวจสอบข้อมูลการสัมผัส</string>
+
+    <string name="notification_channel_name">ผลตรวจความเสี่ยงสัมผัส</string>
+
+    <string name="notification_exposure_not_found_title">@string/notification_channel_name</string>
+    <string name="notification_exposure_not_found_message">ยังไม่มีความเสี่ยงสัมผัส</string>
+
+    <string name="notification_exposure_state_updated_title">@string/notification_channel_name</string>
+    <string name="notification_exposure_state_updated_message">พบความเสี่ยงสัมผัส โปรดตรวจสอบรายละเอียดบนแอปพลิเคชัน</string>
+
+    <string name="notification_service_state_updated_title">@string/notification_provide_diagnosis_keys_title</string>
+    <string name="notification_service_state_updated_message_on">เปิดรับการแจ้งเตือนความเสี่ยงสัมผัส</string>
+    <string name="notification_service_state_updated_message_off">การแจ้งเตือนความเสี่ยงสัมผัสถูกปิดการใช้งาน กรุณาตรวจสอบรายละเอียดผ่านแอป</string>
+
+    <string name="app_update_message">แอปพลิเคชัน"ระยะห่างทางสังคมไต้หวัน"ได้รับการอัพเดทเป็นเวอร์ชั่นล่าสุด โปรดเปิดการทำงานแอปอีกครั้ง</string>
+    <string name="app_update_restart">เริ่มการทำงานใหม่</string>
+
+
+
+
+
+    <string name="confirm">ยืนยัน</string>
+    <string name="cancel">ยกเลิก</string>
+
+    <string name="ok">OK</string>
+    <string name="yes">ใช่</string>
+    <string name="no">ไม่ใช่</string>
+
+</resources>

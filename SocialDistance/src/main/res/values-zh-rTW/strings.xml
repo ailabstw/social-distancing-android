@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appname "臺灣社交距離">]>
+
+<resources>
+
+    <string name="app_name">&appname;</string>
+
+    <string name="cdc_name_ch">衛生福利部疾病管制署</string>
+    <string name="cdc_name_translate">Taiwan Centers for Disease Control</string>
+
+    <string name="introduction_family_title">保護您與您的家人</string>
+    <string name="introduction_family_description">臺灣社交距離 App 是由台灣人工智慧實驗室開發並與行政院及衛生福利部疾病管制署合作，目的在減少疾病傳播的機會，進而保護你的家人。</string>
+    <string name="introduction_privacy_title">隱私與資料保護</string>
+    <string name="introduction_privacy_description">臺灣社交距離 App 使用者無需註冊且不會有任何資料上傳，僅使用手持裝置間彼此藍牙訊號的強弱去計算每個使用者之間的距離。\n\n此去中心化服務會將自己接觸過的手持裝置隨機 ID 資訊儲存在各自的手持裝置中，並且以嚴密的技術將資料去識別化，以保護使用者隱私。</string>
+    <string name="introduction_intro_title">減少疫情擴散機會</string>
+    <string name="introduction_intro_description">如果 App 的使用者被確診具傳染性的疾病，他可以選擇發布他的手持裝置隨機 ID（以嚴密的技術去識別化），曾跟他的手持裝置有過近距離且維持一定時間接觸的人便會收到通知。且無法知道是誰，在兼顧個人隱私的情況下也保護公眾的健康。</string>
+
+    <string name="start_using">開始使用</string>
+
+    <string name="main_button_start">開啟接觸通知功能</string>
+    <string name="main_button_already_start">接觸通知功能已開啟</string>
+
+    <string name="main_info">%1$s\n%2$s\n%3$s</string>
+    <string name="main_info_first_launch_time">接觸通知功能啟用時間 %1$s</string>
+    <string name="main_info_enable_time_percent">運作時間比例為 %1$d%%</string>
+    <string name="main_info_last_check_time">上次檢查時間為 %1$s</string>
+
+    <string name="dialog_low_storage_title">儲存空間不足</string>
+    <string name="dialog_low_storage_message">如要接收接觸通知，請管理儲存空間</string>
+
+    <string name="risk_brief_unknown">尚未開啟接觸通知功能</string>
+    <string name="risk_detail_unknown">請點選開啟接觸通知功能按鈕確認您的風險狀態</string>
+
+    <string name="risk_brief_normal">與確診者資料比對無接觸</string>
+    <string name="risk_detail_normal">請繼續保持社交距離</string>
+
+    <string name="risk_brief_risky">與確診者資料比對有接觸</string>
+    <string-array name="risk_detail_risky">
+        <item>冷靜面對：您曾經和確診者在近距離範圍內，但並非代表您確診。\n</item>
+        <item>自主健康管理：建議您做自主健康管理，並注意自身健康狀況。\n</item>
+        <item>發生健康狀況：若有發燒、呼吸道相關等疑似症狀，再聯絡您現居地方衛生機關或「1922」防疫專線安排後續採檢。</item>
+    </string-array>
+    <string name="risk_detail_risky_split">：</string>
+
+    <string name="menu_barcode_scanning">1922 簡訊實聯制</string>
+    <string name="menu_about">App 介紹</string>
+    <string name="menu_daily_summary">每日接觸狀況</string>
+    <string name="menu_cancel_alert">解除示警狀態</string>
+    <string name="menu_upload">確診者上傳隨機 ID</string>
+    <string name="menu_privacy">注意事項及個資保護說明</string>
+    <string name="menu_control">資料權限控管</string>
+    <string name="menu_faq">常見問題</string>
+
+    <string name="url_privacy">https://ailabs.tw/taiwan-social-distancing-apppersonal-data-protection-note/</string>
+
+
+    <string name="daily_summary_no_contact">無</string>
+    <string name="daily_summary_less_then_2_mins">接觸小於 2 分鐘</string>
+    <string name="daily_summary_mins">接觸 %1$d 分鐘</string>
+    <string name="daily_summary_hrs_mins">接觸 %1$d 小時 %2$d 分鐘</string>
+
+    <string name="upload_confirm_title">你是確診者嗎？</string>
+    <string name="upload_confirm_message">此功能為提供確診者上傳隨機 ID 以減少疫情擴散</string>
+    <string name="upload_title">上傳隨機 ID</string>
+    <string name="upload_date">請輸入起訖日期</string>
+    <string name="upload_date_start_enter_hint">請輸入起始日期</string>
+    <string name="upload_date_end_enter_hint">請輸入結束日期</string>
+    <string name="upload_date_start_hint">起始日期</string>
+    <string name="upload_date_end_hint">結束日期</string>
+    <string name="upload_tek_description">請輸入由衛生局提供的驗證碼，送出後，會上傳您的隨機 ID，這些資料會保存在衛生福利部疾病管制署，並於 10 天後自動刪除。</string>
+    <string name="upload_success">上傳成功</string>
+    <string name="upload_fail">上傳失敗</string>
+    <string name="upload_fail_message_no_files">所選區間無資料可供上傳</string>
+
+    <string name="enter_verification_code">請輸入驗證碼</string>
+    <string name="enter_verification_code_hint">請輸入驗證碼</string>
+    <string name="send_verification_code">送出</string>
+
+    <string name="cancel_alert_confirm_title">確定要解除示警狀態嗎？</string>
+    <string name="cancel_alert_confirm_message">此功能為提供疫調後之示警狀態解除</string>
+    <string name="cancel_alert_test_date">請輸入疫調日期</string>
+    <string name="cancel_alert_test_date_hint">請輸入日期</string>
+    <string name="cancel_alert_description">請輸入由衛生局提供的驗證碼，送出後，即取消您的示警狀態。</string>
+
+    <string name="barcode_shortcut_label">實聯掃描</string>
+    <string name="barcode_shortcut_label_long">掃描 1922 簡訊實聯制</string>
+    <string name="barcode_invalid_hint">非 1922 簡訊實聯制 QR code</string>
+    <string name="barcode_camera_permission_dialog_title">&appname;想取用您的相機</string>
+    <string name="barcode_camera_permission_dialog_message">&appname;要使用相機來掃描 1922 簡訊實聯制 QR code</string>
+
+    <string name="control_exposure">接觸通知服務</string>
+    <string name="control_exposure_turn_off_title">要停用接觸通知功能嗎？</string>
+    <string name="control_exposure_turn_off_detail">如果你接觸過 COVID-19 患者，系統將不會通知你</string>
+
+    <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
+
+    <string name="notification_channel_name_foreground_service">接觸比對中</string>
+
+    <string name="notification_provide_diagnosis_keys_title">接觸通知</string>
+    <string name="notification_provide_diagnosis_keys_message">正在進行接觸資訊比對</string>
+
+    <string name="notification_channel_name">接觸比對結果</string>
+
+    <string name="notification_exposure_not_found_title">@string/notification_channel_name</string>
+    <string name="notification_exposure_not_found_message">尚無接觸風險</string>
+
+    <string name="notification_exposure_state_updated_title">@string/notification_channel_name</string>
+    <string name="notification_exposure_state_updated_message">有接觸風險，請開啟 App 查看進一步資訊</string>
+
+    <string name="notification_service_state_updated_title">@string/notification_provide_diagnosis_keys_title</string>
+    <string name="notification_service_state_updated_message_on">接觸通知已開啟</string>
+    <string name="notification_service_state_updated_message_off">接觸通知已停用，請開啟 App 查看進一步資訊</string>
+
+    <string name="app_update_message">最新版本的「&appname;」已下載完畢，請重新開啟 App</string>
+    <string name="app_update_restart">重新開啟</string>
+
+    <string name="feature_barcode">新增「1922 簡訊實聯制」掃描功能</string>
+    <string name="feature_barcode_tip">秘訣：長按桌面 APP 圖示，可以將掃描功能捷徑加到桌面喔！</string>
+    <string name="feature_daily_summary">新增「每日接觸狀況」資訊頁面</string>
+
+    <string name="confirm">確認</string>
+    <string name="cancel">取消</string>
+    <string name="deny">不允許</string>
+    <string name="ok">是</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
+
+</resources>

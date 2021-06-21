@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:enabled="true"
+        android:icon="@mipmap/ic_barcode"
+        android:shortcutId="barcode_scanning"
+        android:shortcutLongLabel="@string/barcode_shortcut_label_long"
+        android:shortcutShortLabel="@string/barcode_shortcut_label">
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetClass="tw.gov.cdc.exposurenotifications.activity.BarcodeScanningActivity"
+            android:targetPackage="tw.gov.cdc.exposurenotifications" />
+    </shortcut>
+</shortcuts>

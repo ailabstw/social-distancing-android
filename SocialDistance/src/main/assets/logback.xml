@@ -1,0 +1,28 @@
+<configuration>
+
+    <property name="FILE_LOG_PATH" value='log' />
+
+    <appender name="logcat" class="ch.qos.logback.classic.android.LogcatAppender">
+        <tagEncoder>
+            <pattern>%logger{0}</pattern>
+        </tagEncoder>
+        <encoder>
+            <pattern>[%thread]%msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="file" class="ch.qos.logback.core.FileAppender">
+        <file>
+            ${FILE_LOG_PATH}/covid19.log
+        </file>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%-16thread] %-5level %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="DEBUG">
+        <appender-ref ref="logcat" />
+        <appender-ref ref="file" />
+    </root>
+
+</configuration>

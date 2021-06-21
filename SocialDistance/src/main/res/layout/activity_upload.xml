@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/ToolBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/upload_date_text"
+        style="@style/Text"
+        android:layout_marginHorizontal="@dimen/upload_margin_horizontal"
+        android:layout_marginTop="@dimen/upload_margin_top"
+        android:text="@string/upload_date"
+        app:layout_constraintBottom_toTopOf="@id/upload_date_start_edit_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <EditText
+        android:id="@+id/upload_date_start_edit_text"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/upload_margin_horizontal"
+        android:layout_marginTop="@dimen/upload_margin_vertical_small"
+        android:background="@color/white"
+        android:hint="@string/upload_date_start_hint"
+        android:inputType="none"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/upload_edit_text_padding_horizontal"
+        android:paddingVertical="@dimen/upload_edit_text_padding_vertical"
+        android:textColor="@color/text"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upload_date_text"
+        app:layout_constraintVertical_bias="1" />
+
+    <EditText
+        android:id="@+id/upload_date_end_edit_text"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/upload_margin_horizontal"
+        android:layout_marginTop="@dimen/upload_margin_vertical_small"
+        android:background="@color/white"
+        android:hint="@string/upload_date_end_hint"
+        android:inputType="none"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/upload_edit_text_padding_horizontal"
+        android:paddingVertical="@dimen/upload_edit_text_padding_vertical"
+        android:textColor="@color/text"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upload_date_start_edit_text"
+        app:layout_constraintVertical_bias="1" />
+
+    <TextView
+        android:id="@+id/upload_code_text"
+        style="@style/Text"
+        android:layout_marginHorizontal="@dimen/upload_margin_horizontal"
+        android:layout_marginTop="@dimen/upload_margin_vertical"
+        android:text="@string/enter_verification_code"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upload_date_end_edit_text" />
+
+    <EditText
+        android:id="@+id/upload_code_edit_text"
+        style="@style/Widget.AppCompat.EditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/upload_margin_horizontal"
+        android:layout_marginTop="@dimen/upload_margin_vertical_small"
+        android:background="@drawable/background_text_code"
+        android:hint="@string/enter_verification_code_hint"
+        android:inputType="number"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/upload_edit_text_padding_horizontal"
+        android:paddingVertical="@dimen/upload_edit_text_padding_vertical"
+        android:textColor="@color/text"
+        android:textSize="@dimen/text_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upload_code_text"
+        app:layout_constraintVertical_bias="1" />
+
+    <TextView
+        android:id="@+id/upload_description_text"
+        style="@style/Text"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/upload_margin_horizontal"
+        android:layout_marginVertical="@dimen/upload_margin_vertical"
+        android:autoSizeMaxTextSize="@dimen/text_size"
+        android:autoSizeMinTextSize="@dimen/text_size_min"
+        android:autoSizeTextType="uniform"
+        android:gravity="center_vertical"
+        android:text="@string/upload_tek_description"
+        app:layout_constraintBottom_toTopOf="@id/upload_send_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upload_code_edit_text"
+        tools:text="很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字字很多字很多字＾＿＾" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/upload_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.7" />
+
+    <Button
+        android:id="@+id/upload_send_button"
+        style="@style/Button.Major"
+        android:layout_width="0dp"
+        android:layout_marginHorizontal="20dp"
+        android:text="@string/send_verification_code"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upload_guideline"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintWidth_default="wrap" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

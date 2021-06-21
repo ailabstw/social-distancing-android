@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="enx_daysSinceExposureThreshold">14</integer>
+
+    <integer name="enx_attenuationImmediateNearThreshold">65</integer>
+    <integer name="enx_attenuationNearMedThreshold">75</integer>
+    <integer name="enx_attenuationMedFarThreshold">85</integer>
+
+    <integer name="enx_attenuationImmediateWeight">100</integer>
+    <integer name="enx_attenuationNearWeight">0</integer>
+    <integer name="enx_attenuationMedWeight">0</integer>
+    <integer name="enx_attenuationOtherWeight">0</integer>
+
+    <!-- Infectiousness (NONE, STANDARD, HIGH)
+          * STANDARD and HIGH levels can be assigned a weight between 0% and 250%
+          * NONE is fixed at 0% -->
+    <integer name="enx_infectiousnessStandardWeight">100</integer>
+    <integer name="enx_infectiousnessHighWeight">100</integer>
+
+    <integer name="enx_reportTypeConfirmedTestWeight">100</integer>
+    <integer name="enx_reportTypeConfirmedClinicalDiagnosisWeight">100</integer>
+    <integer name="enx_reportTypeSelfReportWeight">100</integer>
+
+</resources>

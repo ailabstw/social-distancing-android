@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/background">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/ToolBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/main_risk_brief_text"
+        style="@style/Text.Title"
+        android:layout_marginHorizontal="@dimen/main_margin_horizontal"
+        android:layout_marginTop="@dimen/main_margin_vertical"
+        android:autoSizeMaxTextSize="@dimen/text_size_title"
+        android:autoSizeMinTextSize="@dimen/text_size_min"
+        android:autoSizeTextType="uniform"
+        android:maxLines="3"
+        android:padding="@dimen/text_padding"
+        app:layout_constraintBottom_toTopOf="@id/main_risk_detail_text_invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintWidth_default="wrap"
+        tools:background="@drawable/background_text_risk_medium"
+        tools:text="很長長很長長很長長長很長很長長很長很長很長很長"
+        tools:textColor="@color/text_risk_low" />
+
+    <TextView
+        android:id="@+id/main_risk_detail_text_invisible"
+        style="@style/Text"
+        android:layout_marginHorizontal="@dimen/main_margin_horizontal_large"
+        android:layout_marginVertical="@dimen/main_margin_vertical"
+        android:paddingHorizontal="4dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical"
+        android:visibility="invisible"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toTopOf="@id/main_white_background_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_risk_brief_text"
+        app:layout_constraintWidth_default="wrap"
+        tools:text="\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+        tools:textColor="@color/text_risk_high" />
+
+    <TextView
+        android:id="@+id/main_risk_detail_text"
+        style="@style/Text"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/main_margin_horizontal_large"
+        android:paddingHorizontal="4dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toBottomOf="@id/main_risk_detail_text_invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/main_risk_detail_text_invisible"
+        app:layout_constraintWidth_default="wrap"
+        tools:text="risk_brief_risky\n1\n2\n3\n4\n5\n\6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19"
+        tools:textColor="@color/text_risk_high" />
+
+    <View
+        android:id="@+id/main_white_background_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/main_start_button"
+        style="@style/Button.Major"
+        android:layout_width="0dp"
+        android:layout_marginHorizontal="@dimen/main_margin_horizontal"
+        android:text="@string/main_button_start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/main_white_background_view"
+        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintWidth_default="wrap" />
+
+    <TextView
+        android:id="@+id/main_info_text"
+        style="@style/Text.Center"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/main_margin_horizontal"
+        android:layout_marginTop="18dp"
+        android:layout_marginBottom="6dp"
+        android:autoSizeMaxTextSize="@dimen/text_size_small"
+        android:autoSizeMinTextSize="@dimen/text_size_min"
+        android:autoSizeTextType="uniform"
+        android:gravity="center_horizontal|top"
+        android:lines="3"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintBottom_toTopOf="@id/main_version_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/main_start_button"
+        tools:text="iqwjeoifjqejroioaeirjoiegjoaajojqpwoeijfpqowieqwjepofijqwpoweqjpfoqjwpeoifjqpwoeifjpqoweijfp\nqjwpoefqjpwoeifqwoeijfpqjwpeofijegiajo\niowefjjowEifjaoajwoeifjaow" />
+
+    <TextView
+        android:id="@+id/main_version_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:textColor="#495d5e"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="v1.0.0" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/feature_barcode_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/elevation_toolbar"
+        android:visibility="gone"
+        app:constraint_referenced_ids="feature_barcode_back_drop_view, feature_barcode_icon_position_view, feature_barcode_arrow_image, feature_barcode_text, feature_barcode_tip_text"
+        tools:visibility="gone" />
+
+    <View
+        android:id="@+id/feature_barcode_back_drop_view"
+        style="@style/Feature.Backdrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <View
+        android:id="@+id/feature_barcode_icon_position_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/feature_barcode_arrow_image"
+        style="@style/Feature.Arrow"
+        android:layout_marginTop="@dimen/feature_margin_around_arrow"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@id/feature_barcode_icon_position_view"
+        app:layout_constraintStart_toStartOf="@id/feature_barcode_icon_position_view"
+        app:layout_constraintTop_toBottomOf="@id/feature_barcode_icon_position_view" />
+
+    <TextView
+        android:id="@+id/feature_barcode_text"
+        style="@style/Text.Feature"
+        android:layout_marginTop="@dimen/feature_margin_around_arrow"
+        android:layout_marginEnd="@dimen/main_margin_horizontal"
+        android:text="@string/feature_barcode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/feature_barcode_arrow_image"
+        app:layout_constraintTop_toBottomOf="@id/feature_barcode_arrow_image" />
+
+    <TextView
+        android:id="@+id/feature_barcode_tip_text"
+        style="@style/Text.Feature"
+        android:layout_marginTop="@dimen/feature_margin_between_text"
+        android:text="@string/feature_barcode_tip"
+        android:textStyle="normal"
+        app:layout_constraintEnd_toEndOf="@id/feature_barcode_text"
+        app:layout_constraintStart_toStartOf="@id/feature_barcode_text"
+        app:layout_constraintTop_toBottomOf="@id/feature_barcode_text" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/feature_daily_summary_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/elevation_toolbar"
+        android:visibility="gone"
+        app:constraint_referenced_ids="feature_daily_summary_top_back_drop_view, feature_daily_summary_bottom_back_drop_view, feature_daily_summary_arrow_image, feature_daily_summary_text"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/feature_daily_summary_top_back_drop_view"
+        style="@style/Feature.Backdrop"
+        android:layout_marginBottom="@dimen/main_margin_vertical"
+        app:layout_constraintBottom_toTopOf="@id/main_risk_brief_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/feature_daily_summary_bottom_back_drop_view"
+        style="@style/Feature.Backdrop"
+        android:layout_marginTop="@dimen/main_margin_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_risk_brief_text" />
+
+    <ImageView
+        android:id="@+id/feature_daily_summary_arrow_image"
+        style="@style/Feature.Arrow"
+        android:layout_marginTop="@dimen/feature_margin_around_arrow"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@id/main_risk_brief_text"
+        app:layout_constraintStart_toStartOf="@id/main_risk_brief_text"
+        app:layout_constraintTop_toTopOf="@id/feature_daily_summary_bottom_back_drop_view" />
+
+    <TextView
+        android:id="@+id/feature_daily_summary_text"
+        style="@style/Text.Feature"
+        android:layout_marginTop="@dimen/feature_margin_around_arrow"
+        android:gravity="center_horizontal"
+        android:text="@string/feature_daily_summary"
+        app:layout_constraintEnd_toEndOf="@id/main_risk_brief_text"
+        app:layout_constraintStart_toStartOf="@id/main_risk_brief_text"
+        app:layout_constraintTop_toBottomOf="@id/feature_daily_summary_arrow_image" />
+
+    <View
+        android:id="@+id/feature_touch_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:elevation="@dimen/elevation_toolbar"
+        android:focusable="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

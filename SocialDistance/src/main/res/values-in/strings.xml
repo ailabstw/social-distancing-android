@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appname "Social Distancing Taiwan">]>
+
+<resources>
+
+    <string name="app_name">&appname;</string>
+
+    <string name="cdc_name_ch">衛生福利部疾病管制署</string>
+    <string name="cdc_name_translate">Taiwan Centers of Disease Control (Taiwan CDC)</string>
+
+    <string name="introduction_family_title">Lindungi Anda dan Keluarga Anda</string>
+    <string name="introduction_family_description">Aplikasi Social Distancing Taiwan dikembangkan oleh Taiwan AI Labs bekerjasama dengan Executive Yuan dan Taiwan Centers for Disease Control (CDC) dengan tujuan mengurangi kemungkinan terjadinya penularan penyakit untuk melindungi Anda dan orang-orang yang Anda kasihi.</string>
+    <string name="introduction_privacy_title">Perlindungan Privasi dan Data</string>
+    <string name="introduction_privacy_description">Pengguna tidak perlu mendaftarkan akun atau mengunggah data pribadi apapun untuk menggunakan Aplikasi Social Distancing Taiwan. Risiko tertular penyakit ditentukan oleh jarak di antara para pengguna perangkat seluler yang dihitung berdasarkan kekuatan sinyal bluetooth di antara perangkat seluler tersebut.\n\nLayanan terdesentralisasi dari aplikasi ini menyimpan secara lokal ID acak dari perangkat seluler pengguna aplikasi lain yang telah mendekat selama 14 hari terakhir. Nomor ID acak tersebut telah dianonimkan melalui mekanisme yang teliti untuk kepentingan perlindungan privasi.</string>
+    <string name="introduction_intro_title">Mengurangi Kemungkinan Penyebaran Pandemi</string>
+    <string name="introduction_intro_description">Jika pengguna aplikasi telah dikonfirmasi sebagai pembawa penyakit menular, mereka dapat memilih untuk memberitahukan ID anonim acak (yang telah disamarkan) dan sistem akan memberitahu para pengguna lainnya yang telah berada dekat dengan pengguna yang telah terkonfirmasi tentang bahaya tertular penyakit. Keseluruhan proses dilakukan secara anonim dan mendukung baik privasi data maupun kesehatan masyarakat.</string>
+
+    <string name="start_using">Mulai!</string>
+
+    <string name="main_button_start">Aktifkan Notifikasi Paparan</string>
+    <string name="main_button_already_start">Notifikasi paparan telah AKTIF</string>
+
+    <string name="main_info">%1$s\n%2$s\n%3$s</string>
+    <string name="main_info_first_launch_time">Waktu aktivasi fungsi notifikasi paparan %1$s</string>
+    <string name="main_info_enable_time_percent">Rasio waktu operasi adalah %1$d%%</string>
+    <string name="main_info_last_check_time">Last checked at %1$s</string>
+
+    <string name="dialog_low_storage_title">Ruang penyimpanan tidak cukup</string>
+    <string name="dialog_low_storage_message">Harap kelola ruang penyimpanan untuk menerima notifikasi paparan.</string>
+
+    <string name="risk_brief_unknown">Notifikasi Paparan TIDAK Diaktifkan</string>
+    <string name="risk_detail_unknown">Silakan aktifkan fungsi notifikasi paparan untuk mengkonfirmasi status risiko Anda.</string>
+
+    <string name="risk_brief_normal">Anda tidak pernah berdekatan dengan kasus positif dalam database kami</string>
+    <string name="risk_detail_normal">Tetap menjaga jarak dengan sesama.</string>
+
+    <string name="risk_brief_risky">Anda memiliki kontak langsung dengan kasus terkonfirmasi covid-19 dalam database kami</string>
+    <string-array name="risk_detail_risky">
+        <item>Silakan lakukan panggilan ke 1922 atau Departemen Kesehatan lokal untuk melaporkan kasus Anda, dan lakukan pengawasan mandiri terhadap kesehatan Anda. Kunjungi rumah sakit terdekat jika Anda merasakan gejala-gejala penyakit.</item>
+
+
+    </string-array>
+
+
+
+    <string name="menu_about">Pengenalan Aplikasi</string>
+
+    <string name="menu_cancel_alert">Nonaktifkan peringatan</string>
+    <string name="menu_upload">Pasien COVID-19 Mengunggah ID Acak</string>
+    <string name="menu_privacy">IKebijakan Privasi Data</string>
+    <string name="menu_control">Pengaturan Data Pribadi</string>
+
+
+    <string name="url_privacy">https://ailabs.tw/taiwan-social-distancing-apppersonal-data-protection-note/</string>
+
+
+
+
+
+
+
+    <string name="upload_confirm_title">Apakah Anda terkonfimasi sebagai pasien COVID-19?</string>
+    <string name="upload_confirm_message">Unggah ID anonim Anda untuk mengurangi kemungkinan penyebaran.</string>
+    <string name="upload_title">Mengunggah ID Acak</string>
+    <string name="upload_date">Silakan masukkan tanggal awal dan akhir</string>
+    <string name="upload_date_start_enter_hint">Silakan masukkan tanggal awal</string>
+    <string name="upload_date_end_enter_hint">Silakan masukkan tanggal akhir</string>
+    <string name="upload_date_start_hint">Dari</string>
+    <string name="upload_date_end_hint">Sampai</string>
+    <string name="upload_tek_description">Silakan masukkan nomor verifikasi yang telah diberikan kepada Anda oleh Kementrian Kesehatan. Setelah mengkonfirmasi nomor verifikasi Anda, ID anonim Anda akan diunggah ke database CDC dan akan secara otomatis dihapus setelah 10 hari.</string>
+    <string name="upload_success">BERHASIL mengunggah</string>
+    <string name="upload_fail">GAGAL mengunggah</string>
+
+
+    <string name="enter_verification_code">Masukkan nomor verifikasi</string>
+    <string name="enter_verification_code_hint">Masukkan nomor verifikasi</string>
+    <string name="send_verification_code">Kirim</string>
+
+    <string name="cancel_alert_confirm_title">Apakah Anda yakin akan menonaktifkan peringatan?</string>
+    <string name="cancel_alert_confirm_message">Fitur ini dirancang untuk menonaktifkan peringatan setelah investigasi transmisi.</string>
+    <string name="cancel_alert_test_date">Tanggal investigasi transmisi</string>
+    <string name="cancel_alert_test_date_hint">Silakan masukkan tanggal</string>
+    <string name="cancel_alert_description">Silakan masukkan kode verifikasi yang disediakan oleh Kementrian Kesehatan. Status peringatan Anda akan dibatalkan setelah mengirimkannya.</string>
+
+
+
+
+
+
+
+    <string name="control_exposure">Layanan Notifikasi Paparan</string>
+    <string name="control_exposure_turn_off_title">Apakah Anda yakin untuk mematikan notifikasi paparan?</string>
+    <string name="control_exposure_turn_off_detail">Apabila Anda pernah kontak langsung dengan pasien terkonfirmasi covid-19, sistem tidak akan lagi mengirimkan notifikasi.</string>
+
+    <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
+
+    <string name="notification_channel_name_foreground_service">Dalam proses…</string>
+
+    <string name="notification_provide_diagnosis_keys_title">Notifikasi Paparan</string>
+    <string name="notification_provide_diagnosis_keys_message">Perbandingan informasi kontak sedang berlangsung</string>
+
+    <string name="notification_channel_name">Hasil periksa</string>
+
+    <string name="notification_exposure_not_found_title">@string/notification_channel_name</string>
+    <string name="notification_exposure_not_found_message">Tidak ada risiko tertular</string>
+
+    <string name="notification_exposure_state_updated_title">@string/notification_channel_name</string>
+    <string name="notification_exposure_state_updated_message">MUNGKIN TERTULAR: Buka aplikasi untuk informasi lebih lanjut</string>
+
+    <string name="notification_service_state_updated_title">@string/notification_provide_diagnosis_keys_title</string>
+    <string name="notification_service_state_updated_message_on">Notifikasi Paparan Diaktifkan</string>
+    <string name="notification_service_state_updated_message_off">Notifikasi paparan dimatikan, silakan buka aplikasi untuk informasi lebih lanjut</string>
+
+    <string name="app_update_message">Aplikasi Social Distancing Taiwan terbaru telah diunduh. Silakan tutup dan buka kembali aplikasi.</string>
+    <string name="app_update_restart">Mulai ulang</string>
+
+
+
+
+
+    <string name="confirm">Konfirmasi</string>
+    <string name="cancel">Batal</string>
+
+    <string name="ok">OK</string>
+    <string name="yes">Ya</string>
+    <string name="no">Tidak</string>
+
+</resources>

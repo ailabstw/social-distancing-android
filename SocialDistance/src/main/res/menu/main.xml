@@ -1,0 +1,40 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_about"
+        android:title="@string/menu_about"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_daily_summary"
+        android:title="@string/menu_daily_summary"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_cancel_alarm"
+        android:title="@string/menu_cancel_alert"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_upload"
+        android:title="@string/menu_upload"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_privacy"
+        android:title="@string/menu_privacy"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_control"
+        android:title="@string/menu_control"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_faq"
+        android:title="@string/menu_faq"
+        app:showAsAction="never" />
+
+</menu>

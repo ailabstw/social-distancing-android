@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/daily_summary_item_invisible_text"
+        style="@style/Text"
+        android:lines="1"
+        android:padding="@dimen/text_padding"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/daily_summary_item_date_text"
+        style="@style/Text.AutoSize"
+        android:layout_height="0dp"
+        android:gravity="start|center_vertical"
+        android:lines="1"
+        android:padding="@dimen/text_padding"
+        app:layout_constraintBottom_toBottomOf="@id/daily_summary_item_invisible_text"
+        app:layout_constraintEnd_toStartOf="@id/daily_summary_item_summary_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/daily_summary_item_invisible_text"
+        tools:text="200年20月20日" />
+
+    <TextView
+        android:id="@+id/daily_summary_item_summary_text"
+        style="@style/Text.AutoSize"
+        android:layout_height="0dp"
+        android:gravity="end|center_vertical"
+        android:lines="1"
+        android:padding="@dimen/text_padding"
+        app:layout_constraintBottom_toBottomOf="@id/daily_summary_item_invisible_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/daily_summary_item_date_text"
+        app:layout_constraintTop_toTopOf="@id/daily_summary_item_invisible_text"
+        tools:text="99小時12分鐘" />
+
+    <View
+        android:id="@+id/daily_summary_item_divider_view"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/divider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

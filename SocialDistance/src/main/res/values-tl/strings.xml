@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appname "Taiwan Social Distance">]>
+
+<resources>
+
+    <string name="app_name">&appname;</string>
+
+    <string name="cdc_name_ch">衛生福利部疾病管制署</string>
+    <string name="cdc_name_translate">Taiwan Centers for Disease Control</string>
+
+    <string name="introduction_family_title">Upang maprotektahan ka at ang iyong pamilya</string>
+    <string name="introduction_family_description">Ang Taiwan Social Distance App ay dinisenyo ng Taiwan AI Labs at Taiwan Centers for Disease Control upang makaiwas sa pag-expose sa COVID-19, at maprotektahan ang iyong pamilya.</string>
+    <string name="introduction_privacy_title">Proteksyon sa privacy at data</string>
+    <string name="introduction_privacy_description">Ang mga gumagamit ng Taiwan Social Distance App ay hindi kailangang magparehistro at mag-upload ng anumang data. Ginagamit lamang nila ang lakas ng signal ng Bluetooth sa pagitan ng mga handheld devices upang makalkula ang distansya ng bawat gumagamit.\n\nAng decentralized service na ito ay nag-iimbak ng impormasyon ng random ID ng iyong handheld devices, at gumagamit ng mahigpit na teknolohiya para makilala ang data upang maprotektahan ang privacy ng gumagamit.</string>
+    <string name="introduction_intro_title">Upang mabawasan ang pagkalat ng pandemya</string>
+    <string name="introduction_intro_description">Kung ang user ng App ay may nakakahawang sakit, puwede niyang ipadala ang random ID sa kanyang handheld device (ginagamit ang isang advanced na teknolohiya upang hindi makilala ang taong gumagamit nito), makakareceive ka ng notification kung malapit ang handheld device mo sa taong may sakit, at hindi mo rin malalaman kung sino siya upang maprotektahan ang privacy, at maprotektahan din ang kalusugan ng iba tao.</string>
+
+    <string name="start_using">Simulan na ang paggamit!</string>
+
+    <string name="main_button_start">Buksan ang Exposure Notification</string>
+    <string name="main_button_already_start">Bukas na ang Exposure Notification</string>
+
+    <string name="main_info">%1$s\n%2$s\n%3$s</string>
+    <string name="main_info_first_launch_time">Oras mula ng nabuksan ang Exposure Notification %1$s</string>
+    <string name="main_info_enable_time_percent">Ang ratio ng operating time ay %1$d%%</string>
+    <string name="main_info_last_check_time">Last checked at %1$s</string>
+
+    <string name="dialog_low_storage_title">Hindi sapat ang storage</string>
+    <string name="dialog_low_storage_message">Mangyaring i-check ang storage kung nais mong buksan ang Exposure Notification.</string>
+
+    <string name="risk_brief_unknown">Hindi pa nabubuksan ang Exposure Notification</string>
+    <string name="risk_detail_unknown">Mangyaring buksan ang Exposure Notification upang makumpirma ang iyong katayuan ngayon.</string>
+
+    <string name="risk_brief_normal">Hindi ka na-expose sa pasyente ng COVID-19 sa aming database</string>
+    <string name="risk_detail_normal">Mangyaring ipagtuloy ang social distancing.</string>
+
+    <string name="risk_brief_risky">Na-expose ka sa mga positibong pasyente sa aming database</string>
+    <string-array name="risk_detail_risky">
+        <item>Mangyaring i-report ito sa lokal na health bureau o tawagan ang 1922 hotline. Paki obserbahan ang iyong personal na kondisyon sa kalusugan, at puntahan na ang pinaka malapit na ospital kung masama ang pakiramdam.</item>
+
+
+    </string-array>
+
+
+
+    <string name="menu_about">Introduction ng App</string>
+
+    <string name="menu_cancel_alert">Isara ang warning notification</string>
+    <string name="menu_upload">Confirmed patients upload Anonymous ID</string>
+    <string name="menu_privacy">Privacy Policy and Terms of Use</string>
+    <string name="menu_control">Pagkontrol sa awtoridad ng data</string>
+
+
+    <string name="url_privacy">https://ailabs.tw/taiwan-social-distancing-apppersonal-data-protection-note/</string>
+
+
+
+
+
+
+
+    <string name="upload_confirm_title">Kumpirmado ka bang isang pasyente ng COVID-19?</string>
+    <string name="upload_confirm_message">Ang function na ito ay para sa pag-upload ng mga pasyente ng random ID upang mabawasan ang posibilidad ng pagkalat ng COVID-19.</string>
+    <string name="upload_title">Mag-upload ng anonymous ID</string>
+    <string name="upload_date">Mangyaring i-type ang date ng pagsisimula at pagtatapos</string>
+    <string name="upload_date_start_enter_hint">Mangyaring i-type ang date ng pagsisimula</string>
+    <string name="upload_date_end_enter_hint">Mangyaring i-type ang date ng pagtatapos</string>
+    <string name="upload_date_start_hint">Ang date ng pagsisimula</string>
+    <string name="upload_date_end_hint">Ang date ng pagkatapos</string>
+    <string name="upload_tek_description">Mangyaring i-type ang verification code na ibinigay ng health bureau. Matapos ipadala ito, maa-upload ang iyong random ID sa database ng Taiwan Centers for Disease Control, at awtomatikong buburahin pagkalipas ng 10 araw.</string>
+    <string name="upload_success">Matagumpay na pag-upload</string>
+    <string name="upload_fail">Nabigo ang pag-upload</string>
+    
+
+    <string name="enter_verification_code">Mangyaring i-type ang verification code</string>
+    <string name="enter_verification_code_hint">Mangyaring i-type ang verification code</string>
+    <string name="send_verification_code">Ipadala</string>
+
+    <string name="cancel_alert_confirm_title">Siguradong isasara ba ang warning notification?</string>
+    <string name="cancel_alert_confirm_message">Ang function na ito ay para sa pagsara ng warning notification pagkatapos ng pagsisiyasat sa mga pasyente.</string>
+    <string name="cancel_alert_test_date">Mangyaring i-type ang date ng pagimbestiga sa pandemya</string>
+    <string name="cancel_alert_test_date_hint">I-type ang date</string>
+    <string name="cancel_alert_description">Mangyaring i-type ang verification code na ibinigay ng health bureau. Matapos ipadala ito, isasarado na ang warning notification mo.</string>
+
+
+
+
+
+
+
+    <string name="control_exposure">Exposure Notification Services</string>
+    <string name="control_exposure_turn_off_title">Sigurado ka bang nais mong i-off ang Exposure Notification?</string>
+    <string name="control_exposure_turn_off_detail">Hindi na magpapadala ang sistema ng notification muli kung na-expose ka na sa pasyente ng COVID-19.</string>
+
+    <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
+
+    <string name="notification_channel_name_foreground_service">Processing</string>
+
+    <string name="notification_provide_diagnosis_keys_title">Exposure Notification</string>
+    <string name="notification_provide_diagnosis_keys_message">Pinoproseso ang impormasyon sa pag-expose sa mga pasyente ng COVID-19</string>
+
+    <string name="notification_channel_name">Resulta ng pag-expose sa mga pasyente ng COVID-19</string>
+
+    <string name="notification_exposure_not_found_title">@string/notification_channel_name</string>
+    <string name="notification_exposure_not_found_message">Walang peligro sa pag-expose sa mga pasyente ng COVID-19</string>
+
+    <string name="notification_exposure_state_updated_title">@string/notification_channel_name</string>
+    <string name="notification_exposure_state_updated_message">Maaring na-expose sa mga pasyente ng COVID-19, mangyaring buksan ang App upang makakuha ng karagdagang impormasyon</string>
+
+    <string name="notification_service_state_updated_title">@string/notification_provide_diagnosis_keys_title</string>
+    <string name="notification_service_state_updated_message_on">Bukas na ang Exposure Notification</string>
+    <string name="notification_service_state_updated_message_off">Nakasara ngayon ang notification sa pag-expose sa mga pasyente ng COVID-19, mangyaring buksan ang App upang i-check ang mga impormasyon</string>
+
+    <string name="app_update_message">Na-download na ang pinaka bagong bersyon ng "Taiwan Social Distance", mangyaring buksan ulit ang App.</string>
+    <string name="app_update_restart">Restart</string>
+
+
+
+
+
+    <string name="confirm">Kumpirmahin</string>
+    <string name="cancel">Ikansela</string>
+
+    <string name="ok">OK</string>
+    <string name="yes">Oo</string>
+    <string name="no">Hindi</string>
+
+</resources>

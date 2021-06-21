@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        style="@style/ToolBar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/daily_summary_last_check_time_text"
+        style="@style/Text.Center"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/main_margin_horizontal_large"
+        android:layout_marginTop="@dimen/main_margin_vertical"
+        android:autoSizeMaxTextSize="@dimen/text_size_small"
+        android:autoSizeMinTextSize="@dimen/text_size_min"
+        android:autoSizeTextType="uniform"
+        android:lines="1"
+        android:textSize="@dimen/text_size_small"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="wrap"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:text="@string/main_info_last_check_time" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/daily_summary_recycler_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/main_margin_horizontal"
+        android:layout_marginVertical="@dimen/main_margin_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/daily_summary_last_check_time_text">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,112 @@
+<resources>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primary_dark</item>
+        <item name="colorAccent">@color/primary</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.Splash">
+        <item name="android:windowBackground">@color/primary</item>
+    </style>
+
+    <style name="ToolBar">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">?attr/colorPrimary</item>
+        <item name="android:elevation">@dimen/elevation_toolbar</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="android:theme">?attr/actionBarTheme</item>
+
+    </style>
+
+    <style name="Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">@dimen/button_width</item>
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="android:paddingStart">20dp</item>
+        <item name="android:paddingEnd">20dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_button</item>
+    </style>
+
+    <style name="Button.Major">
+        <item name="android:background">@drawable/background_button_major</item>
+    </style>
+
+    <style name="Button.Secondary">
+        <item name="android:background">@drawable/background_button_secondary</item>
+    </style>
+
+    <style name="Button.Report">
+        <item name="android:background">@drawable/background_button_report</item>
+    </style>
+
+    <style name="Button.ReportUrgent">
+        <item name="android:background">@drawable/background_button_report_urgent</item>
+    </style>
+
+    <style name="Button.Statistic">
+        <item name="android:background">@drawable/background_button_statistic</item>
+    </style>
+
+    <style name="Text">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="Text.AutoSize">
+        <item name="autoSizeMaxTextSize">@dimen/text_size</item>
+        <item name="autoSizeMinTextSize">@dimen/text_size_min</item>
+        <item name="autoSizeTextType">uniform</item>
+    </style>
+
+    <style name="Text.Center">
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Text.Title">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">@dimen/text_size_title</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Text.Title.Large">
+        <item name="android:textSize">@dimen/text_size_title_large</item>
+    </style>
+
+    <style name="Text.Feature">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:gravity">start|top</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Feature"></style>
+
+    <style name="Feature.Backdrop">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:alpha">0.6</item>
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <style name="Feature.Arrow">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">21dp</item>
+        <item name="android:background">@drawable/triangle_white_up</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+</resources>

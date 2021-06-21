@@ -1,0 +1,2 @@
+rootProject.name='臺灣社交距離'
+include ':SocialDistance'

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="main_margin_horizontal">20dp</dimen>
+    <dimen name="main_margin_horizontal_large">40dp</dimen>
+    <dimen name="main_margin_vertical">12dp</dimen>
+
+    <dimen name="text_size">16sp</dimen>
+    <dimen name="text_size_small">11sp</dimen>
+    <dimen name="text_size_min">1sp</dimen>
+    <dimen name="text_size_title">19sp</dimen>
+    <dimen name="text_size_title_large">40sp</dimen>
+    <dimen name="text_size_button">15dp</dimen>
+
+    <dimen name="text_size_description">17sp</dimen>
+    <dimen name="text_size_asr">15sp</dimen>
+
+    <dimen name="text_radius_title">6dp</dimen>
+
+    <dimen name="dot_size">10dp</dimen>
+    <dimen name="dot_padding">3dp</dimen>
+
+    <dimen name="text_padding">8dp</dimen>
+    <dimen name="view_horizontal_margin">20dp</dimen>
+
+    <dimen name="button_radius">8dp</dimen>
+    <dimen name="button_width">220dp</dimen>
+    <dimen name="button_height">42dp</dimen>
+
+    <dimen name="upload_margin_horizontal">45dp</dimen>
+    <dimen name="upload_margin_vertical">20dp</dimen>
+    <dimen name="upload_margin_vertical_small">6dp</dimen>
+    <dimen name="upload_margin_top">40dp</dimen>
+    <dimen name="upload_margin_bottom">44dp</dimen>
+    <dimen name="upload_edit_text_padding_horizontal">10dp</dimen>
+    <dimen name="upload_edit_text_padding_vertical">5dp</dimen>
+
+    <dimen name="feature_margin_around_arrow">12dp</dimen>
+    <dimen name="feature_margin_between_text">8dp</dimen>
+
+    <dimen name="elevation_toolbar">4dp</dimen>
+
+</resources>

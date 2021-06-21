@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appname "Taiwan Social Distancing">]>
+
+<resources>
+
+    <string name="app_name">&appname;</string>
+
+    <string name="cdc_name_ch">衛生福利部疾病管制署</string>
+    <string name="cdc_name_translate">Taiwan Centers for Disease Control</string>
+
+    <string name="introduction_family_title">Stay Safe, Keep Your Family Safe</string>
+    <string name="introduction_family_description">The Taiwan Social Distancing App was developed by the Taiwan AI Labs in cooperation with the Executive Yuan and the Taiwan Centers for Disease Control in order to reduce the likelihood of disease transmission and keep people safe.</string>
+    <string name="introduction_privacy_title">Privacy and Data Protection</string>
+    <string name="introduction_privacy_description">Taiwan Social Distancing App use is anonymous - users do not need to register and no user data will be collected. The only form of data transmission involved is the observation of Bluetooth signals between handheld devices to calculate the distance between each user.\n\nUser privacy will be ensured via decentralized storage of anonymous IDs for individual devices; contact data will be compiled by each respective device.</string>
+    <string name="introduction_intro_title">Reduce the Spread of Pandemic</string>
+    <string name="introduction_intro_description">Users who have tested positive can choose to anonymously publish their device\'s anonymous IDs. When users with a positive test publish their results, people who have been in proximity to this device and maintained contact for a certain period of time will receive a notification. This process guarantees the anonymity and personal privacy of those who share their positive test results while contributing to keeping our communities informed and diligent in taking preventative and cautionary measures.</string>
+
+    <string name="start_using">Get started</string>
+
+    <string name="main_button_start">Enable Exposure Notification</string>
+    <string name="main_button_already_start">Notification is Enabled</string>
+
+    <string name="main_info">%2$s\n%1$s\n%3$s</string>
+    <string name="main_info_first_launch_time">Since enabled at %1$s</string>
+    <string name="main_info_enable_time_percent">Exposure Notification operating ratio %1$d%%</string>
+    <string name="main_info_last_check_time">Last checked at %1$s</string>
+
+    <string name="dialog_low_storage_title">Insufficient Data Storage Available</string>
+    <string name="dialog_low_storage_message">To receive notifications, please free up storage.</string>
+
+    <string name="risk_brief_unknown">Exposure Notification is not enabled</string>
+    <string name="risk_detail_unknown">Click the button below to enable exposure notification for possible contact with COVID-positive persons.</string>
+
+    <string name="risk_brief_normal">No contact with registered positive tests</string>
+    <string name="risk_detail_normal">Please continue to maintain social distancing.</string>
+
+    <string name="risk_brief_risky">You have been in proximity with registered positive tests</string>
+    <string-array name="risk_detail_risky">
+        <item>Stay Calm: You have been identified as a close contact of a confirmed COVID-19 case, but that does NOT mean you are a confirmed case.\n</item>
+        <item>Self-Health Management: We advise you to conduct self-health management and be aware of your health conditions.\n</item>
+        <item>Health Conditions: If you have fever or respiratory symptoms, please contact your local health agency, or dial the toll-free hotline \"1922\" for testing arrangement.</item>
+    </string-array>
+    <string name="risk_detail_risky_split">:</string>
+
+    <string name="menu_barcode_scanning">1922 SMS Contact Tracing</string>
+    <string name="menu_about">App Introduction</string>
+    <string name="menu_daily_summary">Daily Summary</string>
+    <string name="menu_cancel_alert">Reset Your Status</string>
+    <string name="menu_upload">Upload Anonymous IDs</string>
+    <string name="menu_privacy">Privacy Policy and Terms of Use</string>
+    <string name="menu_control">Exposure Notification Setting</string>
+    <string name="menu_faq">FAQ</string>
+
+    <string name="url_privacy">https://ailabs.tw/taiwan-social-distancing-apppersonal-data-protection-note/</string>
+    <string name="url_faq">https://www.cdc.gov.tw/Category/Page/R8bAd_yiVi22CIr73qM2yw</string>
+
+    <string name="daily_summary_no_contact">No Contact</string>
+    <string name="daily_summary_less_then_2_mins">Less than 2 min</string>
+    <string name="daily_summary_mins">%1$d min</string>
+    <string name="daily_summary_hrs_mins">%1$d hr %2$d min</string>
+
+    <string name="upload_confirm_title">Have You Had a Positive Test?</string>
+    <string name="upload_confirm_message">Upload your anonymous IDs to reduce transmission.</string>
+    <string name="upload_title">Upload Anonymous IDs</string>
+    <string name="upload_date">Please Enter Start and End Dates</string>
+    <string name="upload_date_start_enter_hint">Please Enter Start Date</string>
+    <string name="upload_date_end_enter_hint">Please Enter End Date</string>
+    <string name="upload_date_start_hint">Start Date</string>
+    <string name="upload_date_end_hint">End Date</string>
+    <string name="upload_tek_description">Please enter the verification code provided by the local Department of Health. After submitting, your anonymous IDs will be uploaded. These data will be stored by the Taiwan Centers for Disease Control and will be automatically deleted after 10 days.</string>
+    <string name="upload_success">Upload Successful</string>
+    <string name="upload_fail">Upload Failed</string>
+    <string name="upload_fail_message_no_files">No data between start and end dates.</string>
+
+    <string name="enter_verification_code">Please Enter Verification Code</string>
+    <string name="enter_verification_code_hint">Verification Code</string>
+    <string name="send_verification_code">Submit</string>
+
+    <string name="cancel_alert_confirm_title">Are you sure you want to reset your status?</string>
+    <string name="cancel_alert_confirm_message">Reset status upon completion of contact tracing assessment.</string>
+    <string name="cancel_alert_test_date">Please Enter Date of Contact Tracing Assessment</string>
+    <string name="cancel_alert_test_date_hint">Assessment Date</string>
+    <string name="cancel_alert_description">Please enter the verification code provided by the local Department of Health. After submitting, the warning will be disabled.</string>
+
+    <string name="barcode_shortcut_label">1922 SMS</string>
+    <string name="barcode_shortcut_label_long">Scan 1922 QR Code</string>
+    <string name="barcode_invalid_hint">Invalid 1922 SMS contact tracing QR code</string>
+    <string name="barcode_camera_permission_dialog_title">&appname; Would Like to Access the Camera</string>
+    <string name="barcode_camera_permission_dialog_message">&appname; uses the camera to scan QR code for 1922 SMS contact tracing registration.</string>
+
+    <string name="control_exposure">Notification Service</string>
+    <string name="control_exposure_turn_off_title">Are you sure you want to disable exposure notification?</string>
+    <string name="control_exposure_turn_off_detail">If you have been in contact with a COVID-19 patient, the system will not notify you in this mode.</string>
+
+    <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
+
+    <string name="notification_channel_name_foreground_service">Contact Tracing Evaluation</string>
+
+    <string name="notification_provide_diagnosis_keys_title">Contact Tracing Notification</string>
+    <string name="notification_provide_diagnosis_keys_message">Contact Tracing Evaluation in Progress</string>
+
+    <string name="notification_channel_name">Contact Tracing Results</string>
+
+    <string name="notification_exposure_not_found_title">@string/notification_channel_name</string>
+    <string name="notification_exposure_not_found_message">No exposure detected</string>
+
+    <string name="notification_exposure_state_updated_title">@string/notification_channel_name</string>
+    <string name="notification_exposure_state_updated_message">You may be at risk for exposure to COVID-19, open the App for more details</string>
+
+    <string name="notification_service_state_updated_title">@string/notification_provide_diagnosis_keys_title</string>
+    <string name="notification_service_state_updated_message_on">Exposure notifications are Turned ON</string>
+    <string name="notification_service_state_updated_message_off">Exposure notifications are Turned OFF, open the App for more details</string>
+
+    <string name="app_update_message">The latest version of The &appname; App has been downloaded, please reopen the app.</string>
+    <string name="app_update_restart">Reopen the app</string>
+
+    <string name="feature_barcode">New \"1922 SMS\" QR code scanning feature.</string>
+    <string name="feature_barcode_tip">Tip: Long press the app icon on a Home screen, then you can add the \"1922 SMS\" short cut to a Home screen.</string>
+    <string name="feature_daily_summary">New \"Daily Summary\" page.</string>
+    
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="deny">Deny</string>
+    <string name="ok">OK</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+</resources>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#2EB6A9</color>       <!--   46 182 169  -->
+    <color name="primary_dark">#1C968A</color>  <!--   28 150 138  -->
+
+    <color name="background">#EBEBEB</color>        <!--  235 235 235  -->
+    <color name="background_report">#A2A2A2</color> <!--  162 162 162  -->
+
+    <color name="text">#49615E</color>  <!--   73  97  94  -->
+    <color name="text_risk_low">@color/button_major_normal</color>          <!--   46 182 169  -->
+    <color name="text_risk_medium">@color/button_report_normal</color>      <!--  230 134  37  -->
+    <color name="text_risk_high">@color/button_report_urgent_normal</color> <!--  217 115 115  -->
+
+    <color name="divider">#70707033</color> <!--  112 112 112 20% -->
+
+    <color name="button_major_normal">@color/primary</color>        <!--   46 182 169  -->
+    <color name="button_major_pressed">@color/primary_dark</color>  <!--   28 150 138  -->
+    <color name="button_major_disable">#9FD6D0</color>              <!--  159 214 208  -->
+    <color name="button_secondary_normal">#859F9C</color>   <!--  133 159 156  -->
+    <color name="button_secondary_pressed">#597C78</color>  <!--   89 124 120  -->
+    <color name="button_secondary_disable">#C1CCCB</color>  <!--  193 204 203  -->
+    <color name="button_report_normal">#E68625</color>   <!--  230 134  37  -->
+    <color name="button_report_pressed">#B9630D</color>  <!--  185  99  13  -->
+    <color name="button_report_disable">#E9C29B</color>  <!--  233 194 155  -->
+    <color name="button_report_urgent_normal">#D97373</color>   <!--  217 115 115  -->
+    <color name="button_report_urgent_pressed">#AF4848</color>  <!--  175  72  72  -->
+    <color name="button_report_urgent_disable">#E3BABA</color>  <!--  227 186 186  -->
+    <color name="button_statistic_normal">@color/background</color>       <!--  255 255 255  -->
+    <color name="button_statistic_pressed">@color/text</color>  <!--   73  97  94  -->
+
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+
+</resources>
