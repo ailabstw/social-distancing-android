@@ -51,7 +51,7 @@
     <string name="menu_faq">常見問題</string>
 
     <string name="url_privacy">https://ailabs.tw/taiwan-social-distancing-apppersonal-data-protection-note/</string>
-
+    <string name="url_faq">https://www.cdc.gov.tw/Category/Page/R8bAd_yiVi22CIr73qM2yw</string>
 
     <string name="daily_summary_no_contact">無</string>
     <string name="daily_summary_less_then_2_mins">接觸小於 2 分鐘</string>
