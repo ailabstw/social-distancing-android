@@ -64,7 +64,8 @@
             android:label="@string/menu_control" />
         <activity
             android:name=".activity.BarcodeScanningActivity"
-            android:label="@string/menu_barcode_scanning" />
+            android:label="@string/menu_barcode_scanning"
+            android:launchMode="singleTask"/>
 
         <receiver
             android:name=".nearby.ExposureNotificationBroadcastReceiver"
