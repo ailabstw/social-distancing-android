@@ -39,7 +39,7 @@ object ExposureNotificationManager {
                 updateStatus(true)
             }
             .addOnFailureListener {
-                (it as? ApiException)?.status?.let { status ->
+                (it as? ApiException)?.status?.also { status ->
                     if (status.hasResolution()) {
                         status.startResolutionForResult(activity,
                             RequestCode.REQUEST_RESOLUTION_EN_CLIENT_START)
@@ -118,7 +118,7 @@ object ExposureNotificationManager {
                 (activity as? UploadActivity)?.onReceivedKeys(it)
             }
             .addOnFailureListener {
-                (it as? ApiException)?.status?.let { status ->
+                (it as? ApiException)?.status?.also { status ->
                     if (status.hasResolution()) {
                         status.startResolutionForResult(activity,
                             RequestCode.REQUEST_RESOLUTION_EN_TEK_HISTORY)
