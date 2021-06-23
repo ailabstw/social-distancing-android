@@ -1,6 +1,5 @@
 package tw.gov.cdc.exposurenotifications.activity
 
-import android.app.Activity
 import android.app.AlertDialog
 import android.content.Intent
 import android.content.IntentSender
@@ -247,7 +246,7 @@ class MainActivity : BaseActivity() {
 //                debugCount ++
 //            }
 
-            if (ExposureNotificationManager.state.value == ExposureNotificationState.DISABLED
+            if (ExposureNotificationManager.state.value == ExposureNotificationState.Disabled
                 || (!ExposureNotificationManager.askManageStorageIfNeeded(this)
                         && !ExposureNotificationManager.askTurningOnBluetoothOrLocationIfNeeded(this))
             ) {
@@ -306,7 +305,7 @@ class MainActivity : BaseActivity() {
         }
 
         val isExposureNotificationEnabled =
-            ExposureNotificationManager.state.value == ExposureNotificationState.ENABLED
+            ExposureNotificationManager.state.value == ExposureNotificationState.Enabled
 
         when (isExposureNotificationEnabled) {
             true -> {

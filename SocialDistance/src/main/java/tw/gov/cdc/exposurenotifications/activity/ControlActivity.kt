@@ -33,7 +33,7 @@ class ControlActivity : BaseActivity() {
                 setOnCheckedChangeListener(onCheckedChangeListener)
             }
             when (isChecked) {
-                true -> if (ExposureNotificationManager.state.value == ExposureNotificationState.DISABLED
+                true -> if (ExposureNotificationManager.state.value == ExposureNotificationState.Disabled
                     || !ExposureNotificationManager.askTurningOnBluetoothOrLocationIfNeeded(this)) {
                     ExposureNotificationManager.start(this)
                 }
@@ -56,7 +56,7 @@ class ControlActivity : BaseActivity() {
             Log.d(TAG, "observe state $it")
             controlView.sw.apply {
                 setOnCheckedChangeListener(null)
-                isChecked = it == ExposureNotificationState.ENABLED
+                isChecked = it == ExposureNotificationState.Enabled
                 setOnCheckedChangeListener(onCheckedChangeListener)
             }
         })

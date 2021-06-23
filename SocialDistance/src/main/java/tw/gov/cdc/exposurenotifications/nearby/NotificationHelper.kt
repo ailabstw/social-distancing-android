@@ -93,7 +93,7 @@ object NotificationHelper {
 
                     now in startTime..endTime
                     && PreferenceManager.lastNotFoundNotificationTime !in startTime..endTime
-                    && ExposureNotificationManager.state.value == ExposureNotificationManager.ExposureNotificationState.ENABLED
+                    && ExposureNotificationManager.state.value == ExposureNotificationManager.ExposureNotificationState.Enabled
                 }
             }
             NotificationType.ExposureStateUpdated -> {
