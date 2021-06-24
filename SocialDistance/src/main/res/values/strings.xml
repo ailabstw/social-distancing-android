@@ -41,6 +41,14 @@
     </string-array>
     <string name="risk_detail_risky_split">:</string>
 
+    <string name="state_en_not_support">Exposure notification is not supported.</string>
+    <string name="state_hw_not_support">Hardware of this device does not support exposure notification.</string>
+    <string name="state_user_profile_not_support">Exposure notification is not supported for current user profile.</string>
+    <string name="state_not_in_allowlist">The client is not in approved client list.</string>
+    <string name="state_unknown">Current status is unknown.</string>
+    <string name="state_instruction">For further instructions, see \"Next Step.\"</string>
+    <string name="state_instruction_next_step">Next Step</string>
+    
     <string name="menu_barcode_scanning">1922 SMS Contact Tracing</string>
     <string name="menu_about">App Introduction</string>
     <string name="menu_daily_summary">Daily Summary</string>
@@ -52,6 +60,7 @@
 
     <string name="url_privacy">https://ailabs.tw/taiwan-social-distancing-apppersonal-data-protection-note/</string>
     <string name="url_faq">https://www.cdc.gov.tw/Category/Page/R8bAd_yiVi22CIr73qM2yw</string>
+    <string name="url_clean_cache">https://support.google.com/googleplay/answer/9037938</string>
 
     <string name="daily_summary_no_contact">No Contact</string>
     <string name="daily_summary_less_then_2_mins">Less than 2 min</string>
