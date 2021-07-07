@@ -91,7 +91,7 @@ class MainActivity : BaseActivity() {
         }
 
         if (!hasBackCamera) {
-            allFeatures.remove(Feature.BARCODE)
+            allFeatures.remove(Feature.BARCODE_V2)
         }
 
 //        if (debugNotification) {
@@ -539,7 +539,7 @@ class MainActivity : BaseActivity() {
 
     private fun presentFeature(feature: Feature): Boolean {
         return when (feature) {
-            Feature.BARCODE -> {
+            Feature.BARCODE_V2 -> {
                 featureBarcodeGroup.visibility = View.VISIBLE
                 featureTouchView.visibility = View.VISIBLE
                 true
@@ -563,7 +563,7 @@ class MainActivity : BaseActivity() {
         val feature = currentPresentingFeature ?: return
 
         when (feature) {
-            Feature.BARCODE -> {
+            Feature.BARCODE_V2 -> {
                 featureBarcodeGroup.visibility = View.GONE
                 featureTouchView.visibility = View.GONE
             }

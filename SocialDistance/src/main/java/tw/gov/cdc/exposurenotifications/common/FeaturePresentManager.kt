@@ -3,7 +3,8 @@ package tw.gov.cdc.exposurenotifications.common
 object FeaturePresentManager {
 
     enum class Feature {
-        BARCODE,
+        // BARCODE, // Shortcut
+        BARCODE_V2, // Shortcut + Widget + Tile
         DAILY_SUMMARY
     }
 
