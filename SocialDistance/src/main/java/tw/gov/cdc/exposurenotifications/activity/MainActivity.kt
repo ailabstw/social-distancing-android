@@ -405,7 +405,6 @@ class MainActivity : BaseActivity() {
                     val builder = SpannableStringBuilder()
                     val splitMark = getString(R.string.risk_detail_risky_split)
                     var startIndex = 0
-                    var text = ""
                     strings.forEach { item ->
                         builder.append(
                             item,
@@ -419,7 +418,6 @@ class MainActivity : BaseActivity() {
                             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
                         )
                         startIndex = builder.lastIndex
-                        text += item
 
                     }
                     textRiskDetail.text = builder
