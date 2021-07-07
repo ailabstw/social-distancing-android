@@ -37,4 +37,9 @@
         android:title="@string/menu_faq"
         app:showAsAction="never" />
 
+    <item
+        android:id="@+id/action_hints"
+        android:title="@string/menu_hints"
+        app:showAsAction="never" />
+
 </menu>

@@ -176,6 +176,11 @@ class MainActivity : BaseActivity() {
             startActivity(WebViewActivity.getIntent(this, WebViewActivity.Page.FAQ))
             true
         }
+        R.id.action_hints -> {
+            FeaturePresentManager.resetPresented()
+            presentFeatureIfNeeded()
+            true
+        }
         else -> {
             super.onOptionsItemSelected(item)
         }
