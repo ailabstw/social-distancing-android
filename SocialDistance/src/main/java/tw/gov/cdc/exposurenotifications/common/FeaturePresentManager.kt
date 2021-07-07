@@ -7,7 +7,7 @@ object FeaturePresentManager {
         DAILY_SUMMARY
     }
 
-    val featuresNeedToPresent: Set<Feature>
+    private val featuresNeedToPresent: Set<Feature>
         get() {
             val presentedFeatures = PreferenceManager.presentedFeatures
             return Feature.values().filter {
@@ -15,9 +15,20 @@ object FeaturePresentManager {
             }.toSet()
         }
 
+    fun getFeaturesNeedToPresent(features: List<Feature>): List<Feature> {
+        val allFeatures = featuresNeedToPresent
+        return features.filter {
+            allFeatures.contains(it)
+        }
+    }
+
     fun setPresented(features: Set<Feature>) {
         val presentedFeatures = PreferenceManager.presentedFeatures.toMutableSet()
         presentedFeatures.addAll(features.map { it.name })
         PreferenceManager.presentedFeatures = presentedFeatures
+    }
+
+    fun resetPresented() {
+        PreferenceManager.presentedFeatures = setOf()
     }
 }

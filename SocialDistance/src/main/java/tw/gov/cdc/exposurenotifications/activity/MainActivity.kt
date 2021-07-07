@@ -71,13 +71,8 @@ class MainActivity : BaseActivity() {
     private val textVersion by lazy { main_version_text }
     private val buttonStart by lazy { main_start_button }
 
+    private val allFeatures = mutableListOf(Feature.BARCODE_V2, Feature.DAILY_SUMMARY)
     private var currentPresentingFeature: Feature? = null
-    private val featuresNeedToPresent = listOf(Feature.BARCODE, Feature.DAILY_SUMMARY).let {
-        val featuresNeedToPresent = FeaturePresentManager.featuresNeedToPresent
-        it.filter { feature ->
-            featuresNeedToPresent.contains(feature)
-        }.toMutableList()
-    }
     private val featureBarcodeGroup by lazy { feature_barcode_group }
     private val featureDailySummaryGroup by lazy { feature_daily_summary_group }
     private val featureTouchView by lazy { feature_touch_view }
@@ -96,8 +91,9 @@ class MainActivity : BaseActivity() {
         }
 
         if (!hasBackCamera) {
-            featuresNeedToPresent.remove(Feature.BARCODE)
+            allFeatures.remove(Feature.BARCODE)
         }
+
 //        if (debugNotification) {
 //            NotificationHelper.createNotificationChannelIfNeeded(NotificationHelper.NotificationType.ProvideDiagnosisKeys.channelInfo, this)
 //            NotificationHelper.createNotificationChannelIfNeeded(NotificationHelper.NotificationType.ExposureNotFound.channelInfo, this)
@@ -527,7 +523,7 @@ class MainActivity : BaseActivity() {
 
     private fun presentFeatureIfNeeded() {
         if (currentPresentingFeature == null) {
-            featuresNeedToPresent.forEach {
+            FeaturePresentManager.getFeaturesNeedToPresent(allFeatures).forEach {
                 if (presentFeature(it)) {
                     currentPresentingFeature = it
                     return
@@ -571,7 +567,6 @@ class MainActivity : BaseActivity() {
                 featureTouchView.visibility = View.GONE
             }
         }
-        featuresNeedToPresent.remove(feature)
         FeaturePresentManager.setPresented(setOf(feature))
         currentPresentingFeature = null
 
