@@ -130,7 +130,7 @@
         android:elevation="@dimen/elevation_toolbar"
         android:visibility="gone"
         app:constraint_referenced_ids="feature_barcode_back_drop_view, feature_barcode_icon_position_view, feature_barcode_arrow_image, feature_barcode_text, feature_barcode_tip_text"
-        tools:visibility="visible" />
+        tools:visibility="invisible" />
 
     <View
         android:id="@+id/feature_barcode_back_drop_view"
@@ -225,6 +225,35 @@
         app:layout_constraintEnd_toEndOf="@id/main_risk_brief_text"
         app:layout_constraintStart_toStartOf="@id/main_risk_brief_text"
         app:layout_constraintTop_toBottomOf="@id/feature_daily_summary_arrow_image" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/feature_hints_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/elevation_toolbar"
+        android:visibility="gone"
+        app:constraint_referenced_ids="feature_hints_back_drop_view, feature_hints_text"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/feature_hints_back_drop_view"
+        style="@style/Feature.Backdrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/feature_hints_text"
+        style="@style/Text.Feature"
+        android:layout_marginHorizontal="@dimen/main_margin_horizontal"
+        android:gravity="center"
+        android:text="@string/feature_hints"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintVertical_bias="0.35" />
 
     <View
         android:id="@+id/feature_touch_view"

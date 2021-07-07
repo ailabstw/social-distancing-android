@@ -74,7 +74,7 @@ class MainActivity : BaseActivity() {
     private val textVersion by lazy { main_version_text }
     private val buttonStart by lazy { main_start_button }
 
-    private val allFeatures = mutableListOf(Feature.BARCODE_V2, Feature.DAILY_SUMMARY)
+    private val allFeatures = mutableListOf(Feature.BARCODE_V2, Feature.DAILY_SUMMARY, Feature.HINTS)
     private var currentPresentingFeature: Feature? = null
     private val featureBarcodeGroup by lazy { feature_barcode_group }
     private val featureBarcodeTipText by lazy {
@@ -83,6 +83,7 @@ class MainActivity : BaseActivity() {
         }
     }
     private val featureDailySummaryGroup by lazy { feature_daily_summary_group }
+    private val featureHintsViewGroup by lazy { feature_hints_group }
     private val featureTouchView by lazy { feature_touch_view }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -650,6 +651,11 @@ class MainActivity : BaseActivity() {
                     }
                 }
             }
+            Feature.HINTS -> {
+                featureHintsViewGroup.visibility = View.VISIBLE
+                featureTouchView.visibility = View.VISIBLE
+                true
+            }
         }
     }
 
@@ -659,13 +665,17 @@ class MainActivity : BaseActivity() {
         when (feature) {
             Feature.BARCODE_V2 -> {
                 featureBarcodeGroup.visibility = View.GONE
-                featureTouchView.visibility = View.GONE
             }
             Feature.DAILY_SUMMARY -> {
                 featureDailySummaryGroup.visibility = View.GONE
-                featureTouchView.visibility = View.GONE
+            }
+            Feature.HINTS -> {
+                featureHintsViewGroup.visibility = View.GONE
             }
         }
+
+        featureTouchView.visibility = View.GONE
+
         FeaturePresentManager.setPresented(setOf(feature))
         currentPresentingFeature = null
 

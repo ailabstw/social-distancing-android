@@ -5,7 +5,8 @@ object FeaturePresentManager {
     enum class Feature {
         // BARCODE, // Shortcut
         BARCODE_V2, // Shortcut + Widget + Tile
-        DAILY_SUMMARY
+        DAILY_SUMMARY,
+        HINTS
     }
 
     private val featuresNeedToPresent: Set<Feature>
