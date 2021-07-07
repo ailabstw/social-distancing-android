@@ -57,10 +57,12 @@
     <string name="menu_privacy">注意事項及個資保護說明</string>
     <string name="menu_control">資料權限控管</string>
     <string name="menu_faq">常見問題</string>
+    <string name="menu_hints">功能提示</string>
 
     <string name="url_privacy">https://ailabs.tw/taiwan-social-distancing-apppersonal-data-protection-note/</string>
     <string name="url_faq">https://www.cdc.gov.tw/Category/Page/R8bAd_yiVi22CIr73qM2yw</string>
     <string name="url_clean_cache">https://support.google.com/googleplay/answer/9037938</string>
+    <string name="url_quick_settings">https://support.google.com/android/answer/9083864</string>
 
     <string name="daily_summary_no_contact">無</string>
     <string name="daily_summary_less_then_2_mins">接觸小於 2 分鐘</string>
@@ -123,8 +125,17 @@
     <string name="app_update_restart">重新開啟</string>
 
     <string name="feature_barcode">新增「1922 簡訊實聯制」掃描功能</string>
-    <string name="feature_barcode_tip">秘訣：長按桌面 APP 圖示，可以將掃描功能捷徑加到桌面喔！</string>
+    <string-array name="feature_barcode_tip">
+        <item>秘訣 1 桌面捷徑：\n長按桌面 APP 圖示，會跳出捷徑清單，就可以將捷徑拉到桌面囉！\n</item>
+        <item>秘訣 2 小工具：\n長按桌面空白處後，點選「小工具 / Ｗidgets」選項，找到「&appname;」的小工具後，就可以拖曳到桌面囉！\n</item>
+        <item>➤ 桌面捷徑與小工具的作用是一樣的，選一個新增就可以了 :D\n</item>
+        <item>秘訣 3 快速設定：\n從螢幕頂端向下滑動兩次後，點選編輯（不同型號手機的操作略有不同），可將「實聯掃描」按鈕加入「快速設定」選單中。詳細操作可參考官方文件。\n</item>
+        <item>➤ 從「快速設定」啟動的速度會比桌面捷徑與小工具慢一點，但好處是隨時都可以透過下滑螢幕啟動掃描功能。</item>
+    </string-array>
+    <string name="feature_barcode_tip_split">：</string>
+    <string name="feature_barcode_tip_doc">官方文件</string>
     <string name="feature_daily_summary">新增「每日接觸狀況」資訊頁面</string>
+    <string name="feature_hints">若要再次查看提示，可以點選右上方選單裡的「功能提示」選項喔~</string>
 
     <string name="confirm">確認</string>
     <string name="cancel">取消</string>

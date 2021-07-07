@@ -58,9 +58,11 @@
     <string name="menu_control">จัดการสิทธิ์เข้าถึงข้อมูล</string>
 
 
+
     <string name="url_privacy">https://ailabs.tw/taiwan-social-distancing-apppersonal-data-protection-note/</string>
     <string name="url_faq">https://www.cdc.gov.tw/Category/Page/R8bAd_yiVi22CIr73qM2yw</string>
     <string name="url_clean_cache">https://support.google.com/googleplay/answer/9037938</string>
+
 
 
 
@@ -121,6 +123,15 @@
 
     <string name="app_update_message">แอปพลิเคชัน"ระยะห่างทางสังคมไต้หวัน"ได้รับการอัพเดทเป็นเวอร์ชั่นล่าสุด โปรดเปิดการทำงานแอปอีกครั้ง</string>
     <string name="app_update_restart">เริ่มการทำงานใหม่</string>
+
+
+
+
+
+
+
+
+
 
 
 
