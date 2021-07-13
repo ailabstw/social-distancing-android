@@ -41,6 +41,14 @@
     </string-array>
     <string name="risk_detail_risky_split">：</string>
 
+    <string name="state_en_not_support">此裝置目前不支援接觸通知功能。</string>
+    <string name="state_hw_not_support">此裝置之硬體不支援接觸通知功能。</string>
+    <string name="state_user_profile_not_support">此裝置之使用者帳戶不支援接觸通知功能。</string>
+    <string name="state_not_in_allowlist">此裝置之使用者帳戶無法啟用觸通知功能。</string>
+    <string name="state_unknown">此裝置目前無法啟用接觸通知功能。</string>
+    <string name="state_instruction">若要查看進一步指引，請按「下一步」。</string>
+    <string name="state_instruction_next_step">下一步</string>
+
     <string name="menu_barcode_scanning">1922 簡訊實聯制</string>
     <string name="menu_about">App 介紹</string>
     <string name="menu_daily_summary">每日接觸狀況</string>
@@ -51,7 +59,8 @@
     <string name="menu_faq">常見問題</string>
 
     <string name="url_privacy">https://ailabs.tw/taiwan-social-distancing-apppersonal-data-protection-note/</string>
-
+    <string name="url_faq">https://www.cdc.gov.tw/Category/Page/R8bAd_yiVi22CIr73qM2yw</string>
+    <string name="url_clean_cache">https://support.google.com/googleplay/answer/9037938</string>
 
     <string name="daily_summary_no_contact">無</string>
     <string name="daily_summary_less_then_2_mins">接觸小於 2 分鐘</string>

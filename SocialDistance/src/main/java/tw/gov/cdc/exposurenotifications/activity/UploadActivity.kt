@@ -362,7 +362,7 @@ class UploadActivity : BaseActivity() {
      */
 
     private fun requestKeysIfNeeded() {
-        recentKeys?.let {
+        recentKeys?.also {
             onReceivedKeys(it)
         } ?: run {
             ExposureNotificationManager.getTemporaryExposureKeyHistory(this@UploadActivity)

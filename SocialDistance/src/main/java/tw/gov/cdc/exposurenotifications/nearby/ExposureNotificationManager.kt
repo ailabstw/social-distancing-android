@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.AlertDialog
 import android.content.Context
 import android.content.Intent
+import androidx.annotation.StringRes
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.google.android.gms.common.api.ApiException
@@ -28,8 +29,14 @@ object ExposureNotificationManager {
 
     val state: LiveData<ExposureNotificationState> = pState
 
-    enum class ExposureNotificationState {
-        DISABLED, ENABLED, PAUSED_BLE, PAUSED_LOCATION, PAUSED_LOCATION_BLE, STORAGE_LOW
+    sealed class ExposureNotificationState {
+        object Disabled : ExposureNotificationState()
+        object Enabled : ExposureNotificationState()
+        data class NotSupport(@StringRes val reason: Int) : ExposureNotificationState()
+        object PausedBle : ExposureNotificationState()
+        object PausedLocation : ExposureNotificationState()
+        object PausedLocationBle : ExposureNotificationState()
+        object StorageLow : ExposureNotificationState()
     }
 
     fun start(activity: Activity) {
@@ -39,7 +46,7 @@ object ExposureNotificationManager {
                 updateStatus(true)
             }
             .addOnFailureListener {
-                (it as? ApiException)?.status?.let { status ->
+                (it as? ApiException)?.status?.also { status ->
                     if (status.hasResolution()) {
                         status.startResolutionForResult(activity,
                             RequestCode.REQUEST_RESOLUTION_EN_CLIENT_START)
@@ -70,7 +77,7 @@ object ExposureNotificationManager {
     private var lastGoSettingTime = Date().time
 
     fun askManageStorageIfNeeded(context: Context): Boolean {
-        if (pState.value == ExposureNotificationState.STORAGE_LOW
+        if (pState.value == ExposureNotificationState.StorageLow
                 && StorageManagementHelper.isStorageManagementAvailable(context)) {
             showManageStorageConfirmDialog(context)
             return true
@@ -97,9 +104,9 @@ object ExposureNotificationManager {
             return false
         }
 
-        if (pState.value == ExposureNotificationState.PAUSED_LOCATION
-            || pState.value == ExposureNotificationState.PAUSED_BLE
-            || pState.value == ExposureNotificationState.PAUSED_LOCATION_BLE) {
+        if (pState.value == ExposureNotificationState.PausedLocation
+            || pState.value == ExposureNotificationState.PausedBle
+            || pState.value == ExposureNotificationState.PausedLocationBle) {
 
             lastGoSettingTime = Date().time
 
@@ -118,7 +125,7 @@ object ExposureNotificationManager {
                 (activity as? UploadActivity)?.onReceivedKeys(it)
             }
             .addOnFailureListener {
-                (it as? ApiException)?.status?.let { status ->
+                (it as? ApiException)?.status?.also { status ->
                     if (status.hasResolution()) {
                         status.startResolutionForResult(activity,
                             RequestCode.REQUEST_RESOLUTION_EN_TEK_HISTORY)
@@ -271,7 +278,7 @@ object ExposureNotificationManager {
                 val currentState = getStateForStatusAndIsEnabled(statusSet = it,
                                                                  isEnabled = isEnabled)
                 if (value != currentState) {
-                    if (currentState == ExposureNotificationState.ENABLED) {
+                    if (currentState == ExposureNotificationState.Enabled) {
                         PreferenceManager.clearLastDisableTime()
                     } else {
                         PreferenceManager.lastDisableTime = Date().time
@@ -302,45 +309,74 @@ object ExposureNotificationManager {
         }
     }
 
-    private fun getStateForStatusAndIsEnabled(statusSet: Set<ExposureNotificationStatus>,
-                                              isEnabled: Boolean): ExposureNotificationState {
+    private fun getStateForStatusAndIsEnabled(
+        statusSet: Set<ExposureNotificationStatus>,
+        isEnabled: Boolean
+    ): ExposureNotificationState {
+
+        val getOtherState: () -> ExposureNotificationState = {
+            when {
+                statusSet.contains(ExposureNotificationStatus.EN_NOT_SUPPORT) -> {
+                    ExposureNotificationState.NotSupport(R.string.state_en_not_support)
+                }
+                statusSet.contains(ExposureNotificationStatus.HW_NOT_SUPPORT) -> {
+                    ExposureNotificationState.NotSupport(R.string.state_hw_not_support)
+                }
+                statusSet.contains(ExposureNotificationStatus.USER_PROFILE_NOT_SUPPORT) -> {
+                    ExposureNotificationState.NotSupport(R.string.state_user_profile_not_support)
+                }
+                statusSet.contains(ExposureNotificationStatus.NOT_IN_ALLOWLIST) -> {
+                    ExposureNotificationState.NotSupport(R.string.state_not_in_allowlist)
+                }
+                statusSet.contains(ExposureNotificationStatus.UNKNOWN) -> {
+                    ExposureNotificationState.NotSupport(R.string.state_unknown)
+                }
+                else -> {
+                    ExposureNotificationState.Disabled
+                }
+            }
+        }
+
         return when {
             /**
              * The EN is disabled. However, if we also hit a Low Storage error, display it first, as EN
              * can only be (re-)enabled with enough storage space available.
              */
             !isEnabled -> {
-                if (statusSet.contains(ExposureNotificationStatus.LOW_STORAGE)) {
-                    ExposureNotificationState.STORAGE_LOW
-                } else {
-                    ExposureNotificationState.DISABLED
+                when {
+                    statusSet.contains(ExposureNotificationStatus.LOW_STORAGE) -> {
+                        ExposureNotificationState.StorageLow
+                    }
+                    else -> {
+                        getOtherState()
+                    }
                 }
             }
 
             // The EN is enabled and operational.
             statusSet.contains(ExposureNotificationStatus.ACTIVATED) -> {
-                ExposureNotificationState.ENABLED
+                ExposureNotificationState.Enabled
             }
 
             // The EN is enabled but non-operational.
             statusSet.contains(ExposureNotificationStatus.LOW_STORAGE) -> {
-                ExposureNotificationState.STORAGE_LOW
+                ExposureNotificationState.StorageLow
             }
             statusSet.contains(ExposureNotificationStatus.BLUETOOTH_DISABLED)
-                && statusSet.contains(ExposureNotificationStatus.LOCATION_DISABLED) -> {
-                ExposureNotificationState.PAUSED_LOCATION_BLE
+                    && statusSet.contains(ExposureNotificationStatus.LOCATION_DISABLED) -> {
+                ExposureNotificationState.PausedLocationBle
             }
             statusSet.contains(ExposureNotificationStatus.BLUETOOTH_DISABLED) -> {
-                ExposureNotificationState.PAUSED_BLE
+                ExposureNotificationState.PausedBle
             }
             statusSet.contains(ExposureNotificationStatus.LOCATION_DISABLED) -> {
-                ExposureNotificationState.PAUSED_LOCATION
+                ExposureNotificationState.PausedLocation
             }
 
             // For all the remaining scenarios, return the DISABLED state as this is the most suitable one
             // among those currently supported in the app.
             else -> {
-                ExposureNotificationState.DISABLED
+                getOtherState()
             }
         }
     }

@@ -12,7 +12,7 @@ class BaseApplication : Application() {
 
         ExposureNotificationManager.updateStatus(this)
         ExposureNotificationManager.state.observeForever {
-            if (it != ExposureNotificationManager.ExposureNotificationState.DISABLED) {
+            if (it != ExposureNotificationManager.ExposureNotificationState.Disabled) {
                 WorkScheduler.schedule()
             }
         }

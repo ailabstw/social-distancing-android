@@ -1,11 +1,11 @@
 package tw.gov.cdc.exposurenotifications.activity
 
-import android.app.Activity
 import android.app.AlertDialog
 import android.content.Intent
 import android.content.IntentSender
 import android.content.pm.PackageManager
 import android.graphics.Typeface
+import android.net.Uri
 import android.os.Bundle
 import android.os.Looper
 import android.text.Spannable
@@ -15,6 +15,7 @@ import android.text.style.StyleSpan
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
 import com.google.android.play.core.install.InstallStateUpdatedListener
@@ -246,17 +247,30 @@ class MainActivity : BaseActivity() {
 //                }
 //                debugCount ++
 //            }
-
-            if (ExposureNotificationManager.state.value == ExposureNotificationState.DISABLED
-                || (!ExposureNotificationManager.askManageStorageIfNeeded(this)
-                        && !ExposureNotificationManager.askTurningOnBluetoothOrLocationIfNeeded(this))
-            ) {
-                ExposureNotificationManager.start(this)
+            (ExposureNotificationManager.state.value as? ExposureNotificationState.NotSupport)?.also {
+                showNotSupportDialog(it.reason)
+            } ?: run {
+                if (ExposureNotificationManager.state.value == ExposureNotificationState.Disabled
+                    || (!ExposureNotificationManager.askManageStorageIfNeeded(this)
+                          && !ExposureNotificationManager.askTurningOnBluetoothOrLocationIfNeeded(this))) {
+                    ExposureNotificationManager.start(this)
+                }
             }
             updateStatus()
         }
     }
 
+    private fun showNotSupportDialog(@StringRes reason: Int) {
+        AlertDialog.Builder(this)
+            .setMessage(getString(reason) + getString(R.string.state_instruction))
+            .setNegativeButton(R.string.cancel) { _, _ ->
+            }
+            .setPositiveButton(R.string.state_instruction_next_step) { _, _ ->
+                startActivity(Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_clean_cache))))
+            }
+            .create()
+            .show()
+    }
     private fun updateStatus() {
 
         /**
@@ -306,7 +320,7 @@ class MainActivity : BaseActivity() {
         }
 
         val isExposureNotificationEnabled =
-            ExposureNotificationManager.state.value == ExposureNotificationState.ENABLED
+            ExposureNotificationManager.state.value == ExposureNotificationState.Enabled
 
         when (isExposureNotificationEnabled) {
             true -> {
