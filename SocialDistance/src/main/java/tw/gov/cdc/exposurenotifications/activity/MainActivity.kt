@@ -10,8 +10,9 @@ import android.os.Bundle
 import android.os.Looper
 import android.text.Spannable
 import android.text.SpannableStringBuilder
+import android.text.method.LinkMovementMethod
 import android.text.method.ScrollingMovementMethod
-import android.text.style.StyleSpan
+import android.text.style.*
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -26,12 +27,14 @@ import kotlinx.android.synthetic.main.activity_main.*
 import tw.gov.cdc.exposurenotifications.BuildConfig
 import tw.gov.cdc.exposurenotifications.R
 import tw.gov.cdc.exposurenotifications.common.*
+import tw.gov.cdc.exposurenotifications.common.BulletSpan
 import tw.gov.cdc.exposurenotifications.common.FeaturePresentManager.Feature
 import tw.gov.cdc.exposurenotifications.common.Utils.getDateString
 import tw.gov.cdc.exposurenotifications.nearby.ExposureNotificationManager
 import tw.gov.cdc.exposurenotifications.nearby.ExposureNotificationManager.ExposureNotificationState
 import java.lang.reflect.InvocationTargetException
 import java.util.*
+
 
 class MainActivity : BaseActivity() {
 
@@ -71,15 +74,16 @@ class MainActivity : BaseActivity() {
     private val textVersion by lazy { main_version_text }
     private val buttonStart by lazy { main_start_button }
 
+    private val allFeatures = mutableListOf(Feature.BARCODE_V2, Feature.DAILY_SUMMARY, Feature.HINTS)
     private var currentPresentingFeature: Feature? = null
-    private val featuresNeedToPresent = listOf(Feature.BARCODE, Feature.DAILY_SUMMARY).let {
-        val featuresNeedToPresent = FeaturePresentManager.featuresNeedToPresent
-        it.filter { feature ->
-            featuresNeedToPresent.contains(feature)
-        }.toMutableList()
-    }
     private val featureBarcodeGroup by lazy { feature_barcode_group }
+    private val featureBarcodeTipText by lazy {
+        feature_barcode_tip_text.apply {
+            movementMethod = LinkMovementMethod()
+        }
+    }
     private val featureDailySummaryGroup by lazy { feature_daily_summary_group }
+    private val featureHintsViewGroup by lazy { feature_hints_group }
     private val featureTouchView by lazy { feature_touch_view }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -96,8 +100,9 @@ class MainActivity : BaseActivity() {
         }
 
         if (!hasBackCamera) {
-            featuresNeedToPresent.remove(Feature.BARCODE)
+            allFeatures.remove(Feature.BARCODE_V2)
         }
+
 //        if (debugNotification) {
 //            NotificationHelper.createNotificationChannelIfNeeded(NotificationHelper.NotificationType.ProvideDiagnosisKeys.channelInfo, this)
 //            NotificationHelper.createNotificationChannelIfNeeded(NotificationHelper.NotificationType.ExposureNotFound.channelInfo, this)
@@ -120,9 +125,7 @@ class MainActivity : BaseActivity() {
 
         textVersion.text = "v${BuildConfig.VERSION_NAME}"
 
-        featureTouchView.setOnClickListener {
-            clearCurrentPresentingFeature()
-        }
+        setupFeatureUI()
     }
 
     override fun onStart() {
@@ -178,6 +181,11 @@ class MainActivity : BaseActivity() {
         }
         R.id.action_faq -> {
             startActivity(WebViewActivity.getIntent(this, WebViewActivity.Page.FAQ))
+            true
+        }
+        R.id.action_hints -> {
+            FeaturePresentManager.resetPresented()
+            presentFeatureIfNeeded()
             true
         }
         else -> {
@@ -405,7 +413,6 @@ class MainActivity : BaseActivity() {
                     val builder = SpannableStringBuilder()
                     val splitMark = getString(R.string.risk_detail_risky_split)
                     var startIndex = 0
-                    var text = ""
                     strings.forEach { item ->
                         builder.append(
                             item,
@@ -419,7 +426,6 @@ class MainActivity : BaseActivity() {
                             Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
                         )
                         startIndex = builder.lastIndex
-                        text += item
 
                     }
                     textRiskDetail.text = builder
@@ -527,9 +533,95 @@ class MainActivity : BaseActivity() {
         }
     }
 
+    private fun setupFeatureUI() {
+        featureTouchView.setOnClickListener {
+            clearCurrentPresentingFeature()
+        }
+
+        featureBarcodeTipText.apply {
+
+            var lastFeatureBarcodeScrollTime = Date().time
+
+            setOnScrollChangeListener { _, _, _, _, _ ->
+                lastFeatureBarcodeScrollTime = Date().time
+            }
+
+            setOnClickListener {
+                if (Date().time - lastFeatureBarcodeScrollTime > 300) {
+                    clearCurrentPresentingFeature()
+                }
+            }
+
+            text = SpannableStringBuilder().apply {
+                val barcodeTipStrings = resources.getStringArray(R.array.feature_barcode_tip)
+                val docString = getString(R.string.feature_barcode_tip_doc)
+                val splitMark = getString(R.string.feature_barcode_tip_split)
+
+                var startIndex = 0
+
+                barcodeTipStrings.forEachIndexed { index, string ->
+                    append(string)
+
+                    val docStringIndex = string.indexOf(docString)
+                    if (docStringIndex > 0) {
+                        setSpan(
+                            URLSpan(getString(R.string.url_quick_settings)),
+                            startIndex + docStringIndex,
+                            startIndex + docStringIndex + docString.length,
+                            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                        )
+                    }
+
+                    when (index) {
+                        2, 4 -> {
+                            setSpan(
+                                RelativeSizeSpan(1.1f),
+                                startIndex,
+                                lastIndex + 1,
+                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                            )
+                            setSpan(
+                                LeadingMarginSpan.Standard(50, 110),
+                                startIndex,
+                                lastIndex + 1,
+                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                            )
+                        }
+                        else -> {
+                            val splitMarkIndex = string.indexOf(splitMark)
+                            setSpan(
+                                StyleSpan(Typeface.BOLD),
+                                startIndex,
+                                startIndex + splitMarkIndex + splitMark.length,
+                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                            )
+                            setSpan(
+                                RelativeSizeSpan(1.3f),
+                                startIndex,
+                                startIndex + splitMarkIndex + splitMark.length,
+                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                            )
+                        }
+                    }
+
+                    if (index < 4) {
+                        val proportion = if (index == 0) 0.4f else 1.0f
+                        append(
+                            "\n",
+                            RelativeSizeSpan(proportion),
+                            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                        )
+                    }
+
+                    startIndex = lastIndex + 1
+                }
+            }
+        }
+    }
+
     private fun presentFeatureIfNeeded() {
         if (currentPresentingFeature == null) {
-            featuresNeedToPresent.forEach {
+            FeaturePresentManager.getFeaturesNeedToPresent(allFeatures).forEach {
                 if (presentFeature(it)) {
                     currentPresentingFeature = it
                     return
@@ -540,9 +632,11 @@ class MainActivity : BaseActivity() {
 
     private fun presentFeature(feature: Feature): Boolean {
         return when (feature) {
-            Feature.BARCODE -> {
+            Feature.BARCODE_V2 -> {
+                featureBarcodeTipText.scrollTo(0, 0)
                 featureBarcodeGroup.visibility = View.VISIBLE
-                featureTouchView.visibility = View.VISIBLE
+                // Detect touch in `featureBarcodeTipText`
+                // featureTouchView.visibility = View.VISIBLE
                 true
             }
             Feature.DAILY_SUMMARY -> {
@@ -557,6 +651,11 @@ class MainActivity : BaseActivity() {
                     }
                 }
             }
+            Feature.HINTS -> {
+                featureHintsViewGroup.visibility = View.VISIBLE
+                featureTouchView.visibility = View.VISIBLE
+                true
+            }
         }
     }
 
@@ -564,16 +663,19 @@ class MainActivity : BaseActivity() {
         val feature = currentPresentingFeature ?: return
 
         when (feature) {
-            Feature.BARCODE -> {
+            Feature.BARCODE_V2 -> {
                 featureBarcodeGroup.visibility = View.GONE
-                featureTouchView.visibility = View.GONE
             }
             Feature.DAILY_SUMMARY -> {
                 featureDailySummaryGroup.visibility = View.GONE
-                featureTouchView.visibility = View.GONE
+            }
+            Feature.HINTS -> {
+                featureHintsViewGroup.visibility = View.GONE
             }
         }
-        featuresNeedToPresent.remove(feature)
+
+        featureTouchView.visibility = View.GONE
+
         FeaturePresentManager.setPresented(setOf(feature))
         currentPresentingFeature = null
 

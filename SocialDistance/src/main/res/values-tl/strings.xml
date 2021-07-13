@@ -58,9 +58,11 @@
     <string name="menu_control">Pagkontrol sa awtoridad ng data</string>
 
 
+
     <string name="url_privacy">https://ailabs.tw/taiwan-social-distancing-apppersonal-data-protection-note/</string>
     <string name="url_faq">https://www.cdc.gov.tw/Category/Page/R8bAd_yiVi22CIr73qM2yw</string>
     <string name="url_clean_cache">https://support.google.com/googleplay/answer/9037938</string>
+
 
 
 
@@ -121,6 +123,15 @@
 
     <string name="app_update_message">Na-download na ang pinaka bagong bersyon ng "Taiwan Social Distance", mangyaring buksan ulit ang App.</string>
     <string name="app_update_restart">Restart</string>
+
+
+
+
+
+
+
+
+
 
 
 
