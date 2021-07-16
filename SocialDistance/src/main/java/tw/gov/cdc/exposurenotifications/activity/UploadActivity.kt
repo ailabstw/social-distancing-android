@@ -14,7 +14,9 @@ import com.google.common.collect.ImmutableList
 import com.google.common.io.BaseEncoding
 import kotlinx.android.synthetic.main.activity_upload.*
 import okhttp3.MediaType
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.ResponseBody
 import org.json.JSONArray
 import org.json.JSONException
@@ -181,7 +183,7 @@ class UploadActivity : BaseActivity() {
         val code = codeText.text.toString()
         val upload = Upload.newBuilder(code).build()
         val body = verificationCodeRequestBody(upload)
-        val bodyRequest = RequestBody.create(MediaType.parse("application/json"), body.toString())
+        val bodyRequest = body.toString().toRequestBody("application/json".toMediaTypeOrNull())
 
         APIService.verificationServer.submitCode(body = bodyRequest)
             .enqueue(object : Callback<ResponseBody> {
@@ -419,7 +421,7 @@ class UploadActivity : BaseActivity() {
         Log.d(TAG, "submitKeysForCert")
 
         val body = certRequestBody(upload)
-        val bodyRequest = RequestBody.create(MediaType.parse("application/json"), body.toString())
+        val bodyRequest = body.toString().toRequestBody("application/json".toMediaTypeOrNull())
 
         APIService.verificationServer.submitKeysForCert(body = bodyRequest)
             .enqueue(object : Callback<ResponseBody> {
@@ -536,8 +538,7 @@ class UploadActivity : BaseActivity() {
         Log.d(TAG, "Uploading keys: [" + upload.keys()!!.size.toString() + "]")
 
         val payload = createPayload(upload)
-        val bodyRequest = RequestBody.create(MediaType.parse("application/json"),
-                                             payload.toString())
+        val bodyRequest = payload.toString().toRequestBody("application/json".toMediaTypeOrNull())
 
         APIService.keyServer.submitKeys(body = bodyRequest)
             .enqueue(object : Callback<ResponseBody> {

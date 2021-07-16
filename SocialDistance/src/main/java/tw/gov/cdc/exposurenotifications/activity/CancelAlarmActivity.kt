@@ -7,8 +7,8 @@ import android.os.Bundle
 import android.text.InputType
 import android.view.Menu
 import kotlinx.android.synthetic.main.activity_cancel_alarm.*
-import okhttp3.MediaType
-import okhttp3.RequestBody
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.ResponseBody
 import org.json.JSONException
 import org.json.JSONObject
@@ -93,8 +93,7 @@ class CancelAlarmActivity : BaseActivity() {
 
             val code = codeText.text.toString()
             val body = verificationCodeRequestBody(code)
-            val bodyRequest = RequestBody.create(MediaType.parse("application/json"),
-                                                 body.toString())
+            val bodyRequest = body.toString().toRequestBody("application/json".toMediaTypeOrNull())
 
             APIService.verificationServer.submitAccCode(body = bodyRequest)
                 .enqueue(object : Callback<ResponseBody> {
