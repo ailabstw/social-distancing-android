@@ -1,4 +1,4 @@
-package tw.ailabs.Yating.Transcriber.fragment.dialog.recording
+package tw.gov.cdc.exposurenotifications.activity
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
