@@ -6,8 +6,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_control.toolbar
 import kotlinx.android.synthetic.main.activity_daily_summary.*
-import tw.ailabs.Yating.Transcriber.fragment.dialog.recording.DailySummaryAdapter
-import tw.ailabs.Yating.Transcriber.fragment.dialog.recording.DailySummaryViewModel
 import tw.gov.cdc.exposurenotifications.R
 import tw.gov.cdc.exposurenotifications.common.PreferenceManager
 import tw.gov.cdc.exposurenotifications.common.Utils.getDateString
