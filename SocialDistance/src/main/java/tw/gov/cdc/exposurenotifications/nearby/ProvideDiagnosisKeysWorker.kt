@@ -42,13 +42,10 @@ class ProvideDiagnosisKeysWorker(
         ExposureNotificationManager.updateStatus(context)
         return try {
             withTimeout(TimeUnit.MINUTES.toMillis(10)) {
-                val isNearbyAPIEnabled = ExposureNotificationClientWrapper.isEnabled.await() as? Boolean
-                                         ?: false
+                val isNearbyAPIEnabled = ExposureNotificationClientWrapper.isEnabled.await() as? Boolean ?: false
                 if (isNearbyAPIEnabled && !isStopped) {
-                    NotificationHelper.generateNotification(type = ProvideDiagnosisKeys,
-                                                            context = context).let {
-                        setForeground(ForegroundInfo(it.notificationId, it.notification))
-                    }
+                    
+                    startForegroundConditionally()
 
                     Log.d(TAG, "getIndexFile()")
                     val indexContent = APIService.downloadTEKs.getIndexFile().await().string()
@@ -101,6 +98,24 @@ class ProvideDiagnosisKeysWorker(
             } else {
                 Log.d(TAG, "doWork failure")
                 Result.failure()
+            }
+        }
+    }
+
+    private suspend fun startForegroundConditionally() {
+        val isInValidTime = Calendar.getInstance().let {
+            val now = it.timeInMillis
+            val startTime = it.toSpecificTime(hour = 18).timeInMillis
+            val endTime = it.toSpecificTime(hour = 22, minute = 1).timeInMillis
+
+            now in startTime..endTime
+        }
+        if (isInValidTime) {
+            NotificationHelper.generateNotification(
+                type = ProvideDiagnosisKeys,
+                context = context
+            ).let {
+                setForeground(ForegroundInfo(it.notificationId, it.notification))
             }
         }
     }
