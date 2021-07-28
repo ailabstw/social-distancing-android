@@ -42,6 +42,14 @@
 
 
 
+
+
+
+
+
+
+
+
     <string name="menu_about">Giới thiệu ứng dụng</string>
 
     <string name="menu_cancel_alert">Huỷ cảnh báo</string>
@@ -50,7 +58,10 @@
     <string name="menu_control">Quản lý bảo mật thông tin</string>
 
 
+
     <string name="url_privacy">https://ailabs.tw/taiwan-social-distancing-apppersonal-data-protection-note/</string>
+    <string name="url_faq">https://www.cdc.gov.tw/Category/Page/R8bAd_yiVi22CIr73qM2yw</string>
+    <string name="url_clean_cache">https://support.google.com/googleplay/answer/9037938</string>
 
 
 
@@ -112,6 +123,15 @@
 
     <string name="app_update_message">Ứng dụng Giãn cách Xã hội Đài Loan bản mới đã hoàn thành tải về máy. Vui lòng mở lại ứng dụng.</string>
     <string name="app_update_restart">Mở lại ứng dụng</string>
+
+
+
+
+
+
+
+
+
 
 
 

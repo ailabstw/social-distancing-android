@@ -129,7 +129,7 @@
         android:layout_height="wrap_content"
         android:elevation="@dimen/elevation_toolbar"
         android:visibility="gone"
-        app:constraint_referenced_ids="feature_barcode_back_drop_view, feature_barcode_icon_position_view, feature_barcode_arrow_image, feature_barcode_text, feature_barcode_tip_text"
+        app:constraint_referenced_ids="feature_barcode_back_drop_view, feature_barcode_toolbar_back_drop_view, feature_barcode_icon_position_view, feature_barcode_arrow_image, feature_barcode_text, feature_barcode_tip_text"
         tools:visibility="gone" />
 
     <View
@@ -139,6 +139,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <View
+        android:id="@+id/feature_barcode_toolbar_back_drop_view"
+        style="@style/Feature.Backdrop"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/feature_barcode_icon_position_view"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/feature_barcode_icon_position_view"
@@ -170,13 +178,15 @@
 
     <TextView
         android:id="@+id/feature_barcode_tip_text"
-        style="@style/Text.Feature"
-        android:layout_marginTop="@dimen/feature_margin_between_text"
-        android:text="@string/feature_barcode_tip"
+        style="@style/Text.Feature.Tip"
+        android:layout_height="0dp"
+        android:layout_marginVertical="@dimen/feature_margin_between_text"
         android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/feature_barcode_text"
         app:layout_constraintStart_toStartOf="@id/feature_barcode_text"
-        app:layout_constraintTop_toBottomOf="@id/feature_barcode_text" />
+        app:layout_constraintTop_toBottomOf="@id/feature_barcode_text"
+        tools:text="秘訣 1 桌面捷徑：長按桌面 APP 圖示，會跳出捷徑清單，就可以將捷徑拉到桌面囉！\n\n秘訣 2 小工具：長按桌面空白處後，點選「小工具/Ｗidgets」選項，找到「臺灣社交距離」的小工具後，就可以拖曳到桌面囉！\n\n➤ 桌面捷徑與小工具的作用是一樣的，選一個新增就可以了 :D\n\n秘訣 3 快速設定：從螢幕頂端向下滑動兩次後，點選編輯（不同型號手機的操作略有不同），可將「實聯掃描」按鈕加入「快速設定」選單中。詳細操作可參考官方文件。\n\n➤ 從「快速設定」啟動的速度會比桌面捷徑與小工具慢一點，但好處是隨時都可以透過下滑螢幕啟動掃描功能。" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/feature_daily_summary_group"
@@ -185,7 +195,7 @@
         android:elevation="@dimen/elevation_toolbar"
         android:visibility="gone"
         app:constraint_referenced_ids="feature_daily_summary_top_back_drop_view, feature_daily_summary_bottom_back_drop_view, feature_daily_summary_arrow_image, feature_daily_summary_text"
-        tools:visibility="visible" />
+        tools:visibility="invisible" />
 
     <View
         android:id="@+id/feature_daily_summary_top_back_drop_view"
@@ -223,6 +233,60 @@
         app:layout_constraintEnd_toEndOf="@id/main_risk_brief_text"
         app:layout_constraintStart_toStartOf="@id/main_risk_brief_text"
         app:layout_constraintTop_toBottomOf="@id/feature_daily_summary_arrow_image" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/feature_hints_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/elevation_toolbar"
+        android:visibility="gone"
+        app:constraint_referenced_ids="feature_hints_back_drop_view, feature_hints_toolbar_back_drop_view, feature_hints_icon_position_view, feature_hints_arrow_image, feature_hints_text"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/feature_hints_back_drop_view"
+        style="@style/Feature.Backdrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+
+    <View
+        android:id="@+id/feature_hints_toolbar_back_drop_view"
+        style="@style/Feature.Backdrop"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintEnd_toStartOf="@id/feature_hints_icon_position_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/feature_hints_icon_position_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/feature_hints_arrow_image"
+        style="@style/Feature.Arrow"
+        android:layout_marginTop="@dimen/feature_margin_around_arrow"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="@id/feature_hints_icon_position_view"
+        app:layout_constraintStart_toStartOf="@id/feature_hints_icon_position_view"
+        app:layout_constraintTop_toBottomOf="@id/feature_hints_icon_position_view" />
+
+    <TextView
+        android:id="@+id/feature_hints_text"
+        style="@style/Text.Feature"
+        android:layout_marginHorizontal="@dimen/main_margin_horizontal"
+        android:layout_marginTop="@dimen/feature_margin_around_arrow"
+        android:gravity="center"
+        android:text="@string/feature_hints"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/feature_hints_arrow_image" />
 
     <View
         android:id="@+id/feature_touch_view"

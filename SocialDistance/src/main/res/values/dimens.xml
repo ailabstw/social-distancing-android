@@ -36,7 +36,7 @@
     <dimen name="upload_edit_text_padding_vertical">5dp</dimen>
 
     <dimen name="feature_margin_around_arrow">12dp</dimen>
-    <dimen name="feature_margin_between_text">8dp</dimen>
+    <dimen name="feature_margin_between_text">16dp</dimen>
 
     <dimen name="elevation_toolbar">4dp</dimen>
 

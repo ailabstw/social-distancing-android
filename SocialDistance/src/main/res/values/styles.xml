@@ -90,6 +90,10 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="Text.Feature.Tip">
+        <item name="android:textSize">@dimen/text_size_small</item>
+    </style>
+
     <style name="Feature"></style>
 
     <style name="Feature.Backdrop">

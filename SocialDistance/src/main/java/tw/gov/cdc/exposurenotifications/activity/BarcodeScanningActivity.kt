@@ -143,7 +143,7 @@ class BarcodeScanningActivity : BaseActivity() {
             .addOnSuccessListener { barcodes ->
                 barcodes.firstOrNull {
                     it.sms?.phoneNumber == "1922"
-                }?.let {
+                }?.also {
                     setHintTextVisible(visible = false, force = true)
                     imageAnalysis?.clearAnalyzer()
                     imageProxy.close()

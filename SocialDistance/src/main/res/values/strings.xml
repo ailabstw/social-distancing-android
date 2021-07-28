@@ -41,6 +41,14 @@
     </string-array>
     <string name="risk_detail_risky_split">:</string>
 
+    <string name="state_en_not_support">Exposure notification is not supported.</string>
+    <string name="state_hw_not_support">Hardware of this device does not support exposure notification.</string>
+    <string name="state_user_profile_not_support">Exposure notification is not supported for current user profile.</string>
+    <string name="state_not_in_allowlist">The client is not in approved client list.</string>
+    <string name="state_unknown">Current status is unknown.</string>
+    <string name="state_instruction">For further instructions, see \"Next Step.\"</string>
+    <string name="state_instruction_next_step">Next Step</string>
+    
     <string name="menu_barcode_scanning">1922 SMS Contact Tracing</string>
     <string name="menu_about">App Introduction</string>
     <string name="menu_daily_summary">Daily Summary</string>
@@ -49,9 +57,12 @@
     <string name="menu_privacy">Privacy Policy and Terms of Use</string>
     <string name="menu_control">Exposure Notification Setting</string>
     <string name="menu_faq">FAQ</string>
+    <string name="menu_hints">Hints</string>
 
     <string name="url_privacy">https://ailabs.tw/taiwan-social-distancing-apppersonal-data-protection-note/</string>
     <string name="url_faq">https://www.cdc.gov.tw/Category/Page/R8bAd_yiVi22CIr73qM2yw</string>
+    <string name="url_clean_cache">https://support.google.com/googleplay/answer/9037938</string>
+    <string name="url_quick_settings">https://support.google.com/android/answer/9083864</string>
 
     <string name="daily_summary_no_contact">No Contact</string>
     <string name="daily_summary_less_then_2_mins">Less than 2 min</string>
@@ -114,9 +125,18 @@
     <string name="app_update_restart">Reopen the app</string>
 
     <string name="feature_barcode">New \"1922 SMS\" QR code scanning feature.</string>
-    <string name="feature_barcode_tip">Tip: Long press the app icon on a Home screen, then you can add the \"1922 SMS\" short cut to a Home screen.</string>
+    <string-array name="feature_barcode_tip">
+        <item>Tip 1 Shortcut: \nLong press the app icon on a Home screen, you will get a shortcut list. Then you can drag the \"1922 SMS\" shortcut to your Home screen.\n</item>
+        <item>Tip 2 Widget: \nLong press an empty space on a Home screen and tap \"Widgets.\" Then you can find the widget of \"&appname;\" app and drag it to your Home screen.\n</item>
+        <item>➤ Tip 1 and Tip 2 are both recommended to add this function. Choose the one you prefer :D\n</item>
+        <item>Tip 3 Quick Settings: \nSwipe down from the top of your screen twice and tap the \"Edit\" button. (Different devices may have different steps.) Then add the \"1922 SMS\" button into the \"Quick Settings.\" For more detailed instruction, please refer to the Android Help Center.\n</item>
+        <item>➤ It’s slightly slower launching from \"Quick Settings\" than from a shortcut or widget, but it’s convenient to activate the scanning function any time you swipe down your screen.</item>
+    </string-array>
+    <string name="feature_barcode_tip_split">:</string>
+    <string name="feature_barcode_tip_doc">Android Help Center</string>
     <string name="feature_daily_summary">New \"Daily Summary\" page.</string>
-    
+    <string name="feature_hints">You can check the hints again from the menu.</string>
+
     <string name="confirm">Confirm</string>
     <string name="cancel">Cancel</string>
     <string name="deny">Deny</string>

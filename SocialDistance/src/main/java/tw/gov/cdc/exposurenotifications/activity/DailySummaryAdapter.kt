@@ -1,4 +1,4 @@
-package tw.ailabs.Yating.Transcriber.fragment.dialog.recording
+package tw.gov.cdc.exposurenotifications.activity
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.daily_summary_item_view.view.*
-import tw.ailabs.Yating.Transcriber.fragment.dialog.recording.DailySummaryViewModel.SummaryItem
+import tw.gov.cdc.exposurenotifications.activity.DailySummaryViewModel.SummaryItem
 import tw.gov.cdc.exposurenotifications.R
 
 class DailySummaryAdapter :

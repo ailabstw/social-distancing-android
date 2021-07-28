@@ -35,7 +35,8 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            <meta-data android:name="android.app.shortcuts"
+            <meta-data
+                android:name="android.app.shortcuts"
                 android:resource="@xml/shortcuts" />
         </activity>
 
@@ -63,7 +64,8 @@
             android:label="@string/menu_control" />
         <activity
             android:name=".activity.BarcodeScanningActivity"
-            android:label="@string/menu_barcode_scanning" />
+            android:label="@string/menu_barcode_scanning"
+            android:launchMode="singleTask"/>
 
         <receiver
             android:name=".nearby.ExposureNotificationBroadcastReceiver"
@@ -75,6 +77,28 @@
                 <action android:name="com.google.android.gms.exposurenotification.ACTION_SERVICE_STATE_UPDATED" />
             </intent-filter>
         </receiver>
+
+        <receiver android:name=".widget.AppWidgetProvider">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/app_widget_info" />
+        </receiver>
+
+        <service
+            android:name=".tile.BarcodeTileService"
+            android:icon="@drawable/icon_qrcode"
+            android:label="@string/barcode_shortcut_label"
+            android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.service.quicksettings.ACTIVE_TILE"
+                android:value="true" />
+        </service>
 
         <meta-data
             android:name="com.google.mlkit.vision.DEPENDENCIES"
