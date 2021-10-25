@@ -101,6 +101,7 @@
     <string name="control_exposure">Notification Service</string>
     <string name="control_exposure_turn_off_title">Are you sure you want to disable exposure notification?</string>
     <string name="control_exposure_turn_off_detail">If you have been in contact with a COVID-19 patient, the system will not notify you in this mode.</string>
+    <string name="control_not_found_notification">No Exposure Detected Notification</string>
 
     <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
 

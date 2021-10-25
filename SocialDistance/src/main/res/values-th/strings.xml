@@ -102,6 +102,7 @@
     <string name="control_exposure_turn_off_title">คุณยืนยันที่จะปิดรับการแจ้งเตือนความเสี่ยงสัมผัสหรือไม่?</string>
     <string name="control_exposure_turn_off_detail">หากคุณเคยสัมผัสผู้ป่วยยืนยัน ระบบจะไม่ทำการแจ้งเตือนคุณ</string>
 
+
     <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
 
     <string name="notification_channel_name_foreground_service">ระบบกำลังตรวจสอบความเสี่ยงสัมผัส</string>
