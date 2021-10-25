@@ -136,6 +136,7 @@
     <string name="feature_barcode_tip_split">:</string>
     <string name="feature_barcode_tip_doc">Android Help Center</string>
     <string name="feature_daily_summary">New \"Daily Summary\" page.</string>
+    <string name="feature_not_found_notification_control">You can turn off No Detected Notification from the Exposure Notification Settings.</string>
     <string name="feature_hints">You can check the hints again from the menu.</string>
 
     <string name="confirm">Confirm</string>
