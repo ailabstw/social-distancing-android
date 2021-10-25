@@ -22,7 +22,7 @@
     <string name="main_info">%1$s\n%2$s\n%3$s</string>
     <string name="main_info_first_launch_time">ระยะเวลาการเปิดการแจ้งเตือน %1$s</string>
     <string name="main_info_enable_time_percent">อัตราการใช้งาน %1$d%%</string>
-    <string name="main_info_last_check_time">Last checked at %1$s</string>
+
 
     <string name="dialog_low_storage_title">พื้นที่จัดเก็บในมือถือไม่เพียงพอ</string>
     <string name="dialog_low_storage_message">หากต้องการรับการแจ้งเตือนความเสี่ยงสัมผัส กรุณาจัดการพื้นที่จัดเก็บในมือถือ</string>

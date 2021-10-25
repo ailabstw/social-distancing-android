@@ -22,7 +22,7 @@
     <string name="main_info">%1$s\n%2$s\n%3$s</string>
     <string name="main_info_first_launch_time">Thông báo đã được bật %1$s</string>
     <string name="main_info_enable_time_percent">Mức thời gian hoạt động %1$d%%</string>
-    <string name="main_info_last_check_time">Last checked at %1$s</string>
+
 
     <string name="dialog_low_storage_title">Bộ nhớ quá tải</string>
     <string name="dialog_low_storage_message">Vui lòng giảm tải bộ nhớ để nhận thông báo lây nhiễm.</string>
