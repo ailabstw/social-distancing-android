@@ -5,12 +5,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.widget.CompoundButton
-import androidx.lifecycle.Observer
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.activity_control.*
 import kotlinx.android.synthetic.main.control_item.view.*
 import tw.gov.cdc.exposurenotifications.R
 import tw.gov.cdc.exposurenotifications.common.Log
+import tw.gov.cdc.exposurenotifications.common.PreferenceManager
 import tw.gov.cdc.exposurenotifications.common.RequestCode
 import tw.gov.cdc.exposurenotifications.nearby.ExposureNotificationManager
 import tw.gov.cdc.exposurenotifications.nearby.ExposureNotificationManager.ExposureNotificationState
@@ -22,6 +22,7 @@ class ControlActivity : BaseActivity() {
     }
 
     private val exposureNotificationServiceControl by lazy { control_exposure_notification_service }
+    private val notFoundNotificationControl by lazy { control_not_found_notification }
 
     private val onServiceCheckedChangeListener: CompoundButton.OnCheckedChangeListener by lazy {
         CompoundButton.OnCheckedChangeListener { _: CompoundButton, isChecked: Boolean ->
@@ -42,6 +43,13 @@ class ControlActivity : BaseActivity() {
         }
     }
 
+    private val onNotificationCheckedChangeListener: CompoundButton.OnCheckedChangeListener by lazy {
+        CompoundButton.OnCheckedChangeListener { _: CompoundButton, isChecked: Boolean ->
+            Log.d(TAG, "onChecked notificationControl $isChecked")
+            PreferenceManager.isNotFoundNotificationEnabled = isChecked
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_control)
@@ -52,16 +60,23 @@ class ControlActivity : BaseActivity() {
             setDisplayShowHomeEnabled(true)
         }
 
-        ExposureNotificationManager.state.observe(this, Observer {
+        ExposureNotificationManager.state.observe(this, {
             Log.d(TAG, "observe state $it")
             exposureNotificationServiceControl.sw.apply {
                 setOnCheckedChangeListener(null)
                 isChecked = it == ExposureNotificationState.Enabled
                 setOnCheckedChangeListener(onServiceCheckedChangeListener)
             }
+            notFoundNotificationControl.sw.apply {
+                setOnCheckedChangeListener(null)
+                isChecked = it == ExposureNotificationState.Enabled && PreferenceManager.isNotFoundNotificationEnabled
+                setOnCheckedChangeListener(onNotificationCheckedChangeListener)
+                isEnabled = it == ExposureNotificationState.Enabled
+            }
         })
 
         exposureNotificationServiceControl.text.setText(R.string.control_exposure)
+        notFoundNotificationControl.text.setText(R.string.control_not_found_notification)
     }
 
     override fun onResume() {

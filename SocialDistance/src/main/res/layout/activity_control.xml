@@ -17,4 +17,8 @@
         android:id="@+id/control_exposure_notification_service"
         layout="@layout/control_item" />
 
+    <include
+        android:id="@+id/control_not_found_notification"
+        layout="@layout/control_item" />
+
 </androidx.appcompat.widget.LinearLayoutCompat>
