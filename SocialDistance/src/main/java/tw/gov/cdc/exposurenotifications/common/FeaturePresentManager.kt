@@ -6,6 +6,7 @@ object FeaturePresentManager {
         // BARCODE, // Shortcut
         BARCODE_V2, // Shortcut + Widget + Tile
         DAILY_SUMMARY,
+        NOT_FOUND_NOTIFICATION_CONTROL,
         HINTS
     }
 
