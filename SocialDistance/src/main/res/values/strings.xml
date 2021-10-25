@@ -55,7 +55,7 @@
     <string name="menu_cancel_alert">Reset Your Status</string>
     <string name="menu_upload">Upload Anonymous IDs</string>
     <string name="menu_privacy">Privacy Policy and Terms of Use</string>
-    <string name="menu_control">Exposure Notification Setting</string>
+    <string name="menu_control">Exposure Notification Settings</string>
     <string name="menu_faq">FAQ</string>
     <string name="menu_hints">Hints</string>
 
