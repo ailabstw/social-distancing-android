@@ -21,16 +21,16 @@ class ControlActivity : BaseActivity() {
         private const val TAG = "ControlActivity"
     }
 
-    private val controlView by lazy { controlBle }
+    private val exposureNotificationServiceControl by lazy { control_exposure_notification_service }
 
-    private val onCheckedChangeListener: CompoundButton.OnCheckedChangeListener by lazy {
+    private val onServiceCheckedChangeListener: CompoundButton.OnCheckedChangeListener by lazy {
         CompoundButton.OnCheckedChangeListener { _: CompoundButton, isChecked: Boolean ->
-            Log.d(TAG, "onChecked toggled $isChecked")
-            controlView.sw.apply {
+            Log.d(TAG, "onChecked serviceControl $isChecked")
+            exposureNotificationServiceControl.sw.apply {
                 setOnCheckedChangeListener(null)
                 // Set the toggle back. It will only toggle to correct state if operation succeeds.
                 setChecked(!isChecked)
-                setOnCheckedChangeListener(onCheckedChangeListener)
+                setOnCheckedChangeListener(onServiceCheckedChangeListener)
             }
             when (isChecked) {
                 true -> if (ExposureNotificationManager.state.value == ExposureNotificationState.Disabled
@@ -54,14 +54,14 @@ class ControlActivity : BaseActivity() {
 
         ExposureNotificationManager.state.observe(this, Observer {
             Log.d(TAG, "observe state $it")
-            controlView.sw.apply {
+            exposureNotificationServiceControl.sw.apply {
                 setOnCheckedChangeListener(null)
                 isChecked = it == ExposureNotificationState.Enabled
-                setOnCheckedChangeListener(onCheckedChangeListener)
+                setOnCheckedChangeListener(onServiceCheckedChangeListener)
             }
         })
 
-        controlView.text.setText(R.string.control_exposure)
+        exposureNotificationServiceControl.text.setText(R.string.control_exposure)
     }
 
     override fun onResume() {
