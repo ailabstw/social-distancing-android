@@ -136,6 +136,7 @@
     <string name="feature_barcode_tip_split">：</string>
     <string name="feature_barcode_tip_doc">官方文件</string>
     <string name="feature_daily_summary">新增「每日接觸狀況」資訊頁面</string>
+    <string name="feature_not_found_notification_control">若要關閉無風險通知功能，可以到右上方選單裡的「資料權限控管」進行設定喔~</string>
     <string name="feature_hints">若要再次查看提示，可以點選右上方選單裡的「功能提示」選項喔~</string>
 
     <string name="confirm">確認</string>

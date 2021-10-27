@@ -22,7 +22,7 @@
     <string name="main_info">%1$s\n%2$s\n%3$s</string>
     <string name="main_info_first_launch_time">Oras mula ng nabuksan ang Exposure Notification %1$s</string>
     <string name="main_info_enable_time_percent">Ang ratio ng operating time ay %1$d%%</string>
-    <string name="main_info_last_check_time">Last checked at %1$s</string>
+
 
     <string name="dialog_low_storage_title">Hindi sapat ang storage</string>
     <string name="dialog_low_storage_message">Mangyaring i-check ang storage kung nais mong buksan ang Exposure Notification.</string>
@@ -124,6 +124,7 @@
 
     <string name="app_update_message">Na-download na ang pinaka bagong bersyon ng "Taiwan Social Distance", mangyaring buksan ulit ang App.</string>
     <string name="app_update_restart">Restart</string>
+
 
 
 
