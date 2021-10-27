@@ -20,6 +20,7 @@ object PreferenceManager {
 
     private const val PREF_KEY_SAFE_SUMMARY = "PREF_KEY_SAFE_SUMMARY"
 
+    private const val PREF_KEY_NOT_FOUND_NOTIFICATION_ENABLED = "PREF_KEY_NOT_FOUND_NOTIFICATION_ENABLED"
     private const val PREF_KEY_NOT_FOUND_NOTIFICATION_TIME = "PREF_KEY_NOT_FOUND_NOTIFICATION_TIME"
     private const val PREF_KEY_STATE_UPDATED_NOTIFICATION_TIME = "PREF_KEY_STATE_UPDATED_NOTIFICATION_TIME"
 
@@ -55,6 +56,16 @@ object PreferenceManager {
         set(value) {
             sharedPreferences.edit {
                 putLong(PREF_KEY_NOT_FOUND_NOTIFICATION_TIME, value)
+            }
+        }
+
+    var isNotFoundNotificationEnabled: Boolean
+        get() {
+            return sharedPreferences.getBoolean(PREF_KEY_NOT_FOUND_NOTIFICATION_ENABLED, true)
+        }
+        set(value) {
+            sharedPreferences.edit {
+                putBoolean(PREF_KEY_NOT_FOUND_NOTIFICATION_ENABLED, value)
             }
         }
 

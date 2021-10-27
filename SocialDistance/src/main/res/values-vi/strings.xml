@@ -102,6 +102,7 @@
     <string name="control_exposure_turn_off_title">Bạn có chắc mình muốn tắt thông báo tiếp xúc gần không?</string>
     <string name="control_exposure_turn_off_detail">Bạn sẽ không được thông báo khi tiếp xúc với người mắc bệnh COVID-19.</string>
 
+
     <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
 
     <string name="notification_channel_name_foreground_service">Đang tiến hành kiểm tra lây nhiễm</string>
