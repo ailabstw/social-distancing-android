@@ -517,9 +517,8 @@ class MainActivity : BaseActivity() {
     }
 
     private fun showCompleteUpdateDialog() {
-        hideProgressBar()
         appUpdateManager.unregisterListener(appUpdateListener)
-        if (Looper.getMainLooper().isCurrentThread) {
+        if (!isFinishing && Looper.getMainLooper().isCurrentThread) {
             AlertDialog.Builder(this)
                 .setMessage(R.string.app_update_message)
                 .setPositiveButton(R.string.app_update_restart) { _, _ ->
