@@ -1,31 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-
-    <ImageButton
-        android:id="@+id/widget_barcode_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:scaleType="centerInside"
-        android:src="@mipmap/ic_barcode" />
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/widget_barcode_text"
         style="@style/Text.AutoSize"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:autoSizeMaxTextSize="@dimen/text_size"
-        android:autoSizeMinTextSize="@dimen/text_size_min"
+        android:autoSizeMinTextSize="@dimen/text_size_small"
         android:autoSizeTextType="uniform"
+        android:ellipsize="end"
         android:gravity="center_horizontal"
         android:lines="1"
-        android:paddingHorizontal="2dp"
+        android:padding="2dp"
         android:text="@string/barcode_shortcut_label"
         android:textColor="@color/white" />
 
-</LinearLayout>
+    <ImageView
+        android:id="@+id/widget_barcode_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/widget_barcode_text"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/ic_barcode" />
+
+</RelativeLayout>

@@ -22,7 +22,7 @@
     <string name="main_info">%1$s\n%2$s\n%3$s</string>
     <string name="main_info_first_launch_time">Waktu aktivasi fungsi notifikasi paparan %1$s</string>
     <string name="main_info_enable_time_percent">Rasio waktu operasi adalah %1$d%%</string>
-    <string name="main_info_last_check_time">Last checked at %1$s</string>
+
 
     <string name="dialog_low_storage_title">Ruang penyimpanan tidak cukup</string>
     <string name="dialog_low_storage_message">Harap kelola ruang penyimpanan untuk menerima notifikasi paparan.</string>
@@ -102,6 +102,7 @@
     <string name="control_exposure_turn_off_title">Apakah Anda yakin untuk mematikan notifikasi paparan?</string>
     <string name="control_exposure_turn_off_detail">Apabila Anda pernah kontak langsung dengan pasien terkonfirmasi covid-19, sistem tidak akan lagi mengirimkan notifikasi.</string>
 
+
     <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
 
     <string name="notification_channel_name_foreground_service">Dalam proses…</string>
@@ -123,6 +124,7 @@
 
     <string name="app_update_message">Aplikasi Social Distancing Taiwan terbaru telah diunduh. Silakan tutup dan buka kembali aplikasi.</string>
     <string name="app_update_restart">Mulai ulang</string>
+
 
 
 

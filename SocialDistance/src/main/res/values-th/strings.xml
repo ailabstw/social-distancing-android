@@ -22,7 +22,7 @@
     <string name="main_info">%1$s\n%2$s\n%3$s</string>
     <string name="main_info_first_launch_time">ระยะเวลาการเปิดการแจ้งเตือน %1$s</string>
     <string name="main_info_enable_time_percent">อัตราการใช้งาน %1$d%%</string>
-    <string name="main_info_last_check_time">Last checked at %1$s</string>
+
 
     <string name="dialog_low_storage_title">พื้นที่จัดเก็บในมือถือไม่เพียงพอ</string>
     <string name="dialog_low_storage_message">หากต้องการรับการแจ้งเตือนความเสี่ยงสัมผัส กรุณาจัดการพื้นที่จัดเก็บในมือถือ</string>
@@ -102,6 +102,7 @@
     <string name="control_exposure_turn_off_title">คุณยืนยันที่จะปิดรับการแจ้งเตือนความเสี่ยงสัมผัสหรือไม่?</string>
     <string name="control_exposure_turn_off_detail">หากคุณเคยสัมผัสผู้ป่วยยืนยัน ระบบจะไม่ทำการแจ้งเตือนคุณ</string>
 
+
     <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
 
     <string name="notification_channel_name_foreground_service">ระบบกำลังตรวจสอบความเสี่ยงสัมผัส</string>
@@ -123,6 +124,7 @@
 
     <string name="app_update_message">แอปพลิเคชัน"ระยะห่างทางสังคมไต้หวัน"ได้รับการอัพเดทเป็นเวอร์ชั่นล่าสุด โปรดเปิดการทำงานแอปอีกครั้ง</string>
     <string name="app_update_restart">เริ่มการทำงานใหม่</string>
+
 
 
 

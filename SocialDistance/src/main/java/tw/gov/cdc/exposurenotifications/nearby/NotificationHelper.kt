@@ -86,14 +86,15 @@ object NotificationHelper {
     private fun shouldPostNotification(type: NotificationType): Boolean {
         return when (type) {
             NotificationType.ExposureNotFound -> {
-                Calendar.getInstance().let {
+                PreferenceManager.isNotFoundNotificationEnabled
+                && ExposureNotificationManager.state.value == ExposureNotificationManager.ExposureNotificationState.Enabled
+                && Calendar.getInstance().let {
                     val now = it.timeInMillis
                     val startTime = it.toSpecificTime(hour = 18).timeInMillis
                     val endTime = it.toSpecificTime(hour = 22, minute = 1).timeInMillis
 
                     now in startTime..endTime
                     && PreferenceManager.lastNotFoundNotificationTime !in startTime..endTime
-                    && ExposureNotificationManager.state.value == ExposureNotificationManager.ExposureNotificationState.Enabled
                 }
             }
             NotificationType.ExposureStateUpdated -> {

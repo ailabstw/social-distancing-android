@@ -74,7 +74,7 @@ class MainActivity : BaseActivity() {
     private val textVersion by lazy { main_version_text }
     private val buttonStart by lazy { main_start_button }
 
-    private val allFeatures = mutableListOf(Feature.BARCODE_V2, Feature.DAILY_SUMMARY, Feature.HINTS)
+    private val allFeatures = mutableListOf(Feature.BARCODE_V2, Feature.DAILY_SUMMARY, Feature.NOT_FOUND_NOTIFICATION_CONTROL, Feature.HINTS)
     private var currentPresentingFeature: Feature? = null
     private val featureBarcodeGroup by lazy { feature_barcode_group }
     private val featureBarcodeTipText by lazy {
@@ -651,7 +651,14 @@ class MainActivity : BaseActivity() {
                     }
                 }
             }
+            Feature.NOT_FOUND_NOTIFICATION_CONTROL -> {
+                feature_hints_text.setText(R.string.feature_not_found_notification_control)
+                featureHintsViewGroup.visibility = View.VISIBLE
+                featureTouchView.visibility = View.VISIBLE
+                true
+            }
             Feature.HINTS -> {
+                feature_hints_text.setText(R.string.feature_hints)
                 featureHintsViewGroup.visibility = View.VISIBLE
                 featureTouchView.visibility = View.VISIBLE
                 true
@@ -669,7 +676,7 @@ class MainActivity : BaseActivity() {
             Feature.DAILY_SUMMARY -> {
                 featureDailySummaryGroup.visibility = View.GONE
             }
-            Feature.HINTS -> {
+            Feature.HINTS, Feature.NOT_FOUND_NOTIFICATION_CONTROL -> {
                 featureHintsViewGroup.visibility = View.GONE
             }
         }
