@@ -178,6 +178,7 @@ class BarcodeScanningActivity : BaseActivity() {
     private fun gotoSendSMS(sms: Barcode.Sms) {
         Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:${sms.phoneNumber}")).apply {
             putExtra("sms_body", sms.message)
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }.let {
             startActivity(it)
         }
