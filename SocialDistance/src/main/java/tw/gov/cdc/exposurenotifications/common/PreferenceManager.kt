@@ -13,6 +13,7 @@ object PreferenceManager {
     private const val PREF_KEY_ACCUMULATED_DISABLE_TIME = "PREF_KEY_ACCUMULATED_DISABLE_TIME"
     private const val PREF_KEY_LAST_DISABLE_TIME = "PREF_KEY_LAST_DISABLE_TIME"
     private const val PREF_KEY_LAST_CHECK_TIME = "PREF_KEY_LAST_CHECK_TIME"
+    private const val PREF_KEY_LAST_CHECK_UPDATE_TIME = "PREF_KEY_LAST_CHECK_UPDATE_TIME"
     private const val PREF_KEY_LAST_ENTER_MAIN_PAGE_TIME = "PREF_KEY_LAST_ENTER_MAIN_PAGE_TIME"
 
     private const val PREF_KEY_REVISION_TOKEN = "PREF_KEY_REVISION_TOKEN"
@@ -76,6 +77,16 @@ object PreferenceManager {
         set(value) {
             sharedPreferences.edit {
                 putLong(PREF_KEY_LAST_CHECK_TIME, value)
+            }
+        }
+
+    var lastCheckUpdateTime: Long
+        get() {
+            return sharedPreferences.getLong(PREF_KEY_LAST_CHECK_UPDATE_TIME, 0L)
+        }
+        set(value) {
+            sharedPreferences.edit {
+                putLong(PREF_KEY_LAST_CHECK_UPDATE_TIME, value)
             }
         }
 
