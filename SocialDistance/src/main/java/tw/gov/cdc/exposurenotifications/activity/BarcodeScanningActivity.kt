@@ -142,7 +142,7 @@ class BarcodeScanningActivity : BaseActivity() {
         BarcodeScanning.getClient(options).process(inputImage)
             .addOnSuccessListener { barcodes ->
                 barcodes.firstOrNull {
-                    it.sms?.phoneNumber == "1922"
+                    it.sms?.run { phoneNumber == "1922" && !message.isNullOrBlank() } ?: false
                 }?.also {
                     setHintTextVisible(visible = false, force = true)
                     imageAnalysis?.clearAnalyzer()
