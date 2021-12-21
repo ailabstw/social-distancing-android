@@ -146,8 +146,8 @@ class BarcodeScanningActivity : BaseActivity() {
                 }?.also {
                     setHintTextVisible(visible = false, force = true)
                     imageAnalysis?.clearAnalyzer()
-                    imageProxy.close()
                     gotoSendSMS(it.sms!!)
+                    imageProxy.close()
                 } ?: run {
                     setHintTextVisible(barcodes.isNotEmpty())
                     imageProxy.close()
