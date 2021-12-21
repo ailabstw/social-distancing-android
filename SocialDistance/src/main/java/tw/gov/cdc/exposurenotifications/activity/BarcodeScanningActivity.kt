@@ -142,12 +142,12 @@ class BarcodeScanningActivity : BaseActivity() {
         BarcodeScanning.getClient(options).process(inputImage)
             .addOnSuccessListener { barcodes ->
                 barcodes.firstOrNull {
-                    it.sms?.phoneNumber == "1922"
+                    it.sms?.run { phoneNumber == "1922" && !message.isNullOrBlank() } ?: false
                 }?.also {
                     setHintTextVisible(visible = false, force = true)
                     imageAnalysis?.clearAnalyzer()
-                    imageProxy.close()
                     gotoSendSMS(it.sms!!)
+                    imageProxy.close()
                 } ?: run {
                     setHintTextVisible(barcodes.isNotEmpty())
                     imageProxy.close()
@@ -175,9 +175,17 @@ class BarcodeScanningActivity : BaseActivity() {
 
     // Send SMS
 
+    private var isSMSSent: Boolean = false
+
     private fun gotoSendSMS(sms: Barcode.Sms) {
+        if (isSMSSent) {
+            finish()
+            return
+        }
+        isSMSSent = true
         Intent(Intent.ACTION_SENDTO, Uri.parse("smsto:${sms.phoneNumber}")).apply {
             putExtra("sms_body", sms.message)
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         }.let {
             startActivity(it)
         }
