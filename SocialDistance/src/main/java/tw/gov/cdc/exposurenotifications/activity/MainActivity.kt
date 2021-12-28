@@ -130,7 +130,7 @@ class MainActivity : BaseActivity() {
 
     override fun onStart() {
         super.onStart()
-        checkUpdate()
+        checkUpdateIfNeeded()
     }
 
     override fun onResume() {
@@ -469,7 +469,7 @@ class MainActivity : BaseActivity() {
         presentFeatureIfNeeded()
     }
 
-    private fun checkUpdate() {
+    private fun checkUpdateIfNeeded() {
         appUpdateManager.appUpdateInfo
             .addOnSuccessListener { appUpdateInfo ->
                 Log.d(TAG, "appUpdateInfo $appUpdateInfo")
@@ -477,6 +477,11 @@ class MainActivity : BaseActivity() {
                     showCompleteUpdateDialog()
                     return@addOnSuccessListener
                 }
+                val currentTime = Date().time
+                if (currentTime - PreferenceManager.lastCheckUpdateTime < 24L * 60L * 60L * 1000L) {
+                    return@addOnSuccessListener
+                }
+                PreferenceManager.lastCheckUpdateTime = currentTime
                 try {
                     if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE) {
                         when {
@@ -517,9 +522,8 @@ class MainActivity : BaseActivity() {
     }
 
     private fun showCompleteUpdateDialog() {
-        hideProgressBar()
         appUpdateManager.unregisterListener(appUpdateListener)
-        if (Looper.getMainLooper().isCurrentThread) {
+        if (!isFinishing && Looper.getMainLooper().isCurrentThread) {
             AlertDialog.Builder(this)
                 .setMessage(R.string.app_update_message)
                 .setPositiveButton(R.string.app_update_restart) { _, _ ->
