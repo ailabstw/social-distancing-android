@@ -16,6 +16,8 @@
     <color name="button_major_normal">@color/primary</color>        <!--   46 182 169  -->
     <color name="button_major_pressed">@color/primary_dark</color>  <!--   28 150 138  -->
     <color name="button_major_disable">#9FD6D0</color>              <!--  159 214 208  -->
+    <color name="button_secondary_normal">@color/text</color>       <!--   73  97  94  -->
+    <color name="button_secondary_pressed">#C1CCCB</color>          <!--  193 204 203  -->
 
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
