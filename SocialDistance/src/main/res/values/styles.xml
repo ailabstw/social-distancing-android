@@ -40,22 +40,6 @@
         <item name="android:background">@drawable/background_button_major</item>
     </style>
 
-    <style name="Button.Secondary">
-        <item name="android:background">@drawable/background_button_secondary</item>
-    </style>
-
-    <style name="Button.Report">
-        <item name="android:background">@drawable/background_button_report</item>
-    </style>
-
-    <style name="Button.ReportUrgent">
-        <item name="android:background">@drawable/background_button_report_urgent</item>
-    </style>
-
-    <style name="Button.Statistic">
-        <item name="android:background">@drawable/background_button_statistic</item>
-    </style>
-
     <style name="Text">
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_height">wrap_content</item>
