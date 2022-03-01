@@ -48,4 +48,12 @@ interface VerificationServerInterface {
     @POST("/api/verify-acc")
     fun submitAccCode(@Header(ApiConstants.VerifyV1.API_KEY_HEADER) apiKey: String = API_KEY,
                       @Body body: RequestBody): Call<ResponseBody>
+
+    @Headers(
+        "content-type: application/json",
+        "accept: application/json"
+    )
+    @POST("/api/phone-check")
+    fun requestCode(@Header(ApiConstants.VerifyV1.API_KEY_HEADER) apiKey: String = API_KEY,
+                      @Body body: RequestBody): Call<ResponseBody>
 }
