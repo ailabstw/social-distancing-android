@@ -13,9 +13,7 @@ import com.google.common.base.Strings
 import com.google.common.collect.ImmutableList
 import com.google.common.io.BaseEncoding
 import kotlinx.android.synthetic.main.activity_upload.*
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.ResponseBody
 import org.json.JSONArray
@@ -60,6 +58,7 @@ class UploadActivity : BaseActivity() {
     // TODO: Remove or save to pref or somewhere
     private lateinit var diagnosis: DiagnosisEntity
 
+    private val requestCodeButton by lazy { upload_request_code_button }
     private val sendButton by lazy { upload_send_button }
     private val codeText by lazy { upload_code_edit_text }
     private val startDateText by lazy {
@@ -146,6 +145,10 @@ class UploadActivity : BaseActivity() {
                     datePicker.maxDate = Date().time
                 }
                 .show()
+        }
+
+        requestCodeButton.setOnClickListener {
+            startActivity(Intent(this, RequestCodeActivity::class.java))
         }
 
         sendButton.setOnClickListener {
