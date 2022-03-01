@@ -57,6 +57,9 @@
             android:name=".activity.UploadActivity"
             android:label="@string/upload_title" />
         <activity
+            android:name=".activity.RequestCodeActivity"
+            android:label="@string/request_verification_code" />
+        <activity
             android:name=".activity.CancelAlarmActivity"
             android:label="@string/menu_cancel_alert" />
         <activity
