@@ -180,6 +180,16 @@ class UploadActivity : BaseActivity() {
                 }
             }
         }
+
+        ExposureNotificationManager.state.observe(this, {
+            if (it == ExposureNotificationManager.ExposureNotificationState.Enabled) {
+                sendButton.isEnabled = true
+                sendButton.setText(R.string.send_verification_code)
+            } else {
+                sendButton.isEnabled = false
+                sendButton.setText(R.string.send_verification_code_not_enabled)
+            }
+        })
     }
 
     private fun submitCode() {
