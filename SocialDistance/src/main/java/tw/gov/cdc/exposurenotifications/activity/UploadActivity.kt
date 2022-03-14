@@ -24,6 +24,7 @@ import org.threeten.bp.ZoneOffset
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import tw.gov.cdc.exposurenotifications.BuildConfig
 import tw.gov.cdc.exposurenotifications.R
 import tw.gov.cdc.exposurenotifications.Secrets
 import tw.gov.cdc.exposurenotifications.api.APIService
@@ -89,6 +90,10 @@ class UploadActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_upload)
         setSupportActionBar(toolbar)
+
+        if (BuildConfig.DEBUG) {
+            PreferenceManager.requestCodeCount = 0
+        }
 
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)

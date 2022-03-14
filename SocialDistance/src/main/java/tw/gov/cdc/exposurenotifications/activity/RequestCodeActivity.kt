@@ -49,9 +49,7 @@ class RequestCodeActivity : BaseActivity() {
                 return@setOnClickListener
             }
 
-            val lastGetCodeDaysSinceEpoch = (PreferenceManager.lastRequestCodeTime / 1000 / 60 / 60 / 24).toInt()
-            val nowDaysSinceEpoch = (Date().time / 1000 / 60 / 60 / 24).toInt()
-            if (PreferenceManager.requestCodeCount > 2 && nowDaysSinceEpoch == lastGetCodeDaysSinceEpoch) {
+            if (!isWithinLimit()) {
                 showResultDialog(GetCodeResult.FailedLimitExceeded)
                 return@setOnClickListener
             }
@@ -74,6 +72,43 @@ class RequestCodeActivity : BaseActivity() {
         return true
     }
 
+    // Request Limit
+
+    private fun isWithinLimit(): Boolean {
+        val lastGetCodeDaysSinceEpoch = PreferenceManager.lastRequestCodeTime.daysSinceEpoch
+        val nowDaysSinceEpoch = Date().time.daysSinceEpoch
+
+        // A user can request a verification code at most 2 times per day.
+        return nowDaysSinceEpoch != lastGetCodeDaysSinceEpoch || PreferenceManager.requestCodeCount < 2
+    }
+
+    private fun increaseRequestCount() {
+        PreferenceManager.run {
+            val lastGetCodeDaysSinceEpoch = lastRequestCodeTime.daysSinceEpoch
+            val nowTime = Date().time
+            val nowDaysSinceEpoch = nowTime.daysSinceEpoch
+
+            if (lastGetCodeDaysSinceEpoch == 0) {
+                ++requestCodeCount
+                // When the request count reaches 4 times, start constraint at most 2 times per day.
+                if (requestCodeCount == 4) {
+                    requestCodeCount = 2
+                    lastRequestCodeTime = nowTime
+                }
+            } else {
+                if (lastGetCodeDaysSinceEpoch == nowDaysSinceEpoch) {
+                    ++requestCodeCount
+                } else {
+                    // Reset the request count when the last request time is not today.
+                    requestCodeCount = 1
+                }
+                lastRequestCodeTime = nowTime
+            }
+        }
+    }
+
+    private val Long.daysSinceEpoch: Int get() = (this / 1000 / 60 / 60 / 24).toInt()
+
     // Request Code
 
     private fun requestCode(phoneNumber: String) {
@@ -86,8 +121,7 @@ class RequestCodeActivity : BaseActivity() {
                                         response: Response<ResponseBody>) {
                     Log.i(TAG, "requestCode onResponse $response")
                     if (response.isSuccessful) {
-                        ++PreferenceManager.requestCodeCount
-                        PreferenceManager.lastRequestCodeTime = Date().time
+                        increaseRequestCount()
                         showResultDialog(GetCodeResult.Success)
                     } else {
                         showResultDialog(GetCodeResult.Failed)
