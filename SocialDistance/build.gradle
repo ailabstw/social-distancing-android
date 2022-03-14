@@ -14,7 +14,7 @@ android {
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 53
-        versionName "1.7.0"
+        versionName "1.8.0"
         ndk {
             debugSymbolLevel 'FULL'
         }
