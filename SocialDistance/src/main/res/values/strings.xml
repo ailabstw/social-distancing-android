@@ -85,19 +85,20 @@
     <string name="enter_verification_code">Please Enter Verification Code</string>
     <string name="enter_verification_code_hint">Verification Code</string>
     <string name="send_verification_code">Submit</string>
-    <string name="send_verification_code_not_enabled">not_enabled</string>
+    <string name="send_verification_code_not_enabled">@string/risk_brief_unknown</string>
 
-    <string name="enter_phone_number">Please Enter Phone Number</string>
-    <string name="enter_phone_number_hint">Phone Number</string>
+    <string name="enter_phone_number">Please enter your mobile number</string>
+    <string name="enter_phone_number_hint">Mobile Number</string>
 
     <string name="request_verification_code">Get Verification Code</string>
-    <string name="request_verification_code_description">Description</string>
+    <string name="request_verification_code_description">This allows user who is the COVID-19 confirmed case to receive verification code.</string>
 
-    <string name="request_verification_code_success">Success</string>
-    <string name="request_verification_code_success_message">Success.</string>
-    <string name="request_verification_code_fail_message">Fail</string>
-    <string name="request_verification_code_fail_limit_exceeded_message">Limit Exceeded</string>
-    <string name="request_verification_code_fail_invalid_phone_number_message">Invalid Phone Number</string>
+    <string name="request_verification_code_success">Entered mobile number successfully</string>
+    <string name="request_verification_code_success_message">Verification code will be sent to you via SMS in 5 minutes, please try again if you do not receive it.</string>
+    <string name="request_verification_code_fail">Enter mobile number failed</string>
+    <string name="request_verification_code_fail_message">Connect error occurred, please try again later.</string>
+    <string name="request_verification_code_fail_limit_exceeded_message">Number of request exceeded limit, please try again tomorrow.</string>
+    <string name="request_verification_code_fail_invalid_phone_number_message">Invalid mobile number, please re-enter.</string>
 
     <string name="cancel_alert_confirm_title">Are you sure you want to reset your status?</string>
     <string name="cancel_alert_confirm_message">Reset status upon completion of contact tracing assessment.</string>

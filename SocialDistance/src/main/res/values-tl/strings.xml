@@ -86,6 +86,20 @@
     <string name="enter_verification_code_hint">Mangyaring i-type ang verification code</string>
     <string name="send_verification_code">Ipadala</string>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <string name="cancel_alert_confirm_title">Siguradong isasara ba ang warning notification?</string>
     <string name="cancel_alert_confirm_message">Ang function na ito ay para sa pagsara ng warning notification pagkatapos ng pagsisiyasat sa mga pasyente.</string>
     <string name="cancel_alert_test_date">Mangyaring i-type ang date ng pagimbestiga sa pandemya</string>
