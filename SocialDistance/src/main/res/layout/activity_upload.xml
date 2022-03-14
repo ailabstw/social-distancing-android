@@ -101,6 +101,7 @@
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="@dimen/upload_margin_vertical_small"
         android:text="@string/request_verification_code"
+        android:textAllCaps="false"
         android:textColor="@color/button_secondary_normal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
