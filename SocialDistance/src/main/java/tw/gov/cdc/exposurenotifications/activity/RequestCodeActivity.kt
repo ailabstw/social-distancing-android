@@ -130,14 +130,17 @@ class RequestCodeActivity : BaseActivity() {
         }
 
         object Failed: GetCodeResult() {
+            override val title = R.string.request_verification_code_fail
             override val message = R.string.request_verification_code_fail_message
         }
 
         object FailedLimitExceeded: GetCodeResult() {
+            override val title = R.string.request_verification_code_fail
             override val message = R.string.request_verification_code_fail_limit_exceeded_message
         }
 
         object FailedInvalidPhoneNumber: GetCodeResult() {
+            override val title = R.string.request_verification_code_fail
             override val message = R.string.request_verification_code_fail_invalid_phone_number_message
         }
     }
