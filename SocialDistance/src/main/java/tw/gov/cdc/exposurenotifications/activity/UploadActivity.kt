@@ -7,6 +7,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import android.view.Menu
+import android.view.View
 import com.google.android.gms.nearby.exposurenotification.TemporaryExposureKey
 import com.google.common.base.Joiner
 import com.google.common.base.Strings
@@ -188,9 +189,11 @@ class UploadActivity : BaseActivity() {
 
         ExposureNotificationManager.state.observe(this, {
             if (it == ExposureNotificationManager.ExposureNotificationState.Enabled) {
+                requestCodeButton.visibility = View.VISIBLE
                 sendButton.isEnabled = true
                 sendButton.setText(R.string.send_verification_code)
             } else {
+                requestCodeButton.visibility = View.INVISIBLE
                 sendButton.isEnabled = false
                 sendButton.setText(R.string.send_verification_code_not_enabled)
             }
