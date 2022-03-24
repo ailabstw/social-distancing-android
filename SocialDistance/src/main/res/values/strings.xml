@@ -85,6 +85,19 @@
     <string name="enter_verification_code">Please Enter Verification Code</string>
     <string name="enter_verification_code_hint">Verification Code</string>
     <string name="send_verification_code">Submit</string>
+    <string name="send_verification_code_not_enabled">not_enabled</string>
+
+    <string name="enter_phone_number">Please Enter Phone Number</string>
+    <string name="enter_phone_number_hint">Phone Number</string>
+
+    <string name="request_verification_code">Get Verification Code</string>
+    <string name="request_verification_code_description">Description</string>
+
+    <string name="request_verification_code_success">Success</string>
+    <string name="request_verification_code_success_message">Success.</string>
+    <string name="request_verification_code_fail_message">Fail</string>
+    <string name="request_verification_code_fail_limit_exceeded_message">Limit Exceeded</string>
+    <string name="request_verification_code_fail_invalid_phone_number_message">Invalid Phone Number</string>
 
     <string name="cancel_alert_confirm_title">Are you sure you want to reset your status?</string>
     <string name="cancel_alert_confirm_message">Reset status upon completion of contact tracing assessment.</string>
