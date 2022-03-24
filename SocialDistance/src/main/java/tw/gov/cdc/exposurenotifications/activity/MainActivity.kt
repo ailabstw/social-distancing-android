@@ -97,6 +97,7 @@ class MainActivity : BaseActivity() {
             setHomeAsUpIndicator(R.drawable.icon_qrcode)
             // Only provide 1922 sms qrcode scanning feature for devices have a back camera
             setDisplayHomeAsUpEnabled(hasBackCamera)
+            setHomeActionContentDescription(getString(R.string.barcode_shortcut_label))
         }
 
         if (!hasBackCamera) {

@@ -7,15 +7,14 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import android.view.Menu
+import android.view.View
 import com.google.android.gms.nearby.exposurenotification.TemporaryExposureKey
 import com.google.common.base.Joiner
 import com.google.common.base.Strings
 import com.google.common.collect.ImmutableList
 import com.google.common.io.BaseEncoding
 import kotlinx.android.synthetic.main.activity_upload.*
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.ResponseBody
 import org.json.JSONArray
@@ -26,6 +25,7 @@ import org.threeten.bp.ZoneOffset
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import tw.gov.cdc.exposurenotifications.BuildConfig
 import tw.gov.cdc.exposurenotifications.R
 import tw.gov.cdc.exposurenotifications.Secrets
 import tw.gov.cdc.exposurenotifications.api.APIService
@@ -60,6 +60,7 @@ class UploadActivity : BaseActivity() {
     // TODO: Remove or save to pref or somewhere
     private lateinit var diagnosis: DiagnosisEntity
 
+    private val requestCodeButton by lazy { upload_request_code_button }
     private val sendButton by lazy { upload_send_button }
     private val codeText by lazy { upload_code_edit_text }
     private val startDateText by lazy {
@@ -90,6 +91,10 @@ class UploadActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_upload)
         setSupportActionBar(toolbar)
+
+        if (BuildConfig.DEBUG) {
+            PreferenceManager.requestCodeCount = 0
+        }
 
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
@@ -148,6 +153,10 @@ class UploadActivity : BaseActivity() {
                 .show()
         }
 
+        requestCodeButton.setOnClickListener {
+            startActivity(Intent(this, RequestCodeActivity::class.java))
+        }
+
         sendButton.setOnClickListener {
 
             if (startDateText.text.isNullOrBlank()) {
@@ -177,6 +186,18 @@ class UploadActivity : BaseActivity() {
                 }
             }
         }
+
+        ExposureNotificationManager.state.observe(this, {
+            if (it == ExposureNotificationManager.ExposureNotificationState.Enabled) {
+                requestCodeButton.visibility = View.VISIBLE
+                sendButton.isEnabled = true
+                sendButton.setText(R.string.send_verification_code)
+            } else {
+                requestCodeButton.visibility = View.INVISIBLE
+                sendButton.isEnabled = false
+                sendButton.setText(R.string.send_verification_code_not_enabled)
+            }
+        })
     }
 
     private fun submitCode() {

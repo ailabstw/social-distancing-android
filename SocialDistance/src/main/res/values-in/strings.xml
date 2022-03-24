@@ -86,6 +86,20 @@
     <string name="enter_verification_code_hint">Masukkan nomor verifikasi</string>
     <string name="send_verification_code">Kirim</string>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <string name="cancel_alert_confirm_title">Apakah Anda yakin akan menonaktifkan peringatan?</string>
     <string name="cancel_alert_confirm_message">Fitur ini dirancang untuk menonaktifkan peringatan setelah investigasi transmisi.</string>
     <string name="cancel_alert_test_date">Tanggal investigasi transmisi</string>

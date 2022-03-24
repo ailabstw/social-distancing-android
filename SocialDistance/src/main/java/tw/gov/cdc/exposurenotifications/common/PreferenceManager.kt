@@ -27,6 +27,9 @@ object PreferenceManager {
 
     private const val PREF_KEY_PRESENTED_FEATURES = "PREF_KEY_INTRODUCTION_HISTORY"
 
+    private const val PREF_KEY_GET_CODE_COUNT = "PREF_KEY_GET_CODE_COUNT"
+    private const val PREF_KEY_LAST_GET_CODE_TIME = "PREF_KEY_LAST_GET_CODE_TIME"
+
     private val sharedPreferences =
         BaseApplication.instance.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
 
@@ -193,6 +196,26 @@ object PreferenceManager {
         set(value) {
             sharedPreferences.edit {
                 putStringSet(PREF_KEY_PRESENTED_FEATURES, value)
+            }
+        }
+
+    var requestCodeCount: Int
+        get() {
+            return sharedPreferences.getInt(PREF_KEY_GET_CODE_COUNT, 0)
+        }
+        set(value) {
+            sharedPreferences.edit {
+                putInt(PREF_KEY_GET_CODE_COUNT, value)
+            }
+        }
+
+    var lastRequestCodeTime: Long
+        get() {
+            return sharedPreferences.getLong(PREF_KEY_LAST_GET_CODE_TIME, 0L)
+        }
+        set(value) {
+            sharedPreferences.edit {
+                putLong(PREF_KEY_LAST_GET_CODE_TIME, value)
             }
         }
 }

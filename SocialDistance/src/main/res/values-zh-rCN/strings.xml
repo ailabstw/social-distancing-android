@@ -85,6 +85,20 @@
     <string name="enter_verification_code">請輸入驗證碼</string>
     <string name="enter_verification_code_hint">請輸入驗證碼</string>
     <string name="send_verification_code">送出</string>
+    <string name="send_verification_code_not_enabled">@string/risk_brief_unknown</string>
+
+    <string name="enter_phone_number">請輸入手機號碼</string>
+    <string name="enter_phone_number_hint">請輸入手機號碼</string>
+
+    <string name="request_verification_code">索取驗證碼</string>
+    <string name="request_verification_code_description">此功能為提供確診者索取驗證碼，非確診者無法取得驗證碼。</string>
+
+    <string name="request_verification_code_success">手機號碼輸入成功</string>
+    <string name="request_verification_code_success_message">驗證碼將以簡訊送至您的手機，若 5 分鐘內未收到請您再次嘗試。</string>
+    <string name="request_verification_code_fail">手機號碼輸入失敗</string>
+    <string name="request_verification_code_fail_message">連線異常請稍候再試。</string>
+    <string name="request_verification_code_fail_limit_exceeded_message">超過當日索取次數請隔日再試。</string>
+    <string name="request_verification_code_fail_invalid_phone_number_message">手機號碼格式錯誤。</string>
 
     <string name="cancel_alert_confirm_title">確定要解除示警狀態嗎？</string>
     <string name="cancel_alert_confirm_message">此功能為提供疫調後之示警狀態解除</string>
