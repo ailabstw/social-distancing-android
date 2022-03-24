@@ -28,14 +28,13 @@ class BarcodeScanningActivity : BaseActivity() {
 
     companion object {
         private const val TAG = "BarcodeScanningActivity"
+        private lateinit var cameraExecutor: ExecutorService
     }
 
     private var preview: Preview? = null
     private var imageAnalysis: ImageAnalysis? = null
     private var camera: Camera? = null
     private var cameraProvider: ProcessCameraProvider? = null
-
-    private lateinit var cameraExecutor: ExecutorService
 
     private val previewView by lazy { barcode_scanning_previewView }
     private val hintText by lazy { barcode_scanning_hint_text }
