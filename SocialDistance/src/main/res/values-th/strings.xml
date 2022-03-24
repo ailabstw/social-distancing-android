@@ -86,6 +86,20 @@
     <string name="enter_verification_code_hint">กรุณากรอกรหัสยืนยัน</string>
     <string name="send_verification_code">ส่งออก</string>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <string name="cancel_alert_confirm_title">คุณต้องการยกเลิกสถานะการเตือนภัยหรือไม่</string>
     <string name="cancel_alert_confirm_message">ฟังก์ชันนี้สำหรับการยกเลิกระบบเตือนภัยหลังได้รับการตรวจสอบเชื้อโควิด</string>
     <string name="cancel_alert_test_date">กรุณาเลือกวันตรวจสอบความเสี่ยงโควิด</string>

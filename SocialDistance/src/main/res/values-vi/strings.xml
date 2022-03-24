@@ -86,6 +86,20 @@
     <string name="enter_verification_code_hint">Vui lòng nhập mã xác nhận</string>
     <string name="send_verification_code">Gửi</string>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <string name="cancel_alert_confirm_title">Bạn có chắc chắn muốn xóa trạng thái cảnh báo lây nhiễm không?</string>
     <string name="cancel_alert_confirm_message">Tính năng này cung cấp chức năng xóa bỏ trạng thái cảnh báo lây nhiễm sau khi đã hoàn tất điều tra dịch bệnh.</string>
     <string name="cancel_alert_test_date">Nhập ngày tháng điều tra dịch tễ</string>

@@ -7,6 +7,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
 import android.view.Menu
+import android.view.View
 import com.google.android.gms.nearby.exposurenotification.TemporaryExposureKey
 import com.google.common.base.Joiner
 import com.google.common.base.Strings
@@ -24,6 +25,7 @@ import org.threeten.bp.ZoneOffset
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import tw.gov.cdc.exposurenotifications.BuildConfig
 import tw.gov.cdc.exposurenotifications.R
 import tw.gov.cdc.exposurenotifications.Secrets
 import tw.gov.cdc.exposurenotifications.api.APIService
@@ -89,6 +91,10 @@ class UploadActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_upload)
         setSupportActionBar(toolbar)
+
+        if (BuildConfig.DEBUG) {
+            PreferenceManager.requestCodeCount = 0
+        }
 
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
@@ -183,9 +189,11 @@ class UploadActivity : BaseActivity() {
 
         ExposureNotificationManager.state.observe(this, {
             if (it == ExposureNotificationManager.ExposureNotificationState.Enabled) {
+                requestCodeButton.visibility = View.VISIBLE
                 sendButton.isEnabled = true
                 sendButton.setText(R.string.send_verification_code)
             } else {
+                requestCodeButton.visibility = View.INVISIBLE
                 sendButton.isEnabled = false
                 sendButton.setText(R.string.send_verification_code_not_enabled)
             }
