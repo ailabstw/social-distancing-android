@@ -50,7 +50,7 @@ object NotificationHelper {
     fun generateNotification(type: NotificationType, context: Context): NotificationInfo {
         Log.d(TAG, "generateNotification $type")
 
-        createNotificationChannelIfNeeded(type.channelInfo, context)
+        createNotificationChannelIfNeeded(type, context)
 
         val contentTitle = context.getString(type.contentTitle)
         val contentText = context.getString(type.contentText)
@@ -108,9 +108,10 @@ object NotificationHelper {
         }
     }
 
-    private fun createNotificationChannelIfNeeded(channelInfo: NotificationChannelInfo,
+    private fun createNotificationChannelIfNeeded(type: NotificationType,
                                                   context: Context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channelInfo = type.channelInfo
             val channel = NotificationChannel(channelInfo.channelId,
                                               context.getString(channelInfo.channelName),
                                               channelInfo.importance)
