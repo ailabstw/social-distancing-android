@@ -14,6 +14,44 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/main_clock_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="main_clock_background,main_clock_text"/>
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/main_clock_background"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="fitXY"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
+        app:lottie_rawRes="@raw/lottie_clock_background"
+        app:layout_constraintBottom_toBottomOf="@id/main_clock_text"
+        app:layout_constraintEnd_toEndOf="@id/main_clock_text"
+        app:layout_constraintStart_toStartOf="@id/main_clock_text"
+        app:layout_constraintTop_toTopOf="@id/main_clock_text" />
+
+    <TextClock
+        android:id="@+id/main_clock_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/main_margin_vertical"
+        android:autoSizeMaxTextSize="@dimen/text_clock"
+        android:autoSizeMinTextSize="@dimen/text_clock_min"
+        android:format12Hour="hh:mm:ss"
+        android:format24Hour="HH:mm:ss"
+        android:maxLines="1"
+        android:paddingHorizontal="@dimen/text_clock"
+        android:paddingVertical="2dp"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_clock"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:text="24:24:24" />
+
     <TextView
         android:id="@+id/main_risk_brief_text"
         style="@style/Text.Title"
@@ -27,9 +65,10 @@
         app:layout_constraintBottom_toTopOf="@id/main_risk_detail_text_invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintTop_toBottomOf="@id/main_clock_text"
         app:layout_constraintVertical_chainStyle="packed"
         app:layout_constraintWidth_default="wrap"
+        app:layout_constraintVertical_bias="0.2"
         tools:background="@drawable/background_text_risk_medium"
         tools:text="很長長很長長很長長長很長很長長很長很長很長很長"
         tools:textColor="@color/text_risk_low" />
