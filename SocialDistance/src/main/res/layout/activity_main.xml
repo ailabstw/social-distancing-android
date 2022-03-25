@@ -68,6 +68,13 @@
         tools:text="risk_brief_risky\n1\n2\n3\n4\n5\n\6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19"
         tools:textColor="@color/text_risk_high" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/main_guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.75" />
+
     <View
         android:id="@+id/main_white_background_view"
         android:layout_width="0dp"
@@ -75,8 +82,8 @@
         android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.3"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_guideline" />
 
     <Button
         android:id="@+id/main_start_button"
@@ -88,7 +95,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/main_white_background_view"
-        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintVertical_bias="0.25"
         app:layout_constraintWidth_default="wrap" />
 
     <TextView
@@ -241,7 +248,7 @@
         android:elevation="@dimen/elevation_toolbar"
         android:visibility="gone"
         app:constraint_referenced_ids="feature_hints_back_drop_view, feature_hints_toolbar_back_drop_view, feature_hints_icon_position_view, feature_hints_arrow_image, feature_hints_text"
-        tools:visibility="visible" />
+        tools:visibility="gone" />
 
     <View
         android:id="@+id/feature_hints_back_drop_view"
