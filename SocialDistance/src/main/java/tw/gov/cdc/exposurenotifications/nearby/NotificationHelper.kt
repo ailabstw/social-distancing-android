@@ -7,6 +7,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.annotation.StringRes
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -175,6 +176,7 @@ object NotificationHelper {
             }
 
         val channelInfo: NotificationChannelInfo
+            @RequiresApi(Build.VERSION_CODES.N)
             get() = when (this) {
                 ProvideDiagnosisKeys -> NotificationChannelInfo(
                     channelId = NOTIFICATION_CHANNEL_ID_FOREGROUND,
