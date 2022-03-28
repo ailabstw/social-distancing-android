@@ -145,7 +145,7 @@ class ProvideDiagnosisKeysWorker(
                 context,
                 RequestCode.REQUEST_INTENT_NOT_FOUND_NOTIFICATION,
                 intent,
-                0
+                PendingIntent.FLAG_IMMUTABLE
             )
 
             val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager

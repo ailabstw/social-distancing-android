@@ -21,7 +21,7 @@ class AppWidgetProvider : AppWidgetProvider() {
             // Create an Intent to launch ExampleActivity
             val pendingIntent: PendingIntent = Intent(context, BarcodeScanningActivity::class.java)
                 .let { intent ->
-                    PendingIntent.getActivity(context, 0, intent, 0)
+                    PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)
                 }
 
             // Get the layout for the App Widget and attach an on-click listener
