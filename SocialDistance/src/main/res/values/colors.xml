@@ -22,4 +22,6 @@
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
 
+    <color name="popupBackground">#303030</color>
+
 </resources>

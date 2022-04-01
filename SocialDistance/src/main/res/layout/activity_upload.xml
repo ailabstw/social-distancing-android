@@ -103,6 +103,7 @@
         android:text="@string/request_verification_code"
         android:textAllCaps="false"
         android:textColor="@color/button_secondary_normal"
+        app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/upload_code_edit_text"

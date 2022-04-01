@@ -83,7 +83,7 @@
         android:scrollbars="vertical"
         android:visibility="invisible"
         app:layout_constrainedHeight="true"
-        app:layout_constraintBottom_toTopOf="@id/main_white_background_view"
+        app:layout_constraintBottom_toTopOf="@id/main_hcert_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/main_risk_brief_text"
@@ -106,6 +106,18 @@
         app:layout_constraintWidth_default="wrap"
         tools:text="risk_brief_risky\n1\n2\n3\n4\n5\n\6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19"
         tools:textColor="@color/text_risk_high" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/main_hcert_button"
+        style="@style/Button.Round"
+        android:layout_marginHorizontal="@dimen/main_margin_horizontal"
+        android:layout_marginVertical="@dimen/main_margin_vertical"
+        android:text="@string/hcert_full_name"
+        app:layout_constraintBottom_toTopOf="@id/main_guideline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_risk_detail_text"
+        app:layout_constraintVertical_bias="0.8" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/main_guideline"
@@ -227,7 +239,6 @@
         style="@style/Text.Feature.Tip"
         android:layout_height="0dp"
         android:layout_marginVertical="@dimen/feature_margin_between_text"
-        android:textStyle="normal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@id/feature_barcode_text"
         app:layout_constraintStart_toStartOf="@id/feature_barcode_text"

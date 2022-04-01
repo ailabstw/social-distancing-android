@@ -29,6 +29,8 @@
     <dimen name="button_radius">8dp</dimen>
     <dimen name="button_width">220dp</dimen>
     <dimen name="button_height">42dp</dimen>
+    <dimen name="button_padding_vertical">8dp</dimen>
+    <dimen name="button_padding_horizontal">26dp</dimen>
 
     <dimen name="upload_margin_horizontal">45dp</dimen>
     <dimen name="upload_margin_vertical">20dp</dimen>
