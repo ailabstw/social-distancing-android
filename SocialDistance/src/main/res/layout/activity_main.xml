@@ -285,11 +285,75 @@
         android:id="@+id/feature_daily_summary_text"
         style="@style/Text.Feature"
         android:layout_marginTop="@dimen/feature_margin_around_arrow"
-        android:gravity="center_horizontal"
         android:text="@string/feature_daily_summary"
         app:layout_constraintEnd_toEndOf="@id/main_risk_brief_text"
         app:layout_constraintStart_toStartOf="@id/main_risk_brief_text"
-        app:layout_constraintTop_toBottomOf="@id/feature_daily_summary_arrow_image" />
+        app:layout_constraintTop_toBottomOf="@id/feature_daily_summary_arrow_image"
+        app:layout_constraintWidth_default="wrap" />
+    
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/feature_hcert_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/elevation_toolbar"
+        android:visibility="gone"
+        app:constraint_referenced_ids="feature_hcert_top_back_drop_view, feature_hcert_bottom_back_drop_view, feature_hcert_arrow_image, feature_hcert_text, feature_hcert_tip_text"
+        tools:visibility="visible" />
+
+    <View
+        android:id="@+id/feature_hcert_top_back_drop_view"
+        style="@style/Feature.Backdrop"
+        android:layout_marginBottom="@dimen/main_margin_vertical"
+        app:layout_constraintBottom_toTopOf="@id/main_hcert_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/feature_hcert_bottom_back_drop_view"
+        style="@style/Feature.Backdrop"
+        android:layout_marginTop="@dimen/main_margin_vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_hcert_button" />
+
+    <ImageView
+        android:id="@+id/feature_hcert_arrow_image"
+        style="@style/Feature.Arrow"
+        android:layout_marginTop="@dimen/feature_margin_around_arrow"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/feature_hcert_bottom_back_drop_view" />
+
+    <TextView
+        android:id="@+id/feature_hcert_text"
+        style="@style/Text.Feature"
+        android:layout_marginHorizontal="@dimen/main_margin_horizontal"
+        android:layout_marginTop="@dimen/feature_margin_around_arrow"
+        android:text="@string/feature_hcert"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/feature_hcert_arrow_image" />
+
+    <TextView
+        android:id="@+id/feature_hcert_tip_text"
+        style="@style/Text.Feature.Tip"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="@dimen/main_margin_horizontal"
+        android:layout_marginVertical="@dimen/feature_margin_between_text"
+        android:layout_marginTop="@dimen/feature_margin_around_arrow"
+        android:autoSizeMaxTextSize="@dimen/text_size_small"
+        android:autoSizeMinTextSize="@dimen/text_size_min"
+        android:autoSizeTextType="uniform"
+        android:minHeight="@dimen/text_size_small"
+        android:text="@string/feature_hcert_tip"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/feature_hcert_text"
+        tools:text="長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長很長" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/feature_hints_group"
@@ -339,11 +403,11 @@
         style="@style/Text.Feature"
         android:layout_marginHorizontal="@dimen/main_margin_horizontal"
         android:layout_marginTop="@dimen/feature_margin_around_arrow"
-        android:gravity="center"
         android:text="@string/feature_hints"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/feature_hints_arrow_image" />
+        app:layout_constraintTop_toBottomOf="@id/feature_hints_arrow_image"
+        app:layout_constraintWidth_default="wrap" />
 
     <View
         android:id="@+id/feature_touch_view"

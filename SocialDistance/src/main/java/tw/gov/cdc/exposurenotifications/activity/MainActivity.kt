@@ -76,7 +76,7 @@ class MainActivity : BaseActivity() {
 
     private val clockGroup by lazy { main_clock_group }
 
-    private val allFeatures = mutableListOf(Feature.BARCODE_V2, Feature.DAILY_SUMMARY, Feature.NOT_FOUND_NOTIFICATION_CONTROL, Feature.HINTS)
+    private val allFeatures = mutableListOf(Feature.BARCODE_V2, Feature.DAILY_SUMMARY, Feature.HCERT, Feature.NOT_FOUND_NOTIFICATION_CONTROL, Feature.HINTS)
     private var currentPresentingFeature: Feature? = null
     private val featureBarcodeGroup by lazy { feature_barcode_group }
     private val featureBarcodeTipText by lazy {
@@ -85,6 +85,7 @@ class MainActivity : BaseActivity() {
         }
     }
     private val featureDailySummaryGroup by lazy { feature_daily_summary_group }
+    private val featureHcertGroup by lazy { feature_hcert_group }
     private val featureHintsViewGroup by lazy { feature_hints_group }
     private val featureTouchView by lazy { feature_touch_view }
 
@@ -664,6 +665,11 @@ class MainActivity : BaseActivity() {
                     }
                 }
             }
+            Feature.HCERT -> {
+                featureHcertGroup.visibility = View.VISIBLE
+                featureTouchView.visibility = View.VISIBLE
+                true
+            }
             Feature.NOT_FOUND_NOTIFICATION_CONTROL -> {
                 feature_hints_text.setText(R.string.feature_not_found_notification_control)
                 featureHintsViewGroup.visibility = View.VISIBLE
@@ -688,6 +694,9 @@ class MainActivity : BaseActivity() {
             }
             Feature.DAILY_SUMMARY -> {
                 featureDailySummaryGroup.visibility = View.GONE
+            }
+            Feature.HCERT -> {
+                featureHcertGroup.visibility = View.GONE
             }
             Feature.HINTS, Feature.NOT_FOUND_NOTIFICATION_CONTROL -> {
                 featureHintsViewGroup.visibility = View.GONE

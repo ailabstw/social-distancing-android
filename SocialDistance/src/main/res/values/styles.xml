@@ -110,6 +110,7 @@
 
     <style name="Text.Feature.Tip">
         <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textStyle">normal</item>
     </style>
 
     <style name="Feature"></style>
