@@ -33,7 +33,7 @@
         android:textSize="16dp"
         android:paddingHorizontal="26dp"
         android:paddingVertical="10dp"
-        android:text="@string/barcode_invalid_hint"
+        android:text="@string/barcode_hint_1922_invalid"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
