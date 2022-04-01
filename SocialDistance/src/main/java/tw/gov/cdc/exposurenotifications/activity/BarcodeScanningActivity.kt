@@ -5,6 +5,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.view.View
+import androidx.annotation.StringRes
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
 import androidx.core.content.ContextCompat
@@ -19,6 +20,10 @@ import tw.gov.cdc.exposurenotifications.R
 import tw.gov.cdc.exposurenotifications.common.Log
 import tw.gov.cdc.exposurenotifications.common.PermissionUtils
 import tw.gov.cdc.exposurenotifications.common.RequestCode
+import tw.gov.cdc.exposurenotifications.hcert.Chain
+import tw.gov.cdc.exposurenotifications.hcert.Error
+import tw.gov.cdc.exposurenotifications.hcert.VerificationException
+import tw.gov.cdc.exposurenotifications.hcert.data.GreenCertificate
 import java.util.*
 import java.util.concurrent.ExecutionException
 import java.util.concurrent.ExecutorService
@@ -29,6 +34,7 @@ class BarcodeScanningActivity : BaseActivity() {
     companion object {
         private const val TAG = "BarcodeScanningActivity"
         private lateinit var cameraExecutor: ExecutorService
+        const val EXTRA_HCERT_MODE = "EXTRA_HCERT_MODE"
     }
 
     private var preview: Preview? = null
@@ -39,10 +45,15 @@ class BarcodeScanningActivity : BaseActivity() {
     private val previewView by lazy { barcode_scanning_previewView }
     private val hintText by lazy { barcode_scanning_hint_text }
 
+    private var hcertMode = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_barcode_scanning)
         setSupportActionBar(toolbar)
+
+        hcertMode = intent.getBooleanExtra(EXTRA_HCERT_MODE, false)
+        title = getString(if (hcertMode) R.string.hcert_full_name else R.string.menu_barcode_scanning)
 
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(!isTaskRoot)
@@ -140,16 +151,36 @@ class BarcodeScanningActivity : BaseActivity() {
 
         BarcodeScanning.getClient(options).process(inputImage)
             .addOnSuccessListener { barcodes ->
-                barcodes.firstOrNull {
-                    it.sms?.run { phoneNumber == "1922" && !message.isNullOrBlank() } ?: false
-                }?.also {
-                    setHintTextVisible(visible = false, force = true)
-                    imageAnalysis?.clearAnalyzer()
-                    gotoSendSMS(it.sms!!)
+                if (hcertMode) {
+                    var error: Error? = null
+                    barcodes.forEach {
+                        it.rawValue?.let { raw ->
+                            try {
+                                val cert = Chain.decode(raw)
+                                hideHintText(true)
+                                if (handleHcert(raw, cert)) return@addOnSuccessListener
+                            } catch (e: VerificationException) {
+                                error = e.error
+                            }
+                        }
+                    }
+                    when (error) {
+                        Error.CWT_EXPIRED -> showHintText(Hint.HINT_HCERT_EXPIRED)
+                        else -> if (barcodes.isNotEmpty()) showHintText(Hint.HINT_HCERT_INVALID) else hideHintText()
+                    }
                     imageProxy.close()
-                } ?: run {
-                    setHintTextVisible(barcodes.isNotEmpty())
-                    imageProxy.close()
+                } else {
+                    barcodes.firstOrNull {
+                        it.sms?.run { phoneNumber == "1922" && !message.isNullOrBlank() } ?: false
+                    }?.also {
+                        hideHintText(true)
+                        imageAnalysis?.clearAnalyzer()
+                        gotoSendSMS(it.sms!!)
+                        imageProxy.close()
+                    } ?: run {
+                        if (barcodes.isNotEmpty()) showHintText(Hint.HINT_1922_INVALID) else hideHintText()
+                        imageProxy.close()
+                    }
                 }
             }
             .addOnFailureListener {
@@ -164,12 +195,26 @@ class BarcodeScanningActivity : BaseActivity() {
 
     private var lastUpdateHintTime = Date().time
 
-    private fun setHintTextVisible(visible: Boolean, force: Boolean = false) {
+    private fun showHintText(hint: Hint) {
         val now = Date().time
-        if (force || visible || now - lastUpdateHintTime > 300) {
-            hintText.visibility = if (visible) View.VISIBLE else View.INVISIBLE
+        hintText.setText(hint.res)
+        hintText.visibility = View.VISIBLE
+        lastUpdateHintTime = now
+    }
+
+    private fun hideHintText(force: Boolean = false) {
+        val now = Date().time
+        if (force || now - lastUpdateHintTime > 300) {
+            hintText.visibility = View.INVISIBLE
             lastUpdateHintTime = now
         }
+    }
+
+    enum class Hint(@StringRes val res: Int) {
+        HINT_1922_INVALID(R.string.barcode_hint_1922_invalid),
+        HINT_HCERT_INVALID(R.string.barcode_hint_hcert_invalid),
+        HINT_HCERT_DUPLICATED(R.string.barcode_hint_hcert_duplicated),
+        HINT_HCERT_EXPIRED(R.string.barcode_hint_hcert_expired)
     }
 
     // Send SMS
@@ -189,6 +234,14 @@ class BarcodeScanningActivity : BaseActivity() {
             startActivity(it)
         }
         finish()
+    }
+
+    // Hcert
+
+    private fun handleHcert(raw: String, cert: GreenCertificate): Boolean {
+        imageAnalysis?.clearAnalyzer()
+        finish()
+        return true
     }
 
     // Permission
