@@ -7,6 +7,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.os.Build
+import androidx.annotation.RequiresApi
 import androidx.annotation.StringRes
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -49,7 +50,7 @@ object NotificationHelper {
     fun generateNotification(type: NotificationType, context: Context): NotificationInfo {
         Log.d(TAG, "generateNotification $type")
 
-        createNotificationChannelIfNeeded(type.channelInfo, context)
+        createNotificationChannelIfNeeded(type, context)
 
         val contentTitle = context.getString(type.contentTitle)
         val contentText = context.getString(type.contentText)
@@ -107,9 +108,10 @@ object NotificationHelper {
         }
     }
 
-    private fun createNotificationChannelIfNeeded(channelInfo: NotificationChannelInfo,
+    private fun createNotificationChannelIfNeeded(type: NotificationType,
                                                   context: Context) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val channelInfo = type.channelInfo
             val channel = NotificationChannel(channelInfo.channelId,
                                               context.getString(channelInfo.channelName),
                                               channelInfo.importance)
@@ -175,6 +177,7 @@ object NotificationHelper {
             }
 
         val channelInfo: NotificationChannelInfo
+            @RequiresApi(Build.VERSION_CODES.N)
             get() = when (this) {
                 ProvideDiagnosisKeys -> NotificationChannelInfo(
                     channelId = NOTIFICATION_CHANNEL_ID_FOREGROUND,

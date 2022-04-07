@@ -13,8 +13,8 @@ android {
         applicationId "tw.gov.cdc.exposurenotifications"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 54
-        versionName "1.8.0"
+        versionCode 55
+        versionName "1.9.0"
         ndk {
             debugSymbolLevel 'FULL'
         }
@@ -132,6 +132,7 @@ dependencies {
 
     // UI components
     implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
+    implementation 'com.airbnb.android:lottie:5.0.3'
 
     // networking
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
