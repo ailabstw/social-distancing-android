@@ -12,6 +12,9 @@
     <dimen name="text_size_title_large">40sp</dimen>
     <dimen name="text_size_button">15dp</dimen>
 
+    <dimen name="text_clock">36dp</dimen>
+    <dimen name="text_clock_min">20dp</dimen>
+
     <dimen name="text_size_description">17sp</dimen>
     <dimen name="text_size_asr">15sp</dimen>
 

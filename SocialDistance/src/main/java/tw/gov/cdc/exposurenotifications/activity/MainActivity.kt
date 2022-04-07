@@ -74,6 +74,8 @@ class MainActivity : BaseActivity() {
     private val textVersion by lazy { main_version_text }
     private val buttonStart by lazy { main_start_button }
 
+    private val clockGroup by lazy { main_clock_group }
+
     private val allFeatures = mutableListOf(Feature.BARCODE_V2, Feature.DAILY_SUMMARY, Feature.NOT_FOUND_NOTIFICATION_CONTROL, Feature.HINTS)
     private var currentPresentingFeature: Feature? = null
     private val featureBarcodeGroup by lazy { feature_barcode_group }
@@ -462,6 +464,12 @@ class MainActivity : BaseActivity() {
                 }
             }
         }
+
+        /**
+         * Update clock
+         */
+
+        clockGroup.visibility = if (riskStatus == RiskStatus.UNKNOWN) View.INVISIBLE else View.VISIBLE
 
         /**
          * present feature if needed
