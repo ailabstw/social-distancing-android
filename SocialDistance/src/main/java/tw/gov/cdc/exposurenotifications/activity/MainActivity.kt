@@ -72,6 +72,7 @@ class MainActivity : BaseActivity() {
 
     private val textInfo by lazy { main_info_text }
     private val textVersion by lazy { main_version_text }
+    private val buttonHcert by lazy { main_hcert_button }
     private val buttonStart by lazy { main_start_button }
 
     private val clockGroup by lazy { main_clock_group }
@@ -237,7 +238,9 @@ class MainActivity : BaseActivity() {
 //    var debugCount = 0
 
     private fun setupButton() {
-
+        buttonHcert.setOnClickListener {
+            startActivity(Intent(this, HcertActivity::class.java))
+        }
         buttonStart.setOnClickListener {
 //            if (debugNotification) {
 //                when (debugCount % 5) {
