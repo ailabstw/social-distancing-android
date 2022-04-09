@@ -1,9 +1,9 @@
-package tw.gov.cdc.exposurenotifications.hcert
+package tw.gov.cdc.exposurenotifications.hcert.decode
 
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.decodeFromString
-import tw.gov.cdc.exposurenotifications.hcert.data.CborObject
-import tw.gov.cdc.exposurenotifications.hcert.data.GreenCertificate
+import tw.gov.cdc.exposurenotifications.hcert.decode.data.CborObject
+import tw.gov.cdc.exposurenotifications.hcert.decode.data.GreenCertificate
 
 
 /**

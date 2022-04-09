@@ -1,6 +1,6 @@
-package tw.gov.cdc.exposurenotifications.hcert
+package tw.gov.cdc.exposurenotifications.hcert.decode
 
-import tw.gov.cdc.exposurenotifications.hcert.data.CborObject
+import tw.gov.cdc.exposurenotifications.hcert.decode.data.CborObject
 import java.util.*
 
 /**

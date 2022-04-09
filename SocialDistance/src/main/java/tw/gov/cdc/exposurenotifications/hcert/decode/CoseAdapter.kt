@@ -1,4 +1,4 @@
-package tw.gov.cdc.exposurenotifications.hcert
+package tw.gov.cdc.exposurenotifications.hcert.decode
 
 import COSE.MessageTag
 import COSE.Sign1Message

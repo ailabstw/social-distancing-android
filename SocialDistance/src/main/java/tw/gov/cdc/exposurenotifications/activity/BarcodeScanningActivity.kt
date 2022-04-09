@@ -20,10 +20,10 @@ import tw.gov.cdc.exposurenotifications.R
 import tw.gov.cdc.exposurenotifications.common.Log
 import tw.gov.cdc.exposurenotifications.common.PermissionUtils
 import tw.gov.cdc.exposurenotifications.common.RequestCode
-import tw.gov.cdc.exposurenotifications.hcert.Chain
-import tw.gov.cdc.exposurenotifications.hcert.Error
-import tw.gov.cdc.exposurenotifications.hcert.VerificationException
-import tw.gov.cdc.exposurenotifications.hcert.data.GreenCertificate
+import tw.gov.cdc.exposurenotifications.hcert.decode.Chain
+import tw.gov.cdc.exposurenotifications.hcert.decode.Error
+import tw.gov.cdc.exposurenotifications.hcert.decode.VerificationException
+import tw.gov.cdc.exposurenotifications.hcert.decode.data.GreenCertificate
 import java.util.*
 import java.util.concurrent.ExecutionException
 import java.util.concurrent.ExecutorService

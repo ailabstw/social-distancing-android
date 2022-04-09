@@ -1,7 +1,7 @@
-package tw.gov.cdc.exposurenotifications.hcert
+package tw.gov.cdc.exposurenotifications.hcert.decode
 
 import com.upokecenter.cbor.CBORObject
-import tw.gov.cdc.exposurenotifications.hcert.data.CborObject
+import tw.gov.cdc.exposurenotifications.hcert.decode.data.CborObject
 
 object CwtHelper {
     fun fromCbor(input: ByteArray): CwtAdapter = CwtAdapter(input)

@@ -1,4 +1,4 @@
-package tw.gov.cdc.exposurenotifications.hcert
+package tw.gov.cdc.exposurenotifications.hcert.decode
 
 /**
  * From Swift ValidationCore

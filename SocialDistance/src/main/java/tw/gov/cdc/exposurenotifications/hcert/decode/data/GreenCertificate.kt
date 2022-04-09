@@ -1,4 +1,4 @@
-package tw.gov.cdc.exposurenotifications.hcert.data
+package tw.gov.cdc.exposurenotifications.hcert.decode.data
 
 //import kotlinx.datetime.LocalDate
 import kotlinx.serialization.SerialName

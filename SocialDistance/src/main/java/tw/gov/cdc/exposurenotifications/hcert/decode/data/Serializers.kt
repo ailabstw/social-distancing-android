@@ -1,4 +1,4 @@
-package tw.gov.cdc.exposurenotifications.hcert.data
+package tw.gov.cdc.exposurenotifications.hcert.decode.data
 
 import kotlinx.serialization.KSerializer
 import kotlinx.serialization.Serializer

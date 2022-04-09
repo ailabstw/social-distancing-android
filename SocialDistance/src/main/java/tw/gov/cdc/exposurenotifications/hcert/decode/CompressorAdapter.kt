@@ -1,6 +1,6 @@
-package tw.gov.cdc.exposurenotifications.hcert
+package tw.gov.cdc.exposurenotifications.hcert.decode
 
-import tw.gov.cdc.exposurenotifications.hcert.CompressionConstants.MAX_DECOMPRESSED_SIZE
+import tw.gov.cdc.exposurenotifications.hcert.decode.CompressionConstants.MAX_DECOMPRESSED_SIZE
 import java.io.ByteArrayOutputStream
 import java.io.OutputStream
 import java.util.zip.InflaterInputStream

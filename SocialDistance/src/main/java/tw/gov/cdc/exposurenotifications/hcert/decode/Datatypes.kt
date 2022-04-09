@@ -1,4 +1,4 @@
-package tw.gov.cdc.exposurenotifications.hcert
+package tw.gov.cdc.exposurenotifications.hcert.decode
 
 
 enum class CoseHeaderKeys(val intVal: Int, val stringVal: String) {
