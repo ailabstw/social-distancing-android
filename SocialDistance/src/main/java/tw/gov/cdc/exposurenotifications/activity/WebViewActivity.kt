@@ -16,11 +16,14 @@ class WebViewActivity : BaseActivity() {
 
     enum class Page(
         @StringRes val url: Int,
-        @StringRes val label: Int,
-        val lockNavigation: Boolean
+        @StringRes val label: Int? = null,
+        val lockNavigation: Boolean = false
     ) {
         PRIVACY(url = R.string.url_privacy, label = R.string.menu_privacy, lockNavigation = true),
-        FAQ(url = R.string.url_faq, label = R.string.menu_faq, lockNavigation = false)
+        FAQ(url = R.string.url_faq),
+        HCERT_APPLY(url = R.string.url_hcert_apply),
+        HCERT_VACCINE_APPOINTMENT(url = R.string.url_hcert_vaccine_appointment),
+        HCERT_FAQ(url = R.string.url_hcert_faq)
     }
 
     companion object {
@@ -34,11 +37,11 @@ class WebViewActivity : BaseActivity() {
                     getIntent(
                         context = context,
                         url = page.url,
-                        label = page.label,
+                        label = page.label!!,
                         lockNavigation = page.lockNavigation
                     )
                 }
-                Page.FAQ -> {
+                else -> {
                     Intent(Intent.ACTION_VIEW, Uri.parse(context.getString(page.url)))
                 }
             }

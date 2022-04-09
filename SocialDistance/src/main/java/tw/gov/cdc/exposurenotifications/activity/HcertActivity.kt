@@ -1,6 +1,8 @@
 package tw.gov.cdc.exposurenotifications.activity
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_hcert.*
 import tw.gov.cdc.exposurenotifications.R
 
@@ -20,5 +22,35 @@ class HcertActivity : BaseActivity() {
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
         }
+    }
+
+    // ActionBar
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.hcert, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.action_hcert_apply -> {
+            startActivity(WebViewActivity.getIntent(this, WebViewActivity.Page.HCERT_APPLY))
+            true
+        }
+        R.id.action_vaccine_appointment -> {
+            startActivity(WebViewActivity.getIntent(this, WebViewActivity.Page.HCERT_VACCINE_APPOINTMENT))
+            true
+        }
+        R.id.action_faq -> {
+            startActivity(WebViewActivity.getIntent(this, WebViewActivity.Page.HCERT_FAQ))
+            true
+        }
+        else -> {
+            super.onOptionsItemSelected(item)
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return true
     }
 }
