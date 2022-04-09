@@ -46,6 +46,8 @@ class BarcodeScanningActivity : BaseActivity() {
     private val hintText by lazy { barcode_scanning_hint_text }
 
     private var hcertMode = false
+    private val hcertApplyButton by lazy { barcode_hcert_apply_button }
+    private val hcertImportButton by lazy { barcode_hcert_import_button }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,6 +64,7 @@ class BarcodeScanningActivity : BaseActivity() {
 
         cameraExecutor = Executors.newSingleThreadExecutor()
 
+        setUpHcertUI()
         setUpCamera()
     }
 
@@ -85,6 +88,22 @@ class BarcodeScanningActivity : BaseActivity() {
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+
+    // HCERT
+
+    fun setUpHcertUI() {
+        if (hcertMode) {
+            hcertApplyButton.visibility = View.VISIBLE
+            hcertImportButton.visibility = View.VISIBLE
+        } else {
+            hcertApplyButton.visibility = View.GONE
+            hcertImportButton.visibility = View.GONE
+        }
+
+        hcertApplyButton.setOnClickListener {
+            startActivity(WebViewActivity.getIntent(this, WebViewActivity.Page.HCERT_APPLY))
+        }
     }
 
     // Camera
