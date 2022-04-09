@@ -1,5 +1,6 @@
 package tw.gov.cdc.exposurenotifications.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -13,6 +14,9 @@ class HcertActivity : BaseActivity() {
         private const val TAG = "HcertActivity"
     }
 
+    private val emptyViewGroup by lazy { hcert_empty_view_group }
+    private val buttonAdd by lazy { hcert_add_button }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hcert)
@@ -21,6 +25,12 @@ class HcertActivity : BaseActivity() {
         supportActionBar?.apply {
             setDisplayHomeAsUpEnabled(true)
             setDisplayShowHomeEnabled(true)
+        }
+
+        buttonAdd.setOnClickListener {
+            Intent(this, BarcodeScanningActivity::class.java).apply {
+                putExtra(BarcodeScanningActivity.EXTRA_HCERT_MODE, true)
+            }.let(::startActivity)
         }
     }
 
