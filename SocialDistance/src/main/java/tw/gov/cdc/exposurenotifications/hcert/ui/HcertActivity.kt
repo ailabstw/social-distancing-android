@@ -1,4 +1,4 @@
-package tw.gov.cdc.exposurenotifications.activity
+package tw.gov.cdc.exposurenotifications.hcert.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,6 +6,9 @@ import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_hcert.*
 import tw.gov.cdc.exposurenotifications.R
+import tw.gov.cdc.exposurenotifications.activity.BarcodeScanningActivity
+import tw.gov.cdc.exposurenotifications.activity.BaseActivity
+import tw.gov.cdc.exposurenotifications.activity.WebViewActivity
 
 
 class HcertActivity : BaseActivity() {

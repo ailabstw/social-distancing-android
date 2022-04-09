@@ -30,6 +30,7 @@ import tw.gov.cdc.exposurenotifications.common.*
 import tw.gov.cdc.exposurenotifications.common.BulletSpan
 import tw.gov.cdc.exposurenotifications.common.FeaturePresentManager.Feature
 import tw.gov.cdc.exposurenotifications.common.Utils.getDateString
+import tw.gov.cdc.exposurenotifications.hcert.ui.HcertActivity
 import tw.gov.cdc.exposurenotifications.nearby.ExposureNotificationManager
 import tw.gov.cdc.exposurenotifications.nearby.ExposureNotificationManager.ExposureNotificationState
 import java.lang.reflect.InvocationTargetException

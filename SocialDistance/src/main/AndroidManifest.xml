@@ -70,7 +70,7 @@
             android:label="@string/menu_barcode_scanning"
             android:launchMode="singleTask"/>
         <activity
-            android:name=".activity.HcertActivity"
+            android:name=".hcert.ui.HcertActivity"
             android:label="@string/hcert_full_name" />
 
         <receiver
