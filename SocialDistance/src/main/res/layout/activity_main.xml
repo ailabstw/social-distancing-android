@@ -55,6 +55,7 @@
     <TextView
         android:id="@+id/main_risk_brief_text"
         style="@style/Text.Title"
+        android:layout_width="wrap_content"
         android:layout_marginHorizontal="@dimen/main_margin_horizontal"
         android:layout_marginTop="@dimen/main_margin_vertical"
         android:autoSizeMaxTextSize="@dimen/text_size_title"
@@ -62,13 +63,13 @@
         android:autoSizeTextType="uniform"
         android:maxLines="3"
         android:padding="@dimen/text_padding"
+        app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toTopOf="@id/main_risk_detail_text_invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/main_clock_text"
         app:layout_constraintVertical_bias="0.2"
         app:layout_constraintVertical_chainStyle="packed"
-        app:layout_constraintWidth_default="wrap"
         tools:background="@drawable/background_text_risk_medium"
         tools:text="很長長很長長很長長長很長很長長很長很長很長很長"
         tools:textColor="@color/text_risk_low" />
@@ -76,6 +77,7 @@
     <TextView
         android:id="@+id/main_risk_detail_text_invisible"
         style="@style/Text"
+        android:layout_width="wrap_content"
         android:layout_marginHorizontal="@dimen/main_margin_horizontal_large"
         android:layout_marginVertical="@dimen/main_margin_vertical"
         android:paddingHorizontal="4dp"
@@ -83,27 +85,28 @@
         android:scrollbars="vertical"
         android:visibility="invisible"
         app:layout_constrainedHeight="true"
+        app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toTopOf="@id/main_hcert_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/main_risk_brief_text"
-        app:layout_constraintWidth_default="wrap"
         tools:text="\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
         tools:textColor="@color/text_risk_high" />
 
     <TextView
         android:id="@+id/main_risk_detail_text"
         style="@style/Text"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginHorizontal="@dimen/main_margin_horizontal_large"
         android:paddingHorizontal="4dp"
         android:scrollbarStyle="outsideOverlay"
         android:scrollbars="vertical"
+        app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="@id/main_risk_detail_text_invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/main_risk_detail_text_invisible"
-        app:layout_constraintWidth_default="wrap"
         tools:text="risk_brief_risky\n1\n2\n3\n4\n5\n\6\n7\n8\n9\n10\n11\n12\n13\n14\n15\n16\n17\n18\n19"
         tools:textColor="@color/text_risk_high" />
 
@@ -139,15 +142,15 @@
     <Button
         android:id="@+id/main_start_button"
         style="@style/Button.Major"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_marginHorizontal="@dimen/main_margin_horizontal"
         android:text="@string/main_button_start"
+        app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/main_white_background_view"
-        app:layout_constraintVertical_bias="0.25"
-        app:layout_constraintWidth_default="wrap" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <TextView
         android:id="@+id/main_info_text"
@@ -284,13 +287,14 @@
     <TextView
         android:id="@+id/feature_daily_summary_text"
         style="@style/Text.Feature"
+        android:layout_width="wrap_content"
         android:layout_marginTop="@dimen/feature_margin_around_arrow"
         android:text="@string/feature_daily_summary"
+        app:layout_constrainedWidth="true"
         app:layout_constraintEnd_toEndOf="@id/main_risk_brief_text"
         app:layout_constraintStart_toStartOf="@id/main_risk_brief_text"
-        app:layout_constraintTop_toBottomOf="@id/feature_daily_summary_arrow_image"
-        app:layout_constraintWidth_default="wrap" />
-    
+        app:layout_constraintTop_toBottomOf="@id/feature_daily_summary_arrow_image" />
+
     <androidx.constraintlayout.widget.Group
         android:id="@+id/feature_hcert_group"
         android:layout_width="wrap_content"
@@ -401,13 +405,14 @@
     <TextView
         android:id="@+id/feature_hints_text"
         style="@style/Text.Feature"
+        android:layout_width="wrap_content"
         android:layout_marginHorizontal="@dimen/main_margin_horizontal"
         android:layout_marginTop="@dimen/feature_margin_around_arrow"
         android:text="@string/feature_hints"
+        app:layout_constrainedWidth="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/feature_hints_arrow_image"
-        app:layout_constraintWidth_default="wrap" />
+        app:layout_constraintTop_toBottomOf="@id/feature_hints_arrow_image" />
 
     <View
         android:id="@+id/feature_touch_view"
