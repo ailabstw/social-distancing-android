@@ -1,12 +1,11 @@
 package tw.gov.cdc.exposurenotifications.hcert.ui
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import kotlinx.android.synthetic.main.activity_hcert.*
+import androidx.activity.viewModels
+import kotlinx.android.synthetic.main.activity_control.*
 import tw.gov.cdc.exposurenotifications.R
-import tw.gov.cdc.exposurenotifications.activity.BarcodeScanningActivity
 import tw.gov.cdc.exposurenotifications.activity.BaseActivity
 import tw.gov.cdc.exposurenotifications.activity.WebViewActivity
 
@@ -17,8 +16,7 @@ class HcertActivity : BaseActivity() {
         private const val TAG = "HcertActivity"
     }
 
-    private val emptyViewGroup by lazy { hcert_empty_view_group }
-    private val buttonAdd by lazy { hcert_add_button }
+    private val viewModel by viewModels<HcertViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,10 +28,8 @@ class HcertActivity : BaseActivity() {
             setDisplayShowHomeEnabled(true)
         }
 
-        buttonAdd.setOnClickListener {
-            Intent(this, BarcodeScanningActivity::class.java).apply {
-                putExtra(BarcodeScanningActivity.EXTRA_HCERT_MODE, true)
-            }.let(::startActivity)
+        if (savedInstanceState == null) {
+            showMainFragment()
         }
     }
 
@@ -65,5 +61,11 @@ class HcertActivity : BaseActivity() {
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
         return true
+    }
+
+    private fun showMainFragment() {
+        supportFragmentManager.beginTransaction()
+            .add(R.id.fragment_container, HcertMainFragment())
+            .commit()
     }
 }
