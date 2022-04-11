@@ -16,6 +16,7 @@ import com.google.mlkit.vision.barcode.BarcodeScanning
 import com.google.mlkit.vision.common.InputImage
 import kotlinx.android.synthetic.main.activity_barcode_scanning.*
 import kotlinx.android.synthetic.main.activity_control.toolbar
+import tw.gov.cdc.exposurenotifications.BaseApplication
 import tw.gov.cdc.exposurenotifications.R
 import tw.gov.cdc.exposurenotifications.common.Log
 import tw.gov.cdc.exposurenotifications.common.PermissionUtils
@@ -175,9 +176,9 @@ class BarcodeScanningActivity : BaseActivity() {
                     barcodes.forEach {
                         it.rawValue?.let { raw ->
                             try {
-                                val cert = Chain.decode(raw)
+                                val hcert = Chain.decode(raw)
                                 hideHintText(true)
-                                if (handleHcert(raw, cert)) return@addOnSuccessListener
+                                if (handleHcert(hcert)) return@addOnSuccessListener
                             } catch (e: VerificationException) {
                                 error = e.error
                             }
@@ -257,10 +258,13 @@ class BarcodeScanningActivity : BaseActivity() {
 
     // Hcert
 
-    private fun handleHcert(raw: String, cert: GreenCertificate): Boolean {
-        imageAnalysis?.clearAnalyzer()
-        finish()
-        return true
+    private fun handleHcert(hcert: GreenCertificate): Boolean {
+        if (BaseApplication.instance.hcertRepository.addHcert(hcert.rawString)) {
+            imageAnalysis?.clearAnalyzer()
+            finish()
+            return true
+        }
+        return false
     }
 
     // Permission

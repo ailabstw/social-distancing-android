@@ -3,7 +3,7 @@ package tw.gov.cdc.exposurenotifications.hcert.decode.data
 //import kotlinx.datetime.LocalDate
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
-//import kotlinx.serialization.Transient
+import kotlinx.serialization.Transient
 
 @Serializable
 data class GreenCertificate(
@@ -26,6 +26,8 @@ data class GreenCertificate(
     val tests: Array<Test?>? = null,
 ) {
 
+    @Transient
+    lateinit var rawString: String
 //    /**
 //     * For [dateOfBirthString] ("dob"), month and day are optional in eu-dcc-schema 1.2.1,
 //     * so we may not be able to get a valid [LocalDate] from it.

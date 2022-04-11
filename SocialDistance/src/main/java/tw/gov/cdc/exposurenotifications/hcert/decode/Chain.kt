@@ -43,6 +43,6 @@ object Chain {
         cborObj = cwtService.decode(cwt)
         rawEuGcc = cborObj.toJsonString()
 
-        return json.decodeFromString(rawEuGcc)
+        return json.decodeFromString<GreenCertificate>(rawEuGcc).apply { rawString = input }
     }
 }
