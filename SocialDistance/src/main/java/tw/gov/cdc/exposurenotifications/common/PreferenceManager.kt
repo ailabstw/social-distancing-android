@@ -30,6 +30,8 @@ object PreferenceManager {
     private const val PREF_KEY_GET_CODE_COUNT = "PREF_KEY_GET_CODE_COUNT"
     private const val PREF_KEY_LAST_GET_CODE_TIME = "PREF_KEY_LAST_GET_CODE_TIME"
 
+    private const val PREF_KEY_HCERT = "PREF_KEY_HCERT"
+
     private val sharedPreferences =
         BaseApplication.instance.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
 
@@ -216,6 +218,16 @@ object PreferenceManager {
         set(value) {
             sharedPreferences.edit {
                 putLong(PREF_KEY_LAST_GET_CODE_TIME, value)
+            }
+        }
+
+    var hcerts: Set<String>
+        get() {
+            return sharedPreferences.getStringSet(PREF_KEY_HCERT, setOf())!!.toSet()
+        }
+        set(value) {
+            sharedPreferences.edit {
+                putStringSet(PREF_KEY_HCERT, value)
             }
         }
 }
