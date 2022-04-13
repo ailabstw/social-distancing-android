@@ -29,6 +29,8 @@
     <dimen name="button_radius">8dp</dimen>
     <dimen name="button_width">220dp</dimen>
     <dimen name="button_height">42dp</dimen>
+    <dimen name="button_size_round">40dp</dimen>
+    <dimen name="button_icon_size_round">28dp</dimen>
     <dimen name="button_padding_vertical">8dp</dimen>
     <dimen name="button_padding_horizontal">26dp</dimen>
 
@@ -43,6 +45,7 @@
     <dimen name="feature_margin_around_arrow">12dp</dimen>
     <dimen name="feature_margin_between_text">16dp</dimen>
 
+    <dimen name="elevation_default">10dp</dimen>
     <dimen name="elevation_toolbar">4dp</dimen>
 
 </resources>

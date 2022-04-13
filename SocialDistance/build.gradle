@@ -136,7 +136,7 @@ dependencies {
     implementation 'com.jakewharton.threetenabp:threetenabp:1.2.4'
 
     // UI components
-    implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
+    implementation 'com.tbuonomo:dotsindicator:4.2'
     implementation 'com.airbnb.android:lottie:5.0.3'
 
     // networking

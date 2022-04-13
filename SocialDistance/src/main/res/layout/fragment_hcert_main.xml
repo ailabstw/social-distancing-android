@@ -2,14 +2,78 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/hcert_main_view_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="hcert_view_pager,hcert_hint_text,hcert_dotsIndicator,hcert_list_button,hcert_add_more_button" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/hcert_empty_view_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="hcert_empty_image,hcert_description_text,hcert_add_button" />
+        app:constraint_referenced_ids="hcert_empty_image,hcert_description_text,hcert_add_button"
+        tools:visibility="gone" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/hcert_view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/hcert_hint_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/hcert_hint_text"
+        style="@style/Text.AutoSize"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/main_margin_horizontal"
+        android:gravity="center"
+        android:lines="1"
+        android:text="@string/hcert_hint"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toTopOf="@id/hcert_dotsIndicator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+        android:id="@+id/hcert_dotsIndicator"
+        style="@style/DotsIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/main_margin_horizontal"
+        android:layout_marginRight="@dimen/main_margin_horizontal"
+        android:layout_marginBottom="@dimen/main_margin_horizontal_large"
+        app:layout_constraintBottom_toTopOf="@id/hcert_bottom_barrier"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/hcert_bottom_barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="hcert_list_button,hcert_add_more_button" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/hcert_list_button"
+        style="@style/Button.Round.Icon"
+        app:icon="@drawable/icon_list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/hcert_add_more_button"
+        style="@style/Button.Round.Icon"
+        app:icon="@drawable/icon_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/hcert_guideline"
