@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/hcert_detail_view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Space
+        android:id="@+id/hcert_detail_top_space"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="@dimen/main_margin_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Space
+        android:id="@+id/hcert_detail_qrcode_space"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginVertical="@dimen/main_margin_vertical"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hcert_detail_top_space"
+        app:layout_constraintWidth_percent="0.7" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/hcert_detail_prev_button"
+        style="@style/Button.Round.Icon"
+        android:layout_margin="0dp"
+        android:rotation="180"
+        app:icon="@drawable/icon_arrow_right"
+        app:layout_constraintBottom_toBottomOf="@id/hcert_detail_qrcode_space"
+        app:layout_constraintEnd_toStartOf="@id/hcert_detail_qrcode_space"
+        app:layout_constraintHorizontal_bias="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/hcert_detail_qrcode_space" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/hcert_detail_next_button"
+        style="@style/Button.Round.Icon"
+        android:layout_margin="0dp"
+        app:icon="@drawable/icon_arrow_right"
+        app:layout_constraintBottom_toBottomOf="@id/hcert_detail_qrcode_space"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toEndOf="@id/hcert_detail_qrcode_space"
+        app:layout_constraintTop_toTopOf="@id/hcert_detail_qrcode_space" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -47,6 +47,10 @@
         <item name="android:background">@drawable/background_button_major</item>
     </style>
 
+    <style name="Button.Major.Red">
+        <item name="android:background">@drawable/background_button_major_red</item>
+    </style>
+
     <style name="Button.Secondary">
         <item name="android:background">@drawable/background_button_secondary</item>
     </style>
