@@ -30,4 +30,8 @@ class HcertViewModel : ViewModel() {
     val isEmpty: LiveData<Boolean> = Transformations.map(allItems) {
         it.isEmpty()
     }
+
+    fun deleteAt(position: Int) {
+        _repository.removeAt(position)
+    }
 }

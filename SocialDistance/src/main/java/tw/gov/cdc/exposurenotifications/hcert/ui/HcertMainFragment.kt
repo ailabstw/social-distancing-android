@@ -63,5 +63,9 @@ class HcertMainFragment : Fragment(), HcertMainActionHandler {
     }
 
     override fun onHcertClick(hcert: GreenCertificate) {
+        parentFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, HcertDetailFragment())
+            .addToBackStack(HcertDetailFragment::class.java.canonicalName)
+            .commit()
     }
 }
