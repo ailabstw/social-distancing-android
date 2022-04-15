@@ -23,6 +23,7 @@ class HcertMainFragment : Fragment(), HcertMainActionHandler {
     private val mainViewGroup by lazy { hcert_main_view_group }
     private val viewPager by lazy { hcert_view_pager }
     private val dotsIndicator by lazy { hcert_dotsIndicator }
+    private val buttonList by lazy { hcert_list_button }
     private val buttonAddMore by lazy { hcert_add_more_button }
 
     private val emptyViewGroup by lazy { hcert_empty_view_group }
@@ -53,6 +54,13 @@ class HcertMainFragment : Fragment(), HcertMainActionHandler {
             if (viewPager.currentItem != position) viewPager.doOnAttach {
                 viewPager.setCurrentItem(position, false)
             }
+        }
+
+        buttonList.setOnClickListener {
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, HcertListFragment())
+                .addToBackStack(HcertListFragment::class.java.canonicalName)
+                .commit()
         }
 
         buttonAddMore.setOnClickListener {
