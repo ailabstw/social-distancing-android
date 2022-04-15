@@ -1,6 +1,7 @@
 package tw.gov.cdc.exposurenotifications.hcert.ui
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import tw.gov.cdc.exposurenotifications.BaseApplication
@@ -27,11 +28,20 @@ class HcertViewModel : ViewModel() {
         }
     }
 
+    private val _currentPosition = MutableLiveData(0)
+    val currentPosition: LiveData<Int> = _currentPosition
+
     val isEmpty: LiveData<Boolean> = Transformations.map(allItems) {
         it.isEmpty()
     }
 
     fun deleteAt(position: Int) {
         _repository.removeAt(position)
+    }
+
+    fun updatePosition(newPosition: Int) {
+        if (_currentPosition.value != newPosition) {
+            _currentPosition.value = newPosition
+        }
     }
 }

@@ -5,8 +5,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.doOnAttach
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.viewpager2.widget.ViewPager2
 import kotlinx.android.synthetic.main.fragment_hcert_main.*
 import tw.gov.cdc.exposurenotifications.R
 import tw.gov.cdc.exposurenotifications.activity.BarcodeScanningActivity
@@ -37,10 +39,19 @@ class HcertMainFragment : Fragment(), HcertMainActionHandler {
         viewPager.adapter = adapter
         dotsIndicator.setViewPager2(viewPager)
 
+        viewPager.unregisterOnPageChangeCallback(onPageChangeCallback)
+        viewPager.registerOnPageChangeCallback(onPageChangeCallback)
+
         viewModel.allItems.observe(viewLifecycleOwner) {
             adapter.submitList(it)
             viewPager.post {
                 dotsIndicator.setViewPager2(viewPager)
+            }
+        }
+
+        viewModel.currentPosition.observe(viewLifecycleOwner) { position ->
+            if (viewPager.currentItem != position) viewPager.doOnAttach {
+                viewPager.setCurrentItem(position, false)
             }
         }
 
@@ -59,6 +70,19 @@ class HcertMainFragment : Fragment(), HcertMainActionHandler {
         viewModel.isEmpty.observe(viewLifecycleOwner) { isEmpty ->
             emptyViewGroup.visibility = if (isEmpty) View.VISIBLE else View.GONE
             mainViewGroup.visibility = if (isEmpty) View.GONE else View.VISIBLE
+        }
+
+        viewPager.doOnAttach {
+            viewPager.visibility = View.VISIBLE
+        }
+    }
+
+    private val onPageChangeCallback = object : ViewPager2.OnPageChangeCallback() {
+        override fun onPageScrollStateChanged(state: Int) {
+            super.onPageScrollStateChanged(state)
+            if (state == ViewPager2.SCROLL_STATE_IDLE) {
+                viewModel.updatePosition(viewPager.currentItem)
+            }
         }
     }
 
