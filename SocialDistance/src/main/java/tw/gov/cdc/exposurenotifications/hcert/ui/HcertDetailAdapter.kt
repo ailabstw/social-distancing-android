@@ -16,7 +16,8 @@ import tw.gov.cdc.exposurenotifications.R
 import tw.gov.cdc.exposurenotifications.hcert.decode.data.GreenCertificate
 
 class HcertDetailAdapter(
-    private val actionHandler: HcertDetailActionHandler
+    private val actionHandler: HcertDetailActionHandler,
+    private val onCurrentListChanged: (itemCount: Int) -> Unit
 ) : ListAdapter<GreenCertificate, HcertDetailViewHolder>(HcertDetailDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HcertDetailViewHolder {
@@ -25,6 +26,11 @@ class HcertDetailAdapter(
 
     override fun onBindViewHolder(holder: HcertDetailViewHolder, position: Int) {
         holder.bind(getItem(position), position)
+    }
+
+    override fun onCurrentListChanged(previousList: MutableList<GreenCertificate>, currentList: MutableList<GreenCertificate>) {
+        super.onCurrentListChanged(previousList, currentList)
+        onCurrentListChanged(currentList.size)
     }
 }
 

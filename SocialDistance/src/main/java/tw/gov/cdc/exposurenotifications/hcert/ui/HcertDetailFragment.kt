@@ -19,6 +19,8 @@ class HcertDetailFragment : Fragment(), HcertDetailActionHandler {
     private val viewModel by activityViewModels<HcertViewModel>()
 
     private val viewPager by lazy { hcert_detail_view_pager }
+    private val prevButton by lazy { hcert_detail_prev_button }
+    private val nextButton by lazy { hcert_detail_next_button }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return selfView ?: inflater.inflate(R.layout.fragment_hcert_detail, container, false).also { selfView = it }
@@ -27,7 +29,17 @@ class HcertDetailFragment : Fragment(), HcertDetailActionHandler {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = HcertDetailAdapter(this)
+        fun updateButtonUI(itemCount: Int) {
+            if (itemCount == 0) {
+                requireActivity().onBackPressed()
+            }
+            viewPager.post {
+                prevButton.isEnabled = viewPager.currentItem > 0
+                nextButton.isEnabled = viewPager.currentItem < itemCount - 1
+            }
+        }
+
+        val adapter = HcertDetailAdapter(this) { updateButtonUI(it) }
         viewPager.adapter = adapter
 
         viewPager.unregisterOnPageChangeCallback(onPageChangeCallback)
@@ -41,6 +53,15 @@ class HcertDetailFragment : Fragment(), HcertDetailActionHandler {
             if (viewPager.currentItem != position) viewPager.doOnAttach {
                 viewPager.setCurrentItem(position, false)
             }
+            updateButtonUI(adapter.itemCount)
+        }
+
+        prevButton.setOnClickListener {
+            viewPager.currentItem = viewPager.currentItem - 1
+        }
+
+        nextButton.setOnClickListener {
+            viewPager.currentItem = viewPager.currentItem + 1
         }
 
         viewPager.doOnAttach {
