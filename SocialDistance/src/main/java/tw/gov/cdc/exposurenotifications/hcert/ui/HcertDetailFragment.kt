@@ -1,5 +1,6 @@
 package tw.gov.cdc.exposurenotifications.hcert.ui
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -89,6 +90,15 @@ class HcertDetailFragment : Fragment(), HcertDetailActionHandler {
     }
 
     override fun onHcertDelete(hcert: HcertModel, position: Int) {
-        viewModel.deleteAt(position)
+        context?.let {
+            AlertDialog.Builder(it)
+                .setTitle(R.string.hcert_delete_confirm_title)
+                .setMessage(it.getString(R.string.hcert_delete_confirm_message, hcert.name))
+                .setPositiveButton(R.string.confirm) { _, _ -> viewModel.deleteAt(position) }
+                .setNegativeButton(R.string.cancel) { _, _ -> }
+                .setCancelable(false)
+                .create()
+                .show()
+        }
     }
 }
