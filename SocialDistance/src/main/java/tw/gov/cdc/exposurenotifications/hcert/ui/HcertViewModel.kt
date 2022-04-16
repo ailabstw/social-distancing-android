@@ -44,4 +44,39 @@ class HcertViewModel : ViewModel() {
             _currentPosition.value = newPosition
         }
     }
+
+    private val regex = """[a-zA-Z]""".toRegex()
+
+    private fun createHcertModel(hcert: GreenCertificate): HcertModel {
+        val name: String
+        val nameTransliterated: String
+
+        hcert.subject.run {
+            if (familyName?.contains(regex) == true || givenName?.contains(regex) == true) {
+                name = "$givenName $familyName"
+                nameTransliterated = "${givenNameTransliterated?.replace("<", "-")} ${familyNameTransliterated.replace("<", "-")}"
+            } else {
+                name = "$familyName$givenName"
+                nameTransliterated = "${familyNameTransliterated.replace("<", "-")}, ${givenNameTransliterated?.replace("<", "-")}"
+            }
+        }
+
+        return hcert.vaccinations!!.firstNotNullOf { it }.run {
+            HcertModel(
+                name = name,
+                nameTransliterated = nameTransliterated,
+                dateOfBirth = hcert.dateOfBirthString.replace('-', '.'),
+                targetDisease = target.valueSetEntry.display,
+                vaccine = vaccine.valueSetEntry.display,
+                medicinalProduct = medicinalProduct.valueSetEntry.display,
+                authorizationHolder = authorizationHolder.valueSetEntry.display,
+                doseState = "${doseNumber}/${doseTotalNumber}",
+                dateOfVaccination = dateString.replace('-', '.'),
+                country = country.valueSetEntry.display,
+                certificateIssuer = certificateIssuer,
+                certificateIdentifier = certificateIdentifier,
+                rawString = hcert.rawString
+            )
+        }
+    }
 }
