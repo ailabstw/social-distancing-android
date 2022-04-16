@@ -28,6 +28,13 @@ class HcertViewModel : ViewModel() {
         }
     }
 
+    private var itemCount = allItems.value?.size ?: 0
+    val autoScroll: LiveData<Boolean> = Transformations.map(allItems) {
+        val oldCount = itemCount
+        itemCount = it.size
+        oldCount != 0 && oldCount < itemCount
+    }
+
     private val _currentPosition = MutableLiveData(0)
     val currentPosition: LiveData<Int> = _currentPosition
 

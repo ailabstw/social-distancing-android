@@ -12,7 +12,8 @@ import kotlinx.android.synthetic.main.item_hcert.view.*
 import tw.gov.cdc.exposurenotifications.R
 
 class HcertMainAdapter(
-    private val actionHandler: HcertMainActionHandler
+    private val actionHandler: HcertMainActionHandler,
+    private val onCurrentListChanged: (itemCount: Int) -> Unit
 ) : ListAdapter<HcertModel, HcertViewHolder>(HcertDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HcertViewHolder {
@@ -21,6 +22,11 @@ class HcertMainAdapter(
 
     override fun onBindViewHolder(holder: HcertViewHolder, position: Int) {
         holder.bind(getItem(position))
+    }
+
+    override fun onCurrentListChanged(previousList: MutableList<HcertModel>, currentList: MutableList<HcertModel>) {
+        super.onCurrentListChanged(previousList, currentList)
+        onCurrentListChanged(currentList.size)
     }
 }
 

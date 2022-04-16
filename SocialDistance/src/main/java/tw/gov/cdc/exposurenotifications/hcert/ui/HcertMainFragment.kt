@@ -35,7 +35,15 @@ class HcertMainFragment : Fragment(), HcertMainActionHandler {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val adapter = HcertMainAdapter(this)
+        var autoScroll = false
+        val adapter = HcertMainAdapter(this) { itemCount ->
+            viewPager.post {
+                dotsIndicator.setViewPager2(viewPager)
+                if (autoScroll) {
+                    viewPager.currentItem = itemCount - 1
+                }
+            }
+        }
         viewPager.adapter = adapter
         dotsIndicator.setViewPager2(viewPager)
 
@@ -44,9 +52,10 @@ class HcertMainFragment : Fragment(), HcertMainActionHandler {
 
         viewModel.allItems.observe(viewLifecycleOwner) {
             adapter.submitList(it)
-            viewPager.post {
-                dotsIndicator.setViewPager2(viewPager)
-            }
+        }
+
+        viewModel.autoScroll.observe(viewLifecycleOwner) {
+            autoScroll = it
         }
 
         viewModel.currentPosition.observe(viewLifecycleOwner) { position ->
