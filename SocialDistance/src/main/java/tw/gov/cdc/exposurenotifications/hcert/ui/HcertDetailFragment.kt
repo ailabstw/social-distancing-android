@@ -10,7 +10,6 @@ import androidx.fragment.app.activityViewModels
 import androidx.viewpager2.widget.ViewPager2
 import kotlinx.android.synthetic.main.fragment_hcert_detail.*
 import tw.gov.cdc.exposurenotifications.R
-import tw.gov.cdc.exposurenotifications.hcert.decode.data.GreenCertificate
 
 class HcertDetailFragment : Fragment(), HcertDetailActionHandler {
 
@@ -78,7 +77,7 @@ class HcertDetailFragment : Fragment(), HcertDetailActionHandler {
         }
     }
 
-    override fun onHcertDelete(hcert: GreenCertificate, position: Int) {
+    override fun onHcertDelete(hcert: HcertModel, position: Int) {
         viewModel.deleteAt(position)
     }
 }

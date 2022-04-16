@@ -13,12 +13,11 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_hcert_detail.view.*
 import tw.gov.cdc.exposurenotifications.R
-import tw.gov.cdc.exposurenotifications.hcert.decode.data.GreenCertificate
 
 class HcertDetailAdapter(
     private val actionHandler: HcertDetailActionHandler,
     private val onCurrentListChanged: (itemCount: Int) -> Unit
-) : ListAdapter<GreenCertificate, HcertDetailViewHolder>(HcertDetailDiffCallback()) {
+) : ListAdapter<HcertModel, HcertDetailViewHolder>(HcertDetailDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HcertDetailViewHolder {
         return HcertDetailViewHolder.createViewHolder(parent, viewType, actionHandler)
@@ -28,7 +27,7 @@ class HcertDetailAdapter(
         holder.bind(getItem(position), position)
     }
 
-    override fun onCurrentListChanged(previousList: MutableList<GreenCertificate>, currentList: MutableList<GreenCertificate>) {
+    override fun onCurrentListChanged(previousList: MutableList<HcertModel>, currentList: MutableList<HcertModel>) {
         super.onCurrentListChanged(previousList, currentList)
         onCurrentListChanged(currentList.size)
     }
@@ -36,7 +35,7 @@ class HcertDetailAdapter(
 
 sealed class HcertDetailViewHolder(v: View) : RecyclerView.ViewHolder(v) {
 
-    abstract fun bind(item: GreenCertificate, position: Int)
+    abstract fun bind(item: HcertModel, position: Int)
 
     class HcertDetailHolder(v: View, private val actionHandler: HcertDetailActionHandler) : HcertDetailViewHolder(v) {
 
@@ -49,7 +48,7 @@ sealed class HcertDetailViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         private val detailText by lazy { v.item_hcert_detail_text }
         private val deleteButton by lazy { v.item_hcert_detail_delete_button }
 
-        override fun bind(item: GreenCertificate, position: Int) {
+        override fun bind(item: HcertModel, position: Int) {
             scrollView.scrollTo(0, 0)
 
             qrCodeImage.post {
@@ -67,65 +66,46 @@ sealed class HcertDetailViewHolder(v: View) : RecyclerView.ViewHolder(v) {
                 }
             }
 
-            item.subject.run {
-                if (familyName?.contains(regex) == true || givenName?.contains(regex) == true) {
-                    name.text = "$givenName $familyName"
-                    nameTransliterated.text = "${givenNameTransliterated?.replace("<", "-")} ${familyNameTransliterated?.replace("<", "-")}"
-                } else {
-                    name.text = "$familyName$givenName"
-                    nameTransliterated.text = "${familyNameTransliterated?.replace("<", "-")}, ${givenNameTransliterated?.replace("<", "-")}"
-                }
-            }
+            name.text = item.name
+            nameTransliterated.text = item.nameTransliterated
+            birthday.text = item.dateOfBirth
 
-            birthday.text = item.dateOfBirthString.replace('-', '.')
+            lastDoseDate.text = lastDoseDate.context.getString(
+                R.string.hcert_last_dose_date, item.dateOfVaccination
+            )
 
-            item.vaccinations?.firstNotNullOf { it }?.let { vaccination ->
-                val dateString = vaccination.dateString.replace('-', '.')
+            detailText.text = buildSpannedString {
+                bold { append(detailText.context.getString(R.string.hcert_detail_target)) }
+                append("${item.targetDisease}\n")
 
-                lastDoseDate.text = lastDoseDate.context.getString(
-                    R.string.hcert_last_dose_date, dateString
-                )
+                bold { append(detailText.context.getString(R.string.hcert_detail_vaccine)) }
+                append("${item.vaccine}\n")
 
-                detailText.text = buildSpannedString {
-                    bold { append(detailText.context.getString(R.string.hcert_detail_target)) }
-                    append("${vaccination.target.valueSetEntry.display}\n")
+                bold { append(detailText.context.getString(R.string.hcert_detail_medicinal_product)) }
+                append("${item.medicinalProduct}\n")
 
-                    bold { append(detailText.context.getString(R.string.hcert_detail_vaccine)) }
-                    append("${vaccination.vaccine.valueSetEntry.display}\n")
+                bold { append(detailText.context.getString(R.string.hcert_detail_authorization_holder)) }
+                append("${item.authorizationHolder}\n")
 
-                    bold { append(detailText.context.getString(R.string.hcert_detail_medicinal_product)) }
-                    append("${vaccination.medicinalProduct.valueSetEntry.display}\n")
+                bold { append(detailText.context.getString(R.string.hcert_detail_dose)) }
+                append("${item.doseState}\n")
 
-                    bold { append(detailText.context.getString(R.string.hcert_detail_authorization_holder)) }
-                    append("${vaccination.authorizationHolder.valueSetEntry.display}\n")
+                bold { append(detailText.context.getString(R.string.hcert_detail_date)) }
+                append("${item.dateOfVaccination}\n")
 
-                    bold { append(detailText.context.getString(R.string.hcert_detail_dose)) }
-                    append("${vaccination.doseNumber}/${vaccination.doseTotalNumber}\n")
+                bold { append(detailText.context.getString(R.string.hcert_detail_country)) }
+                append("${item.country}\n")
 
-                    bold { append(detailText.context.getString(R.string.hcert_detail_date)) }
-                    append("${dateString}\n")
+                bold { append(detailText.context.getString(R.string.hcert_detail_certificate_issuer)) }
+                append("${item.certificateIssuer}\n")
 
-                    bold { append(detailText.context.getString(R.string.hcert_detail_country)) }
-                    append("${vaccination.country.valueSetEntry.display}\n")
-
-                    bold { append(detailText.context.getString(R.string.hcert_detail_certificate_issuer)) }
-                    append("${vaccination.certificateIssuer}\n")
-
-                    bold { append(detailText.context.getString(R.string.hcert_detail_certificate_identifier)) }
-                    append(vaccination.certificateIdentifier)
-                }
-
-            } ?: run {
-                lastDoseDate.text = "-"
+                bold { append(detailText.context.getString(R.string.hcert_detail_certificate_identifier)) }
+                append(item.certificateIdentifier)
             }
 
             deleteButton.setOnClickListener {
                 actionHandler.onHcertDelete(item, adapterPosition)
             }
-        }
-
-        companion object {
-            private val regex = """[a-zA-Z]""".toRegex()
         }
     }
 
@@ -140,7 +120,7 @@ sealed class HcertDetailViewHolder(v: View) : RecyclerView.ViewHolder(v) {
     }
 }
 
-class HcertDetailDiffCallback : DiffUtil.ItemCallback<GreenCertificate>() {
-    override fun areItemsTheSame(oldItem: GreenCertificate, newItem: GreenCertificate): Boolean = oldItem == newItem
-    override fun areContentsTheSame(oldItem: GreenCertificate, newItem: GreenCertificate): Boolean = oldItem == newItem
+class HcertDetailDiffCallback : DiffUtil.ItemCallback<HcertModel>() {
+    override fun areItemsTheSame(oldItem: HcertModel, newItem: HcertModel): Boolean = oldItem == newItem
+    override fun areContentsTheSame(oldItem: HcertModel, newItem: HcertModel): Boolean = oldItem == newItem
 }

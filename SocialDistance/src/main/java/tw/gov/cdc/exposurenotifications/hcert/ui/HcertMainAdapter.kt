@@ -10,11 +10,10 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_hcert.view.*
 import tw.gov.cdc.exposurenotifications.R
-import tw.gov.cdc.exposurenotifications.hcert.decode.data.GreenCertificate
 
 class HcertMainAdapter(
     private val actionHandler: HcertMainActionHandler
-) : ListAdapter<GreenCertificate, HcertViewHolder>(HcertDiffCallback()) {
+) : ListAdapter<HcertModel, HcertViewHolder>(HcertDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HcertViewHolder {
         return HcertViewHolder.createViewHolder(parent, viewType, actionHandler)
@@ -27,7 +26,7 @@ class HcertMainAdapter(
 
 sealed class HcertViewHolder(v: View) : RecyclerView.ViewHolder(v) {
 
-    abstract fun bind(item: GreenCertificate)
+    abstract fun bind(item: HcertModel)
 
     class HcertCardHolder(v: View, private val actionHandler: HcertMainActionHandler) : HcertViewHolder(v) {
 
@@ -38,7 +37,7 @@ sealed class HcertViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         private val birthday by lazy { v.item_hcert_birthday }
         private val lastDoseDate by lazy { v.item_last_dose_date }
 
-        override fun bind(item: GreenCertificate) {
+        override fun bind(item: HcertModel) {
             qrCodeImage.post {
                 val qrgEncoder = QRGEncoder(
                     item.rawString, null,
@@ -53,24 +52,15 @@ sealed class HcertViewHolder(v: View) : RecyclerView.ViewHolder(v) {
                 }
             }
 
-            item.subject.run {
-                if (familyName?.contains(regex) == true || givenName?.contains(regex) == true) {
-                    name.text = "$givenName $familyName"
-                    nameTransliterated.text = "${givenNameTransliterated?.replace("<", "-")} ${familyNameTransliterated?.replace("<", "-")}"
-                } else {
-                    name.text = "$familyName$givenName"
-                    nameTransliterated.text = "${familyNameTransliterated?.replace("<", "-")}, ${givenNameTransliterated?.replace("<", "-")}"
-                }
-            }
-
-            birthday.text = item.dateOfBirthString.replace('-','.')
-
-            lastDoseDate.text = lastDoseDate.context.getString(R.string.hcert_last_dose_date,
-                item.vaccinations?.let { it.firstNotNullOf { it }.dateString.replace('-','.') } ?: "-"
+            name.text = item.name
+            nameTransliterated.text = item.nameTransliterated
+            birthday.text = item.dateOfBirth
+            lastDoseDate.text = lastDoseDate.context.getString(
+                R.string.hcert_last_dose_date, item.dateOfVaccination
             )
 
             cardView.setOnClickListener {
-                actionHandler.onHcertClick(item)
+                actionHandler.onHcertClick()
             }
         }
 
@@ -90,7 +80,7 @@ sealed class HcertViewHolder(v: View) : RecyclerView.ViewHolder(v) {
     }
 }
 
-class HcertDiffCallback : DiffUtil.ItemCallback<GreenCertificate>() {
-    override fun areItemsTheSame(oldItem: GreenCertificate, newItem: GreenCertificate): Boolean = oldItem == newItem
-    override fun areContentsTheSame(oldItem: GreenCertificate, newItem: GreenCertificate): Boolean = oldItem == newItem
+class HcertDiffCallback : DiffUtil.ItemCallback<HcertModel>() {
+    override fun areItemsTheSame(oldItem: HcertModel, newItem: HcertModel): Boolean = oldItem == newItem
+    override fun areContentsTheSame(oldItem: HcertModel, newItem: HcertModel): Boolean = oldItem == newItem
 }

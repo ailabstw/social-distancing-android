@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import kotlinx.android.synthetic.main.fragment_hcert_list.*
 import tw.gov.cdc.exposurenotifications.R
-import tw.gov.cdc.exposurenotifications.hcert.decode.data.GreenCertificate
 
 class HcertListFragment : Fragment(), HcertListActionHandler {
 
@@ -36,7 +35,7 @@ class HcertListFragment : Fragment(), HcertListActionHandler {
         }
     }
 
-    override fun onHcertClick(hcert: GreenCertificate, position: Int) {
+    override fun onHcertClick(position: Int) {
         viewModel.updatePosition(position)
         parentFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, HcertDetailFragment())

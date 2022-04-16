@@ -17,10 +17,10 @@ class HcertViewModel : ViewModel() {
 
     private val _repository = BaseApplication.instance.hcertRepository
 
-    val allItems: LiveData<List<GreenCertificate>> = Transformations.map(_repository.hcerts) {
+    val allItems: LiveData<List<HcertModel>> = Transformations.map(_repository.hcerts) {
         it.fold(mutableListOf()) { acc, hcert ->
             try {
-                acc.add(Chain.decode(hcert))
+                acc.add(createHcertModel(Chain.decode(hcert)))
             } catch (e: VerificationException) {
                 // TODO: Show hint for expired hcerts
             }

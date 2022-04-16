@@ -12,7 +12,6 @@ import androidx.viewpager2.widget.ViewPager2
 import kotlinx.android.synthetic.main.fragment_hcert_main.*
 import tw.gov.cdc.exposurenotifications.R
 import tw.gov.cdc.exposurenotifications.activity.BarcodeScanningActivity
-import tw.gov.cdc.exposurenotifications.hcert.decode.data.GreenCertificate
 
 class HcertMainFragment : Fragment(), HcertMainActionHandler {
 
@@ -94,7 +93,7 @@ class HcertMainFragment : Fragment(), HcertMainActionHandler {
         }
     }
 
-    override fun onHcertClick(hcert: GreenCertificate) {
+    override fun onHcertClick() {
         parentFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, HcertDetailFragment())
             .addToBackStack(HcertDetailFragment::class.java.canonicalName)
