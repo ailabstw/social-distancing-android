@@ -10,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.viewpager2.widget.ViewPager2
 import kotlinx.android.synthetic.main.fragment_hcert_detail.*
 import tw.gov.cdc.exposurenotifications.R
+import tw.gov.cdc.exposurenotifications.common.overrideScreenBrightness
 
 class HcertDetailFragment : Fragment(), HcertDetailActionHandler {
 
@@ -66,6 +67,16 @@ class HcertDetailFragment : Fragment(), HcertDetailActionHandler {
         viewPager.doOnAttach {
             viewPager.visibility = View.VISIBLE
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        requireActivity().window.overrideScreenBrightness(true)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        requireActivity().window.overrideScreenBrightness(false)
     }
 
     private val onPageChangeCallback = object : ViewPager2.OnPageChangeCallback() {
