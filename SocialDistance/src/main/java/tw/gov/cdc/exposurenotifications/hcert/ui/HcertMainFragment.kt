@@ -12,6 +12,7 @@ import androidx.viewpager2.widget.ViewPager2
 import kotlinx.android.synthetic.main.fragment_hcert_main.*
 import tw.gov.cdc.exposurenotifications.R
 import tw.gov.cdc.exposurenotifications.activity.BarcodeScanningActivity
+import tw.gov.cdc.exposurenotifications.common.Utils
 
 class HcertMainFragment : Fragment(), HcertMainActionHandler {
 
@@ -72,9 +73,13 @@ class HcertMainFragment : Fragment(), HcertMainActionHandler {
         }
 
         buttonAddMore.setOnClickListener {
-            Intent(context, BarcodeScanningActivity::class.java).apply {
-                putExtra(BarcodeScanningActivity.EXTRA_HCERT_MODE, true)
-            }.let(::startActivity)
+            if (viewModel.canAdd) {
+                Intent(context, BarcodeScanningActivity::class.java).apply {
+                    putExtra(BarcodeScanningActivity.EXTRA_HCERT_MODE, true)
+                }.let(::startActivity)
+            } else {
+                Utils.showHintDialog(requireContext(), R.string.hcert_limit_reached_message)
+            }
         }
 
         buttonAdd.setOnClickListener {

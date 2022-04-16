@@ -4,12 +4,19 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import kotlinx.coroutines.*
 import tw.gov.cdc.exposurenotifications.common.PreferenceManager
+import tw.gov.cdc.exposurenotifications.hcert.decode.data.GreenCertificate
 
 class HcertRepository {
+
+    companion object {
+        private const val LIMIT = 16
+    }
 
     private var _hcertsCache: MutableList<String>
     private val _hcerts: MutableLiveData<List<String>>
     val hcerts: LiveData<List<String>>
+
+    val canAdd: Boolean get() = _hcertsCache.size < LIMIT
 
     init {
         val certs = PreferenceManager.hcerts.map {
@@ -33,11 +40,13 @@ class HcertRepository {
         _hcerts.value = _hcertsCache
     }
 
-    // TODO: Check duplicate
-    fun addHcert(hcert: String): Boolean {
-        _hcertsCache.apply { add(hcert) }
+    fun addHcert(hcert: GreenCertificate) {
+        if (!canAdd) throw HcertRepositoryException(HcertRepositoryError.LIMIT_REACHED)
+        if (_hcertsCache.contains(hcert.rawString)) throw HcertRepositoryException(HcertRepositoryError.DUPLICATED)
+        hcert.vaccinations?.firstNotNullOf { it } ?: throw HcertRepositoryException(HcertRepositoryError.INVALID_HCERT)
+
+        _hcertsCache.apply { add(hcert.rawString) }
         updateHcerts()
-        return true
     }
 
     fun removeAt(index: Int) {

@@ -21,6 +21,8 @@ import tw.gov.cdc.exposurenotifications.R
 import tw.gov.cdc.exposurenotifications.common.Log
 import tw.gov.cdc.exposurenotifications.common.PermissionUtils
 import tw.gov.cdc.exposurenotifications.common.RequestCode
+import tw.gov.cdc.exposurenotifications.hcert.data.HcertRepositoryError
+import tw.gov.cdc.exposurenotifications.hcert.data.HcertRepositoryException
 import tw.gov.cdc.exposurenotifications.hcert.decode.Chain
 import tw.gov.cdc.exposurenotifications.hcert.decode.Error
 import tw.gov.cdc.exposurenotifications.hcert.decode.VerificationException
@@ -172,21 +174,28 @@ class BarcodeScanningActivity : BaseActivity() {
         BarcodeScanning.getClient(options).process(inputImage)
             .addOnSuccessListener { barcodes ->
                 if (hcertMode) {
-                    var error: Error? = null
+                    var hcertError: Error? = null
+                    var repositoryError: HcertRepositoryError? = null
                     barcodes.forEach {
                         it.rawValue?.let { raw ->
                             try {
                                 val hcert = Chain.decode(raw)
                                 hideHintText(true)
-                                if (handleHcert(hcert)) return@addOnSuccessListener
+                                if (addHcert(hcert)) {
+                                    return@addOnSuccessListener
+                                }
                             } catch (e: VerificationException) {
-                                error = e.error
+                                hcertError = e.error
+                            } catch (e: HcertRepositoryException) {
+                                repositoryError = e.error
                             }
                         }
                     }
-                    when (error) {
-                        Error.CWT_EXPIRED -> showHintText(Hint.HINT_HCERT_EXPIRED)
-                        else -> if (barcodes.isNotEmpty()) showHintText(Hint.HINT_HCERT_INVALID) else hideHintText()
+                    when {
+                        hcertError == Error.CWT_EXPIRED -> showHintText(Hint.HINT_HCERT_EXPIRED)
+                        repositoryError == HcertRepositoryError.DUPLICATED -> showHintText(Hint.HINT_HCERT_DUPLICATED)
+                        barcodes.isNotEmpty() -> showHintText(Hint.HINT_HCERT_INVALID)
+                        else -> hideHintText()
                     }
                     imageProxy.close()
                 } else {
@@ -258,13 +267,11 @@ class BarcodeScanningActivity : BaseActivity() {
 
     // Hcert
 
-    private fun handleHcert(hcert: GreenCertificate): Boolean {
-        if (BaseApplication.instance.hcertRepository.addHcert(hcert.rawString)) {
-            imageAnalysis?.clearAnalyzer()
-            finish()
-            return true
-        }
-        return false
+    private fun addHcert(hcert: GreenCertificate): Boolean {
+        BaseApplication.instance.hcertRepository.addHcert(hcert)
+        imageAnalysis?.clearAnalyzer()
+        finish()
+        return true
     }
 
     // Permission

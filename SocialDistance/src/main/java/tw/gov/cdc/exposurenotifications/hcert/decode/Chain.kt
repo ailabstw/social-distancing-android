@@ -27,10 +27,9 @@ object Chain {
      * - [CoseService]
      * - [CwtService]
      */
-    fun decode(input: String): GreenCertificate {
+    fun decode(input: String, throwWhenExpired: Boolean = true): GreenCertificate {
 
         val rawEuGcc: String?
-        val cborObj: CborObject?
         val cwt: ByteArray?
         val cose: ByteArray?
         val compressed: ByteArray?
@@ -40,9 +39,12 @@ object Chain {
         compressed = base45Service.decode(encoded)
         cose = compressorService.decode(compressed)
         cwt = coseService.decode(cose)
-        cborObj = cwtService.decode(cwt)
+        val (cborObj, expired) = cwtService.decode(cwt, throwWhenExpired)
         rawEuGcc = cborObj.toJsonString()
 
-        return json.decodeFromString<GreenCertificate>(rawEuGcc).apply { rawString = input }
+        return json.decodeFromString<GreenCertificate>(rawEuGcc).apply {
+            rawString = input
+            isExpired = expired
+        }
     }
 }

@@ -16,14 +16,13 @@ class HcertViewModel : ViewModel() {
     }
 
     private val _repository = BaseApplication.instance.hcertRepository
+    val canAdd: Boolean get() = _repository.canAdd
 
     val allItems: LiveData<List<HcertModel>> = Transformations.map(_repository.hcerts) {
         it.fold(mutableListOf()) { acc, hcert ->
             try {
-                acc.add(createHcertModel(Chain.decode(hcert)))
-            } catch (e: VerificationException) {
-                // TODO: Show hint for expired hcerts
-            }
+                acc.add(createHcertModel(Chain.decode(hcert, false)))
+            } catch (e: VerificationException) { }
             acc
         }
     }
@@ -70,6 +69,7 @@ class HcertViewModel : ViewModel() {
 
         return hcert.vaccinations!!.firstNotNullOf { it }.run {
             HcertModel(
+                isExpired = hcert.isExpired,
                 name = name,
                 nameTransliterated = nameTransliterated,
                 dateOfBirth = hcert.dateOfBirthString.replace('-', '.'),

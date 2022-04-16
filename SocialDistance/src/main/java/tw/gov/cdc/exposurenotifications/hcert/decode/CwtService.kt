@@ -8,31 +8,45 @@ import java.util.*
  */
 class CwtService {
 
-    fun decode(input: ByteArray): CborObject {
+    fun decode(input: ByteArray, throwWhenExpired: Boolean): Pair<CborObject, Boolean> {
         try {
             val now = Date()
             val map = CwtHelper.fromCbor(input)
+            var isExpired = false
+
+            fun throwIfNeeded(e: VerificationException): Long {
+                if (throwWhenExpired) {
+                    throw e
+                } else {
+                    isExpired = true
+                }
+                return 0L
+            }
 
             val issuedAtMilliSeconds = map.getNumber(CwtHeaderKeys.ISSUED_AT.intVal)?.let { it.toLong() * 1000 }
-                ?: throw VerificationException(Error.CWT_EXPIRED, details = mapOf("issuedAt" to "null"))
+                ?: throwIfNeeded(VerificationException(Error.CWT_EXPIRED, details = mapOf("issuedAt" to "null")))
 
             if (issuedAtMilliSeconds > now.time) {
-                throw VerificationException(
-                    Error.CWT_NOT_YET_VALID, details = mapOf(
-                        "issuedAt" to Date(issuedAtMilliSeconds).toString(),
-                        "currentTime" to now.toString()
+                throwIfNeeded(
+                    VerificationException(
+                        Error.CWT_NOT_YET_VALID, details = mapOf(
+                            "issuedAt" to Date(issuedAtMilliSeconds).toString(),
+                            "currentTime" to now.toString()
+                        )
                     )
                 )
             }
 
             val expirationMilliSeconds = map.getNumber(CwtHeaderKeys.EXPIRATION.intVal)?.let { it.toLong() * 1000 }
-                ?: throw VerificationException(Error.CWT_EXPIRED, details = mapOf("expirationTime" to "null"))
+                ?: throwIfNeeded(VerificationException(Error.CWT_EXPIRED, details = mapOf("expirationTime" to "null")))
 
             if (expirationMilliSeconds < now.time) {
-                throw VerificationException(
-                    Error.CWT_EXPIRED, details = mapOf(
-                        "expirationTime" to Date(expirationMilliSeconds).toString(),
-                        "currentTime" to now.toString()
+                throwIfNeeded(
+                    VerificationException(
+                        Error.CWT_EXPIRED, details = mapOf(
+                            "expirationTime" to Date(expirationMilliSeconds).toString(),
+                            "currentTime" to now.toString()
+                        )
                     )
                 )
             }
@@ -43,12 +57,11 @@ class CwtService {
             val dgc = hcert.getMap(CwtHeaderKeys.EUDGC_IN_HCERT.intVal)
                 ?: throw VerificationException(Error.CBOR_DESERIALIZATION_FAILED, "CWT contains no EUDGC")
 
-            return dgc.toCborObject()
+            return dgc.toCborObject() to isExpired
         } catch (e: VerificationException) {
             throw e
         } catch (e: Throwable) {
             throw VerificationException(Error.CBOR_DESERIALIZATION_FAILED, e.message, e)
         }
     }
-
 }

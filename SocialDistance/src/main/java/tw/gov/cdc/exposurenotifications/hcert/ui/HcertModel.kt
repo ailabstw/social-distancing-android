@@ -1,6 +1,7 @@
 package tw.gov.cdc.exposurenotifications.hcert.ui
 
 data class HcertModel(
+    val isExpired: Boolean,
     val name: String,
     val nameTransliterated: String,
     val dateOfBirth: String,
