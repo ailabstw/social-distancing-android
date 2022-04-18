@@ -3,8 +3,10 @@ package tw.gov.cdc.exposurenotifications.activity
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.provider.DocumentsContract
 import android.view.Menu
 import android.view.View
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.StringRes
 import androidx.camera.core.*
 import androidx.camera.lifecycle.ProcessCameraProvider
@@ -21,12 +23,14 @@ import tw.gov.cdc.exposurenotifications.R
 import tw.gov.cdc.exposurenotifications.common.Log
 import tw.gov.cdc.exposurenotifications.common.PermissionUtils
 import tw.gov.cdc.exposurenotifications.common.RequestCode
+import tw.gov.cdc.exposurenotifications.common.Utils
 import tw.gov.cdc.exposurenotifications.hcert.data.HcertRepositoryError
 import tw.gov.cdc.exposurenotifications.hcert.data.HcertRepositoryException
 import tw.gov.cdc.exposurenotifications.hcert.decode.Chain
 import tw.gov.cdc.exposurenotifications.hcert.decode.Error
 import tw.gov.cdc.exposurenotifications.hcert.decode.VerificationException
 import tw.gov.cdc.exposurenotifications.hcert.decode.data.GreenCertificate
+import java.io.IOException
 import java.util.*
 import java.util.concurrent.ExecutionException
 import java.util.concurrent.ExecutorService
@@ -52,6 +56,13 @@ class BarcodeScanningActivity : BaseActivity() {
     private val hcertApplyButton by lazy { barcode_hcert_apply_button }
     private val hcertImportButton by lazy { barcode_hcert_import_button }
 
+    private val options = BarcodeScannerOptions.Builder()
+        .setBarcodeFormats(
+            Barcode.FORMAT_QR_CODE
+        )
+        .build()
+    val scanner = BarcodeScanning.getClient(options)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_barcode_scanning)
@@ -73,7 +84,11 @@ class BarcodeScanningActivity : BaseActivity() {
 
     override fun onStart() {
         super.onStart()
-        PermissionUtils.requestCameraPermissionIfNeeded(activity = this, finishOnDeny = true)
+        PermissionUtils.requestCameraPermissionIfNeeded(
+            activity = this,
+            message = if (hcertMode) R.string.barcode_camera_permission_dialog_message_hcert else R.string.barcode_camera_permission_dialog_message,
+            finishOnDeny =!hcertMode
+        )
     }
 
     override fun onDestroy() {
@@ -107,6 +122,55 @@ class BarcodeScanningActivity : BaseActivity() {
         hcertApplyButton.setOnClickListener {
             startActivity(WebViewActivity.getIntent(this, WebViewActivity.Page.HCERT_APPLY))
         }
+
+        hcertImportButton.setOnClickListener {
+            val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
+                addCategory(Intent.CATEGORY_OPENABLE)
+                type = "image/*"
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                    putExtra(DocumentsContract.EXTRA_INITIAL_URI, Uri.parse("content://com.android.externalstorage.documents/document/primary:Download"))
+                }
+            }
+            imagePickResult.launch(intent)
+        }
+    }
+
+    private val imagePickResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        if (result.resultCode == RESULT_OK) {
+            result.data?.data?.let {
+                try {
+                    val image = InputImage.fromFilePath(this, it)
+                    scanner.process(image)
+                        .addOnSuccessListener { barcodes ->
+                            var hcertError: Error? = null
+                            var repositoryError: HcertRepositoryError? = null
+                            barcodes.forEach {
+                                it.rawValue?.let { raw ->
+                                    try {
+                                        val hcert = Chain.decode(raw)
+                                        hideHintText(true)
+                                        if (addHcert(hcert)) {
+                                            return@addOnSuccessListener
+                                        }
+                                    } catch (e: VerificationException) {
+                                        hcertError = e.error
+                                    } catch (e: HcertRepositoryException) {
+                                        repositoryError = e.error
+                                    }
+                                }
+                            }
+                            when {
+                                hcertError == Error.CWT_EXPIRED -> showHintDialog(Hint.HINT_HCERT_EXPIRED)
+                                repositoryError == HcertRepositoryError.DUPLICATED -> showHintDialog(Hint.HINT_HCERT_DUPLICATED)
+                                barcodes.isNotEmpty() -> showHintDialog(Hint.HINT_HCERT_INVALID)
+                                else -> showHintDialog(Hint.HINT_HCERT_NO_QR_CODE)
+                            }
+                        }
+                } catch (e: IOException) {
+                    e.printStackTrace()
+                }
+            }
+        }
     }
 
     // Camera
@@ -137,9 +201,9 @@ class BarcodeScanningActivity : BaseActivity() {
         imageAnalysis = ImageAnalysis.Builder()
             .setBackpressureStrategy(ImageAnalysis.STRATEGY_KEEP_ONLY_LATEST)
             .build().apply {
-                setAnalyzer(cameraExecutor, { imageProxy ->
+                setAnalyzer(cameraExecutor) { imageProxy ->
                     scanBarcodes(imageProxy)
-                })
+                }
             }
 
         // CameraProvider
@@ -165,13 +229,7 @@ class BarcodeScanningActivity : BaseActivity() {
 
         val inputImage = InputImage.fromMediaImage(image, imageProxy.imageInfo.rotationDegrees)
 
-        val options = BarcodeScannerOptions.Builder()
-            .setBarcodeFormats(
-                Barcode.FORMAT_QR_CODE
-            )
-            .build()
-
-        BarcodeScanning.getClient(options).process(inputImage)
+        scanner.process(inputImage)
             .addOnSuccessListener { barcodes ->
                 if (hcertMode) {
                     var hcertError: Error? = null
@@ -239,8 +297,13 @@ class BarcodeScanningActivity : BaseActivity() {
         }
     }
 
+    private fun showHintDialog(hint: Hint) {
+        Utils.showHintDialog(this, hint.res)
+    }
+
     enum class Hint(@StringRes val res: Int) {
         HINT_1922_INVALID(R.string.barcode_hint_1922_invalid),
+        HINT_HCERT_NO_QR_CODE(R.string.barcode_hint_hcert_no_qr_code),
         HINT_HCERT_INVALID(R.string.barcode_hint_hcert_invalid),
         HINT_HCERT_DUPLICATED(R.string.barcode_hint_hcert_duplicated),
         HINT_HCERT_EXPIRED(R.string.barcode_hint_hcert_expired)
@@ -283,8 +346,17 @@ class BarcodeScanningActivity : BaseActivity() {
     ) {
         when (requestCode) {
             RequestCode.REQUEST_CAMERA_PERMISSION -> {
-                if (!PermissionUtils.provideLinkToSettingIfNeeded(activity = this, finishOnDeny = true)) {
-                    PermissionUtils.requestCameraPermissionIfNeeded(this, finishOnDeny = true)
+                if (!PermissionUtils.provideLinkToSettingIfNeeded(
+                        activity = this,
+                        message = if (hcertMode) R.string.barcode_camera_permission_dialog_message_hcert else R.string.barcode_camera_permission_dialog_message,
+                        finishOnDeny = !hcertMode
+                    )
+                ) {
+                    PermissionUtils.requestCameraPermissionIfNeeded(
+                        activity = this,
+                        message = if (hcertMode) R.string.barcode_camera_permission_dialog_message_hcert else R.string.barcode_camera_permission_dialog_message,
+                        finishOnDeny = !hcertMode
+                    )
                 }
             }
             else -> {

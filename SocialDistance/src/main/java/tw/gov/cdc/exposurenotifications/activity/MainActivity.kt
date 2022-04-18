@@ -230,7 +230,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun gotoBarcodePage() {
-        if (!PermissionUtils.requestCameraPermissionIfNeeded(this)) {
+        if (!PermissionUtils.requestCameraPermissionIfNeeded(this, R.string.barcode_camera_permission_dialog_message)) {
             startActivity(Intent(this, BarcodeScanningActivity::class.java))
         }
     }
@@ -744,7 +744,7 @@ class MainActivity : BaseActivity() {
     ) {
         when (requestCode) {
             RequestCode.REQUEST_CAMERA_PERMISSION -> {
-                if (!PermissionUtils.provideLinkToSettingIfNeeded(this)) {
+                if (!PermissionUtils.provideLinkToSettingIfNeeded(this, R.string.barcode_camera_permission_dialog_message)) {
                     gotoBarcodePage()
                 }
             }
