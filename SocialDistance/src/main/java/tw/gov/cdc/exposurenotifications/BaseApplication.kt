@@ -3,6 +3,7 @@ package tw.gov.cdc.exposurenotifications
 import android.app.Application
 import android.content.Context
 import tw.gov.cdc.exposurenotifications.hcert.data.HcertRepository
+import tw.gov.cdc.exposurenotifications.data.InstructionRepository
 import tw.gov.cdc.exposurenotifications.nearby.ExposureNotificationManager
 import tw.gov.cdc.exposurenotifications.nearby.WorkScheduler
 import tw.gov.cdc.exposurenotifications.vitalfix.VitalFixer
@@ -13,6 +14,7 @@ class BaseApplication : Application() {
         super.onCreate()
         instance = this
 
+        InstructionRepository.updateInstruction()
         ExposureNotificationManager.updateStatus(this)
         ExposureNotificationManager.state.observeForever {
             if (it != ExposureNotificationManager.ExposureNotificationState.Disabled) {
