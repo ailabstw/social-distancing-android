@@ -12,7 +12,10 @@ import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.method.LinkMovementMethod
 import android.text.method.ScrollingMovementMethod
-import android.text.style.*
+import android.text.style.LeadingMarginSpan
+import android.text.style.RelativeSizeSpan
+import android.text.style.StyleSpan
+import android.text.style.URLSpan
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -27,10 +30,10 @@ import kotlinx.android.synthetic.main.activity_main.*
 import tw.gov.cdc.exposurenotifications.BuildConfig
 import tw.gov.cdc.exposurenotifications.R
 import tw.gov.cdc.exposurenotifications.common.*
-import tw.gov.cdc.exposurenotifications.common.BulletSpan
 import tw.gov.cdc.exposurenotifications.common.FeaturePresentManager.Feature
 import tw.gov.cdc.exposurenotifications.common.Utils.getDateString
 import tw.gov.cdc.exposurenotifications.hcert.ui.HcertActivity
+import tw.gov.cdc.exposurenotifications.data.InstructionRepository
 import tw.gov.cdc.exposurenotifications.nearby.ExposureNotificationManager
 import tw.gov.cdc.exposurenotifications.nearby.ExposureNotificationManager.ExposureNotificationState
 import java.lang.reflect.InvocationTargetException
@@ -204,16 +207,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun showCancelAlarmConfirmDialog() {
-        AlertDialog.Builder(this)
-            .setTitle(R.string.cancel_alert_confirm_title)
-            .setMessage(R.string.cancel_alert_confirm_message)
-            .setNegativeButton(R.string.no) { _, _ ->
-            }
-            .setPositiveButton(R.string.yes) { _, _ ->
-                startActivity(Intent(this, CancelAlarmActivity::class.java))
-            }
-            .create()
-            .show()
+        startActivity(Intent(this, CancelAlarmActivity::class.java))
     }
 
     private fun showUploadConfirmDialog() {
@@ -416,26 +410,31 @@ class MainActivity : BaseActivity() {
             }
             RiskStatus.RISKY -> {
                 textRiskBrief.setText(R.string.risk_brief_risky)
+                val remoteInstruction = InstructionRepository.riskDetailInstruction.toTypedArray()
                 val strings = resources.getStringArray(R.array.risk_detail_risky)
-                if (strings.size > 1) {
+                if (remoteInstruction.isNotEmpty() || strings.size > 1) {
                     val builder = SpannableStringBuilder()
-                    val splitMark = getString(R.string.risk_detail_risky_split)
-                    var startIndex = 0
-                    strings.forEach { item ->
-                        builder.append(
-                            item,
-                            getBulletSpan(),
-                            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
-                        )
-                        builder.setSpan(
-                            StyleSpan(Typeface.BOLD),
-                            startIndex,
-                            startIndex + item.indexOf(splitMark) + splitMark.length,
-                            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
-                        )
-                        startIndex = builder.lastIndex
+                    val splitMark = if (remoteInstruction.isNotEmpty()) InstructionRepository.riskDetailInstructionSplitMark else getString(R.string.risk_detail_risky_split)
 
+                    fun setString(strs: Array<String>) {
+                        var startIndex = 0
+                        strs.forEach { item ->
+                            builder.append(
+                                item,
+                                getBulletSpan(),
+                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                            )
+                            builder.setSpan(
+                                StyleSpan(Typeface.BOLD),
+                                startIndex,
+                                startIndex + item.indexOf(splitMark) + splitMark.length,
+                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                            )
+                            startIndex = builder.lastIndex + 1
+                        }
                     }
+
+                    setString(remoteInstruction.takeIf { it.isNotEmpty() } ?: strings)
                     textRiskDetail.text = builder
 
                     // FIXME: Should have a better solution
