@@ -84,6 +84,7 @@
     <string name="upload_success">Upload Successful</string>
     <string name="upload_fail">Upload Failed</string>
     <string name="upload_fail_message_no_files">No data between start and end dates.</string>
+    <string name="upload_fail_message_invalid_code">Invalid verification code.</string>
 
     <string name="enter_verification_code">Please Enter Verification Code</string>
     <string name="enter_verification_code_hint">Verification Code</string>
