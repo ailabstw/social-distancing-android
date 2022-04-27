@@ -100,8 +100,8 @@
     <string name="request_verification_code_success">Entered mobile number successfully</string>
     <string name="request_verification_code_success_message">Verification code will be sent to you via SMS in 5 minutes, please try again if you do not receive it.</string>
     <string name="request_verification_code_fail">Enter mobile number failed</string>
-    <string name="request_verification_code_fail_message">Connect error occurred, please try again later.</string>
-    <string name="request_verification_code_fail_limit_exceeded_message">Number of request exceeded limit, please try again tomorrow.</string>
+    <string name="request_verification_code_fail_message">Connection error occurred, please try again later.</string>
+    <string name="request_verification_code_fail_limit_exceeded_message">Number of requests exceeded limit, please try again tomorrow.</string>
     <string name="request_verification_code_fail_invalid_phone_number_message">Invalid mobile number, please re-enter.</string>
 
     <string name="cancel_alert_confirm_title">Are you sure you want to reset your status?</string>
@@ -144,7 +144,7 @@
     <string name="hcert_hint">Valid in combination with a government issued ID.</string>
     <string name="hcert_delete">Remove This Vaccination Certificate</string>
     <string name="hcert_menu_apply">Apply for Vaccination Certificate</string>
-    <string name="hcert_menu_vaccine_appointment">Vaccination Reservation</string>
+    <string name="hcert_menu_vaccine_appointment">Vaccination Appointment</string>
     <string name="hcert_menu_faq">FAQ</string>
     <string name="hcert_apply">Apply</string>
     <string name="hcert_import">Import</string>
@@ -154,7 +154,7 @@
     <string name="hcert_detail_medicinal_product">Product: </string>
     <string name="hcert_detail_authorization_holder">Manufacturer: </string>
     <string name="hcert_detail_dose">Dose: </string>
-    <string name="hcert_detail_date">Date of vacination: </string>
+    <string name="hcert_detail_date">Date of vaccination: </string>
     <string name="hcert_detail_country">Country of vaccination: </string>
     <string name="hcert_detail_certificate_issuer">Issuer: </string>
     <string name="hcert_detail_certificate_identifier">UVCI: </string>
