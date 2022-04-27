@@ -1744,6 +1744,13 @@
       "active": true,
       "system": "urn:iso:std:iso:3166",
       "version": ""
+    },
+    "XK": {
+      "display": "Kosovo, Republic of",
+      "lang": "en",
+      "active": true,
+      "system": "http://ec.europa.eu/temp/countrycodes",
+      "version": "1.4"
     }
   }
 }
