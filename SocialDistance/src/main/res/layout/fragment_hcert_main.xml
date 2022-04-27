@@ -35,7 +35,7 @@
         style="@style/Text.AutoSize"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/main_margin_horizontal"
+        android:layout_margin="@dimen/main_margin_vertical"
         android:gravity="center"
         android:lines="1"
         android:text="@string/hcert_hint"
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/main_margin_horizontal"
         android:layout_marginRight="@dimen/main_margin_horizontal"
-        android:layout_marginBottom="@dimen/main_margin_horizontal_large"
+        android:layout_marginBottom="@dimen/main_margin_vertical"
         app:layout_constraintBottom_toTopOf="@id/hcert_bottom_barrier"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

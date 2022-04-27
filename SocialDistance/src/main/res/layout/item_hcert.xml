@@ -28,14 +28,13 @@
                 android:id="@+id/item_hcert_qrcode_image"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginTop="@dimen/main_margin_vertical"
+                app:layout_constrainedHeight="true"
                 app:layout_constraintBottom_toTopOf="@id/item_hcert_name"
-                app:layout_constraintDimensionRatio="1"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_chainStyle="spread_inside"
-                app:layout_constraintWidth_percent="0.94"
                 tools:src="@drawable/icon" />
 
             <TextView
@@ -91,8 +90,12 @@
                 android:id="@+id/item_last_dose_date"
                 style="@style/Button.Secondary.Light"
                 android:layout_marginTop="@dimen/upload_margin_vertical_small"
+                android:autoSizeMaxTextSize="@dimen/text_size"
+                android:autoSizeMinTextSize="@dimen/text_size_min"
+                android:autoSizeTextType="uniform"
                 android:clickable="false"
-                android:padding="4dp"
+                android:lines="1"
+                android:padding="2dp"
                 android:textAllCaps="false"
                 android:textColor="@color/primary"
                 app:backgroundTint="@null"
@@ -101,7 +104,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/item_hcert_birthday"
-                tools:text="最近接種日期 8888-88-88" />
+                tools:text="接種日期 8888-88-88" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
