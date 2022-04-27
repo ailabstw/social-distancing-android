@@ -40,7 +40,6 @@ class ProvideDiagnosisKeysWorker(
 
     override suspend fun doWork(): Result {
         Log.d(TAG, "doWork")
-        InstructionRepository.updateInstruction()
         ExposureNotificationManager.updateStatus(context)
         return try {
             withTimeout(TimeUnit.MINUTES.toMillis(10)) {
@@ -48,6 +47,8 @@ class ProvideDiagnosisKeysWorker(
                 if (isNearbyAPIEnabled && !isStopped) {
                     
                     startForegroundConditionally()
+
+                    InstructionRepository.updateInstruction()
 
                     Log.d(TAG, "getIndexFile()")
                     val indexContent = APIService.downloadTEKs.getIndexFile().await().string()
