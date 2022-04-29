@@ -9,6 +9,7 @@ import androidx.core.view.doOnAttach
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.viewpager2.widget.ViewPager2
+import com.google.android.material.tabs.TabLayoutMediator
 import kotlinx.android.synthetic.main.fragment_hcert_main.*
 import tw.gov.cdc.exposurenotifications.R
 import tw.gov.cdc.exposurenotifications.activity.BarcodeScanningActivity
@@ -22,7 +23,7 @@ class HcertMainFragment : Fragment(), HcertMainActionHandler {
 
     private val mainViewGroup by lazy { hcert_main_view_group }
     private val viewPager by lazy { hcert_view_pager }
-    private val dotsIndicator by lazy { hcert_dotsIndicator }
+    private val tabLayout by lazy { hcert_tab_layout }
     // FIXME: Workaround due to setting dotsIndicator's visibility is not working
     private val dotsIndicatorMask by lazy { hcert_dotsIndicator_mask }
     private val buttonList by lazy { hcert_list_button }
@@ -41,14 +42,14 @@ class HcertMainFragment : Fragment(), HcertMainActionHandler {
         var autoScroll = false
         val adapter = HcertMainAdapter(this) { itemCount ->
             viewPager.post {
-                dotsIndicator.setViewPager2(viewPager)
                 if (autoScroll) {
                     viewPager.currentItem = itemCount - 1
+                    viewModel.updateAutoScroll(false)
                 }
             }
         }
         viewPager.adapter = adapter
-        dotsIndicator.setViewPager2(viewPager)
+        TabLayoutMediator(tabLayout, viewPager) { tab, position -> }.attach()
 
         viewPager.unregisterOnPageChangeCallback(onPageChangeCallback)
         viewPager.registerOnPageChangeCallback(onPageChangeCallback)
@@ -56,10 +57,10 @@ class HcertMainFragment : Fragment(), HcertMainActionHandler {
         viewModel.allItems.observe(viewLifecycleOwner) {
             adapter.submitList(it)
             if (it.size > 1) {
-                dotsIndicator.visibility = View.VISIBLE
+                tabLayout.visibility = View.VISIBLE
                 dotsIndicatorMask.visibility = View.INVISIBLE
             } else {
-                dotsIndicator.visibility = View.INVISIBLE
+                tabLayout.visibility = View.INVISIBLE
                 dotsIndicatorMask.visibility = View.VISIBLE
             }
         }
