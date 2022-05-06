@@ -21,6 +21,7 @@ import tw.gov.cdc.exposurenotifications.common.Log
 import tw.gov.cdc.exposurenotifications.common.PreferenceManager
 import tw.gov.cdc.exposurenotifications.common.RequestCode
 import tw.gov.cdc.exposurenotifications.common.Utils.toSpecificTime
+import tw.gov.cdc.exposurenotifications.data.InstructionRepository
 import tw.gov.cdc.exposurenotifications.keydownload.KeyFile
 import tw.gov.cdc.exposurenotifications.nearby.NotificationHelper.NotificationType.ProvideDiagnosisKeys
 import java.io.File
@@ -46,6 +47,8 @@ class ProvideDiagnosisKeysWorker(
                 if (isNearbyAPIEnabled && !isStopped) {
                     
                     startForegroundConditionally()
+
+                    InstructionRepository.updateInstruction()
 
                     Log.d(TAG, "getIndexFile()")
                     val indexContent = APIService.downloadTEKs.getIndexFile().await().string()
@@ -145,7 +148,7 @@ class ProvideDiagnosisKeysWorker(
                 context,
                 RequestCode.REQUEST_INTENT_NOT_FOUND_NOTIFICATION,
                 intent,
-                0
+                PendingIntent.FLAG_IMMUTABLE
             )
 
             val alarmManager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager

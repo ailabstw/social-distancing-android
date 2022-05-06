@@ -12,15 +12,19 @@ import androidx.annotation.StringRes
 import kotlinx.android.synthetic.main.activity_web_view.*
 import tw.gov.cdc.exposurenotifications.R
 
+
 class WebViewActivity : BaseActivity() {
 
     enum class Page(
         @StringRes val url: Int,
-        @StringRes val label: Int,
-        val lockNavigation: Boolean
+        @StringRes val label: Int? = null,
+        val lockNavigation: Boolean = false
     ) {
         PRIVACY(url = R.string.url_privacy, label = R.string.menu_privacy, lockNavigation = true),
-        FAQ(url = R.string.url_faq, label = R.string.menu_faq, lockNavigation = false)
+        FAQ(url = R.string.url_faq),
+        HCERT_APPLY(url = R.string.url_hcert_apply),
+        HCERT_VACCINE_APPOINTMENT(url = R.string.url_hcert_vaccine_appointment),
+        HCERT_FAQ(url = R.string.url_hcert_faq)
     }
 
     companion object {
@@ -34,11 +38,19 @@ class WebViewActivity : BaseActivity() {
                     getIntent(
                         context = context,
                         url = page.url,
-                        label = page.label,
+                        label = page.label!!,
                         lockNavigation = page.lockNavigation
                     )
                 }
-                Page.FAQ -> {
+                Page.HCERT_FAQ -> {
+                    val browserIntent = Intent(Intent.ACTION_VIEW).apply {
+                        setDataAndType(Uri.parse(context.getString(page.url)), "application/pdf")
+                    }
+                    Intent.createChooser(browserIntent, context.getString(R.string.hcert_menu_faq)).apply {
+                        flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                    }
+                }
+                else -> {
                     Intent(Intent.ACTION_VIEW, Uri.parse(context.getString(page.url)))
                 }
             }

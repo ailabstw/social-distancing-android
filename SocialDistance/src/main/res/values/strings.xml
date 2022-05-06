@@ -63,6 +63,9 @@
     <string name="url_faq">https://www.cdc.gov.tw/Category/Page/R8bAd_yiVi22CIr73qM2yw</string>
     <string name="url_clean_cache">https://support.google.com/googleplay/answer/9037938</string>
     <string name="url_quick_settings">https://support.google.com/android/answer/9083864</string>
+    <string name="url_hcert_apply">https://dvc.mohw.gov.tw/vapa/apply/Index.init.ctr</string>
+    <string name="url_hcert_vaccine_appointment">https://www.cdc.gov.tw/Category/List/u4l1b_gHhf9WDjhEtRmRRw</string>
+    <string name="url_hcert_faq">https://dvc.mohw.gov.tw/vapa/template/vapa/common/pdf/QA.pdf</string>
 
     <string name="daily_summary_no_contact">No Contact</string>
     <string name="daily_summary_less_then_2_mins">Less than 2 min</string>
@@ -81,6 +84,7 @@
     <string name="upload_success">Upload Successful</string>
     <string name="upload_fail">Upload Failed</string>
     <string name="upload_fail_message_no_files">No data between start and end dates.</string>
+    <string name="upload_fail_message_invalid_code">Invalid verification code.</string>
 
     <string name="enter_verification_code">Please Enter Verification Code</string>
     <string name="enter_verification_code_hint">Verification Code</string>
@@ -96,8 +100,8 @@
     <string name="request_verification_code_success">Entered mobile number successfully</string>
     <string name="request_verification_code_success_message">Verification code will be sent to you via SMS in 5 minutes, please try again if you do not receive it.</string>
     <string name="request_verification_code_fail">Enter mobile number failed</string>
-    <string name="request_verification_code_fail_message">Connect error occurred, please try again later.</string>
-    <string name="request_verification_code_fail_limit_exceeded_message">Number of request exceeded limit, please try again tomorrow.</string>
+    <string name="request_verification_code_fail_message">Connection error occurred, please try again later.</string>
+    <string name="request_verification_code_fail_limit_exceeded_message">Number of requests exceeded limit, please try again tomorrow.</string>
     <string name="request_verification_code_fail_invalid_phone_number_message">Invalid mobile number, please re-enter.</string>
 
     <string name="cancel_alert_confirm_title">Are you sure you want to reset your status?</string>
@@ -106,16 +110,58 @@
     <string name="cancel_alert_test_date_hint">Assessment Date</string>
     <string name="cancel_alert_description">Please enter the verification code provided by the local Department of Health. After submitting, the warning will be disabled.</string>
 
+    <string name="cancel_alert_acknowledgement">我已詳細閱讀並同意以上衛教資訊</string>
+    <string-array name="cancel_alert_intruction">
+        <item>I have taken a COVID-19 rapid test by myself, and the result was negative.\n</item>
+        <item>I will watch for my health status. If I have symptoms such as fever, respiratory symptoms, diarrhea, or new loss of taste/smell, I will take the COVID-19 rapid test.\n</item>
+        <item>If I test positive in my COVID-19 rapid test, I will wear a medical mask to get a PCR test at a nearby community testing site or a hospital, and do not taking the public transportation.\n</item>
+        <item>I have notified my family members that I have received a \"Exposure Notification\" warning, and they must take appropriate precautions such as washing hands frequently and wearing masks.\n</item>
+        <item>I will avoid unnecessary family gatherings and visits.\n</item>
+        <item>I will avoid participating in activities that cannot maintain social distancing and contact with unspecified people.\n</item>
+        <item>I will avoid participating in indoor activities or work where the masks are not required.\n</item>
+    </string-array>
+
     <string name="barcode_shortcut_label">1922 SMS</string>
     <string name="barcode_shortcut_label_long">Scan 1922 QR Code</string>
-    <string name="barcode_invalid_hint">Invalid 1922 SMS contact tracing QR code</string>
+    <string name="barcode_hint_1922_invalid">Invalid 1922 SMS contact tracing QR code.</string>
+    <string name="barcode_hint_hcert_no_qr_code">Failed to detect vaccination certificate QR code.</string>
+    <string name="barcode_hint_hcert_invalid">Invalid vaccination certificate QR Code.</string>
+    <string name="barcode_hint_hcert_duplicated">Duplicated vaccination certificate.</string>
+    <string name="barcode_hint_hcert_expired">Expired vaccination certificate.</string>
     <string name="barcode_camera_permission_dialog_title">&appname; Would Like to Access the Camera</string>
     <string name="barcode_camera_permission_dialog_message">&appname; uses the camera to scan QR code for 1922 SMS contact tracing registration.</string>
+    <string name="barcode_camera_permission_dialog_message_hcert">&appname; uses the camera to scan QR code of vaccination certificate.</string>
 
     <string name="control_exposure">Notification Service</string>
     <string name="control_exposure_turn_off_title">Are you sure you want to disable exposure notification?</string>
     <string name="control_exposure_turn_off_detail">If you have been in contact with a COVID-19 patient, the system will not notify you in this mode.</string>
     <string name="control_not_found_notification">No Exposure Detected Notification</string>
+
+    <string name="hcert_full_name">Vaccination Certificate</string>
+    <string name="hcert_description">Carry a digital copy of the vaccination certificate by scanning the QR code of the digital COVID-19 certificate.</string>
+    <string name="hcert_button_add">Add Vaccination Certificate</string>
+    <string name="hcert_last_dose_date">Date of vaccination: %s</string>
+    <string name="hcert_hint">Valid in combination with a government issued ID.</string>
+    <string name="hcert_delete">Remove This Vaccination Certificate</string>
+    <string name="hcert_menu_apply">Apply for Vaccination Certificate</string>
+    <string name="hcert_menu_vaccine_appointment">Vaccination Appointment</string>
+    <string name="hcert_menu_faq">FAQ</string>
+    <string name="hcert_apply">Apply</string>
+    <string name="hcert_import">Import</string>
+
+    <string name="hcert_detail_target">Disease or agent targeted: </string>
+    <string name="hcert_detail_vaccine">Vaccine type: </string>
+    <string name="hcert_detail_medicinal_product">Product: </string>
+    <string name="hcert_detail_authorization_holder">Manufacturer: </string>
+    <string name="hcert_detail_dose">Dose: </string>
+    <string name="hcert_detail_date">Date of vaccination: </string>
+    <string name="hcert_detail_country">Country of vaccination: </string>
+    <string name="hcert_detail_certificate_issuer">Issuer: </string>
+    <string name="hcert_detail_certificate_identifier">UVCI: </string>
+
+    <string name="hcert_delete_confirm_title">Are you sure you want to remove it?</string>
+    <string name="hcert_delete_confirm_message">Are you sure you want to remove %s\'s vaccination certificate?</string>
+    <string name="hcert_limit_reached_message">Exceeded vaccination certificates limits.</string>
 
     <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
 
@@ -150,6 +196,8 @@
     <string name="feature_barcode_tip_split">:</string>
     <string name="feature_barcode_tip_doc">Android Help Center</string>
     <string name="feature_daily_summary">New \"Daily Summary\" page.</string>
+    <string name="feature_hcert">Newly added Vaccination Certificate</string>
+    <string name="feature_hcert_tip">Manage vaccination certificate for you and your loved ones.</string>
     <string name="feature_not_found_notification_control">You can turn off No Detected Notification from the Exposure Notification Settings.</string>
     <string name="feature_hints">You can check the hints again from the menu.</string>
 

@@ -220,7 +220,7 @@ class UploadActivity : BaseActivity() {
                         state = State.CODE_VERIFIED
                         requestKeysIfNeeded()
                     } else {
-                        showUploadResultDialog(UploadResult.FAILED)
+                        showUploadResultDialog(UploadResult.FAILED_INVALID_CODE)
                     }
                 }
 
@@ -235,6 +235,7 @@ class UploadActivity : BaseActivity() {
         SUCCESS,
         FAILED,
         FAILED_NO_FILES,
+        FAILED_INVALID_CODE,
         FAILED_NO_GRANTED_TEK
     }
 
@@ -243,7 +244,7 @@ class UploadActivity : BaseActivity() {
             UploadResult.SUCCESS -> {
                 true
             }
-            UploadResult.FAILED -> {
+            UploadResult.FAILED, UploadResult.FAILED_INVALID_CODE -> {
                 codeText.isEnabled = true
                 state = State.INITIAL
                 false
@@ -257,8 +258,10 @@ class UploadActivity : BaseActivity() {
         hideProgressBar()
         AlertDialog.Builder(this).apply {
             setTitle(if (success) R.string.upload_success else R.string.upload_fail)
-            if (result == UploadResult.FAILED_NO_FILES) {
-                setMessage(R.string.upload_fail_message_no_files)
+            when (result) {
+                UploadResult.FAILED_NO_FILES -> setMessage(R.string.upload_fail_message_no_files)
+                UploadResult.FAILED_INVALID_CODE -> setMessage(R.string.upload_fail_message_invalid_code)
+                else -> {}
             }
             setPositiveButton(R.string.confirm) { _, _ ->
                 if (success) {

@@ -69,6 +69,9 @@
 
 
 
+
+
+
     <string name="upload_confirm_title">Bạn có phải là một trường hợp được xác nhận nhiễm COVID-19?</string>
     <string name="upload_confirm_message">Tính năng này cho phép các trường hợp dương tính công khai ID thiết bị nhằm phục vụ công tác truy vết nguồn lây COVID-19.</string>
     <string name="upload_title">Tải lên ID ẩn danh</string>
@@ -80,6 +83,7 @@
     <string name="upload_tek_description">Vui lòng nhập mã xác nhận được cung cấp bởi Bộ Y tế và Phúc lợi. Sau khi nhập xong ID ẩn danh của bạn sẽ được tải lên cơ sở dữ liệu của Trung tâm Kiểm soát Dịch bệnh Đài Loan (CDC) và tự động xoá sau 10 ngày.</string>
     <string name="upload_success">Đăng tải thành công</string>
     <string name="upload_fail">Đăng tải không thành công</string>
+
 
 
     <string name="enter_verification_code">Vui lòng nhập mã xác nhận</string>
@@ -112,9 +116,51 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <string name="control_exposure">Quyền bặt/ tắt thông báo tiếp xúc gần</string>
     <string name="control_exposure_turn_off_title">Bạn có chắc mình muốn tắt thông báo tiếp xúc gần không?</string>
     <string name="control_exposure_turn_off_detail">Bạn sẽ không được thông báo khi tiếp xúc với người mắc bệnh COVID-19.</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
@@ -138,6 +184,8 @@
 
     <string name="app_update_message">Ứng dụng Giãn cách Xã hội Đài Loan bản mới đã hoàn thành tải về máy. Vui lòng mở lại ứng dụng.</string>
     <string name="app_update_restart">Mở lại ứng dụng</string>
+
+
 
 
 

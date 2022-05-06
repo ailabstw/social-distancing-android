@@ -25,23 +25,43 @@
     <TextView
         android:id="@+id/barcode_scanning_hint_text"
         style="@style/Text.Center"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="26dp"
         android:background="@drawable/background_white_radius_21"
         android:minHeight="42dp"
-        android:textSize="16dp"
         android:paddingHorizontal="26dp"
         android:paddingVertical="10dp"
-        android:text="@string/barcode_invalid_hint"
+        android:text="@string/barcode_hint_1922_invalid"
+        android:textSize="16dp"
         android:visibility="invisible"
+        app:layout_constrainedHeight="true"
+        app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_default="wrap"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         app:layout_constraintVertical_bias="0.03"
-        app:layout_constraintWidth_default="wrap"
         tools:visibility="visible" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/barcode_hcert_apply_button"
+        style="@style/Button.Round"
+        android:layout_marginHorizontal="@dimen/main_margin_horizontal"
+        android:layout_marginVertical="@dimen/main_margin_vertical"
+        android:text="@string/hcert_apply"
+        app:layout_constraintBottom_toTopOf="@id/barcode_hcert_import_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/barcode_hcert_import_button"
+        style="@style/Button.Round"
+        android:layout_marginHorizontal="@dimen/main_margin_horizontal"
+        android:layout_marginVertical="@dimen/main_margin_vertical"
+        android:text="@string/hcert_import"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

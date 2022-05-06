@@ -64,6 +64,9 @@
     <string name="url_clean_cache">https://support.google.com/googleplay/answer/9037938</string>
     <string name="url_quick_settings">https://support.google.com/android/answer/9083864</string>
 
+
+
+
     <string name="daily_summary_no_contact">無</string>
     <string name="daily_summary_less_then_2_mins">接觸小於 2 分鐘</string>
     <string name="daily_summary_mins">接觸 %1$d 分鐘</string>
@@ -81,6 +84,7 @@
     <string name="upload_success">上傳成功</string>
     <string name="upload_fail">上傳失敗</string>
     <string name="upload_fail_message_no_files">所選區間無資料可供上傳</string>
+    <string name="upload_fail_message_invalid_code">無效的驗證碼</string>
 
     <string name="enter_verification_code">請輸入驗證碼</string>
     <string name="enter_verification_code_hint">請輸入驗證碼</string>
@@ -106,16 +110,58 @@
     <string name="cancel_alert_test_date_hint">請輸入日期</string>
     <string name="cancel_alert_description">請輸入由衛生局提供的驗證碼，送出後，即取消您的示警狀態。</string>
 
+    <string name="cancel_alert_acknowledgement">我已詳細閱讀並同意以上衛教資訊</string>
+    <string-array name="cancel_alert_intruction">
+        <item>我已經自行快篩 1 次且為陰性。\n</item>
+        <item>我會注意是否有發燒、呼吸道症狀、腹瀉、嗅/味覺異常等 Covid-19 疑似症狀，若出現症狀，會自行快篩。\n</item>
+        <item>我如果快篩陽性，會佩戴醫用口罩就醫採檢，出門時避免搭乘大眾運輸。\n</item>
+        <item>我已通知同住家人有收到「接觸通知」警示，要採取適當防護措施，例如勤洗手、戴口罩等。\n</item>
+        <item>我會避免非必要的家庭聚會及拜訪。\n</item>
+        <item>我會避免參加無法保持社交距離及接觸不特定對象的活動。\n</item>
+        <item>我會避免參加可以免佩戴口罩的室內活動或工作。\n</item>
+    </string-array>
+
     <string name="barcode_shortcut_label">實聯掃描</string>
     <string name="barcode_shortcut_label_long">掃描 1922 簡訊實聯制</string>
-    <string name="barcode_invalid_hint">非 1922 簡訊實聯制 QR code</string>
+    <string name="barcode_hint_1922_invalid">非 1922 簡訊實聯制 QR code</string>
+    <string name="barcode_hint_hcert_no_qr_code">未偵測到疫苗接種數位證明 QR code</string>
+    <string name="barcode_hint_hcert_invalid">非疫苗接種數位證明 QR code</string>
+    <string name="barcode_hint_hcert_duplicated">此疫苗接種數位證明已存在</string>
+    <string name="barcode_hint_hcert_expired">此疫苗接種數位證明已過期</string>
     <string name="barcode_camera_permission_dialog_title">&appname;想取用您的相機</string>
     <string name="barcode_camera_permission_dialog_message">&appname;要使用相機來掃描 1922 簡訊實聯制 QR code</string>
+    <string name="barcode_camera_permission_dialog_message_hcert">&appname; 要使用相機來掃描疫苗接種數位證明 QR code</string>
 
     <string name="control_exposure">接觸通知服務</string>
     <string name="control_exposure_turn_off_title">要停用接觸通知功能嗎？</string>
     <string name="control_exposure_turn_off_detail">如果你接觸過 COVID-19 患者，系統將不會通知你</string>
     <string name="control_not_found_notification">無風險時通知</string>
+
+    <string name="hcert_full_name">疫苗接種數位證明</string>
+    <string name="hcert_description">將你與家人的疫苗接種數位證明存入手機，並以 QR code 的方式提供快速驗證。</string>
+    <string name="hcert_button_add">立即新增疫苗接種數位證明</string>
+    <string name="hcert_last_dose_date">接種日期 %s</string>
+    <string name="hcert_hint">使用時請同步出示身分證</string>
+    <string name="hcert_delete">刪除此疫苗接種數位證明</string>
+    <string name="hcert_menu_apply">申請疫苗接種數位證明</string>
+    <string name="hcert_menu_vaccine_appointment">預約疫苗</string>
+    <string name="hcert_menu_faq">常見問題</string>
+    <string name="hcert_apply">申請疫苗接種數位證明</string>
+    <string name="hcert_import">匯入疫苗接種數位證明</string>
+
+    <string name="hcert_detail_target">預防疾病名稱：</string>
+    <string name="hcert_detail_vaccine">疫苗類型：</string>
+    <string name="hcert_detail_medicinal_product">疫苗名稱：</string>
+    <string name="hcert_detail_authorization_holder">疫苗經銷商或製造商：</string>
+    <string name="hcert_detail_dose">接種劑次：</string>
+    <string name="hcert_detail_date">接種日期：</string>
+    <string name="hcert_detail_country">接種國家：</string>
+    <string name="hcert_detail_certificate_issuer">數位證明發行機構：</string>
+    <string name="hcert_detail_certificate_identifier">數位證明識別碼：</string>
+
+    <string name="hcert_delete_confirm_title">是否確認刪除？</string>
+    <string name="hcert_delete_confirm_message">確認刪除%s的疫苗接種數位證明嗎？</string>
+    <string name="hcert_limit_reached_message">數量已達上限</string>
 
     <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
 
@@ -150,6 +196,8 @@
     <string name="feature_barcode_tip_split">：</string>
     <string name="feature_barcode_tip_doc">官方文件</string>
     <string name="feature_daily_summary">新增「每日接觸狀況」資訊頁面</string>
+    <string name="feature_hcert">新增「疫苗接種數位證明」存放功能</string>
+    <string name="feature_hcert_tip">讓您輕鬆存放與管理自己以及全家人的疫苗接種數位證明。</string>
     <string name="feature_not_found_notification_control">若要關閉無風險通知功能，可以到右上方選單裡的「資料權限控管」進行設定喔~</string>
     <string name="feature_hints">若要再次查看提示，可以點選右上方選單裡的「功能提示」選項喔~</string>
 

@@ -12,7 +12,10 @@ import android.text.Spannable
 import android.text.SpannableStringBuilder
 import android.text.method.LinkMovementMethod
 import android.text.method.ScrollingMovementMethod
-import android.text.style.*
+import android.text.style.LeadingMarginSpan
+import android.text.style.RelativeSizeSpan
+import android.text.style.StyleSpan
+import android.text.style.URLSpan
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
@@ -27,9 +30,10 @@ import kotlinx.android.synthetic.main.activity_main.*
 import tw.gov.cdc.exposurenotifications.BuildConfig
 import tw.gov.cdc.exposurenotifications.R
 import tw.gov.cdc.exposurenotifications.common.*
-import tw.gov.cdc.exposurenotifications.common.BulletSpan
 import tw.gov.cdc.exposurenotifications.common.FeaturePresentManager.Feature
 import tw.gov.cdc.exposurenotifications.common.Utils.getDateString
+import tw.gov.cdc.exposurenotifications.hcert.ui.HcertActivity
+import tw.gov.cdc.exposurenotifications.data.InstructionRepository
 import tw.gov.cdc.exposurenotifications.nearby.ExposureNotificationManager
 import tw.gov.cdc.exposurenotifications.nearby.ExposureNotificationManager.ExposureNotificationState
 import java.lang.reflect.InvocationTargetException
@@ -72,11 +76,12 @@ class MainActivity : BaseActivity() {
 
     private val textInfo by lazy { main_info_text }
     private val textVersion by lazy { main_version_text }
+    private val buttonHcert by lazy { main_hcert_button }
     private val buttonStart by lazy { main_start_button }
 
     private val clockGroup by lazy { main_clock_group }
 
-    private val allFeatures = mutableListOf(Feature.BARCODE_V2, Feature.DAILY_SUMMARY, Feature.NOT_FOUND_NOTIFICATION_CONTROL, Feature.HINTS)
+    private val allFeatures = mutableListOf(Feature.BARCODE_V2, Feature.DAILY_SUMMARY, Feature.HCERT, Feature.NOT_FOUND_NOTIFICATION_CONTROL, Feature.HINTS)
     private var currentPresentingFeature: Feature? = null
     private val featureBarcodeGroup by lazy { feature_barcode_group }
     private val featureBarcodeTipText by lazy {
@@ -85,6 +90,7 @@ class MainActivity : BaseActivity() {
         }
     }
     private val featureDailySummaryGroup by lazy { feature_daily_summary_group }
+    private val featureHcertGroup by lazy { feature_hcert_group }
     private val featureHintsViewGroup by lazy { feature_hints_group }
     private val featureTouchView by lazy { feature_touch_view }
 
@@ -201,16 +207,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun showCancelAlarmConfirmDialog() {
-        AlertDialog.Builder(this)
-            .setTitle(R.string.cancel_alert_confirm_title)
-            .setMessage(R.string.cancel_alert_confirm_message)
-            .setNegativeButton(R.string.no) { _, _ ->
-            }
-            .setPositiveButton(R.string.yes) { _, _ ->
-                startActivity(Intent(this, CancelAlarmActivity::class.java))
-            }
-            .create()
-            .show()
+        startActivity(Intent(this, CancelAlarmActivity::class.java))
     }
 
     private fun showUploadConfirmDialog() {
@@ -227,7 +224,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun gotoBarcodePage() {
-        if (!PermissionUtils.requestCameraPermissionIfNeeded(this)) {
+        if (!PermissionUtils.requestCameraPermissionIfNeeded(this, R.string.barcode_camera_permission_dialog_message)) {
             startActivity(Intent(this, BarcodeScanningActivity::class.java))
         }
     }
@@ -236,7 +233,9 @@ class MainActivity : BaseActivity() {
 //    var debugCount = 0
 
     private fun setupButton() {
-
+        buttonHcert.setOnClickListener {
+            startActivity(Intent(this, HcertActivity::class.java))
+        }
         buttonStart.setOnClickListener {
 //            if (debugNotification) {
 //                when (debugCount % 5) {
@@ -411,26 +410,31 @@ class MainActivity : BaseActivity() {
             }
             RiskStatus.RISKY -> {
                 textRiskBrief.setText(R.string.risk_brief_risky)
+                val remoteInstruction = InstructionRepository.riskDetailInstruction.toTypedArray()
                 val strings = resources.getStringArray(R.array.risk_detail_risky)
-                if (strings.size > 1) {
+                if (remoteInstruction.isNotEmpty() || strings.size > 1) {
                     val builder = SpannableStringBuilder()
-                    val splitMark = getString(R.string.risk_detail_risky_split)
-                    var startIndex = 0
-                    strings.forEach { item ->
-                        builder.append(
-                            item,
-                            getBulletSpan(),
-                            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
-                        )
-                        builder.setSpan(
-                            StyleSpan(Typeface.BOLD),
-                            startIndex,
-                            startIndex + item.indexOf(splitMark) + splitMark.length,
-                            Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
-                        )
-                        startIndex = builder.lastIndex
+                    val splitMark = if (remoteInstruction.isNotEmpty()) InstructionRepository.riskDetailInstructionSplitMark else getString(R.string.risk_detail_risky_split)
 
+                    fun setString(strs: Array<String>) {
+                        var startIndex = 0
+                        strs.forEach { item ->
+                            builder.append(
+                                item,
+                                getBulletSpan(),
+                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                            )
+                            builder.setSpan(
+                                StyleSpan(Typeface.BOLD),
+                                startIndex,
+                                startIndex + item.indexOf(splitMark) + splitMark.length,
+                                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+                            )
+                            startIndex = builder.lastIndex + 1
+                        }
                     }
+
+                    setString(remoteInstruction.takeIf { it.isNotEmpty() } ?: strings)
                     textRiskDetail.text = builder
 
                     // FIXME: Should have a better solution
@@ -664,6 +668,11 @@ class MainActivity : BaseActivity() {
                     }
                 }
             }
+            Feature.HCERT -> {
+                featureHcertGroup.visibility = View.VISIBLE
+                featureTouchView.visibility = View.VISIBLE
+                true
+            }
             Feature.NOT_FOUND_NOTIFICATION_CONTROL -> {
                 feature_hints_text.setText(R.string.feature_not_found_notification_control)
                 featureHintsViewGroup.visibility = View.VISIBLE
@@ -688,6 +697,9 @@ class MainActivity : BaseActivity() {
             }
             Feature.DAILY_SUMMARY -> {
                 featureDailySummaryGroup.visibility = View.GONE
+            }
+            Feature.HCERT -> {
+                featureHcertGroup.visibility = View.GONE
             }
             Feature.HINTS, Feature.NOT_FOUND_NOTIFICATION_CONTROL -> {
                 featureHintsViewGroup.visibility = View.GONE
@@ -731,7 +743,7 @@ class MainActivity : BaseActivity() {
     ) {
         when (requestCode) {
             RequestCode.REQUEST_CAMERA_PERMISSION -> {
-                if (!PermissionUtils.provideLinkToSettingIfNeeded(this)) {
+                if (!PermissionUtils.provideLinkToSettingIfNeeded(this, R.string.barcode_camera_permission_dialog_message)) {
                     gotoBarcodePage()
                 }
             }

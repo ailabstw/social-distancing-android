@@ -2,6 +2,8 @@ package tw.gov.cdc.exposurenotifications
 
 import android.app.Application
 import android.content.Context
+import tw.gov.cdc.exposurenotifications.hcert.data.HcertRepository
+import tw.gov.cdc.exposurenotifications.data.InstructionRepository
 import tw.gov.cdc.exposurenotifications.nearby.ExposureNotificationManager
 import tw.gov.cdc.exposurenotifications.nearby.WorkScheduler
 import tw.gov.cdc.exposurenotifications.vitalfix.VitalFixer
@@ -31,4 +33,7 @@ class BaseApplication : Application() {
         lateinit var instance: BaseApplication
             private set
     }
+
+    // TODO: Consider a Dependency Injection framework.
+    val hcertRepository: HcertRepository by lazy { HcertRepository() }
 }

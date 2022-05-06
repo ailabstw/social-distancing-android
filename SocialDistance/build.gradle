@@ -1,3 +1,7 @@
+plugins {
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.6.10'
+}
+
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
@@ -13,8 +17,8 @@ android {
         applicationId "tw.gov.cdc.exposurenotifications"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 55
-        versionName "1.9.0"
+        versionCode 61
+        versionName "2.0.0"
         ndk {
             debugSymbolLevel 'FULL'
         }
@@ -24,7 +28,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false // TODO: true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -89,6 +93,7 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     implementation 'com.google.android.material:material:1.4.0'
     implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation "androidx.fragment:fragment-ktx:1.3.0"
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.core:core-ktx:1.6.0'
 
@@ -131,8 +136,12 @@ dependencies {
     implementation 'com.jakewharton.threetenabp:threetenabp:1.2.4'
 
     // UI components
-    implementation 'com.tbuonomo.andrui:viewpagerdotsindicator:4.1.2'
+    implementation 'com.tbuonomo:dotsindicator:4.2'
     implementation 'com.airbnb.android:lottie:5.0.3'
+    
+    // QR Genearator
+    implementation 'androidmads.library.qrgenearator:QRGenearator:1.0.4'
+    implementation 'com.google.zxing:core:3.3.2'
 
     // networking
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
@@ -142,4 +151,11 @@ dependencies {
     // Logger
     implementation 'io.github.microutils:kotlin-logging:1.7.4'
     implementation 'com.github.tony19:logback-android:2.0.0'
+
+    // COSE
+    implementation 'org.bouncycastle:bcpkix-jdk15to18:1.69'
+    implementation 'com.augustcellars.cose:cose-java:1.1.0'
+
+    // Json
+    implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.2'
 }

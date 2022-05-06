@@ -9,6 +9,10 @@ object PreferenceManager {
 
     private const val PREF_NAME = "PREF_NAME_TW_CDC_EN"
 
+    private const val PREF_KEY_INSTRUCTION_RISK_DETAIL = "PREF_KEY_INSTRUCTION_RISK_DETAIL"
+    private const val PREF_KEY_INSTRUCTION_RISK_DETAIL_SPLIT_MARK = "PREF_KEY_INSTRUCTION_RISK_DETAIL_SPLIT_MARK"
+    private const val PREF_KEY_INSTRUCTION_CANCEL_ALARM = "PREF_KEY_INSTRUCTION_CANCEL_ALARM"
+
     private const val PREF_KEY_FIRST_LAUNCH_TIME = "PREF_KEY_FIRST_LAUNCH_TIME"
     private const val PREF_KEY_ACCUMULATED_DISABLE_TIME = "PREF_KEY_ACCUMULATED_DISABLE_TIME"
     private const val PREF_KEY_LAST_DISABLE_TIME = "PREF_KEY_LAST_DISABLE_TIME"
@@ -30,8 +34,40 @@ object PreferenceManager {
     private const val PREF_KEY_GET_CODE_COUNT = "PREF_KEY_GET_CODE_COUNT"
     private const val PREF_KEY_LAST_GET_CODE_TIME = "PREF_KEY_LAST_GET_CODE_TIME"
 
+    private const val PREF_KEY_HCERT = "PREF_KEY_HCERT"
+
     private val sharedPreferences =
         BaseApplication.instance.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
+
+    var riskDetailInstruction: String
+        get() {
+            return sharedPreferences.getString(PREF_KEY_INSTRUCTION_RISK_DETAIL, "") ?: ""
+        }
+        set(value) {
+            sharedPreferences.edit {
+                putString(PREF_KEY_INSTRUCTION_RISK_DETAIL, value)
+            }
+        }
+
+    var riskDetailInstructionSplitMark: String
+        get() {
+            return sharedPreferences.getString(PREF_KEY_INSTRUCTION_RISK_DETAIL_SPLIT_MARK, "") ?: ""
+        }
+        set(value) {
+            sharedPreferences.edit {
+                putString(PREF_KEY_INSTRUCTION_RISK_DETAIL_SPLIT_MARK, value)
+            }
+        }
+
+    var cancelAlarmInstruction: String
+        get() {
+            return sharedPreferences.getString(PREF_KEY_INSTRUCTION_CANCEL_ALARM, "") ?: ""
+        }
+        set(value) {
+            sharedPreferences.edit {
+                putString(PREF_KEY_INSTRUCTION_CANCEL_ALARM, value)
+            }
+        }
 
     var lastEnterMainPageTime: Long
         get() {
@@ -216,6 +252,16 @@ object PreferenceManager {
         set(value) {
             sharedPreferences.edit {
                 putLong(PREF_KEY_LAST_GET_CODE_TIME, value)
+            }
+        }
+
+    var hcerts: Set<String>
+        get() {
+            return sharedPreferences.getStringSet(PREF_KEY_HCERT, setOf())!!.toSet()
+        }
+        set(value) {
+            sharedPreferences.edit {
+                putStringSet(PREF_KEY_HCERT, value)
             }
         }
 }

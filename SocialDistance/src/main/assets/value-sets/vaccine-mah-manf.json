@@ -1,0 +1,209 @@
+{
+  "valueSetId": "vaccines-covid-19-auth-holders",
+  "valueSetDate": "2022-01-26",
+  "valueSetValues": {
+    "ORG-100001699": {
+      "display": "AstraZeneca AB",
+      "lang": "en",
+      "active": true,
+      "system": "https://spor.ema.europa.eu/v1/organisations",
+      "version": ""
+    },
+    "ORG-100030215": {
+      "display": "Biontech Manufacturing GmbH",
+      "lang": "en",
+      "active": true,
+      "system": "https://spor.ema.europa.eu/v1/organisations",
+      "version": ""
+    },
+    "ORG-100001417": {
+      "display": "Janssen-Cilag International",
+      "lang": "en",
+      "active": true,
+      "system": "https://spor.ema.europa.eu/v1/organisations",
+      "version": ""
+    },
+    "ORG-100031184": {
+      "display": "Moderna Biotech Spain S.L.",
+      "lang": "en",
+      "active": true,
+      "system": "https://spor.ema.europa.eu/v1/organisations",
+      "version": ""
+    },
+    "ORG-100006270": {
+      "display": "Curevac AG",
+      "lang": "en",
+      "active": true,
+      "system": "https://spor.ema.europa.eu/v1/organisations",
+      "version": ""
+    },
+    "ORG-100013793": {
+      "display": "CanSino Biologics",
+      "lang": "en",
+      "active": true,
+      "system": "https://spor.ema.europa.eu/v1/organisations",
+      "version": ""
+    },
+    "ORG-100020693": {
+      "display": "China Sinopharm International Corp. - Beijing location",
+      "lang": "en",
+      "active": true,
+      "system": "https://spor.ema.europa.eu/v1/organisations",
+      "version": ""
+    },
+    "ORG-100010771": {
+      "display": "Sinopharm Weiqida Europe Pharmaceutical s.r.o. - Prague location",
+      "lang": "en",
+      "active": true,
+      "system": "https://spor.ema.europa.eu/v1/organisations",
+      "version": ""
+    },
+    "ORG-100024420": {
+      "display": "Sinopharm Zhijun (Shenzhen) Pharmaceutical Co. Ltd. - Shenzhen location",
+      "lang": "en",
+      "active": true,
+      "system": "https://spor.ema.europa.eu/v1/organisations",
+      "version": ""
+    },
+    "ORG-100032020": {
+      "display": "Novavax CZ a.s.",
+      "lang": "en",
+      "active": true,
+      "system": "https://spor.ema.europa.eu/v1/organisations",
+      "version": ""
+    },
+    "Gamaleya-Research-Institute": {
+      "display": "Gamaleya Research Institute",
+      "lang": "en",
+      "active": true,
+      "system": "http://ec.europa.eu/temp/vaccinemanufacturer",
+      "version": "1.0"
+    },
+    "Vector-Institute": {
+      "display": "Vector Institute",
+      "lang": "en",
+      "active": true,
+      "system": "http://ec.europa.eu/temp/vaccinemanufacturer",
+      "version": "1.0"
+    },
+    "Sinovac-Biotech": {
+      "display": "Sinovac Biotech",
+      "lang": "en",
+      "active": true,
+      "system": "http://ec.europa.eu/temp/vaccinemanufacturer",
+      "version": "1.0"
+    },
+    "Bharat-Biotech": {
+      "display": "Bharat Biotech",
+      "lang": "en",
+      "active": true,
+      "system": "http://ec.europa.eu/temp/vaccinemanufacturer",
+      "version": "1.0"
+    },
+    "ORG-100001981": {
+      "display": "Serum Institute Of India Private Limited",
+      "lang": "en",
+      "active": true,
+      "system": "https://spor.ema.europa.eu/v1/organisations",
+      "version": ""
+    },
+    "Fiocruz": {
+      "display": "Fiocruz",
+      "lang": "en",
+      "active": true,
+      "system": "http://ec.europa.eu/temp/vaccinemanufacturer",
+      "version": "1.3"
+    },
+    "ORG-100007893": {
+      "display": "R-Pharm CJSC",
+      "lang": "en",
+      "active": true,
+      "system": "https://spor.ema.europa.eu/v1/organisations",
+      "version": ""
+    },
+    "Chumakov-Federal-Scientific-Center": {
+      "display": "Chumakov Federal Scientific Center for Research and Development of Immune-and-Biological Products",
+      "lang": "en",
+      "active": true,
+      "system": "http://ec.europa.eu/temp/vaccinemanufacturer",
+      "version": "1.4"
+    },
+    "ORG-100023050": {
+      "display": "Gulf Pharmaceutical Industries",
+      "lang": "en",
+      "active": true,
+      "system": "https://spor.ema.europa.eu/v1/organisations",
+      "version": ""
+    },
+    "CIGB": {
+      "display": "Center for Genetic Engineering and Biotechnology",
+      "lang": "en",
+      "active": true,
+      "system": "http://ec.europa.eu/temp/vaccinemanufacturer",
+      "version": "1.5"
+    },
+    "Sinopharm-WIBP": {
+      "display": "Sinopharm - Wuhan Institute of Biological Products",
+      "lang": "en",
+      "active": true,
+      "system": "http://ec.europa.eu/temp/vaccinemanufacturer",
+      "version": "1.5"
+    },
+    "ORG-100033914": {
+      "display": "Medigen Vaccine Biologics Corporation",
+      "lang": "en",
+      "active": true,
+      "system": "https://spor.ema.europa.eu/v1/organisations",
+      "version": ""
+    },
+    "ORG-100000788": {
+      "display": "Sanofi Pasteur",
+      "lang": "en",
+      "active": true,
+      "system": "https://spor.ema.europa.eu/v1/organisations",
+      "version": ""
+    },
+    "ORG-100036422": {
+      "display": "Valneva France",
+      "lang": "en",
+      "active": true,
+      "system": "https://spor.ema.europa.eu/v1/organisations",
+      "version": ""
+    },
+    "Instituto-Butantan": {
+      "display": "Instituto Butantan",
+      "lang": "en",
+      "active": true,
+      "system": "http://ec.europa.eu/temp/vaccinemanufacturer",
+      "version": "1.9"
+    },
+    "NVSI": {
+      "display": "National Vaccine and Serum Institute, China",
+      "lang": "en",
+      "active": true,
+      "system": "http://ec.europa.eu/temp/vaccinemanufacturer",
+      "version": "1.9"
+    },
+    "Yisheng-Biopharma": {
+      "display": "Yisheng Biopharma",
+      "lang": "en",
+      "active": true,
+      "system": "http://ec.europa.eu/temp/vaccinemanufacturer",
+      "version": "1.9"
+    },
+    "ORG-100026614": {
+      "display": "Sinocelltech Ltd.",
+      "lang": "en",
+      "active": true,
+      "system": "https://spor.ema.europa.eu/v1/organisations",
+      "version": ""
+    },
+    "ORG-100008549": {
+      "display": "Medicago Inc.",
+      "lang": "en",
+      "active": true,
+      "system": "https://spor.ema.europa.eu/v1/organisations",
+      "version": ""
+    }
+  }
+}
