@@ -21,6 +21,7 @@ import tw.gov.cdc.exposurenotifications.common.Log
 import tw.gov.cdc.exposurenotifications.common.PreferenceManager
 import tw.gov.cdc.exposurenotifications.common.RequestCode
 import tw.gov.cdc.exposurenotifications.common.Utils.toSpecificTime
+import tw.gov.cdc.exposurenotifications.data.InstructionRepository
 import tw.gov.cdc.exposurenotifications.keydownload.KeyFile
 import tw.gov.cdc.exposurenotifications.nearby.NotificationHelper.NotificationType.ProvideDiagnosisKeys
 import java.io.File
@@ -39,6 +40,7 @@ class ProvideDiagnosisKeysWorker(
 
     override suspend fun doWork(): Result {
         Log.d(TAG, "doWork")
+        InstructionRepository.updateInstruction()
         ExposureNotificationManager.updateStatus(context)
         return try {
             withTimeout(TimeUnit.MINUTES.toMillis(10)) {

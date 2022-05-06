@@ -1,24 +1,24 @@
 package tw.gov.cdc.exposurenotifications.activity
 
-import android.app.Activity
 import android.app.AlertDialog
-import android.app.DatePickerDialog
+import android.graphics.Paint
+import android.graphics.Paint.FontMetricsInt
 import android.os.Bundle
-import android.text.InputType
+import android.os.Parcel
+import android.text.ParcelableSpan
+import android.text.Spannable
+import android.text.SpannableStringBuilder
+import android.text.TextUtils
+import android.text.method.ScrollingMovementMethod
+import android.text.style.LeadingMarginSpan
+import android.text.style.LineHeightSpan
 import android.view.Menu
 import kotlinx.android.synthetic.main.activity_cancel_alarm.*
-import okhttp3.MediaType.Companion.toMediaTypeOrNull
-import okhttp3.RequestBody.Companion.toRequestBody
-import okhttp3.ResponseBody
 import org.json.JSONException
 import org.json.JSONObject
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import tw.gov.cdc.exposurenotifications.R
-import tw.gov.cdc.exposurenotifications.api.APIService
 import tw.gov.cdc.exposurenotifications.common.Log
-import tw.gov.cdc.exposurenotifications.common.Utils
+import tw.gov.cdc.exposurenotifications.data.InstructionRepository
 import tw.gov.cdc.exposurenotifications.keyupload.ApiConstants.VerifyV1
 import tw.gov.cdc.exposurenotifications.nearby.ExposureNotificationManager
 import tw.gov.cdc.exposurenotifications.network.Padding
@@ -30,15 +30,13 @@ class CancelAlarmActivity : BaseActivity() {
         private const val TAG = "UploadActivity"
     }
 
-    private val sendButton by lazy { cancel_alarm_send_button }
-    private val codeText by lazy { cancel_alarm_code_edit_text }
-    private val dateText by lazy {
-        cancel_alarm_test_date_edit_text.apply {
-            inputType = InputType.TYPE_NULL
+    private val instructionText by lazy {
+        cancel_alarm_text.apply {
+            movementMethod = ScrollingMovementMethod()
         }
     }
-
-    private var cancelDate = Calendar.getInstance()
+    private val checkBox by lazy { cancel_alarm_check_box }
+    private val sendButton by lazy { cancel_alarm_send_button }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,90 +48,60 @@ class CancelAlarmActivity : BaseActivity() {
             setDisplayShowHomeEnabled(true)
         }
 
-        currentFocus?.clearFocus()
+        val builder = SpannableStringBuilder()
+        val strings = InstructionRepository.cancelAlarmInstruction.toTypedArray().takeIf { it.isNotEmpty() }
+            ?: resources.getStringArray(R.array.cancel_alert_intruction)
 
-        dateText.setOnClickListener {
-            DatePickerDialog(this,
-                             { _, year, monthOfYear, dayOfMonth ->
-                                 dateText.setText(getString(R.string.date_yyyy_mm_dd,
-                                                            year,
-                                                            monthOfYear + 1,
-                                                            dayOfMonth))
-                                 cancelDate.apply {
-                                     set(Calendar.YEAR, year)
-                                     set(Calendar.MONTH, monthOfYear)
-                                     set(Calendar.DAY_OF_MONTH, dayOfMonth)
-                                 }
-                             },
-                             cancelDate.get(Calendar.YEAR),
-                             cancelDate.get(Calendar.MONTH),
-                             cancelDate.get(Calendar.DAY_OF_MONTH)).apply {
-                Calendar.getInstance().add(Calendar.DAY_OF_MONTH, -14)
-                datePicker.minDate = Calendar.getInstance().apply {
-                    add(Calendar.DAY_OF_MONTH, -14)
-                }.timeInMillis
-                datePicker.maxDate = Date().time
-            }.show()
+        strings.forEachIndexed { index, s ->
+            val number = "${index + 1}. "
+            builder.append(
+                number + s,
+                LeadingMarginSpan.Standard(0, instructionText.paint.measureText(number).toInt()),
+                Spannable.SPAN_EXCLUSIVE_EXCLUSIVE
+            )
+            if (index != strings.lastIndex) {
+                builder.append("\n", object : LineHeightSpan {
+                    override fun chooseHeight(text: CharSequence?, start: Int, end: Int, spanstartv: Int, lineHeight: Int, fm: Paint.FontMetricsInt?) {
+                        fm?.apply {
+                            val height = descent - ascent
+                            if (height > 0) {
+                                val ratio = 0.5
+                                descent = (descent * ratio).toInt()
+                                ascent = descent - (height * ratio).toInt()
+                            }
+                        }
+                    }
+                }, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+            }
+        }
+
+        instructionText.text = builder
+
+        instructionText.post {
+            checkBox.isEnabled = !instructionText.canScrollVertically(1)
+        }
+
+        instructionText.setOnScrollChangeListener { _, _, _, _, _ ->
+            checkBox.isEnabled = !instructionText.canScrollVertically(1)
+        }
+
+        checkBox.setOnCheckedChangeListener { _, isChecked ->
+            sendButton.isEnabled = isChecked
         }
 
         sendButton.setOnClickListener {
-
-            if (dateText.text.isNullOrBlank()) {
-                Utils.showHintDialog(this, R.string.cancel_alert_test_date)
-                return@setOnClickListener
-            }
-
-            if (codeText.text.isNullOrBlank()) {
-                Utils.showHintDialog(this, R.string.enter_verification_code)
-                return@setOnClickListener
-            }
-
-            sendButton.isEnabled = false
-            showProgressBar()
-
-            val code = codeText.text.toString()
-            val body = verificationCodeRequestBody(code)
-            val bodyRequest = body.toString().toRequestBody("application/json".toMediaTypeOrNull())
-
-            APIService.verificationServer.submitAccCode(body = bodyRequest)
-                .enqueue(object : Callback<ResponseBody> {
-                    override fun onResponse(call: Call<ResponseBody>,
-                                            response: Response<ResponseBody>) {
-                        Log.i(TAG, "submitAccCode onResponse $response")
-                        if (response.isSuccessful) {
-                            ExposureNotificationManager.updateSafeSummaries(cancelDate)
-                            showUploadResultDialog(true)
-                        } else {
-                            showUploadResultDialog(false)
-                        }
-                    }
-
-                    override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
-                        Log.e(TAG, "submitAccCode onFailure $t")
-                        showUploadResultDialog(false)
-                    }
-                })
-        }
-    }
-
-    private fun showUploadResultDialog(success: Boolean) {
-        sendButton.isEnabled = true
-        hideProgressBar()
-        AlertDialog.Builder(this)
-            .setMessage(if (success) R.string.upload_success else R.string.upload_fail)
-            .setPositiveButton(R.string.confirm) { _, _ ->
-                if (success) {
-                    onUploadSuccess()
+            AlertDialog.Builder(this)
+                .setTitle(R.string.menu_cancel_alert)
+                .setMessage(R.string.cancel_alert_confirm_title)
+                .setPositiveButton(R.string.confirm) { _, _ ->
+                    ExposureNotificationManager.updateSafeSummaries(Calendar.getInstance())
+                    finish()
                 }
-            }
-            .setCancelable(false)
-            .create()
-            .show()
-    }
-
-    private fun onUploadSuccess() {
-        setResult(Activity.RESULT_OK)
-        finish()
+                .setNegativeButton(R.string.cancel) { _, _ -> }
+                .setCancelable(false)
+                .create()
+                .show()
+        }
     }
 
     // ActionBar

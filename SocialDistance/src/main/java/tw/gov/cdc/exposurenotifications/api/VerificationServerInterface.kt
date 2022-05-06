@@ -3,13 +3,10 @@ package tw.gov.cdc.exposurenotifications.api
 import okhttp3.RequestBody
 import okhttp3.ResponseBody
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.Header
-import retrofit2.http.Headers
-import retrofit2.http.POST
+import retrofit2.http.*
 import tw.gov.cdc.exposurenotifications.BaseApplication
-import tw.gov.cdc.exposurenotifications.BuildConfig
 import tw.gov.cdc.exposurenotifications.Secrets
+import tw.gov.cdc.exposurenotifications.api.response.HealthEducationResponse
 import tw.gov.cdc.exposurenotifications.keyupload.ApiConstants
 
 interface VerificationServerInterface {
@@ -55,5 +52,14 @@ interface VerificationServerInterface {
     )
     @POST("/api/phone-check")
     fun requestCode(@Header(ApiConstants.VerifyV1.API_KEY_HEADER) apiKey: String = API_KEY,
-                      @Body body: RequestBody): Call<ResponseBody>
+                    @Body body: RequestBody): Call<ResponseBody>
+
+    @Headers(
+        "content-type: application/json",
+        "accept: application/json"
+    )
+    @GET("/api/asset/health_education")
+    fun healthEducation(@Header(ApiConstants.VerifyV1.API_KEY_HEADER) apiKey: String = API_KEY,
+                        @Query("lang") language: String): Call<HealthEducationResponse>
+
 }
