@@ -3,13 +3,13 @@ package tw.gov.cdc.exposurenotifications.hcert.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidmads.library.qrgenearator.QRGContents
-import androidmads.library.qrgenearator.QRGEncoder
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_hcert.view.*
 import tw.gov.cdc.exposurenotifications.R
+import tw.gov.cdc.exposurenotifications.common.QRCodeEncoder
 
 class HcertMainAdapter(
     private val actionHandler: HcertMainActionHandler,
@@ -45,14 +45,15 @@ sealed class HcertViewHolder(v: View) : RecyclerView.ViewHolder(v) {
 
         override fun bind(item: HcertModel) {
             qrCodeImage.post {
-                val qrgEncoder = QRGEncoder(
-                    item.rawString, null,
-                    QRGContents.Type.TEXT,
-                    qrCodeImage.width
-                )
                 try {
-                    val bitmap = qrgEncoder.bitmap
-                    qrCodeImage.setImageBitmap(bitmap)
+                    qrCodeImage.setImageBitmap(
+                        QRCodeEncoder.getBitmap(
+                            item.rawString,
+                            qrCodeImage.width,
+                            ContextCompat.getColor(qrCodeImage.context, R.color.black),
+                            ContextCompat.getColor(qrCodeImage.context, R.color.white)
+                        )
+                    )
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }

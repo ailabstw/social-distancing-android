@@ -138,8 +138,7 @@ dependencies {
     // UI components
     implementation 'com.airbnb.android:lottie:5.0.3'
     
-    // QR Genearator
-    implementation 'androidmads.library.qrgenearator:QRGenearator:1.0.4'
+    // zxing
     implementation 'com.google.zxing:core:3.3.2'
 
     // networking
