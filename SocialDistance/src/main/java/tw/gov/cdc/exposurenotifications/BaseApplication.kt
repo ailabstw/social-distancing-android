@@ -14,7 +14,6 @@ class BaseApplication : Application() {
         super.onCreate()
         instance = this
 
-        InstructionRepository.updateInstruction()
         ExposureNotificationManager.updateStatus(this)
         ExposureNotificationManager.state.observeForever {
             if (it != ExposureNotificationManager.ExposureNotificationState.Disabled) {

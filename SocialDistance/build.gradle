@@ -17,8 +17,8 @@ android {
         applicationId "tw.gov.cdc.exposurenotifications"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 55
-        versionName "1.9.0"
+        versionCode 61
+        versionName "2.0.0"
         ndk {
             debugSymbolLevel 'FULL'
         }
@@ -28,7 +28,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false // TODO: true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
