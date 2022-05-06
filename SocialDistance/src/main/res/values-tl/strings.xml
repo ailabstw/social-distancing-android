@@ -69,6 +69,9 @@
 
 
 
+
+
+
     <string name="upload_confirm_title">Kumpirmado ka bang isang pasyente ng COVID-19?</string>
     <string name="upload_confirm_message">Ang function na ito ay para sa pag-upload ng mga pasyente ng random ID upang mabawasan ang posibilidad ng pagkalat ng COVID-19.</string>
     <string name="upload_title">Mag-upload ng anonymous ID</string>
@@ -80,7 +83,8 @@
     <string name="upload_tek_description">Mangyaring i-type ang verification code na ibinigay ng health bureau. Matapos ipadala ito, maa-upload ang iyong random ID sa database ng Taiwan Centers for Disease Control, at awtomatikong buburahin pagkalipas ng 10 araw.</string>
     <string name="upload_success">Matagumpay na pag-upload</string>
     <string name="upload_fail">Nabigo ang pag-upload</string>
-    
+
+
 
     <string name="enter_verification_code">Mangyaring i-type ang verification code</string>
     <string name="enter_verification_code_hint">Mangyaring i-type ang verification code</string>
@@ -112,9 +116,51 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <string name="control_exposure">Exposure Notification Services</string>
     <string name="control_exposure_turn_off_title">Sigurado ka bang nais mong i-off ang Exposure Notification?</string>
     <string name="control_exposure_turn_off_detail">Hindi na magpapadala ang sistema ng notification muli kung na-expose ka na sa pasyente ng COVID-19.</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
@@ -138,6 +184,8 @@
 
     <string name="app_update_message">Na-download na ang pinaka bagong bersyon ng "Taiwan Social Distance", mangyaring buksan ulit ang App.</string>
     <string name="app_update_restart">Restart</string>
+
+
 
 
 

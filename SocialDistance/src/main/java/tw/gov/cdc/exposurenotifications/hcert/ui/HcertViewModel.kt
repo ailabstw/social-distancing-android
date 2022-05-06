@@ -58,12 +58,14 @@ class HcertViewModel : ViewModel() {
         val nameTransliterated: String
 
         hcert.subject.run {
+            val fNameTransliterated = familyNameTransliterated.replace("<", "-")
+            val gNameTransliterated = givenNameTransliterated?.replace("<", "-") ?: ""
             if (familyName?.contains(regex) == true || givenName?.contains(regex) == true) {
-                name = "$givenName $familyName"
-                nameTransliterated = "${givenNameTransliterated?.replace("<", "-")} ${familyNameTransliterated.replace("<", "-")}"
+                nameTransliterated = "$gNameTransliterated $fNameTransliterated".trim(' ', ',', '-').takeIf { it.contains(regex) } ?: "-"
+                name = "${givenName ?: ""} ${familyName ?: ""}".trim(' ', ',', '-').takeIf { it.isNotEmpty() } ?: nameTransliterated
             } else {
-                name = "$familyName$givenName"
-                nameTransliterated = "${familyNameTransliterated.replace("<", "-")}, ${givenNameTransliterated?.replace("<", "-")}"
+                nameTransliterated = "$fNameTransliterated, $gNameTransliterated".trim(' ', ',', '-').takeIf { it.contains(regex) } ?: "-"
+                name = "${familyName ?: ""}${givenName ?: ""}".trim(' ', ',', '-').takeIf { it.isNotEmpty() } ?: nameTransliterated
             }
         }
 

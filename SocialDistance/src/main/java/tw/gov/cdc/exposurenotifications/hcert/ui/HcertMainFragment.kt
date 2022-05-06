@@ -23,6 +23,8 @@ class HcertMainFragment : Fragment(), HcertMainActionHandler {
     private val mainViewGroup by lazy { hcert_main_view_group }
     private val viewPager by lazy { hcert_view_pager }
     private val dotsIndicator by lazy { hcert_dotsIndicator }
+    // FIXME: Workaround due to setting dotsIndicator's visibility is not working
+    private val dotsIndicatorMask by lazy { hcert_dotsIndicator_mask }
     private val buttonList by lazy { hcert_list_button }
     private val buttonAddMore by lazy { hcert_add_more_button }
 
@@ -53,6 +55,13 @@ class HcertMainFragment : Fragment(), HcertMainActionHandler {
 
         viewModel.allItems.observe(viewLifecycleOwner) {
             adapter.submitList(it)
+            if (it.size > 1) {
+                dotsIndicator.visibility = View.VISIBLE
+                dotsIndicatorMask.visibility = View.INVISIBLE
+            } else {
+                dotsIndicator.visibility = View.INVISIBLE
+                dotsIndicatorMask.visibility = View.VISIBLE
+            }
         }
 
         viewModel.autoScroll.observe(viewLifecycleOwner) {

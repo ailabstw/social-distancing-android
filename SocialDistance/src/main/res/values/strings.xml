@@ -84,6 +84,7 @@
     <string name="upload_success">Upload Successful</string>
     <string name="upload_fail">Upload Failed</string>
     <string name="upload_fail_message_no_files">No data between start and end dates.</string>
+    <string name="upload_fail_message_invalid_code">Invalid verification code.</string>
 
     <string name="enter_verification_code">Please Enter Verification Code</string>
     <string name="enter_verification_code_hint">Verification Code</string>
@@ -122,44 +123,45 @@
 
     <string name="barcode_shortcut_label">1922 SMS</string>
     <string name="barcode_shortcut_label_long">Scan 1922 QR Code</string>
-    <string name="barcode_hint_1922_invalid">Invalid 1922 SMS contact tracing QR code</string>
-    <string name="barcode_hint_hcert_no_qr_code">未偵測到疫苗接種數位證明 QR code</string>
-    <string name="barcode_hint_hcert_invalid">非疫苗接種數位證明 QR code</string>
-    <string name="barcode_hint_hcert_duplicated">此疫苗接種數位證明已存在</string>
-    <string name="barcode_hint_hcert_expired">此疫苗接種數位證明已過期</string>
+    <string name="barcode_hint_1922_invalid">Invalid 1922 SMS contact tracing QR code.</string>
+    <string name="barcode_hint_hcert_no_qr_code">Failed to detect vaccination certificate QR code.</string>
+    <string name="barcode_hint_hcert_invalid">Invalid vaccination certificate QR Code.</string>
+    <string name="barcode_hint_hcert_duplicated">Duplicated vaccination certificate.</string>
+    <string name="barcode_hint_hcert_expired">Expired vaccination certificate.</string>
     <string name="barcode_camera_permission_dialog_title">&appname; Would Like to Access the Camera</string>
     <string name="barcode_camera_permission_dialog_message">&appname; uses the camera to scan QR code for 1922 SMS contact tracing registration.</string>
-    <string name="barcode_camera_permission_dialog_message_hcert">&appname; 要使用相機來掃描疫苗接種數位證明 QR code</string>
+    <string name="barcode_camera_permission_dialog_message_hcert">&appname; uses the camera to scan QR code of vaccination certificate.</string>
 
     <string name="control_exposure">Notification Service</string>
     <string name="control_exposure_turn_off_title">Are you sure you want to disable exposure notification?</string>
     <string name="control_exposure_turn_off_detail">If you have been in contact with a COVID-19 patient, the system will not notify you in this mode.</string>
     <string name="control_not_found_notification">No Exposure Detected Notification</string>
 
-    <string name="hcert_full_name">疫苗接種數位證明</string>
-    <string name="hcert_description">將你與家人的疫苗接種數位證明存入手機，並以 QR code 的方式提供快速驗證。</string>
-    <string name="hcert_button_add">立即新增疫苗接種數位證明</string>
-    <string name="hcert_last_dose_date">最近接種日期 %s</string>
-    <string name="hcert_hint">使用時請同步出示身分證</string>
-    <string name="hcert_delete">刪除此疫苗接種數位證明</string>
-    <string name="hcert_menu_apply">申請疫苗接種數位證明</string>
-    <string name="hcert_menu_vaccine_appointment">預約疫苗</string>
-    <string name="hcert_menu_faq">常見問題</string>
-    <string name="hcert_import">匯入疫苗接種數位證明</string>
+    <string name="hcert_full_name">Vaccination Certificate</string>
+    <string name="hcert_description">Carry a digital copy of the vaccination certificate by scanning the QR code of the digital COVID-19 certificate.</string>
+    <string name="hcert_button_add">Add Vaccination Certificate</string>
+    <string name="hcert_last_dose_date">Date of vaccination: %s</string>
+    <string name="hcert_hint">Valid in combination with a government issued ID.</string>
+    <string name="hcert_delete">Remove This Vaccination Certificate</string>
+    <string name="hcert_menu_apply">Apply for Vaccination Certificate</string>
+    <string name="hcert_menu_vaccine_appointment">Vaccination Reservation</string>
+    <string name="hcert_menu_faq">FAQ</string>
+    <string name="hcert_apply">Apply</string>
+    <string name="hcert_import">Import</string>
 
-    <string name="hcert_detail_target">預防疾病名稱：</string>
-    <string name="hcert_detail_vaccine">疫苗類型：</string>
-    <string name="hcert_detail_medicinal_product">疫苗名稱：</string>
-    <string name="hcert_detail_authorization_holder">疫苗經銷商或製造商：</string>
-    <string name="hcert_detail_dose">接種劑次：</string>
-    <string name="hcert_detail_date">接種日期：</string>
-    <string name="hcert_detail_country">接種國家：</string>
-    <string name="hcert_detail_certificate_issuer">數位證明發行機構：</string>
-    <string name="hcert_detail_certificate_identifier">數位證明識別碼：</string>
+    <string name="hcert_detail_target">Disease or agent targeted: </string>
+    <string name="hcert_detail_vaccine">Vaccine type: </string>
+    <string name="hcert_detail_medicinal_product">Product: </string>
+    <string name="hcert_detail_authorization_holder">Manufacturer: </string>
+    <string name="hcert_detail_dose">Dose: </string>
+    <string name="hcert_detail_date">Date of vacination: </string>
+    <string name="hcert_detail_country">Country of vaccination: </string>
+    <string name="hcert_detail_certificate_issuer">Issuer: </string>
+    <string name="hcert_detail_certificate_identifier">UVCI: </string>
 
-    <string name="hcert_delete_confirm_title">是否確認刪除？</string>
-    <string name="hcert_delete_confirm_message">確認刪除%s的疫苗接種數位證明嗎？</string>
-    <string name="hcert_limit_reached_message">數量已達上限</string>
+    <string name="hcert_delete_confirm_title">Are you sure you want to remove it?</string>
+    <string name="hcert_delete_confirm_message">Are you sure you want to remove %s\'s vaccination certificate?</string>
+    <string name="hcert_limit_reached_message">Exceeded vaccination certificates limits.</string>
 
     <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
 
@@ -194,8 +196,8 @@
     <string name="feature_barcode_tip_split">:</string>
     <string name="feature_barcode_tip_doc">Android Help Center</string>
     <string name="feature_daily_summary">New \"Daily Summary\" page.</string>
-    <string name="feature_hcert">新增「疫苗接種數位證明」存放功能</string>
-    <string name="feature_hcert_tip">讓您輕鬆存放與管理自己以及全家人的疫苗接種數位證明。</string>
+    <string name="feature_hcert">Newly added Vaccination Certificate</string>
+    <string name="feature_hcert_tip">Manage vaccination certificate for you and your loved ones.</string>
     <string name="feature_not_found_notification_control">You can turn off No Detected Notification from the Exposure Notification Settings.</string>
     <string name="feature_hints">You can check the hints again from the menu.</string>
 

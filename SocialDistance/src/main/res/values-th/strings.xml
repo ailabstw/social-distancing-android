@@ -69,6 +69,9 @@
 
 
 
+
+
+
     <string name="upload_confirm_title">คุณเป็นผู้ป่วยยืนยัน หรือไม่</string>
     <string name="upload_confirm_message">ฟังก์ชันนี้เป็นการอัพโหลดรหัสIDแบบสุ่มของผู้ป่วยยืนยันโดยไม่ระบุตัวตน เพื่อลดการแพร่ระบาดของโรค</string>
     <string name="upload_title">อัพโหลดIDสุ่ม</string>
@@ -80,6 +83,7 @@
     <string name="upload_tek_description">กรุณากรอกรหัสยืนยันที่ได้รับจากหน่วยงานสาธารณสุข จากนั้นจะแสดงรหัสIDแบบสุ่มของคุณ ข้อมูลของคุณจะถูกจัดเก็บไว้ในกระทรวงสาธารณสุข และจะทำการถูกลบออกโดยอัตโนมัติหลัง10วัน</string>
     <string name="upload_success">อัพโหลดสำเร็จ</string>
     <string name="upload_fail">อัพโหลดล้มเหลว</string>
+
 
 
     <string name="enter_verification_code">กรุณากรอกรหัสยืนยัน</string>
@@ -112,9 +116,51 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <string name="control_exposure">การแจ้งเตือนความเสี่ยงสัมผัส</string>
     <string name="control_exposure_turn_off_title">คุณยืนยันที่จะปิดรับการแจ้งเตือนความเสี่ยงสัมผัสหรือไม่?</string>
     <string name="control_exposure_turn_off_detail">หากคุณเคยสัมผัสผู้ป่วยยืนยัน ระบบจะไม่ทำการแจ้งเตือนคุณ</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
@@ -138,6 +184,8 @@
 
     <string name="app_update_message">แอปพลิเคชัน"ระยะห่างทางสังคมไต้หวัน"ได้รับการอัพเดทเป็นเวอร์ชั่นล่าสุด โปรดเปิดการทำงานแอปอีกครั้ง</string>
     <string name="app_update_restart">เริ่มการทำงานใหม่</string>
+
+
 
 
 

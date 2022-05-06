@@ -48,6 +48,13 @@ class HcertDetailFragment : Fragment(), HcertDetailActionHandler {
 
         viewModel.allItems.observe(viewLifecycleOwner) {
             adapter.submitList(it)
+            if (it.size > 1) {
+                prevButton.visibility = View.VISIBLE
+                nextButton.visibility = View.VISIBLE
+            } else {
+                prevButton.visibility = View.INVISIBLE
+                nextButton.visibility = View.INVISIBLE
+            }
         }
 
         viewModel.currentPosition.observe(viewLifecycleOwner) { position ->

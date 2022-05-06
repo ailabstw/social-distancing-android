@@ -69,6 +69,9 @@
 
 
 
+
+
+
     <string name="upload_confirm_title">Apakah Anda terkonfimasi sebagai pasien COVID-19?</string>
     <string name="upload_confirm_message">Unggah ID anonim Anda untuk mengurangi kemungkinan penyebaran.</string>
     <string name="upload_title">Mengunggah ID Acak</string>
@@ -80,6 +83,7 @@
     <string name="upload_tek_description">Silakan masukkan nomor verifikasi yang telah diberikan kepada Anda oleh Kementrian Kesehatan. Setelah mengkonfirmasi nomor verifikasi Anda, ID anonim Anda akan diunggah ke database CDC dan akan secara otomatis dihapus setelah 10 hari.</string>
     <string name="upload_success">BERHASIL mengunggah</string>
     <string name="upload_fail">GAGAL mengunggah</string>
+
 
 
     <string name="enter_verification_code">Masukkan nomor verifikasi</string>
@@ -112,9 +116,51 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <string name="control_exposure">Layanan Notifikasi Paparan</string>
     <string name="control_exposure_turn_off_title">Apakah Anda yakin untuk mematikan notifikasi paparan?</string>
     <string name="control_exposure_turn_off_detail">Apabila Anda pernah kontak langsung dengan pasien terkonfirmasi covid-19, sistem tidak akan lagi mengirimkan notifikasi.</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
@@ -138,6 +184,8 @@
 
     <string name="app_update_message">Aplikasi Social Distancing Taiwan terbaru telah diunduh. Silakan tutup dan buka kembali aplikasi.</string>
     <string name="app_update_restart">Mulai ulang</string>
+
+
 
 
 

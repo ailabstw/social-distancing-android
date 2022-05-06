@@ -12,6 +12,7 @@ import androidx.annotation.StringRes
 import kotlinx.android.synthetic.main.activity_web_view.*
 import tw.gov.cdc.exposurenotifications.R
 
+
 class WebViewActivity : BaseActivity() {
 
     enum class Page(
@@ -40,6 +41,14 @@ class WebViewActivity : BaseActivity() {
                         label = page.label!!,
                         lockNavigation = page.lockNavigation
                     )
+                }
+                Page.HCERT_FAQ -> {
+                    val browserIntent = Intent(Intent.ACTION_VIEW).apply {
+                        setDataAndType(Uri.parse(context.getString(page.url)), "application/pdf")
+                    }
+                    Intent.createChooser(browserIntent, context.getString(R.string.hcert_menu_faq)).apply {
+                        flags = Intent.FLAG_ACTIVITY_NEW_TASK
+                    }
                 }
                 else -> {
                     Intent(Intent.ACTION_VIEW, Uri.parse(context.getString(page.url)))
