@@ -19,20 +19,18 @@ class HcertViewModel : ViewModel() {
     val canAdd: Boolean get() = _repository.canAdd
 
     val allItems: LiveData<List<HcertModel>> = Transformations.map(_repository.hcerts) {
-        it.fold(mutableListOf()) { acc, hcert ->
+        it.fold<String, MutableList<HcertModel>>(mutableListOf()) { acc, hcert ->
             try {
                 acc.add(createHcertModel(Chain.decode(hcert, false)))
             } catch (e: VerificationException) { }
             acc
-        }
+        }.also { calculateItemChanged(it.size) }
     }
 
     private var itemCount = allItems.value?.size ?: 0
-    val autoScroll: LiveData<Boolean> = Transformations.map(allItems) {
-        val oldCount = itemCount
-        itemCount = it.size
-        oldCount != 0 && oldCount < itemCount
-    }
+
+    private val _autoScroll = MutableLiveData<Boolean>()
+    val autoScroll: LiveData<Boolean> = _autoScroll
 
     private val _currentPosition = MutableLiveData(0)
     val currentPosition: LiveData<Int> = _currentPosition
@@ -48,6 +46,12 @@ class HcertViewModel : ViewModel() {
     fun updatePosition(newPosition: Int) {
         if (_currentPosition.value != newPosition) {
             _currentPosition.value = newPosition
+        }
+    }
+
+    fun updateAutoScroll(isAuto: Boolean) {
+        if (_autoScroll.value != isAuto) {
+            _autoScroll.value = isAuto
         }
     }
 
@@ -87,5 +91,11 @@ class HcertViewModel : ViewModel() {
                 rawString = hcert.rawString
             )
         }
+    }
+
+    private fun calculateItemChanged(newCount: Int) {
+        val oldCount = itemCount
+        itemCount = newCount
+        _autoScroll.value = oldCount != 0 && oldCount < itemCount
     }
 }

@@ -60,8 +60,7 @@ class IntroductionActivity : BaseActivity() {
             activity = this,
             showStartButton = showStartButton
         )
-
-        dotsIndicator.setViewPager(viewPager)
+        tabLayout.setupWithViewPager(viewPager)
     }
 
     // ActionBar
