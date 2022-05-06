@@ -108,7 +108,7 @@
 
     <string name="barcode_shortcut_label">實聯掃描</string>
     <string name="barcode_shortcut_label_long">掃描 1922 簡訊實聯制</string>
-    <string name="barcode_invalid_hint">非 1922 簡訊實聯制 QR code</string>
+    <string name="barcode_hint_1922_invalid">非 1922 簡訊實聯制 QR code</string>
     <string name="barcode_camera_permission_dialog_title">&appname;想取用您的相機</string>
     <string name="barcode_camera_permission_dialog_message">&appname;要使用相機來掃描 1922 簡訊實聯制 QR code</string>
 

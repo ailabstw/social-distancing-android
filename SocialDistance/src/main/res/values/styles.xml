@@ -1,12 +1,19 @@
 <resources>
 
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorAccent">@color/primary</item>
         <item name="colorSurface">@color/white</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+
+        <item name="actionOverflowMenuStyle">@style/ActionOverflowMenuStyle</item>
+    </style>
+
+    <style name="ActionOverflowMenuStyle" parent="@style/Widget.MaterialComponents.PopupMenu.Overflow">
+        <item name="android:popupBackground">@color/popupBackground</item>
+        <item name="android:actionMenuTextColor">@color/white</item>
     </style>
 
     <style name="AppTheme.Splash">
@@ -40,8 +47,61 @@
         <item name="android:background">@drawable/background_button_major</item>
     </style>
 
+    <style name="Button.Major.Red">
+        <item name="android:background">@drawable/background_button_major_red</item>
+    </style>
+
     <style name="Button.Secondary">
         <item name="android:background">@drawable/background_button_secondary</item>
+    </style>
+
+    <style name="Button.Secondary.Light">
+        <item name="android:background">@drawable/background_button_secondary_light</item>
+    </style>
+
+    <style name="Button.Round" parent="Widget.MaterialComponents.Button">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:minHeight">0dp</item>
+        <item name="android:paddingStart">@dimen/button_padding_horizontal</item>
+        <item name="android:paddingEnd">@dimen/button_padding_horizontal</item>
+        <item name="android:paddingTop">@dimen/button_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/button_padding_vertical</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/text_size_button</item>
+        <item name="android:insetLeft">0dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetRight">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="shapeAppearanceOverlay">@style/ShapeAppearanceOverlay.CornerSize.50percent</item>
+    </style>
+
+    <style name="Button.Round.Icon">
+        <item name="android:layout_width">@dimen/button_size_round</item>
+        <item name="android:layout_height">@dimen/button_size_round</item>
+        <item name="android:layout_margin">@dimen/main_margin_horizontal</item>
+        <item name="android:padding">0dp</item>
+        <item name="iconGravity">textStart</item>
+        <item name="iconPadding">0dp</item>
+        <item name="iconSize">@dimen/button_icon_size_round</item>
+        <item name="iconTintMode">multiply</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.CornerSize.50percent" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="DotsIndicator">
+        <item name="android:foregroundGravity">center</item>
+        <item name="dampingRatio">0.5</item>
+        <item name="dotsColor">@color/primary</item>
+        <item name="dotsSize">12dp</item>
+        <item name="dotsSpacing">2.5dp</item>
+        <item name="dotsStrokeColor">@color/primary_dark</item>
+        <item name="dotsStrokeWidth">1dp</item>
+        <item name="stiffness">300</item>
     </style>
 
     <style name="Text">
@@ -80,6 +140,7 @@
 
     <style name="Text.Feature.Tip">
         <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textStyle">normal</item>
     </style>
 
     <style name="Feature"></style>

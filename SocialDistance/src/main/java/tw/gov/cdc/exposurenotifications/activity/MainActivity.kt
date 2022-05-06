@@ -30,6 +30,7 @@ import tw.gov.cdc.exposurenotifications.common.*
 import tw.gov.cdc.exposurenotifications.common.BulletSpan
 import tw.gov.cdc.exposurenotifications.common.FeaturePresentManager.Feature
 import tw.gov.cdc.exposurenotifications.common.Utils.getDateString
+import tw.gov.cdc.exposurenotifications.hcert.ui.HcertActivity
 import tw.gov.cdc.exposurenotifications.nearby.ExposureNotificationManager
 import tw.gov.cdc.exposurenotifications.nearby.ExposureNotificationManager.ExposureNotificationState
 import java.lang.reflect.InvocationTargetException
@@ -72,11 +73,12 @@ class MainActivity : BaseActivity() {
 
     private val textInfo by lazy { main_info_text }
     private val textVersion by lazy { main_version_text }
+    private val buttonHcert by lazy { main_hcert_button }
     private val buttonStart by lazy { main_start_button }
 
     private val clockGroup by lazy { main_clock_group }
 
-    private val allFeatures = mutableListOf(Feature.BARCODE_V2, Feature.DAILY_SUMMARY, Feature.NOT_FOUND_NOTIFICATION_CONTROL, Feature.HINTS)
+    private val allFeatures = mutableListOf(Feature.BARCODE_V2, Feature.DAILY_SUMMARY, Feature.HCERT, Feature.NOT_FOUND_NOTIFICATION_CONTROL, Feature.HINTS)
     private var currentPresentingFeature: Feature? = null
     private val featureBarcodeGroup by lazy { feature_barcode_group }
     private val featureBarcodeTipText by lazy {
@@ -85,6 +87,7 @@ class MainActivity : BaseActivity() {
         }
     }
     private val featureDailySummaryGroup by lazy { feature_daily_summary_group }
+    private val featureHcertGroup by lazy { feature_hcert_group }
     private val featureHintsViewGroup by lazy { feature_hints_group }
     private val featureTouchView by lazy { feature_touch_view }
 
@@ -227,7 +230,7 @@ class MainActivity : BaseActivity() {
     }
 
     private fun gotoBarcodePage() {
-        if (!PermissionUtils.requestCameraPermissionIfNeeded(this)) {
+        if (!PermissionUtils.requestCameraPermissionIfNeeded(this, R.string.barcode_camera_permission_dialog_message)) {
             startActivity(Intent(this, BarcodeScanningActivity::class.java))
         }
     }
@@ -236,7 +239,9 @@ class MainActivity : BaseActivity() {
 //    var debugCount = 0
 
     private fun setupButton() {
-
+        buttonHcert.setOnClickListener {
+            startActivity(Intent(this, HcertActivity::class.java))
+        }
         buttonStart.setOnClickListener {
 //            if (debugNotification) {
 //                when (debugCount % 5) {
@@ -664,6 +669,11 @@ class MainActivity : BaseActivity() {
                     }
                 }
             }
+            Feature.HCERT -> {
+                featureHcertGroup.visibility = View.VISIBLE
+                featureTouchView.visibility = View.VISIBLE
+                true
+            }
             Feature.NOT_FOUND_NOTIFICATION_CONTROL -> {
                 feature_hints_text.setText(R.string.feature_not_found_notification_control)
                 featureHintsViewGroup.visibility = View.VISIBLE
@@ -688,6 +698,9 @@ class MainActivity : BaseActivity() {
             }
             Feature.DAILY_SUMMARY -> {
                 featureDailySummaryGroup.visibility = View.GONE
+            }
+            Feature.HCERT -> {
+                featureHcertGroup.visibility = View.GONE
             }
             Feature.HINTS, Feature.NOT_FOUND_NOTIFICATION_CONTROL -> {
                 featureHintsViewGroup.visibility = View.GONE
@@ -731,7 +744,7 @@ class MainActivity : BaseActivity() {
     ) {
         when (requestCode) {
             RequestCode.REQUEST_CAMERA_PERMISSION -> {
-                if (!PermissionUtils.provideLinkToSettingIfNeeded(this)) {
+                if (!PermissionUtils.provideLinkToSettingIfNeeded(this, R.string.barcode_camera_permission_dialog_message)) {
                     gotoBarcodePage()
                 }
             }

@@ -7,12 +7,13 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.provider.Settings
+import androidx.annotation.StringRes
 import androidx.core.content.ContextCompat
 import tw.gov.cdc.exposurenotifications.R
 
 object PermissionUtils {
 
-    fun requestCameraPermissionIfNeeded(activity: Activity, finishOnDeny: Boolean = false): Boolean {
+    fun requestCameraPermissionIfNeeded(activity: Activity, @StringRes message: Int, finishOnDeny: Boolean = false): Boolean {
         return when {
             ContextCompat.checkSelfPermission(
                 activity,
@@ -23,7 +24,7 @@ object PermissionUtils {
             activity.shouldShowRequestPermissionRationale(Manifest.permission.CAMERA) -> {
                 AlertDialog.Builder(activity)
                     .setTitle(R.string.barcode_camera_permission_dialog_title)
-                    .setMessage(R.string.barcode_camera_permission_dialog_message)
+                    .setMessage(message)
                     .setNegativeButton(R.string.deny) { _, _ ->
                         if (finishOnDeny) {
                             activity.finish()
@@ -50,7 +51,7 @@ object PermissionUtils {
         }
     }
 
-    fun provideLinkToSettingIfNeeded(activity: Activity, finishOnDeny: Boolean = false): Boolean {
+    fun provideLinkToSettingIfNeeded(activity: Activity, @StringRes message: Int, finishOnDeny: Boolean = false): Boolean {
         return when {
             ContextCompat.checkSelfPermission(
                 activity,
@@ -64,7 +65,7 @@ object PermissionUtils {
             else -> {
                 AlertDialog.Builder(activity)
                     .setTitle(R.string.barcode_camera_permission_dialog_title)
-                    .setMessage(R.string.barcode_camera_permission_dialog_message)
+                    .setMessage(message)
                     .setNegativeButton(R.string.deny) { _, _ ->
                         if (finishOnDeny) {
                             activity.finish()

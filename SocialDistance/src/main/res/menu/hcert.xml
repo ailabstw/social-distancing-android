@@ -1,0 +1,20 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/action_hcert_apply"
+        android:title="@string/hcert_menu_apply"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_vaccine_appointment"
+        android:title="@string/hcert_menu_vaccine_appointment"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_faq"
+        android:title="@string/hcert_menu_faq"
+        app:showAsAction="never" />
+
+</menu>

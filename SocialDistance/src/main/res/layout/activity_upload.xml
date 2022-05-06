@@ -97,16 +97,17 @@
     <Button
         android:id="@+id/upload_request_code_button"
         style="@style/Button.Secondary"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:layout_marginTop="@dimen/upload_margin_vertical_small"
         android:text="@string/request_verification_code"
         android:textAllCaps="false"
         android:textColor="@color/button_secondary_normal"
+        app:backgroundTint="@null"
+        app:layout_constrainedWidth="true"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/upload_code_edit_text"
-        app:layout_constraintWidth_default="wrap" />
+        app:layout_constraintTop_toBottomOf="@id/upload_code_edit_text" />
 
     <TextView
         android:id="@+id/upload_description_text"
@@ -135,15 +136,14 @@
     <Button
         android:id="@+id/upload_send_button"
         style="@style/Button.Major"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_marginHorizontal="20dp"
         android:text="@string/send_verification_code"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/upload_guideline"
-        app:layout_constraintVertical_bias="0.25"
-        app:layout_constraintWidth_default="wrap" />
+        app:layout_constraintVertical_bias="0.25" />
 
     <ProgressBar
         android:id="@+id/progressBar"
