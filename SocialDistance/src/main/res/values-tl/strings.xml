@@ -14,6 +14,8 @@
     <string name="introduction_intro_title">Upang mabawasan ang pagkalat ng pandemya</string>
     <string name="introduction_intro_description">Kung ang user ng App ay may nakakahawang sakit, puwede niyang ipadala ang random ID sa kanyang handheld device (ginagamit ang isang advanced na teknolohiya upang hindi makilala ang taong gumagamit nito), makakareceive ka ng notification kung malapit ang handheld device mo sa taong may sakit, at hindi mo rin malalaman kung sino siya upang maprotektahan ang privacy, at maprotektahan din ang kalusugan ng iba tao.</string>
 
+
+
     <string name="start_using">Simulan na ang paggamit!</string>
 
     <string name="main_button_start">Buksan ang Exposure Notification</string>
@@ -86,6 +88,7 @@
 
 
 
+
     <string name="enter_verification_code">Mangyaring i-type ang verification code</string>
     <string name="enter_verification_code_hint">Mangyaring i-type ang verification code</string>
     <string name="send_verification_code">Ipadala</string>
@@ -135,6 +138,8 @@
     <string name="control_exposure">Exposure Notification Services</string>
     <string name="control_exposure_turn_off_title">Sigurado ka bang nais mong i-off ang Exposure Notification?</string>
     <string name="control_exposure_turn_off_detail">Hindi na magpapadala ang sistema ng notification muli kung na-expose ka na sa pasyente ng COVID-19.</string>
+
+
 
 
 
