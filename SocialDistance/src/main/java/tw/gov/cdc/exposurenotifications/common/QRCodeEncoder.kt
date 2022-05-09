@@ -10,8 +10,9 @@ object QRCodeEncoder {
 
     fun getBitmap(contents: String, dimension: Int, black: Int, white: Int): Bitmap? {
         return try {
-            val hints = guessAppropriateEncoding(contents)?.let { encoding ->
-                EnumMap<EncodeHintType, String>(EncodeHintType::class.java).also { it[EncodeHintType.CHARACTER_SET] = encoding }
+            val hints = EnumMap<EncodeHintType, Any>(EncodeHintType::class.java).apply {
+                guessAppropriateEncoding(contents)?.let { put(EncodeHintType.CHARACTER_SET, it) }
+                put(EncodeHintType.MARGIN, 0)
             }
             val result = MultiFormatWriter().encode(contents, BarcodeFormat.QR_CODE, dimension, dimension, hints)
             val width = result.width

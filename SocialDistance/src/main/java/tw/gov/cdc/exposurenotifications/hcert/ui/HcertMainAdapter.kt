@@ -37,6 +37,7 @@ sealed class HcertViewHolder(v: View) : RecyclerView.ViewHolder(v) {
     class HcertCardHolder(v: View, private val actionHandler: HcertMainActionHandler) : HcertViewHolder(v) {
 
         private val cardView by lazy { v.item_card_view }
+        private val expiredText by lazy { v.item_hcert_expired_text }
         private val qrCodeImage by lazy { v.item_hcert_qrcode_image }
         private val name by lazy { v.item_hcert_name }
         private val nameTransliterated by lazy { v.item_hcert_name_transliterated }
@@ -65,6 +66,14 @@ sealed class HcertViewHolder(v: View) : RecyclerView.ViewHolder(v) {
             lastDoseDate.text = lastDoseDate.context.getString(
                 R.string.hcert_last_dose_date, item.dateOfVaccination
             )
+
+            if (item.isExpired) {
+                expiredText.visibility = View.VISIBLE
+                cardView.strokeColor = ContextCompat.getColor(qrCodeImage.context, R.color.button_major_red_pressed)
+            } else {
+                expiredText.visibility = View.INVISIBLE
+                cardView.strokeColor = ContextCompat.getColor(qrCodeImage.context, R.color.white)
+            }
 
             cardView.setOnClickListener {
                 actionHandler.onHcertClick()

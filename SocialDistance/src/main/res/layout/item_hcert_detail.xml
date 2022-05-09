@@ -11,21 +11,54 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingVertical="@dimen/main_margin_vertical">
+        android:paddingBottom="@dimen/main_margin_vertical">
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/item_hcert_detail_expired_group"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:visibility="invisible"
+            app:constraint_referenced_ids="item_hcert_expired_text,item_hcert_expired_qrcode_border"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/item_hcert_expired_text"
+            style="@style/Text.AutoSize"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/hcert_expired"
+            android:textColor="@color/button_major_red_pressed"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/item_hcert_detail_qrcode_image"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_marginVertical="@dimen/main_margin_vertical"
+            android:padding="8dp"
             app:layout_constraintBottom_toTopOf="@+id/item_hcert_detail_name"
             app:layout_constraintDimensionRatio="1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintWidth_percent="0.7"
+            app:layout_constraintTop_toBottomOf="@id/item_hcert_expired_text"
+            app:layout_constraintWidth_percent="0.68"
             tools:src="@drawable/icon_qrcode"
             tools:tint="@color/black" />
+
+        <View
+            android:id="@+id/item_hcert_expired_qrcode_border"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/background_hcert_expired"
+            app:layout_constraintBottom_toBottomOf="@id/item_hcert_detail_qrcode_image"
+            app:layout_constraintEnd_toEndOf="@id/item_hcert_detail_qrcode_image"
+            app:layout_constraintStart_toStartOf="@id/item_hcert_detail_qrcode_image"
+            app:layout_constraintTop_toTopOf="@id/item_hcert_detail_qrcode_image" />
 
         <TextView
             android:id="@+id/item_hcert_detail_name"
