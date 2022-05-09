@@ -99,7 +99,10 @@ sealed class HcertDetailViewHolder(v: View) : RecyclerView.ViewHolder(v) {
                 append("${item.certificateIssuer}\n")
 
                 bold { append(detailText.context.getString(R.string.hcert_detail_certificate_identifier)) }
-                append(item.certificateIdentifier)
+                append("${item.certificateIdentifier}\n")
+
+                bold { append(detailText.context.getString(R.string.hcert_detail_issue_date)) }
+                append(item.issueDate)
             }
 
             if (item.isExpired) {

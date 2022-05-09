@@ -1,6 +1,7 @@
 package tw.gov.cdc.exposurenotifications.hcert.decode
 
 import tw.gov.cdc.exposurenotifications.hcert.decode.data.CborObject
+import tw.gov.cdc.exposurenotifications.hcert.decode.data.CwtDecodeResult
 import java.util.*
 
 /**
@@ -8,7 +9,7 @@ import java.util.*
  */
 class CwtService {
 
-    fun decode(input: ByteArray, throwWhenExpired: Boolean): Pair<CborObject, Boolean> {
+    fun decode(input: ByteArray, throwWhenExpired: Boolean): CwtDecodeResult {
         try {
             val now = Date()
             val map = CwtHelper.fromCbor(input)
@@ -57,7 +58,7 @@ class CwtService {
             val dgc = hcert.getMap(CwtHeaderKeys.EUDGC_IN_HCERT.intVal)
                 ?: throw VerificationException(Error.CBOR_DESERIALIZATION_FAILED, "CWT contains no EUDGC")
 
-            return dgc.toCborObject() to isExpired
+            return CwtDecodeResult(dgc.toCborObject(), isExpired, issuedAtMilliSeconds)
         } catch (e: VerificationException) {
             throw e
         } catch (e: Throwable) {
