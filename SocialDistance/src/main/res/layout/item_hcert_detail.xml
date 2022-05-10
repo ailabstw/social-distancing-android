@@ -172,9 +172,9 @@
             android:text="@string/hcert_delete"
             android:textAllCaps="false"
             app:backgroundTint="@null"
+            app:layout_constrainedWidth="true"
             app:layout_constraintBottom_toTopOf="@+id/item_hcert_detail_qrcode_image"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/item_hcert_detail_text" />
 
