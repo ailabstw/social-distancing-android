@@ -3,7 +3,6 @@ package tw.gov.cdc.exposurenotifications.activity
 import android.app.AlertDialog
 import android.content.Intent
 import android.content.IntentSender
-import android.content.pm.PackageManager
 import android.graphics.Typeface
 import android.net.Uri
 import android.os.Bundle
@@ -99,16 +98,16 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
 
-        val hasBackCamera = packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA)
+        val enable1922Sms = false //packageManager.hasSystemFeature(PackageManager.FEATURE_CAMERA)
 
         supportActionBar?.apply {
             setHomeAsUpIndicator(R.drawable.icon_qrcode)
             // Only provide 1922 sms qrcode scanning feature for devices have a back camera
-            setDisplayHomeAsUpEnabled(hasBackCamera)
+            setDisplayHomeAsUpEnabled(enable1922Sms)
             setHomeActionContentDescription(getString(R.string.barcode_shortcut_label))
         }
 
-        if (!hasBackCamera) {
+        if (!enable1922Sms) {
             allFeatures.remove(Feature.BARCODE_V2)
         }
 
