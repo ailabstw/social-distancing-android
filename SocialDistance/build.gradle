@@ -17,7 +17,7 @@ android {
         applicationId "tw.gov.cdc.exposurenotifications"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 61
+        versionCode 62
         versionName "2.1.0"
         ndk {
             debugSymbolLevel 'FULL'
