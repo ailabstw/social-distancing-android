@@ -10,7 +10,7 @@
         android:id="@+id/hcert_main_view_group"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:constraint_referenced_ids="hcert_view_pager,hcert_hint_text,hcert_dotsIndicator,hcert_list_button,hcert_add_more_button" />
+        app:constraint_referenced_ids="hcert_view_pager,hcert_hint_text,hcert_tab_layout,hcert_list_button,hcert_add_more_button" />
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/hcert_empty_view_group"
@@ -40,32 +40,20 @@
         android:lines="1"
         android:text="@string/hcert_hint"
         app:layout_constrainedHeight="true"
-        app:layout_constraintBottom_toTopOf="@id/hcert_dotsIndicator"
+        app:layout_constraintBottom_toTopOf="@id/hcert_tab_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
-        android:id="@+id/hcert_dotsIndicator"
-        style="@style/DotsIndicator"
-        android:layout_width="wrap_content"
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/hcert_tab_layout"
+        style="@style/tabIndicator"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="@dimen/main_margin_horizontal"
-        android:layout_marginRight="@dimen/main_margin_horizontal"
+        android:layout_marginHorizontal="@dimen/main_margin_vertical"
         android:layout_marginBottom="@dimen/main_margin_vertical"
         app:layout_constraintBottom_toTopOf="@id/hcert_bottom_barrier"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <View
-        android:id="@+id/hcert_dotsIndicator_mask"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@color/background"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@id/hcert_dotsIndicator"
-        app:layout_constraintEnd_toEndOf="@id/hcert_dotsIndicator"
-        app:layout_constraintStart_toStartOf="@id/hcert_dotsIndicator"
-        app:layout_constraintTop_toTopOf="@id/hcert_dotsIndicator" />
 
     <androidx.constraintlayout.widget.Barrier
         android:id="@+id/hcert_bottom_barrier"

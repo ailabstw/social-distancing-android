@@ -6,6 +6,7 @@ import retrofit2.Call
 import retrofit2.http.*
 import tw.gov.cdc.exposurenotifications.BaseApplication
 import tw.gov.cdc.exposurenotifications.Secrets
+import tw.gov.cdc.exposurenotifications.api.response.ConfigResponse
 import tw.gov.cdc.exposurenotifications.api.response.HealthEducationResponse
 import tw.gov.cdc.exposurenotifications.keyupload.ApiConstants
 
@@ -61,5 +62,13 @@ interface VerificationServerInterface {
     @GET("/api/asset/health_education")
     fun healthEducation(@Header(ApiConstants.VerifyV1.API_KEY_HEADER) apiKey: String = API_KEY,
                         @Query("lang") language: String): Call<HealthEducationResponse>
+
+    @Headers(
+        "content-type: application/json",
+        "accept: application/json"
+    )
+    @GET("/api/config")
+    fun cloudConfig(@Header(ApiConstants.VerifyV1.API_KEY_HEADER) apiKey: String = API_KEY,
+                    ): Call<ConfigResponse>
 
 }

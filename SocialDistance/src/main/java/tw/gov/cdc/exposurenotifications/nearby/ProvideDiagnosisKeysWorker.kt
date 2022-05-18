@@ -49,6 +49,7 @@ class ProvideDiagnosisKeysWorker(
                     startForegroundConditionally()
 
                     InstructionRepository.updateInstruction()
+                    PreferenceManager.updateCloudConfig()
 
                     Log.d(TAG, "getIndexFile()")
                     val indexContent = APIService.downloadTEKs.getIndexFile().await().string()

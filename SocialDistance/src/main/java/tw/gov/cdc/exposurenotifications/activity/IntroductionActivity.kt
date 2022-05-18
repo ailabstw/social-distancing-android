@@ -3,6 +3,7 @@ package tw.gov.cdc.exposurenotifications.activity
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
@@ -35,7 +36,12 @@ class IntroductionActivity : BaseActivity() {
         Introduction(
             R.string.introduction_intro_title,
             R.string.introduction_intro_description,
-            R.drawable.introduction_intro
+            R.drawable.introduction_upload
+        ),
+        Introduction(
+            R.string.introduction_hcert_title,
+            R.string.introduction_hcert_description,
+            R.drawable.introduction_hcert
         )
     )
 
@@ -60,8 +66,7 @@ class IntroductionActivity : BaseActivity() {
             activity = this,
             showStartButton = showStartButton
         )
-
-        dotsIndicator.setViewPager(viewPager)
+        tabLayout.setupWithViewPager(viewPager)
     }
 
     // ActionBar
@@ -98,22 +103,24 @@ private class ViewPagerAdapter(
         val layout = inflater.inflate(baseView, container, false) as ViewGroup
 
         layout.textTitle.setText(introduction.title)
-        layout.textDescription.setText(introduction.description)
+        layout.textDescription.apply {
+            setText(introduction.description)
+            movementMethod = ScrollingMovementMethod()
+        }
         layout.image.setImageResource(introduction.image)
 
+        val startButton: Button = layout.button
+
         if (showStartButton && position == count - 1) {
-            val startButton: Button = layout.button
             startButton.visibility = View.VISIBLE
             startButton.setOnClickListener {
                 activity.startActivity(Intent(activity, MainActivity::class.java))
                 activity.finish()
             }
-        }
-
-        if (!showStartButton) {
-            val startButton: Button = layout.button
-            val params = startButton.layoutParams as ViewGroup.MarginLayoutParams
-            params.bottomMargin = 0
+        } else if (showStartButton) {
+            startButton.visibility = View.INVISIBLE
+        } else {
+            startButton.visibility = View.GONE
         }
 
         container.addView(layout)

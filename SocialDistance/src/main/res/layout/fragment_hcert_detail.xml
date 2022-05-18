@@ -35,7 +35,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/hcert_detail_top_space"
-        app:layout_constraintWidth_percent="0.7" />
+        app:layout_constraintWidth_percent="0.68" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/hcert_detail_prev_button"
@@ -45,7 +45,6 @@
         app:icon="@drawable/icon_arrow_right"
         app:layout_constraintBottom_toBottomOf="@id/hcert_detail_qrcode_space"
         app:layout_constraintEnd_toStartOf="@id/hcert_detail_qrcode_space"
-        app:layout_constraintHorizontal_bias="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@id/hcert_detail_qrcode_space" />
 
@@ -56,7 +55,6 @@
         app:icon="@drawable/icon_arrow_right"
         app:layout_constraintBottom_toBottomOf="@id/hcert_detail_qrcode_space"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0"
         app:layout_constraintStart_toEndOf="@id/hcert_detail_qrcode_space"
         app:layout_constraintTop_toTopOf="@id/hcert_detail_qrcode_space" />
 

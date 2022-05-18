@@ -261,6 +261,7 @@ class UploadActivity : BaseActivity() {
             when (result) {
                 UploadResult.FAILED_NO_FILES -> setMessage(R.string.upload_fail_message_no_files)
                 UploadResult.FAILED_INVALID_CODE -> setMessage(R.string.upload_fail_message_invalid_code)
+                UploadResult.FAILED_NO_GRANTED_TEK -> setMessage(R.string.upload_fail_message_no_granted_tek)
                 else -> {}
             }
             setPositiveButton(R.string.confirm) { _, _ ->

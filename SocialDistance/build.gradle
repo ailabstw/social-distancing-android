@@ -17,8 +17,8 @@ android {
         applicationId "tw.gov.cdc.exposurenotifications"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 61
-        versionName "2.0.0"
+        versionCode 62
+        versionName "2.1.0"
         ndk {
             debugSymbolLevel 'FULL'
         }
@@ -136,11 +136,9 @@ dependencies {
     implementation 'com.jakewharton.threetenabp:threetenabp:1.2.4'
 
     // UI components
-    implementation 'com.tbuonomo:dotsindicator:4.2'
     implementation 'com.airbnb.android:lottie:5.0.3'
     
-    // QR Genearator
-    implementation 'androidmads.library.qrgenearator:QRGenearator:1.0.4'
+    // zxing
     implementation 'com.google.zxing:core:3.3.2'
 
     // networking

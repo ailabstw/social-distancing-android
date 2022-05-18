@@ -3,8 +3,6 @@ package tw.gov.cdc.exposurenotifications.hcert.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidmads.library.qrgenearator.QRGContents
-import androidmads.library.qrgenearator.QRGEncoder
 import androidx.core.content.ContextCompat
 import androidx.core.text.bold
 import androidx.core.text.buildSpannedString
@@ -13,6 +11,7 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_hcert_detail.view.*
 import tw.gov.cdc.exposurenotifications.R
+import tw.gov.cdc.exposurenotifications.common.QRCodeEncoder
 
 class HcertDetailAdapter(
     private val actionHandler: HcertDetailActionHandler,
@@ -40,6 +39,7 @@ sealed class HcertDetailViewHolder(v: View) : RecyclerView.ViewHolder(v) {
     class HcertDetailHolder(v: View, private val actionHandler: HcertDetailActionHandler) : HcertDetailViewHolder(v) {
 
         private val scrollView by lazy { v.item_hcert_detail_scroll_view }
+        private val expiredGroup by lazy { v.item_hcert_detail_expired_group }
         private val qrCodeImage by lazy { v.item_hcert_detail_qrcode_image }
         private val name by lazy { v.item_hcert_detail_name }
         private val nameTransliterated by lazy { v.item_hcert_detail_name_transliterated }
@@ -52,15 +52,14 @@ sealed class HcertDetailViewHolder(v: View) : RecyclerView.ViewHolder(v) {
             scrollView.scrollTo(0, 0)
 
             qrCodeImage.post {
-                val qrgEncoder = QRGEncoder(
-                    item.rawString, null,
-                    QRGContents.Type.TEXT,
-                    qrCodeImage.width
-                )
-                qrgEncoder.colorWhite = ContextCompat.getColor(qrCodeImage.context, R.color.background)
                 try {
-                    val bitmap = qrgEncoder.bitmap
-                    qrCodeImage.setImageBitmap(bitmap)
+                    qrCodeImage.setImageBitmap(
+                        QRCodeEncoder.getBitmap(
+                            item.rawString, qrCodeImage.width,
+                            ContextCompat.getColor(qrCodeImage.context, R.color.black),
+                            ContextCompat.getColor(qrCodeImage.context, R.color.background)
+                        )
+                    )
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
@@ -100,7 +99,16 @@ sealed class HcertDetailViewHolder(v: View) : RecyclerView.ViewHolder(v) {
                 append("${item.certificateIssuer}\n")
 
                 bold { append(detailText.context.getString(R.string.hcert_detail_certificate_identifier)) }
-                append(item.certificateIdentifier)
+                append("${item.certificateIdentifier}\n")
+
+                bold { append(detailText.context.getString(R.string.hcert_detail_issue_date)) }
+                append(item.issueDate)
+            }
+
+            if (item.isExpired) {
+                expiredGroup.visibility = View.VISIBLE
+            } else {
+                expiredGroup.visibility = View.INVISIBLE
             }
 
             deleteButton.setOnClickListener {

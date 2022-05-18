@@ -14,6 +14,8 @@
     <string name="introduction_intro_title">Mengurangi Kemungkinan Penyebaran Pandemi</string>
     <string name="introduction_intro_description">Jika pengguna aplikasi telah dikonfirmasi sebagai pembawa penyakit menular, mereka dapat memilih untuk memberitahukan ID anonim acak (yang telah disamarkan) dan sistem akan memberitahu para pengguna lainnya yang telah berada dekat dengan pengguna yang telah terkonfirmasi tentang bahaya tertular penyakit. Keseluruhan proses dilakukan secara anonim dan mendukung baik privasi data maupun kesehatan masyarakat.</string>
 
+
+
     <string name="start_using">Mulai!</string>
 
     <string name="main_button_start">Aktifkan Notifikasi Paparan</string>
@@ -86,6 +88,7 @@
 
 
 
+
     <string name="enter_verification_code">Masukkan nomor verifikasi</string>
     <string name="enter_verification_code_hint">Masukkan nomor verifikasi</string>
     <string name="send_verification_code">Kirim</string>
@@ -135,6 +138,8 @@
     <string name="control_exposure">Layanan Notifikasi Paparan</string>
     <string name="control_exposure_turn_off_title">Apakah Anda yakin untuk mematikan notifikasi paparan?</string>
     <string name="control_exposure_turn_off_detail">Apabila Anda pernah kontak langsung dengan pasien terkonfirmasi covid-19, sistem tidak akan lagi mengirimkan notifikasi.</string>
+
+
 
 
 

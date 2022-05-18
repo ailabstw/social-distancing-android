@@ -14,5 +14,6 @@ data class HcertModel(
     val country: String,
     val certificateIssuer: String,
     val certificateIdentifier: String,
+    val issueDate: String,
     val rawString: String
 )

@@ -93,15 +93,15 @@
         <item name="cornerSize">50%</item>
     </style>
 
-    <style name="DotsIndicator">
-        <item name="android:foregroundGravity">center</item>
-        <item name="dampingRatio">0.5</item>
-        <item name="dotsColor">@color/primary</item>
-        <item name="dotsSize">12dp</item>
-        <item name="dotsSpacing">2.5dp</item>
-        <item name="dotsStrokeColor">@color/primary_dark</item>
-        <item name="dotsStrokeWidth">1dp</item>
-        <item name="stiffness">300</item>
+    <style name="tabIndicator">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="tabBackground">@drawable/tab_selector</item>
+        <item name="tabGravity">center</item>
+        <item name="tabIndicator">@null</item>
+        <item name="tabMaxWidth">18dp</item>
+        <item name="tabMode">scrollable</item>
+        <item name="tabPadding">0dp</item>
+        <item name="tabRippleColor">@android:color/transparent</item>
     </style>
 
     <style name="Text">
