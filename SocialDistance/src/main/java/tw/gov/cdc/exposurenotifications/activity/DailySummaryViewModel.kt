@@ -39,6 +39,10 @@ class DailySummaryViewModel : ViewModel() {
 
         val calendar = Calendar.getInstance()
         val daysSinceEpoch = calendar.daysSinceEpoch()
+        val alarmPeriod = PreferenceManager.riskAlarmPeriod.let {
+            val today = Calendar.getInstance().daysSinceEpoch()
+            today - it..today
+        }
 
         for (i in daysSinceEpoch downTo daysSinceEpoch - 14) {
             val currentSum = currentSummary[i] ?: 0.0
@@ -47,7 +51,7 @@ class DailySummaryViewModel : ViewModel() {
             mutableList.add(SummaryItem.Day(
                 dateString = dateFormat.format(calendar.setDaysSinceEpoch(i).time),
                 exposureSeconds = currentSum.toInt(),
-                isInRisk = currentSum - safeSum >= 120.0)
+                isInRisk = i in alarmPeriod && currentSum - safeSum >= 120.0)
             )
         }
         mutableList.last().isLastOne = true

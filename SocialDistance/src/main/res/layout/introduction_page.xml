@@ -10,38 +10,35 @@
         android:id="@+id/image"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="60dp"
-        android:scaleType="fitEnd"
+        android:layout_marginBottom="@dimen/main_margin_horizontal_large"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.35"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@drawable/introduction_intro" />
+        tools:src="@drawable/introduction_hcert" />
 
     <TextView
         android:id="@+id/textTitle"
         style="@style/Text.Title"
+        android:layout_marginHorizontal="@dimen/main_margin_horizontal_large"
         android:layout_marginTop="36dp"
-        android:autoSizeMaxTextSize="@dimen/text_size_title"
-        android:autoSizeMinTextSize="@dimen/text_size_min"
-        android:autoSizeTextType="uniform"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.8"
         tools:text="@string/introduction_family_title" />
 
     <TextView
         android:id="@+id/textDescription"
         style="@style/Text"
         android:layout_height="0dp"
-        android:layout_marginTop="22dp"
-        android:layout_marginBottom="24dp"
-        android:autoSizeMaxTextSize="@dimen/text_size"
-        android:autoSizeMinTextSize="@dimen/text_size_min"
-        android:autoSizeTextType="uniform"
+        android:layout_marginVertical="@dimen/main_margin_vertical"
+        android:fadeScrollbars="false"
         android:gravity="top"
-        app:layout_constraintBottom_toTopOf="@id/button"
+        android:paddingHorizontal="4dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical"
+        app:layout_constraintBottom_toTopOf="@id/image"
         app:layout_constraintEnd_toEndOf="@+id/textTitle"
         app:layout_constraintStart_toStartOf="@+id/textTitle"
         app:layout_constraintTop_toBottomOf="@+id/textTitle"
@@ -50,11 +47,12 @@
     <Button
         android:id="@+id/button"
         style="@style/Button.Major"
-        android:layout_marginBottom="48dp"
+        android:layout_marginVertical="@dimen/main_margin_vertical"
         android:text="@string/start_using"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        tools:visibility="visible" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

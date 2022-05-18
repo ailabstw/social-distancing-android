@@ -14,6 +14,8 @@
     <string name="introduction_intro_title">Giảm thiểu lây lan dịch bệnh</string>
     <string name="introduction_intro_description">Người dùng với kết quả xét nghiệm dương tính có thể chọn công khai kết quả và thiết bị của mình mà không để lộ bất kì thông tin cá nhân nào. Mục đích nhằm cảnh báo những thiết bị xung quanh khi có tiếp xúc gần. Quy trình này đảm bảo tuyệt đối tính bảo mật và ẩn danh của tất cả người dùng, đồng thời góp phần ứng phó với dịch bệnh hiệu quả trên nền tảng thông tin kịp thời và chính xác.</string>
 
+
+
     <string name="start_using">Bắt đầu</string>
 
     <string name="main_button_start">Bật thông báo tiếp xúc</string>
@@ -83,6 +85,7 @@
     <string name="upload_tek_description">Vui lòng nhập mã xác nhận được cung cấp bởi Bộ Y tế và Phúc lợi. Sau khi nhập xong ID ẩn danh của bạn sẽ được tải lên cơ sở dữ liệu của Trung tâm Kiểm soát Dịch bệnh Đài Loan (CDC) và tự động xoá sau 10 ngày.</string>
     <string name="upload_success">Đăng tải thành công</string>
     <string name="upload_fail">Đăng tải không thành công</string>
+
 
 
 
@@ -162,6 +165,8 @@
 
 
 
+
+    
 
     <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
 

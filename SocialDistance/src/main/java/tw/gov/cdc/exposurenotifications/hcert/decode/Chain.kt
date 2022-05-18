@@ -39,12 +39,13 @@ object Chain {
         compressed = base45Service.decode(encoded)
         cose = compressorService.decode(compressed)
         cwt = coseService.decode(cose)
-        val (cborObj, expired) = cwtService.decode(cwt, throwWhenExpired)
+        val (cborObj, expired, issuedTime) = cwtService.decode(cwt, throwWhenExpired)
         rawEuGcc = cborObj.toJsonString()
 
         return json.decodeFromString<GreenCertificate>(rawEuGcc).apply {
             rawString = input
             isExpired = expired
+            issuedAtMilliSeconds = issuedTime
         }
     }
 }

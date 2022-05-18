@@ -14,6 +14,8 @@
     <string name="introduction_intro_title">ลดโอกาสการแพร่ระบาดของโรค</string>
     <string name="introduction_intro_description">หากผู้ใช้งานแอปเป็นผู้ป่วยยืนยันติดเชื้อโควิด สามารถเลือกที่จะเปิดเผยข้อมูลรหัสIDแบบสุ่มของอุปกรณ์มือถือตนเอง (มีกระบวนการจัดการข้อมูลอย่างปลอดภัยโดยไม่ระบุตัวตน) บุคคลที่เคยอยู่ใกล้ชิดและมีการสัมผัสกันในช่วงระยะเวลาหนึ่งกับอุปกรณ์มือถือผู้ป่วยยืนยัน จะได้รับการแจ้งเตือน โดยไม่ทราบข้อมูลส่วนตัวของผู้ป่วยยืนยัน เพื่อรักษาความเป็นส่วนตัวของบุคคลและความปลอดภัยจากการเสี่ยงเป็นโรคของประชาชน</string>
 
+
+
     <string name="start_using">เริ่มใช้งาน</string>
 
     <string name="main_button_start">เปิดการแจ้งเตือน</string>
@@ -86,6 +88,7 @@
 
 
 
+
     <string name="enter_verification_code">กรุณากรอกรหัสยืนยัน</string>
     <string name="enter_verification_code_hint">กรุณากรอกรหัสยืนยัน</string>
     <string name="send_verification_code">ส่งออก</string>
@@ -135,6 +138,8 @@
     <string name="control_exposure">การแจ้งเตือนความเสี่ยงสัมผัส</string>
     <string name="control_exposure_turn_off_title">คุณยืนยันที่จะปิดรับการแจ้งเตือนความเสี่ยงสัมผัสหรือไม่?</string>
     <string name="control_exposure_turn_off_detail">หากคุณเคยสัมผัสผู้ป่วยยืนยัน ระบบจะไม่ทำการแจ้งเตือนคุณ</string>
+
+
 
 
 

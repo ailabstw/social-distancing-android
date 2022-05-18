@@ -2,10 +2,19 @@ package tw.gov.cdc.exposurenotifications.common
 
 import android.content.Context
 import androidx.core.content.edit
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import tw.gov.cdc.exposurenotifications.BaseApplication
+import tw.gov.cdc.exposurenotifications.api.APIService
+import tw.gov.cdc.exposurenotifications.api.response.ConfigResponse
+import tw.gov.cdc.exposurenotifications.api.response.HealthEducationResponse
+import tw.gov.cdc.exposurenotifications.data.InstructionRepository
 import java.util.*
 
 object PreferenceManager {
+
+    private const val TAG = "PreferenceManager"
 
     private const val PREF_NAME = "PREF_NAME_TW_CDC_EN"
 
@@ -262,6 +271,40 @@ object PreferenceManager {
         set(value) {
             sharedPreferences.edit {
                 putStringSet(PREF_KEY_HCERT, value)
+            }
+        }
+
+    /**
+     * Cloud Config
+     */
+
+    private const val PREF_KEY_CONFIG_ALARM_PERIOD = "PREF_KEY_CONFIG_ALARM_PERIOD"
+
+    fun updateCloudConfig() {
+        APIService.verificationServer.cloudConfig()
+            .enqueue(object : Callback<ConfigResponse> {
+                override fun onResponse(call: Call<ConfigResponse>,
+                                        response: Response<ConfigResponse>
+                ) {
+                    Log.i(TAG, "updateCloudConfig onResponse $response")
+                    response.body()?.let {
+                        riskAlarmPeriod = it.riskAlarmPeriod
+                    }
+                }
+
+                override fun onFailure(call: Call<ConfigResponse>, t: Throwable) {
+                    Log.e(TAG, "updateCloudConfig onFailure $t")
+                }
+            })
+    }
+
+    var riskAlarmPeriod: Int
+        get() {
+            return sharedPreferences.getInt(PREF_KEY_CONFIG_ALARM_PERIOD, 7)
+        }
+        private set(value) {
+            sharedPreferences.edit {
+                putInt(PREF_KEY_CONFIG_ALARM_PERIOD, value)
             }
         }
 }

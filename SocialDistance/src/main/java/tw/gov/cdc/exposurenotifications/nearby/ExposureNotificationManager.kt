@@ -16,6 +16,7 @@ import tw.gov.cdc.exposurenotifications.activity.UploadActivity
 import tw.gov.cdc.exposurenotifications.common.Log
 import tw.gov.cdc.exposurenotifications.common.PreferenceManager
 import tw.gov.cdc.exposurenotifications.common.RequestCode
+import tw.gov.cdc.exposurenotifications.common.Utils.daysSinceEpoch
 import tw.gov.cdc.exposurenotifications.common.Utils.toBeginOfTheDay
 import tw.gov.cdc.exposurenotifications.nearby.NotificationHelper.NotificationType.ExposureNotFound
 import tw.gov.cdc.exposurenotifications.nearby.NotificationHelper.NotificationType.ExposureStateUpdated
@@ -149,14 +150,18 @@ object ExposureNotificationManager {
     val isInRisk: Boolean
         get() {
             val safeSummaries = PreferenceManager.safeSummaries
+            val alarmPeriod = PreferenceManager.riskAlarmPeriod.let {
+                val today = Calendar.getInstance().daysSinceEpoch()
+                today - it..today
+            }
+
             Log.d(TAG, "isInRisk safeSummaries $safeSummaries")
             pDailySummaries.value?.forEach { dailySummary ->
-                dailySummary.summaryData.weightedDurationSum.takeIf { it > 0 }?.let { weightedDurationSum ->
-                    val safeSum = safeSummaries[dailySummary.daysSinceEpoch] ?: 0.0
-                    // Only shows an alert when exposed more than 2 minutes
-                    if (weightedDurationSum - safeSum >= 120.0) {
-                        return true
-                    }
+                val weightedDurationSum = dailySummary.summaryData.weightedDurationSum
+                val safeSum = safeSummaries[dailySummary.daysSinceEpoch] ?: 0.0
+                // Only shows an alert when exposed more than 2 minutes and within alarm period.
+                if (dailySummary.daysSinceEpoch in alarmPeriod && weightedDurationSum - safeSum >= 120.0) {
+                    return true
                 }
             }
             PreferenceManager.lastStateUpdatedNotificationTime = Long.MAX_VALUE

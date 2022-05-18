@@ -39,6 +39,7 @@ sealed class HcertDetailViewHolder(v: View) : RecyclerView.ViewHolder(v) {
     class HcertDetailHolder(v: View, private val actionHandler: HcertDetailActionHandler) : HcertDetailViewHolder(v) {
 
         private val scrollView by lazy { v.item_hcert_detail_scroll_view }
+        private val expiredGroup by lazy { v.item_hcert_detail_expired_group }
         private val qrCodeImage by lazy { v.item_hcert_detail_qrcode_image }
         private val name by lazy { v.item_hcert_detail_name }
         private val nameTransliterated by lazy { v.item_hcert_detail_name_transliterated }
@@ -98,7 +99,16 @@ sealed class HcertDetailViewHolder(v: View) : RecyclerView.ViewHolder(v) {
                 append("${item.certificateIssuer}\n")
 
                 bold { append(detailText.context.getString(R.string.hcert_detail_certificate_identifier)) }
-                append(item.certificateIdentifier)
+                append("${item.certificateIdentifier}\n")
+
+                bold { append(detailText.context.getString(R.string.hcert_detail_issue_date)) }
+                append(item.issueDate)
+            }
+
+            if (item.isExpired) {
+                expiredGroup.visibility = View.VISIBLE
+            } else {
+                expiredGroup.visibility = View.INVISIBLE
             }
 
             deleteButton.setOnClickListener {

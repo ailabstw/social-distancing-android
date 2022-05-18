@@ -8,6 +8,8 @@ import tw.gov.cdc.exposurenotifications.BaseApplication
 import tw.gov.cdc.exposurenotifications.hcert.decode.Chain
 import tw.gov.cdc.exposurenotifications.hcert.decode.VerificationException
 import tw.gov.cdc.exposurenotifications.hcert.decode.data.GreenCertificate
+import java.text.SimpleDateFormat
+import java.util.*
 
 class HcertViewModel : ViewModel() {
 
@@ -56,6 +58,7 @@ class HcertViewModel : ViewModel() {
     }
 
     private val regex = """[a-zA-Z]""".toRegex()
+    private val dateFormat = SimpleDateFormat("yyyy.MM.dd", Locale.getDefault())
 
     private fun createHcertModel(hcert: GreenCertificate): HcertModel {
         val name: String
@@ -88,6 +91,7 @@ class HcertViewModel : ViewModel() {
                 country = country.valueSetEntry.display,
                 certificateIssuer = certificateIssuer,
                 certificateIdentifier = certificateIdentifier,
+                issueDate = dateFormat.format(hcert.issuedAtMilliSeconds),
                 rawString = hcert.rawString
             )
         }

@@ -20,6 +20,8 @@
         android:layout_height="0dp"
         android:layout_margin="@dimen/main_margin_horizontal"
         android:gravity="top"
+        android:paddingHorizontal="4dp"
+        android:scrollbarStyle="outsideOverlay"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toTopOf="@id/cancel_alarm_check_box"
         app:layout_constraintEnd_toEndOf="parent"

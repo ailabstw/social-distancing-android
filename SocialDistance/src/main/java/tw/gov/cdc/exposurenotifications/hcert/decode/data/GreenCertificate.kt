@@ -31,6 +31,9 @@ data class GreenCertificate(
 
     @Transient
     var isExpired = false
+
+    @Transient
+    var issuedAtMilliSeconds = 0L
 //    /**
 //     * For [dateOfBirthString] ("dob"), month and day are optional in eu-dcc-schema 1.2.1,
 //     * so we may not be able to get a valid [LocalDate] from it.

@@ -94,12 +94,14 @@
     </style>
 
     <style name="tabIndicator">
-        <item name="android:layout_width">match_parent</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_gravity">bottom</item>
-        <item name="android:paddingTop">4dp</item>
-        <item name="android:paddingBottom">4dp</item>
         <item name="android:background">@android:color/transparent</item>
+        <item name="tabBackground">@drawable/tab_selector</item>
+        <item name="tabGravity">center</item>
+        <item name="tabIndicator">@null</item>
+        <item name="tabMaxWidth">18dp</item>
+        <item name="tabMode">scrollable</item>
+        <item name="tabPadding">0dp</item>
+        <item name="tabRippleColor">@android:color/transparent</item>
     </style>
 
     <style name="Text">
