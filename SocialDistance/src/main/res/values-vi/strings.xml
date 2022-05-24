@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appname "Giãn Cách Xã Hội">]>
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appname "Giãn Cách Xã Hội Đài Loan">]>
 
 <resources>
 
@@ -8,15 +8,15 @@
     <string name="cdc_name_translate">Trung tâm Kiểm soát Dịch bệnh Đài Loan (Taiwan CDC)</string>
 
     <string name="introduction_family_title">Bảo vệ bạn và gia đình</string>
-    <string name="introduction_family_description">"Ứng Dụng Giãn Cách Xã Hội Đài Loan" được phát triển bởi Phòng thí nghiệm Trí tuệ Nhân tạo Đài Loan và hợp tác với Viện Hành Pháp cùng Trung Tâm Kiểm Soát Dịch Bệnh của Bộ Y tế và Phúc lợi, nhằm mục đích giảm khả năng lây truyền bệnh, từ đó bảo vệ gia đình bạn.</string>
+    <string name="introduction_family_description">\"Ứng Dụng Giãn Cách Xã Hội Đài Loan\" được phát triển bởi Phòng thí nghiệm Trí tuệ Nhân tạo Đài Loan và hợp tác với Viện Hành Pháp cùng Trung Tâm Kiểm Soát Dịch Bệnh của Bộ Y tế và Phúc lợi, nhằm mục đích giảm khả năng lây truyền bệnh, từ đó bảo vệ gia đình bạn.</string>
     <string name="introduction_privacy_title">Bảo mật thông tin cá nhân</string>
-    <string name="introduction_privacy_description">"Ứng Dụng Giãn Cách Xã Hội Đài Loan" là ứng dụng ẩn danh, người sử dụng không cần đăng ký bất kỳ thông tin cá nhân nào, chỉ sử dụng độ mạnh yếu của tín hiệu Bluetooth để tính khoảng cách giữa các thiết bị. Dịch vụ phân tán này sẽ lưu trữ thông tin của thiết bị mà người dùng tiếp xúc ở trong điện thoại bằng cách dùng kỹ thuật số mã hoá ẩn danh, bảo vệ thông tin cá nhân người sử dụng.</string>
+    <string name="introduction_privacy_description">\"Ứng Dụng Giãn Cách Xã Hội Đài Loan\" là ứng dụng ẩn danh, người sử dụng không cần đăng ký bất kỳ thông tin cá nhân nào, chỉ sử dụng độ mạnh yếu của tín hiệu Bluetooth để tính khoảng cách giữa các thiết bị. Dịch vụ phân tán này sẽ lưu trữ thông tin của thiết bị mà người dùng tiếp xúc ở trong điện thoại bằng cách dùng kỹ thuật số mã hoá ẩn danh, bảo vệ thông tin cá nhân người sử dụng.</string>
     <string name="introduction_intro_title">Giảm thiểu lây lan dịch bệnh</string>
     <string name="introduction_intro_description">Người dùng với kết quả xét nghiệm dương tính có thể chọn công khai kết quả và thiết bị của mình mà không để lộ bất kì thông tin cá nhân nào. Mục đích nhằm cảnh báo những thiết bị xung quanh khi có tiếp xúc gần. Quy trình này đảm bảo tuyệt đối tính bảo mật và ẩn danh của tất cả người dùng, đồng thời góp phần ứng phó với dịch bệnh hiệu quả trên nền tảng thông tin kịp thời và chính xác.</string>
+    <string name="introduction_hcert_title">@string/hcert_full_name</string>
+    <string name="introduction_hcert_description">Bạn có thể dễ dàng lưu trữ, quản lý và xuất trình Chứng nhận tiêm chủng số của bạn và gia đình thông qua App, đồng thời cung cấp tính năng quét và xác minh bằng mã QR. Dữ liệu của bạn chỉ lưu trữ trong điện thoại của bạn, không cần kết nối internet và cũng sẽ không bị tải lên ở bất cứ đâu.</string>
 
-
-
-    <string name="start_using">Bắt đầu</string>
+    <string name="start_using">Bắt đầu sử dụng</string>
 
     <string name="main_button_start">Bật thông báo tiếp xúc</string>
     <string name="main_button_already_start">Đã bật thông báo tiếp xúc</string>
@@ -24,88 +24,89 @@
     <string name="main_info">%1$s\n%2$s\n%3$s</string>
     <string name="main_info_first_launch_time">Thông báo đã được bật %1$s</string>
     <string name="main_info_enable_time_percent">Mức thời gian hoạt động %1$d%%</string>
-
+    <string name="main_info_last_check_time">Thời gian kiểm tra lần trước là %1$s</string>
 
     <string name="dialog_low_storage_title">Bộ nhớ quá tải</string>
-    <string name="dialog_low_storage_message">Vui lòng giảm tải bộ nhớ để nhận thông báo lây nhiễm.</string>
+    <string name="dialog_low_storage_message">Vui lòng giảm tải bộ nhớ để nhận thông báo tiếp xúc.</string>
 
     <string name="risk_brief_unknown">Bạn đang tắt thông báo tiếp xúc gần</string>
     <string name="risk_detail_unknown">Hãy bật thông báo tiếp xúc gần để theo dõi nguy cơ lây bệnh của mình.</string>
 
-    <string name="risk_brief_normal">Bạn chưa tiếp xúc gần với trường hợp dương tính COVID-19</string>
+    <string name="risk_brief_normal">Bạn không có tiếp xúc gần với trường hợp dương tính COVID-19</string>
     <string name="risk_detail_normal">Xin hãy tiếp tục thực hiện giãn cách an toàn.</string>
 
     <string name="risk_brief_risky">Bạn đã tiếp xúc với trường hợp dương tính COVID-19</string>
     <string-array name="risk_detail_risky">
-        <item>Hãy gọi ngay đường dây nóng 1922 hoặc Sở Y tế địa phương để báo cáo tình trạng đồng thời chú ý quan sát mọi biểu hiện của mình. Hãy tìm đến sự hỗ trợ y tế khi có bất kì triệu chứng nào.</item>
-
-
+        <item>Hãy bình tĩnh: Bạn từng tiếp xúc với ca bệnh COVID-19 với cự ly gần, nhưng không có nghĩa là bạn đã nhiễm bệnh.\n</item>
+        <item>Tự theo dõi sức khỏe: Kiến nghị bạn tự theo dõi sức khỏe và chú ý đến tình trạng sức khỏe của mình.\n</item>
+        <item>Trạng trạng sức khỏe: Nếu có các triệu chứng nghi ngờ về đường hô hấp, sốt.., hãy liên hệ với cơ quan y tế địa phương hoặc gọi \"1922\" để được xét nghiệm.</item>
     </string-array>
+    <string name="risk_detail_risky_split">:</string>
 
+    <string name="state_en_not_support">Tính năng thông báo tiếp xúc hiện không được hỗ trợ trên thiết bị này.</string>
+    <string name="state_hw_not_support">Phần cứng của thiết bị này không hỗ trợ tính năng thông báo tiếp xúc.</string>
+    <string name="state_user_profile_not_support">Tài khoản này không được hỗ trợ tính năng thông báo tiếp xúc.</string>
+    <string name="state_not_in_allowlist">Không thể bật thông báo tiếp xúc cho tài khoản này.</string>
+    <string name="state_unknown">Hiện tại, thiết bị này không thể bật thông báo tiếp xúc.</string>
+    <string name="state_instruction">Hãy nhấp vào \"Bước tiếp theo\" để được hướng dẫn thêm.</string>
+    <string name="state_instruction_next_step">Bước tiếp theo</string>
 
-
-
-
-
-
-
-
-
-
+    <string name="menu_barcode_scanning">Hệ thống đăng ký tên thật qua tin nhắn 1922</string>
     <string name="menu_about">Giới thiệu ứng dụng</string>
-
+    <string name="menu_daily_summary">Tình hình tiếp xúc mỗi ngày</string>
     <string name="menu_cancel_alert">Huỷ cảnh báo</string>
     <string name="menu_upload">Người nhiễm bệnh tải lên ID ẩn danh</string>
     <string name="menu_privacy">Điều khoản và Bảo mật</string>
     <string name="menu_control">Quản lý bảo mật thông tin</string>
-
-
+    <string name="menu_faq">Các câu hỏi thường gặp</string>
+    <string name="menu_hints">Tính năng gợi ý</string>
+    <string name="menu_settings">Cài đặt</string>
 
     <string name="url_privacy">https://ailabs.tw/taiwan-social-distancing-apppersonal-data-protection-note/</string>
     <string name="url_faq">https://www.cdc.gov.tw/Category/Page/R8bAd_yiVi22CIr73qM2yw</string>
     <string name="url_clean_cache">https://support.google.com/googleplay/answer/9037938</string>
+    <string name="url_quick_settings">https://support.google.com/android/answer/9083864</string>
+    <string name="url_hcert_apply">https://dvc.mohw.gov.tw/vapa/apply/Index.init.ctr</string>
+    <string name="url_hcert_vaccine_appointment">https://www.cdc.gov.tw/Category/List/u4l1b_gHhf9WDjhEtRmRRw</string>
+    <string name="url_hcert_faq">https://dvc.mohw.gov.tw/vapa/template/vapa/common/pdf/QA.pdf</string>
 
+    <string name="daily_summary_no_contact">Không có tiếp xúc</string>
+    <string name="daily_summary_less_then_2_mins">Tiếp xúc chưa được 2 phút</string>
+    <string name="daily_summary_mins">Tiếp xúc %1$d phút</string>
+    <string name="daily_summary_hrs_mins">Tiếp xúc %1$d giờ %2$d phút</string>
 
-
-
-
-
-
-
-
-
-    <string name="upload_confirm_title">Bạn có phải là một trường hợp được xác nhận nhiễm COVID-19?</string>
-    <string name="upload_confirm_message">Tính năng này cho phép các trường hợp dương tính công khai ID thiết bị nhằm phục vụ công tác truy vết nguồn lây COVID-19.</string>
+    <string name="upload_confirm_title">Bạn là ca mắc COVID-19?</string>
+    <string name="upload_confirm_message">Tính năng này cung cấp ca bệnh tải lên ID ngẫu nhiên nhằm giảm thiểu lây lan.</string>
     <string name="upload_title">Tải lên ID ẩn danh</string>
     <string name="upload_date">Vui lòng nhập thời gian bắt đầu và kết thúc</string>
     <string name="upload_date_start_enter_hint">Vui lòng nhập thời gian bắt đầu</string>
     <string name="upload_date_end_enter_hint">Vui lòng nhập thời gian kết thúc</string>
     <string name="upload_date_start_hint">Thời gian bắt đầu</string>
     <string name="upload_date_end_hint">Thời gian kết thúc</string>
-    <string name="upload_tek_description">Vui lòng nhập mã xác nhận được cung cấp bởi Bộ Y tế và Phúc lợi. Sau khi nhập xong ID ẩn danh của bạn sẽ được tải lên cơ sở dữ liệu của Trung tâm Kiểm soát Dịch bệnh Đài Loan (CDC) và tự động xoá sau 10 ngày.</string>
+    <string name="upload_tek_description">Vui lòng nhập mã xác nhận do CDC cung cấp. Sau khi nhập xong, ID ẩn danh của bạn sẽ được tải lên cơ sở dữ liệu của CDC thuộc Bộ Y tế-Phúc lợi và tự động xóa sau 10 ngày.</string>
     <string name="upload_success">Đăng tải thành công</string>
     <string name="upload_fail">Đăng tải không thành công</string>
-
-
-
+    <string name="upload_fail_message_no_files">Trong phạm vi đã chọn không có dữ liệu để tải lên.</string>
+    <string name="upload_fail_message_invalid_code">Mã xác minh không hợp lệ.</string>
+    <string name="upload_fail_message_no_granted_tek">Muốn tải lên thì hãy nhấp vào gửi đi và chia sẻ.</string>
 
     <string name="enter_verification_code">Vui lòng nhập mã xác nhận</string>
     <string name="enter_verification_code_hint">Vui lòng nhập mã xác nhận</string>
     <string name="send_verification_code">Gửi</string>
+    <string name="send_verification_code_not_enabled">@string/risk_brief_unknown</string>
 
+    <string name="enter_phone_number">Nhập số điện thoại</string>
+    <string name="enter_phone_number_hint">Nhập số điện thoại</string>
 
+    <string name="request_verification_code">Yêu cầu mã xác minh</string>
+    <string name="request_verification_code_description">Chức năng này chỉ dành cho người bị nhiễm COVID-19 lấy mã xác minh.</string>
 
-
-
-
-
-
-
-
-
-
-
-
+    <string name="request_verification_code_success">Số điện thoại di động đã được nhập thành công</string>
+    <string name="request_verification_code_success_message">Mã xác minh sẽ được gửi bằng tin nhắn đến SĐT của bạn, trong vòng 5 phút nếu không nhận được, vui lòng thử lại.</string>
+    <string name="request_verification_code_fail">Nhập số điện thoại thất bại</string>
+    <string name="request_verification_code_fail_message">Lỗi kết nối, vui lòng thử lại sau.</string>
+    <string name="request_verification_code_fail_limit_exceeded_message">Bạn đã thử quá nhiều lần, vui lòng thử lại vào hôm sau.</string>
+    <string name="request_verification_code_fail_invalid_phone_number_message">Định dạng số điện thoại bị sai.</string>
 
     <string name="cancel_alert_confirm_title">Bạn có chắc chắn muốn xóa trạng thái cảnh báo lây nhiễm không?</string>
     <string name="cancel_alert_confirm_message">Tính năng này cung cấp chức năng xóa bỏ trạng thái cảnh báo lây nhiễm sau khi đã hoàn tất điều tra dịch bệnh.</string>
@@ -113,69 +114,69 @@
     <string name="cancel_alert_test_date_hint">Nhập ngày tháng</string>
     <string name="cancel_alert_description">Vui lòng nhập mã xác minh do Cục Y tế cung cấp và trạng thái cảnh báo lây nhiễm của bạn sẽ bị hủy sau khi gửi.</string>
 
+    <string name="cancel_alert_acknowledgement">Tôi đã đọc kỹ và đồng ý với thông tin giáo dục y tế trên.</string>
+    <string-array name="cancel_alert_intruction">
+        <item>Mã xác minh không hợp lệ.\n</item>
+        <item>Tôi sẽ chú ý xem có các triệu chứng nghi ngờ COVID-19 như sốt, tiêu chảy, mùi/vị bất thường v.v. Nếu có tôi sẽ tự test nhanh.\n</item>
+        <item>Nếu test nhanh dương tính, tôi sẽ đeo khẩu trang y tế để đi xét nghiệm, tránh sử dụng phương tiện giao thông công cộng.\n</item>
+        <item>Tôi đã thông báo cho người nhà nhận được \"Thông báo tiếp xúc\", phải thực hiện các biện pháp bảo vệ như siêng rửa tay, đeo khẩu trang v.v.\n</item>
+        <item>Tôi sẽ tránh những cuộc thăm viếng và tụ tập gia đình không cần thiết.\n</item>
+        <item>Tôi sẽ tránh tham gia các hoạt động không thể giữ khoảng cách an toàn và tiếp xúc với người lạ.\n</item>
+        <item>Tôi sẽ tránh tham gia các hoạt động trong nhà hoặc công việc được miễn đeo khẩu trang.\n</item>
+    </string-array>
 
+    <string name="barcode_shortcut_label">Quét mã QR đăng ký tên thật</string>
+    <string name="barcode_shortcut_label_long">Quét mã QR đăng ký tên thật để gửi tin nhắn cho 1922</string>
+    <string name="barcode_hint_1922_invalid">Mã QR đăng ký tên thật không phải của 1922.</string>
+    <string name="barcode_hint_hcert_no_qr_code">Không quét được mã QR Giấy chứng nhận tiêm chủng.</string>
+    <string name="barcode_hint_hcert_invalid">Không phải mã QR Giấy chứng nhận tiêm chủng.</string>
+    <string name="barcode_hint_hcert_duplicated">Giấy chứng nhận tiêm chủng vắc-xin COVID-19 kỹ thuật số đã tồn tại.</string>
+    <string name="barcode_hint_hcert_expired">Giấy chứng nhận tiêm chủng vắc-xin COVID-19 kỹ thuật số đã hết hạn.</string>
+    <string name="barcode_camera_permission_dialog_title">&appname; muốn sử dụng camera của bạn</string>
+    <string name="barcode_camera_permission_dialog_message">&appname; muốn sử dụng camera để quét mã QR đăng ký tên thật của 1922.</string>
+    <string name="barcode_camera_permission_dialog_message_hcert">&appname; muốn sử dụng camera để quét mã QR Giấy chứng nhận tiêm chủng.</string>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <string name="control_exposure">Quyền bặt/ tắt thông báo tiếp xúc gần</string>
+    <string name="control_exposure">Dịch vụ thông báo tiếp xúc</string>
     <string name="control_exposure_turn_off_title">Bạn có chắc mình muốn tắt thông báo tiếp xúc gần không?</string>
-    <string name="control_exposure_turn_off_detail">Bạn sẽ không được thông báo khi tiếp xúc với người mắc bệnh COVID-19.</string>
+    <string name="control_exposure_turn_off_detail">Bạn sẽ không được thông báo khi từng tiếp xúc với người mắc bệnh COVID-19.</string>
+    <string name="control_not_found_notification">Thông báo khi không có nguy cơ lây nhiễm</string>
 
+    <string name="hcert_full_name">Giấy chứng nhận tiêm chủng vắc-xin COVID-19 kỹ thuật số</string>
+    <string name="hcert_description">Lưu trữ Giấy chứng nhận tiêm chủng vào điện thoại, cung cấp xác minh nhanh chóng dưới dạng mã QR.</string>
+    <string name="hcert_button_add">Thêm ngay Giấy chứng nhận tiêm chủng</string>
+    <string name="hcert_last_dose_date">Ngày tiêm chủng: %s</string>
+    <string name="hcert_hint">Lúc sử dụng vui lòng xuất trình CMND</string>
+    <string name="hcert_delete">Xóa Giấy chứng nhận tiêm chủng vắc xin kỹ thuật số</string>
+    <string name="hcert_menu_apply">Đăng ký xin Giấy chứng nhận tiêm chủng</string>
+    <string name="hcert_menu_vaccine_appointment">Đặt hẹn tiêm vắc-xin</string>
+    <string name="hcert_menu_faq">Các câu hỏi thường gặp</string>
+    <string name="hcert_apply">Đăng ký xin Giấy chứng nhận tiêm chủng</string>
+    <string name="hcert_import">Nhập Giấy chứng nhận tiêm chủng</string>
 
+    <string name="hcert_detail_target">Tên dịch bệnh:\ </string>
+    <string name="hcert_detail_vaccine">Loại vắc-xin:\ </string>
+    <string name="hcert_detail_medicinal_product">Tên sản phẩm:\ </string>
+    <string name="hcert_detail_authorization_holder">Nhà sản xuất:\ </string>
+    <string name="hcert_detail_dose">Số liều:\ </string>
+    <string name="hcert_detail_date">Ngày tiêm chủng:\ </string>
+    <string name="hcert_detail_country">Tiêm chủng ở nước nào:\ </string>
+    <string name="hcert_detail_certificate_issuer">Cơ quan cấp phát Giấy chứng nhận:\ </string>
+    <string name="hcert_detail_certificate_identifier">Mã nhận dạng chứng nhận KTS:\ </string>
+    <string name="hcert_detail_issue_date">Ngày cấp Giấy chứng nhận số:\ </string>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+    <string name="hcert_delete_confirm_title">Bạn có chắc chắn muốn xoá không?</string>
+    <string name="hcert_delete_confirm_message">Bạn có chắc chắn  muốn xoá Giấy chứng nhận tiêm chủng %s không?</string>
+    <string name="hcert_limit_reached_message">Số lượng đã đạt đến giới hạn.</string>
+    <string name="hcert_expired">Hết hạn</string>
 
     <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
 
     <string name="notification_channel_name_foreground_service">Đang tiến hành kiểm tra lây nhiễm</string>
 
     <string name="notification_provide_diagnosis_keys_title">Thông báo tiếp xúc gần</string>
-    <string name="notification_provide_diagnosis_keys_message">Đang tiến hành kiểm tra lây nhiễm</string>
+    <string name="notification_provide_diagnosis_keys_message">Đang tiến hành kiểm tra thông tin tiếp xúc</string>
 
-    <string name="notification_channel_name">Kết quả kiểm tra lây nhiễm</string>
+    <string name="notification_channel_name">Kết quả kiểm tra lây nhiễm</string>
 
     <string name="notification_exposure_not_found_title">@string/notification_channel_name</string>
     <string name="notification_exposure_not_found_message">Không có nguy cơ lây nhiễm</string>
@@ -187,28 +188,28 @@
     <string name="notification_service_state_updated_message_on">Thông báo tiếp xúc gần được bật</string>
     <string name="notification_service_state_updated_message_off">Thông báo tiếp xúc gần đã bị vô hiệu hóa, vui lòng mở ứng dụng để biết thêm thông tin</string>
 
-    <string name="app_update_message">Ứng dụng Giãn cách Xã hội Đài Loan bản mới đã hoàn thành tải về máy. Vui lòng mở lại ứng dụng.</string>
+    <string name="app_update_message">Ứng dụng &appname; phiên bản mới đã tải thành công. Vui lòng mở lại ứng dụng.</string>
     <string name="app_update_restart">Mở lại ứng dụng</string>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <string name="feature_barcode">Thêm tính năng quét hệ thống tên thật của 1922.</string>
+    <string-array name="feature_barcode_tip">
+        <item>Mẹo 1 Lối tắt trên màn hình:\nNhấn và giữ biểu tượng APP trên màn hình, danh sách phím tắt sẽ hiện lên và có thể kéo vào màn hình!\n</item>
+        <item>Mẹo 2 Tiện ích:\nNhấn và giữ một khoảng trống trên màn hình, nhấp tùy chọn \"Tiện ích/Widget\", tìm tiện ích \"&appname;\" và kéo vào màn hình!\n</item>
+        <item>➤ Chức năng các phím tắt và các widget trên màn hình đều giống nhau, chỉ cần chọn 1 thứ :D\n</item>
+        <item>Mẹo 3 Cài đặt nhanh:\nSau khi vuốt xuống 2 lần từ đầu màn hình, nhấp vào Chỉnh sửa (thao tác hơi khác với kiểu điện thoại khác nhau), thêm nút \"Quét mã QR đăng ký tên thật\" vào menu \"Cài đặt nhanh.\" Cách thao tác chi tiết, xin tham khảo Hướng dẫn.\n</item>
+        <item>➤ Khởi động từ \"Cài đặt nhanh\" sẽ chậm hơn so với các phím tắt và widget trên màn hình, nhưng ưu điểm là có thể khởi động chức năng quét bất cứ lúc nào bằng cách trượt màn hình xuống.</item>
+    </string-array>
+    <string name="feature_barcode_tip_split">:</string>
+    <string name="feature_barcode_tip_doc">Hướng dẫn</string>
+    <string name="feature_daily_summary">Đã thêm trang \"Tình hình tiếp xúc mỗi ngày.\"</string>
+    <string name="feature_hcert">Đã thêm chức năng lưu trữ \"Giấy chứng nhận tiêm chủng.\"</string>
+    <string name="feature_hcert_tip">Bạn có thể lưu trữ Giấy chứng nhận tiêm chủng cho bản thân và gia đình.</string>
+    <string name="feature_not_found_notification_control">Muốn tắt chức năng thông báo rủi ro, có thể vào \"Cài đặt\" ở menu trên bên phải để cài đặt.</string>
+    <string name="feature_hints">Để xem lại các mẹo, xin nhấp vào \"Tính năng gợi ý.\"</string>
 
     <string name="confirm">Xác nhận</string>
     <string name="cancel">Huỷ</string>
-
+    <string name="deny">Không cho phép</string>
     <string name="ok">OK</string>
     <string name="yes">Có</string>
     <string name="no">Không</string>

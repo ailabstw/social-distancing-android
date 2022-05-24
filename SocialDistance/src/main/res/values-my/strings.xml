@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appname "Taiwan Social Distancing">]>
+
+<resources>
+
+    <string name="app_name">&appname;</string>
+
+    <string name="cdc_name_ch">衛生福利部疾病管制署</string>
+    <string name="cdc_name_translate">ကျန်းမာရေး၊ လူမှုဖူလုံရေး ဝန်ကြီးဌာန၏ရောဂါထိန်းချုပ်ရေးရုံး</string>
+
+    <string name="introduction_family_title">သင်နှင့် သင့်မိသားစုကို ကာကွယ်ပါ။</string>
+    <string name="introduction_family_description">ဤAPPသည်ရောဂါပြန့်ပွားမှု လျှော့ချခြင်းဖြင့် သင့်မိသားစုကို ကာကွယ်ရန်ရည်ရွယ်၍ထိုင်ဝမ် AI (Artificial Intelligence) စမ်းသပ်ခန်းတီထွင်၍ကျန်းမာရေး၊ လူမှုဖူလုံရေး ဝန်ကြီးဌာန၏ရောဂါထိန်းချုပ်ရေး ရုံးနှင့် တို့ပူပေါင်းလက်တွဲပြုလုပ်ခဲ့သည်။</string>
+    <string name="introduction_privacy_title">ကိုယ်ပိုင်လျှို့ဝှက်ချက်နှင့် ဒေတာကာကွယ်ခြင်း</string>
+    <string name="introduction_privacy_description">ဤAPPကိူသုံးဆွဲသူသည်မှတ်ပုံတင်ရန်မလိုသည့်အပြင်မည်သည့်dataကိုမှပို့ဆောင်ခြင်းမပြုလုပ်ပါ။လက်ကိုင်ဖုန်းတွင်ရှိသော Bluetooth အချက်ပြမှုများကို သာအသုံးပြု၍ သုံးစွဲသူတစ်ဦးစီကြား အကွာအဝေးကို တွက်ချက်ပါသည်။ ဤဗဟိုချုပ်ကိုင်မှု လျှော့ချထားသော ဝန်ဆောင်မှုသည် မိမိတို့၏ လက်ကိုင်ဖုန်းများရှိသော ကျပန်း ID အချက်အလက်များကို သိမ်းဆည်းမည်ဖြစ်ပြီး သုံးစွဲသူ၏ကိုယ်ရေးကိုယ်တာအား ကာကွယ်ရန် တင်းကျပ်သောနည်းပညာဖြင့်အသုံးပြုထားသည်။</string>
+    <string name="introduction_intro_title">ကပ်ရောဂါ ပြန့်ပွားမှု အခွင့်အလမ်းကို လျှော့ချပါ။</string>
+    <string name="introduction_intro_description">ဤAppအသုံးပြုသူသည် ကူးစက်တတ်သောရောဂါရှိကြောင်း စစ်ဆေးတွေ့ရှိပါက၊ ၎င်း၏ဖုန်းIDနှင့် နီးကပ်စွာ ထိတွေ့ခဲ့သောဖုန်း ID အား(တင်းကြပ်သောနည်းပညာဖြင့် ခွဲခြားသတ်မှတ်ထားခြင်း) ထိတွေ့ခဲ့ခြင်းသတိပေးစာထုတ်ဝေရန် ရွေးချယ်နိုင်သည်။ သတိပေးစာလက်ခံသူသည်ပေးပိုသူကိုမသိနိုင်ပါ။ထို့အပြင် ကိုယ်ရေးကိုယ်တာကိုယ်ရေးကိုယ်တာကိစ္စများကိုကာကွယ်နိုင်သည့်အပြင်အများပြည်သူ၏ကျန်းမာရေးကို ကာကွယ်ရန် နိုင်ပါသည်။</string>
+    <string name="introduction_hcert_title">@string/hcert_full_name</string>
+    <string name="introduction_hcert_description">Appမှတစ်ဆင့် သင်နှင့် သင့်မိသားစု၏ ကာကွယ်ဆေးထိုး.ထားသောအထောက်အထားများကိုသိမ်းဆည်း၊၍အသုံးပြုနိုင်သည်၊ QR codeကိုအသုံးပြ၍scanဖတ်ခြင်းနှင့် အတည်ပြုခြင်းတို့ကို လုပ်ဆောင်ပေးနိုင်သည်။ သင်၏dataကို သင့်ဖုန်းထဲတွင်သာ သိမ်းဆည်းထားပြီး အင်တာနက်ချိတ်ရန်မလိုအပ်ပါ။မည်သည့်နေရာတွင်မျှ ပေးပို့မည်မဟုတ်ပါ။</string>
+
+    <string name="start_using">စတင်မည်။</string>
+
+    <string name="main_button_start">ထိတွေ့မှုရှိကြောင်းဆက်သွယ်ခြင်း ကိုဖ့င့်ပါ။</string>
+    <string name="main_button_already_start">ထိတွေ့မှုရှိကြောင်းဆက်သွယ်ခြင်းကို ဖွင့်ထားသည်။</string>
+
+    <string name="main_info">%1$s\n%2$s\n%3$s</string>
+    <string name="main_info_first_launch_time">ဆက်သွယ်ရန် အသိပေးချက်များကို ဖွင့်ထားသောအချိန် %1$s</string>
+    <string name="main_info_enable_time_percent">လည်ပတ်ချိန်အချိုး %1$d%%</string>
+    <string name="main_info_last_check_time">နောက်ဆုံးစစ်ဆေးသောအချိန် %1$s</string>
+
+    <string name="dialog_low_storage_title">Dataထားရန်နေရာ မလုံလောက်ပါ။</string>
+    <string name="dialog_low_storage_message">အဆက်အသွယ်သတိပေးချက်များကို လက်ခံနိုင်ရန်dataထားရန်နေရာကိုစီမံပါ။</string>
+
+    <string name="risk_brief_unknown">ထိတွေ့မှုရှိကြောင်းဆက်သွယ်ခြင်း ခလုပ်မဖွင့်ထားသေးပါ။</string>
+    <string name="risk_detail_unknown">ထိတွေ့မှုရှိကြောင်းဆက်သွယ်ခြင်း ခလုပ်ကိုနိုပ်ပါ။</string>
+
+    <string name="risk_brief_normal">အတည်ပြုလူနာနှင့် အဆက်အသွယ်မရှိပါ။</string>
+    <string name="risk_detail_normal">လူသားခြင်းဆက်ဆံရာတွင်သတ်မှတ်ထားသောအကွာအဝေးကို ဆက်လက်ထိန်းသိမ်းပါ။</string>
+
+    <string name="risk_brief_risky">Dataအရအတည်ပြုလူနာနှင့် အဆက်အသွယ်ရှိခဲ့ပါသည်။</string>
+    <string-array name="risk_detail_risky">
+        <item>အေးအေးဆေးဆေး ရင်ဆိုင်ပါ- သင်သည် အတည်ပြုလူနာနှင့် နီးကပ်စွာရှိနေခဲ့သော်လည်း သင်၌ရောဂါရှာဖွေတွေ့ရှိသည်ဟု မဆိုလိုပါ။\n</item>
+        <item>မိမိ၏ကျန်းမာရေးကိုမိမိကိုယ်တိုင် စီမံခန့်ခွဲမှုပြုပါ- မိမိ၏ကျန်းမာရေးကိုမိမိကိုယ်တိုင် စီမံခန့်ခွဲမှုပြုပြီးမိမိ၏ကျန်းမာရေးကို ဂရုစိုက်ရန် အကြံပြုထားသည်။\n</item>
+        <item>ကျန်းမာရေးအခြေအနေတခုခုဖြစ်ခဲ့လျှင်- သင့်တွင် အဖျားတက်ခြင်းနှင့် အသက်ရှူလမ်းကြောင်းဆိုင်ရာရောဂါသံသယရှိပါက သင်နေထိုင်ရာဒေသ၏ကျန်းမာရေးရုံးသို့မဟုတ် \"1922\" ကပ်ရောဂါကာကွယ်ရေးဖုန်းလိုင်းကို နောက်ဆက်တွဲစစ်ဆေးမှုများစီစဉ်ရန် ဆက်သွယ်ပါ။</item>
+    </string-array>
+    <string name="risk_detail_risky_split">-</string>
+
+    <string name="state_en_not_support">အဆက်အသွယ်သတိပေးချက်များကို လောလောဆယ် ပံ့ပိုးမထားပါ။</string>
+    <string name="state_hw_not_support">Hardwareသည် ထိတွေ့ အသိပေးခြင်း လုပ်ဆောင်ချက်ကို မပံ့ပိုးပါ။</string>
+    <string name="state_user_profile_not_support">ဤစက်အတွက် အသုံးပြုသူအကောင့်သည် အဆက်အသွယ်သတိပေးခြင်းကို မပံ့ပိုးပါ။</string>
+    <string name="state_not_in_allowlist">ဤစက်သည် အဆက်အသွယ်သတိပေးခြင်းကို မပံ့ပိုးပါ။</string>
+    <string name="state_unknown">အသိပေးချက်များကို ယခုအချိန်တွင် ဖွင့်မရနိုင်ပါ။</string>
+    <string name="state_instruction">နောက်ထပ်ညွှန်ကြားချက်များအတွက်၊ Next Step ကိုနှိပ်ပါ။</string>
+    <string name="state_instruction_next_step">Next Step</string>
+
+    <string name="menu_barcode_scanning">1922 SMS ကို scanဖတ်သောစနစ်</string>
+    <string name="menu_about">Appအသုံးပြုနည်း</string>
+    <string name="menu_daily_summary">နေ့စဉ်အခြေအနေ</string>
+    <string name="menu_cancel_alert">သတိပေးသောအခြေအနေမှရုတ်သိမ်းခြင်း</string>
+    <string name="menu_upload">COVID-19လူနာ၏ကျပန်းIDပေးပိုခြင်း</string>
+    <string name="menu_privacy">ကိုယ်ပိုင်အချက်အလက်နှင့် အသုံးပြုမှုစည်းမျဉ်းများ</string>
+    <string name="menu_control">Dataခ့င့်ပြုချက်ထိမ်းချုပ်မှု</string>
+    <string name="menu_faq">FAQ</string>
+    <string name="menu_hints">အကြံပြုချက်များ</string>
+    <string name="menu_settings">Settings</string>
+
+    <string name="url_privacy">https://ailabs.tw/taiwan-social-distancing-apppersonal-data-protection-note/</string>
+    <string name="url_faq">https://www.cdc.gov.tw/Category/Page/R8bAd_yiVi22CIr73qM2yw</string>
+    <string name="url_clean_cache">https://support.google.com/googleplay/answer/9037938</string>
+    <string name="url_quick_settings">https://support.google.com/android/answer/9083864</string>
+    <string name="url_hcert_apply">https://dvc.mohw.gov.tw/vapa/apply/Index.init.ctr</string>
+    <string name="url_hcert_vaccine_appointment">https://www.cdc.gov.tw/Category/List/u4l1b_gHhf9WDjhEtRmRRw</string>
+    <string name="url_hcert_faq">https://dvc.mohw.gov.tw/vapa/template/vapa/common/pdf/QA.pdf</string>
+
+    <string name="daily_summary_no_contact">မရှိပါ။</string>
+    <string name="daily_summary_less_then_2_mins">2- မိနစ်အောက်</string>
+    <string name="daily_summary_mins">%1$d မိနစ်</string>
+    <string name="daily_summary_hrs_mins">%1$d နာရီ %2$d မိနစ်</string>
+
+    <string name="upload_confirm_title">သင်သည်COVID-19ရောဂါရှိသူဖြစ်ပါသလား။</string>
+    <string name="upload_confirm_message">ဤလုပ်ဆောင်မှုသည်COVID-19လူနာ၏ကျပန်းIDပေးပိုခြင်းဖြင့်ကပ်ရောဂါပြန့်ပွားခြင်းကိုလျှော့ချနိုင်ပါသည်။</string>
+    <string name="upload_title">ကျပန်းIdပေးပိုခြင်း</string>
+    <string name="upload_date">စတင်ရက်နှင့်ပြီးဆုံးရက်ကိုထည့်သွင်းပါ။</string>
+    <string name="upload_date_start_enter_hint">စတင်ရက်ကိုထည့်သွင်းပါ။</string>
+    <string name="upload_date_end_enter_hint">ပြီးဆုံးရက်ကိုထည့်သွင်းပါ။</string>
+    <string name="upload_date_start_hint">စတင်ရက်</string>
+    <string name="upload_date_end_hint">ပြီးဆုံးရက်</string>
+    <string name="upload_tek_description">ရောဂါကာကွယ်ရေးဌာနမှထုတ်ပေးသောနံပါတ်ကိုတင်သွင်းပြီးနောက်၊သင့်၏ဖုန်းIDကိုပေးပို့မည်။ဤdataများကိုCDC၌သိမ်းစည်းထားပြီး10 ရက်အကြာတွင် အလိုအလျောက် ဖျက်သွားမည်ဖြစ်ပါသည်။</string>
+    <string name="upload_success">တင်ပို့ခြင်းအောင်မြင်ပါ။</string>
+    <string name="upload_fail">တင်ပို့ခြင်းမအောင်မြင်ပါ။</string>
+    <string name="upload_fail_message_no_files">ရွေးချယ်ထားသော နေရာအတွင်း ပေးပို့ရန် dataမရှိပါ။</string>
+    <string name="upload_fail_message_invalid_code">မမှန်ကန်သော အတည်နံပါတ်</string>
+    <string name="upload_fail_message_no_granted_tek">IDများကိုပေးပို့ရန်ပေးပို့သည်။ကိုနှိပ်ပါ။</string>
+
+    <string name="enter_verification_code">အတည်ပြုနံပတ်ကိုနှိပ်ပါ။</string>
+    <string name="enter_verification_code_hint">အတည်ပြုနံပတ်</string>
+    <string name="send_verification_code">ပေးပို့သည်။</string>
+    <string name="send_verification_code_not_enabled">@string/risk_brief_unknown</string>
+
+    <string name="enter_phone_number">ဖုန်းနံပါတ်ထည့်ပါ။</string>
+    <string name="enter_phone_number_hint">ဖုန်းနံပါတ်ထည့်ပါ။</string>
+
+    <string name="request_verification_code">အတည်ပြုနံပါတ် တောင်းဆိုခြင်း။</string>
+    <string name="request_verification_code_description">ဤလုပ်ဆောင်ချက်သည်အတည်ပြုလူနာ၏ စိစစ်ရေးနံပါတ်ကို ရယူရန် အတွက်ဖြစ်ပြီး အတည်ပြုလူနာမဟုတ်သူများသည် စိစစ်ရေးနံပါတ်ကို ရယူနိုင်မည်မဟုတ်ပါ။</string>
+
+    <string name="request_verification_code_success">ဖုန်းနံပါတ်ကို အောင်မြင်စွာ ထည့်သွင်းခဲ့သည်။</string>
+    <string name="request_verification_code_success_message">စီစစ်ရေးနံပါတ်ကို သင့်မိုဘိုင်းဖုန်းသို့ SMS ဖြင့် ပေးပို့မည်ဖြစ်ပြီး၊ ၎င်းကို 5 မိနစ်အတွင်း မရပါက ထပ်မံကြိုးစားပါ။</string>
+    <string name="request_verification_code_fail">ဖုန်းနံပါတ်ကို ထည့်ခြင်းမအောင်မြင်ပါ။</string>
+    <string name="request_verification_code_fail_message">ချိတ်ဆက်မှု အမှားအယွင်းရှိ၍ထပ်ကြိုးစားပါ။</string>
+    <string name="request_verification_code_fail_limit_exceeded_message">ယနေ့အတွက် တောင်းဆိုချက်အရေအတွက်ထက်ကျော်လွန်ပါသဖြင့် နောက်နေ့မှထပ်မံကြိုးစားပါ။</string>
+    <string name="request_verification_code_fail_invalid_phone_number_message">ဖုန်းနံပါတ်မှားယွင်းနေပါသည်။</string>
+
+    <string name="cancel_alert_confirm_title">သတိပေးချင်း ကို ရုတ်သိမ်းမှာ သေချာပါသလား။</string>
+    <string name="cancel_alert_confirm_message">ဤလုပ်ဆောင်ချက်သည် ရေားဂါကူးစက်ပျံ့နှံ့မှုကို စစ်ဆေးပြီးနောက် သတိပေးသောအခြေအနေမှရုတ်သိမ်းခြင်းကို ထုတ်ပြန်ရန်ဖြစ်သည်။</string>
+    <string name="cancel_alert_test_date">ကပ်ရောဂါစစ်ဆေးသောရက်စွဲကိုနှိပ်ပါ။</string>
+    <string name="cancel_alert_test_date_hint">ရက်စွဲကိုနှိပ်ပါ။</string>
+    <string name="cancel_alert_description">ကျန်းမာရေးရုံးမှ ပေးပို့သောအတည်ပြုနံပါတ်ကို ဖြည့်သွင်းပေးပို့ပြီးလိုက်သည်နှင့် သင့်သတိပေးချက် အခြေအနေကို ပယ်ဖျက်လိုက်ပါမည်။</string>
+
+    <string name="cancel_alert_acknowledgement">အထက်ဖော်ပြပါအချက်အလက်များကို ကျွန်ုပ်ဖတ်ရှုပြီး သဘောတူပါသည်။</string>
+    <string-array name="cancel_alert_intruction">
+        <item>ကိုယ်တိုင် အမြန်စစ်ဆေးမှုကို ပြုလုပ်ထားပြီးဖြစ်ကာ အဖြေမှာnegativeဖြစ်ပါသည်။\n</item>
+        <item>ဖျားခြင်း၊ အသက်ရှူလမ်းကြောင်းဆိုင်ရာ လက္ခဏာများ၊ ဝမ်းလျှောခြင်း၊ အနံ့/အရသာ ရှိမရှိစသည်တို့ကဲ့သို့ COVID-19 ၏ သံသယလက္ခဏာများ ရှိနေခြင်း ရှိမရှိကို အာရုံစိုက်ပါမည်။ ရောဂါလက္ခဏာများ ပေါ်လာပါက ကျွန်ုပ်ကိုယ်တိုင် အမြန်စစ်ဆေးပါမည်။\n</item>
+        <item>အကယ်၍ ကျွန်ုပ်သည် အမြန်စစ်ဆေးမှုတွင်positiveလက္ခဏာပြပါက ဆေးစစ်ရန်အတွက် ဆေးဘက်ဆိုင်ရာမျက်နှာဖုံးကို ဝတ်ဆင်ထားမည်ဖြစ်ပြီး အပြင်ထွက်သည့်အခါ အများသုံးယာဉ်စီးခြင်းကို ရှောင်ကြဉ်ပါမည်။\n</item>
+        <item>ကျွန်ုပ်သည် \"COVID-19လူနာနှင့်ထိတွေ့သောအကြောင်းကြား\" ကို လက်ခံရရှိပြီး လက်ကိုမကြာခဏဆေးကြောခြင်း၊ နှာခေါင်းစည်းတပ်ခြင်းစသည့် သင့်လျော်သောအကာအကွယ်အစီအမံများပြုလုပ်ရန် ကျွန်ုပ်၏မိသားစုဝင်များအား အသိပေးထားပါသည်။\n</item>
+        <item>မလိုအပ်သော မိသားစုစုဝေးမှုများနှင့် လည်ပတ်မှုများကို ရှောင်ကြဉ်ပါမည်။\n</item>
+        <item>လူမှုရေးအရ ခပ်ခွာခွာနေ၍မရသော လှုပ်ရှားမှုများ ပါဝင်ခြင်းကို ရှောင်ကြဉ်ပါမည်။\n</item>
+        <item>နှာခေါင်းစည်းများကို မတပ်ဘဲသွားလို့ရသောအဆောက်အအုံတွင်းလှုပ်ရှားမှုများ သို့မဟုတ် အလုပ်များတွင်ပါ၀င်ခြင်းကို ရှောင်ကြဉ်ပါမည်။\n</item>
+    </string-array>
+
+    <string name="barcode_shortcut_label">1922 SMS</string>
+    <string name="barcode_shortcut_label_long">1922 SMS ကို scanဖတ်ပါ။</string>
+    <string name="barcode_hint_1922_invalid">1922 SMS မဟုတ်သော QR code</string>
+    <string name="barcode_hint_hcert_no_qr_code">ကာကွယ်ဆေးထိုးခြင်း digitalအထောက်အထား QR codeကို ရှာမတွေ့ပါ။</string>
+    <string name="barcode_hint_hcert_invalid">ကာကွယ်ဆေးထိုးခြင်းမဟုတ်သော digitalအထောက်အထား QR code</string>
+    <string name="barcode_hint_hcert_duplicated">ဤကာကွယ်ဆေးထိုးသည့် digitalအထောက်အထား ရှိပါသည်။</string>
+    <string name="barcode_hint_hcert_expired">ဤကာကွယ်ဆေးထိုးdigitalလက်မှတ် သက်တမ်းကုန်သွားပါပြီ။</string>
+    <string name="barcode_camera_permission_dialog_title">&appname;မှသင့်၏cameraအားအသုံးပြုချင်သည်၊</string>
+    <string name="barcode_camera_permission_dialog_message">&appname;မှသင့်၏cameraအားအသုံးပြု၍1922 SMS ၏ QR codeကိုscanဖတ်မည်။</string>
+    <string name="barcode_camera_permission_dialog_message_hcert">&appname;ကာကွယ်ဆေးထိုးလက်မှတ်၏ QR ကုဒ်ကို စကင်န်ဖတ်ရန် ကင်မရာကို အသုံးပြုသည်။</string>
+
+    <string name="control_exposure">အကြောင်းကြားချက်ဝင်ဆောင်မှု</string>
+    <string name="control_exposure_turn_off_title">ထိတွေ့မှုရှိကြောင်းဆက်သွယ်ခြင်းကို ပိတ်လိုပါသလား။</string>
+    <string name="control_exposure_turn_off_detail">အကယ်၍သင်သည် COVID-19 ရှိသူနှင့် ထိတွေ့မိပါက သင့်ကို အကြောင်းကြားမည်မဟုတ်ပါ။</string>
+    <string name="control_not_found_notification">အန္တရာယ်ကင်းသည့်အခါ အသိပေးပါ။</string>
+
+    <string name="hcert_full_name">ကာကွယ်ဆေးထိုးခြင်း၏ digitalအထောက်အထား</string>
+    <string name="hcert_description">အမြန်အတည်ပြုနိုင်ရန် QR Codeဖြင့် သင့်နှင့် သင့်မိသားစု၏ digital ကာကွယ်ဆေးထိုးခြင်းဆိုင်ရာ အထောက်အထားကို သင့်ဖုန်းတွင် သိမ်းဆည်းပါ။</string>
+    <string name="hcert_button_add">ကာကွယ်ဆေးထိုးသည့် ဒစ်ဂျစ်တယ်အထောက်အထားကို ချက်ချင်းထည့်ပါ။</string>
+    <string name="hcert_last_dose_date">ဆေးထိုးသည့်ရက်စွဲ %s</string>
+    <string name="hcert_hint">အသုံးပြုသည့်အခါတွင်သင်၏ ID ကတ်ကို တစ်ပြိုင်နက် တင်ပြပါ။</string>
+    <string name="hcert_delete">ဤဆေးထိုးခြင်းဆိုင်ရာ အထောက်အထားကို ဖျက်ပါ။</string>
+    <string name="hcert_menu_apply">ဆေးထိုးထားသောလက်မှတ်ကို လျှောက်ထားရန်-</string>
+    <string name="hcert_menu_vaccine_appointment">ကာကွယ်ဆေးအတွက် ရက်ချိန်းယူပါ။</string>
+    <string name="hcert_menu_faq">FAQ</string>
+    <string name="hcert_apply">ခွင့်ပြုသည်</string>
+    <string name="hcert_import">တင်သွင်းသည်။</string>
+
+    <string name="hcert_detail_target">ကာကွယ်နိုင်သောရောဂါအမည်-\ </string>
+    <string name="hcert_detail_vaccine">ကာကွယ်ဆေးအမျိုးအစား-\ </string>
+    <string name="hcert_detail_medicinal_product">ကာကွယ်ဆေးအမည်-\ </string>
+    <string name="hcert_detail_authorization_holder"> ထုတ်လုပ်သူ-\ </string>
+    <string name="hcert_detail_dose">အကြိမ်ပေါင်း-\ </string>
+    <string name="hcert_detail_date">ဆေးထိုးသောရက်စွဲ-\ </string>
+    <string name="hcert_detail_country">ဆေးထိုးသောနိုင်ငံ-\ </string>
+    <string name="hcert_detail_certificate_issuer">ထုတ်ပေးသောနေရာ-\ </string>
+    <string name="hcert_detail_certificate_identifier">UVCI-\ </string>
+    <string name="hcert_detail_issue_date">လက်မှတ်ထုတ်ပေးသည့်နေ့။-\ </string>
+
+    <string name="hcert_delete_confirm_title">ဖျက်ရန် သေချာပါသလား။</string>
+    <string name="hcert_delete_confirm_message">%s၏ကာကွယ်ဆေးထိုးသည့် ဒစ်ဂျစ်တယ်အထောက်အထား ဖျက်လိုသည်မှာ သေချာပါသလား။</string>
+    <string name="hcert_limit_reached_message">အရေအတွက်ကန့်သတ်ချက် ပြည့်သွားပါပြီ။</string>
+    <string name="hcert_expired">Dateကုန်သွားပြီ။</string>
+
+    <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
+
+    <string name="notification_channel_name_foreground_service">ထိတွေ့မှုစစ်ဆေးနေစဥ်။</string>
+
+    <string name="notification_provide_diagnosis_keys_title">ထိတွေ့မှု အကြောင်းကြားချက်များ</string>
+    <string name="notification_provide_diagnosis_keys_message">ထိတွေ့မှုရှိမရှိစစ်ဆေးနေစဥ်။</string>
+
+    <string name="notification_channel_name">ထိတွေ့သောစစ်ဆေးမှုအဖြေ</string>
+
+    <string name="notification_exposure_not_found_title">@string/notification_channel_name</string>
+    <string name="notification_exposure_not_found_message">ထိတွေ့မှုအန္တရာယ်မရှိသေးပါ။</string>
+
+    <string name="notification_exposure_state_updated_title">@string/notification_channel_name</string>
+    <string name="notification_exposure_state_updated_message">ထိတွေ့မှုအန္တရာယ်ရှိပါသည်၊ နောက်ဆက်တွဲအချက်အလက်များကြည့်ရန်အတွက် appကိုဖွင့်ပါ။</string>
+
+    <string name="notification_service_state_updated_title">@string/notification_provide_diagnosis_keys_title</string>
+    <string name="notification_service_state_updated_message_on">အကြောင်းကြားခြင်းဖွင်ထားသည်။</string>
+    <string name="notification_service_state_updated_message_off"> အကြောင်းကြားချက်ဝင်ဆောင်မှု ရပ်တန့်ထားသည်၊Appကိုဖွင့်၍နောက်အချက်အလက်များကိုလေ့လာပါ။</string>
+
+    <string name="app_update_message">&appname;၏ နောက်ဆုံးဗားရှင်းကို ဒေါင်းလုဒ်လုပ်ထားပြီး၊ အက်ပ်ကို ပြန်ဖွင့်ပါ။</string>
+    <string name="app_update_restart">ပြန်ဖွင့်</string>
+
+
+    <string-array name="feature_barcode_tip">
+        <item>Tip 1 Desktop ဖြတ်လမ်း-\ndesktop၌ရှိသော Appကို ကြာကြာနှိပ်ပြီးဖြတ်လမ်းစာရင်း ပေါ်လာမည်ဖြစ်ပြီး နောက်appကို desktopသို့ ဆွဲထုတ်နိုင်ပါသည်။\n</item>
+        <item>Tip 2 Small Tool-\ndesktopတွင် နေရာလွတ်တစ်ခုကို နှိပ်ပြီး ဖိထားပါ၊ [\"small tool/widgets]\" ရွေးချယ်မှုကို နှိပ်ပါ၊ \"&appname;\" ၏small toolsကို ရှာပြီး ၎င်းကို desktopသို့ ဆွဲချပါ။ \n</item>
+        <item>➤ Tip1နှင့်Tip2၏ဝင်ဆောင်မှုတူပါသည်၊တစ်ခုကိုရွေးချက်ပါ။ :D\n</item>
+        <item>Tip 3 Quick Setting-\nscreen၏ထိပ်မှအောက်သို့ နှစ်ကြိမ်ပွတ်ဆွဲပြီးနောက်၊ editကိုနှိပ်ပါ၊ (လုပ်ဆောင်ချက်သည် မတူညီသောမိုဘိုင်းလ်ဖုန်းမော်ဒယ်များအတွက် အနည်းငယ်ကွဲပြားသည်) \"1922 Scan\" ခလုတ်ကို \"Quick Setting\" သို့ ထည့်ရန် နှိပ်ပါ။ အသေးစိတ်လုပ်ဆောင်မှုအတွက်၊ တရားဝင်စာရွက်စာတမ်းကို ကိုးကားပါ။\n</item>
+        <item>➤ \"Quick Setting\" မှစတင်ခြင်းသည် Desktopဖြတ်လမ်းများနှင့် widgetsများထက် အနည်းငယ်နှေးမည်ဖြစ်သော်လည်း အားသာချက်မှာ screenကို အောက်သို့လျှောချခြင်းဖြင့် scanဖတ်ခြင်းကိုအချိန်မရွေးစတင်နိုင်သည်။</item>
+    </string-array>
+    <string name="feature_barcode_tip_split">-</string>
+    <string name="feature_barcode_tip_doc">တရားဝင်စာရွက်စာတမ်း</string>
+    <string name="feature_daily_summary">\"နေ့စဉ် ထိတွေ့သောအခြေအနေ\" စာမျက်နှာသစ်။</string>
+    <string name="feature_hcert">\"ကာကွယ်ဆေးထိုးခြင်း၏ digitalအထောက်အထား\" ကို ထည့်သွင်းသည်။</string>
+    <string name="feature_hcert_tip">သင်ကိုယ်တိုင်နှင့် သင့်မိသားစုအတွက် ကာကွယ်ဆေးထိုးသည့် digitalအထောက်အထားများကို အလွယ်တကူ သိမ်းဆည်းစီမံနိုင်စေပါသည်။</string>
+    <string name="feature_not_found_notification_control">အန္တရာယ်ကင်းသော အသိပေးချက်လုပ်ဆောင်ချက်ကို ပိတ်လိုပါက ညာဘက်အပေါ်ပိုင်းရှိ \"Settings\" သို့ သွားနိုင်သည်။</string>
+    <string name="feature_hints">အကြံပြုချက်များကို ထပ်မံကြည့်ရှုရန်၊ ညာဘက်အပေါ်ထောင့်ရှိ \"အကြံပြုချက်များ\" option ကို နှိပ်နိုင်သည်။</string>
+
+    <string name="confirm">Confirm</string>
+    <string name="cancel">Cancel</string>
+    <string name="deny">ခွင့်မပြုပါ။</string>
+    <string name="ok">OK</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+</resources>
