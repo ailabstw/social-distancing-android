@@ -12,7 +12,7 @@ import tw.gov.cdc.exposurenotifications.activity.DailySummaryViewModel.SummaryIt
 import tw.gov.cdc.exposurenotifications.R
 
 class DailySummaryAdapter :
-    ListAdapter<SummaryItem, DailySummaryAdapter.ViewHolder>(RecordingDiffCallback()) {
+    ListAdapter<SummaryItem, DailySummaryAdapter.ViewHolder>(DailySummaryDiffCallback()) {
 
     abstract class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         abstract fun bindTo(item: SummaryItem)
@@ -64,7 +64,7 @@ class DailySummaryAdapter :
         }
     }
 
-    class RecordingDiffCallback : DiffUtil.ItemCallback<SummaryItem>() {
+    class DailySummaryDiffCallback : DiffUtil.ItemCallback<SummaryItem>() {
         override fun areItemsTheSame(oldItem: SummaryItem, newItem: SummaryItem): Boolean =
             oldItem == newItem
 
