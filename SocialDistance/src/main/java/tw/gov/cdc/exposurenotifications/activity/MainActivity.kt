@@ -163,10 +163,6 @@ class MainActivity : BaseActivity() {
             gotoBarcodePage()
             true
         }
-        R.id.action_about -> {
-            startActivity(Intent(this, IntroductionActivity::class.java))
-            true
-        }
         R.id.action_daily_summary -> {
             gotoDailySummaryPage()
             true
@@ -179,21 +175,8 @@ class MainActivity : BaseActivity() {
             showUploadConfirmDialog()
             true
         }
-        R.id.action_privacy -> {
-            startActivity(WebViewActivity.getIntent(this, WebViewActivity.Page.PRIVACY))
-            true
-        }
-        R.id.action_control -> {
+        R.id.action_settings -> {
             startActivity(Intent(this, ControlActivity::class.java))
-            true
-        }
-        R.id.action_faq -> {
-            startActivity(WebViewActivity.getIntent(this, WebViewActivity.Page.FAQ))
-            true
-        }
-        R.id.action_hints -> {
-            FeaturePresentManager.resetPresented()
-            presentFeatureIfNeeded()
             true
         }
         else -> {
