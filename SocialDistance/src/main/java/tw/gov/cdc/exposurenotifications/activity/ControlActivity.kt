@@ -5,10 +5,12 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.widget.CompoundButton
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import kotlinx.android.synthetic.main.activity_control.*
-import kotlinx.android.synthetic.main.control_item.view.*
 import tw.gov.cdc.exposurenotifications.R
+import tw.gov.cdc.exposurenotifications.common.FeaturePresentManager
 import tw.gov.cdc.exposurenotifications.common.Log
 import tw.gov.cdc.exposurenotifications.common.PreferenceManager
 import tw.gov.cdc.exposurenotifications.common.RequestCode
@@ -21,13 +23,10 @@ class ControlActivity : BaseActivity() {
         private const val TAG = "ControlActivity"
     }
 
-    private val exposureNotificationServiceControl by lazy { control_exposure_notification_service }
-    private val notFoundNotificationControl by lazy { control_not_found_notification }
-
     private val onServiceCheckedChangeListener: CompoundButton.OnCheckedChangeListener by lazy {
-        CompoundButton.OnCheckedChangeListener { _: CompoundButton, isChecked: Boolean ->
+        CompoundButton.OnCheckedChangeListener { button: CompoundButton, isChecked: Boolean ->
             Log.d(TAG, "onChecked serviceControl $isChecked")
-            exposureNotificationServiceControl.sw.apply {
+            button.apply {
                 setOnCheckedChangeListener(null)
                 // Set the toggle back. It will only toggle to correct state if operation succeeds.
                 setChecked(!isChecked)
@@ -50,6 +49,28 @@ class ControlActivity : BaseActivity() {
         }
     }
 
+    private val recyclerView by lazy { control_recycler_view }
+
+    private val viewModel: ControlViewModel by lazy {
+        ViewModelProvider(this)
+            .get(ControlViewModel::class.java)
+            .apply {
+                onServiceCheckedChange = onServiceCheckedChangeListener
+                onNotificationCheckedChange = onNotificationCheckedChangeListener
+                onPageOptionClick = {
+                    when (it) {
+                        ControlViewModel.PageOption.ABOUT -> startActivity(Intent(this@ControlActivity, IntroductionActivity::class.java))
+                        ControlViewModel.PageOption.PRIVACY -> startActivity(WebViewActivity.getIntent(this@ControlActivity, WebViewActivity.Page.PRIVACY))
+                        ControlViewModel.PageOption.FAQ -> startActivity(WebViewActivity.getIntent(this@ControlActivity, WebViewActivity.Page.FAQ))
+                        ControlViewModel.PageOption.HINTS -> {
+                            FeaturePresentManager.resetPresented()
+                            finish()
+                        }
+                    }
+                }
+            }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_control)
@@ -60,23 +81,7 @@ class ControlActivity : BaseActivity() {
             setDisplayShowHomeEnabled(true)
         }
 
-        ExposureNotificationManager.state.observe(this, {
-            Log.d(TAG, "observe state $it")
-            exposureNotificationServiceControl.sw.apply {
-                setOnCheckedChangeListener(null)
-                isChecked = it == ExposureNotificationState.Enabled
-                setOnCheckedChangeListener(onServiceCheckedChangeListener)
-            }
-            notFoundNotificationControl.sw.apply {
-                setOnCheckedChangeListener(null)
-                isChecked = it == ExposureNotificationState.Enabled && PreferenceManager.isNotFoundNotificationEnabled
-                setOnCheckedChangeListener(onNotificationCheckedChangeListener)
-                isEnabled = it == ExposureNotificationState.Enabled
-            }
-        })
-
-        exposureNotificationServiceControl.text.setText(R.string.control_exposure)
-        notFoundNotificationControl.text.setText(R.string.control_not_found_notification)
+        setupRecyclerView()
     }
 
     override fun onResume() {
@@ -125,5 +130,25 @@ class ControlActivity : BaseActivity() {
                 ExposureNotificationManager.stop(this)
             }
             .show()
+    }
+
+    // Recycler View
+
+    private fun setupRecyclerView() {
+        val controlAdapter = ControlAdapter()
+
+        recyclerView.apply {
+            adapter = controlAdapter
+            layoutManager = LinearLayoutManager(this@ControlActivity)
+        }
+
+        ExposureNotificationManager.state.observe(this) {
+            Log.d(TAG, "observe state $it")
+            viewModel.updateItems(it)
+        }
+
+        viewModel.allItems.observe(this) {
+            controlAdapter.submitList(it)
+        }
     }
 }
