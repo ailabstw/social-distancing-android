@@ -37,6 +37,17 @@ object InstructionRepository {
     }
 
     private fun getLanguage(): String {
-        return if (Locale.getDefault().language.contains("zh")) "zh-hant" else Locale.getDefault().language
+        val language = Locale.getDefault().language
+        return when {
+            language.contains("zh")  -> "zh-hant"   // 94.9%
+            language.contains("en")  -> "en"        //  2.3%
+            language.contains("in")  -> "in"        //  1.6%
+            language.contains("vi")  -> "vi"        //  0.6%
+            language.contains("th")  -> "th"        //  0.2%
+            language.contains("ms")  -> "ms"
+            language.contains("my")  -> "my"
+            language.contains("fil") -> "fil"
+            else -> language
+        }
     }
 }
