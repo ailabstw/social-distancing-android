@@ -50,6 +50,7 @@
         android:layout_marginHorizontal="@dimen/main_margin_horizontal"
         android:layout_marginVertical="@dimen/main_margin_vertical"
         android:text="@string/hcert_apply"
+        app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toTopOf="@id/barcode_hcert_import_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -60,6 +61,7 @@
         android:layout_marginHorizontal="@dimen/main_margin_horizontal"
         android:layout_marginVertical="@dimen/main_margin_vertical"
         android:text="@string/hcert_import"
+        app:layout_constrainedWidth="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
