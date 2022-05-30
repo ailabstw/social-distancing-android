@@ -105,7 +105,7 @@
         <service
             android:name=".tile.BarcodeTileService"
             android:icon="@drawable/icon_qrcode"
-            android:label="@string/barcode_shortcut_label"
+            android:label="@string/hcert_full_name"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
                 <action android:name="android.service.quicksettings.action.QS_TILE" />
