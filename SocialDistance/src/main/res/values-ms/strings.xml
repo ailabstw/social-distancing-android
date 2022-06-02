@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appname "Penjarakan Sosial Taiwan">]>
+
+<resources>
+
+    <string name="app_name">&appname;</string>
+
+    <string name="cdc_name_ch">衛生福利部疾病管制署</string>
+    <string name="cdc_name_translate">Jabatan Kawalan Penyakit, Kementerian Kesihatan dan Kebajikan (Taiwan CDC)</string>
+
+    <string name="introduction_family_title">Lindungi anda dan keluarga anda</string>
+    <string name="introduction_family_description">App Penjarakan Sosial Taiwan dibangunkan oleh Taiwan AI Labs, bekerjasama dengan Eksekutif Yuan dan Taiwan CDC untuk mengurangkan peluang penularan penyakit serta melindungi keluarga anda.</string>
+    <string name="introduction_privacy_title">Privasi dan Perlindungan Data</string>
+    <string name="introduction_privacy_description">Pengguna App Penjarakan Sosial Taiwan tidak perlu daftar dan memuat naik sebarang data. Bentuk penghantaran data hanya untuk pemerhatian kekuatan isyarat Bluetooth antara peranti mudah alih untuk mengira jarak antara setiap pengguna.\n\nPerkhidmatan desentralisasi ini hanya menyimpan maklumat ID rawak yang pernah kontak dalam peranti masing-masing, identiti data akan dipadamkan untuk melindungi privasi.</string>
+    <string name="introduction_intro_title">Kurangkan peluang penyebaran wabak</string>
+    <string name="introduction_intro_description">Jika pengguna App didiagnosis menghidap penyakit berjangkit, dia boleh memilih untuk menerbitkan ID rawak peranti mudah alihnya (identiti data akan dipadamkan dengan teknologi yang ketat). Pengguna-pengguna peranti mudah alih yang pernah kontak rapat dengan mereka dalam tempoh tertentu akan menerima pemberitahuan. Proses ini menjamin kerahsiaan dengan mengambil kira privasi peribadi sambil melindungi kesihatan orang ramai.</string>
+    <string name="introduction_hcert_title">@string/hcert_full_name</string>
+    <string name="introduction_hcert_description">APP ini mudah simpan dan menunjukkan sijil digital diri dan ahli keluarga semasa scan kod QR ataupun untuk mendapat pengesahan. Penggunaan APP ini tidak memerlukan sambungan internet, hanya untuk data simpanan di telefon bimbit anda.</string>
+
+    <string name="start_using">Mulai</string>
+
+    <string name="main_button_start">Hidupkan Fungsi Pemberitahuan Pendedahan</string>
+    <string name="main_button_already_start">Pemberitahuan dihidupkan</string>
+
+    <string name="main_info">%1$s\n%2$s\n%3$s</string>
+    <string name="main_info_first_launch_time">Masa Fungsi Pemberitahuan Pendedahan dihidupkan %1$s</string>
+    <string name="main_info_enable_time_percent">Nisbah masa operasi ialah %1$d%%</string>
+    <string name="main_info_last_check_time">Waktu pemeriksaan terakhir adalah %1$s</string>
+
+    <string name="dialog_low_storage_title">Storan Tidak Mencukupi</string>
+    <string name="dialog_low_storage_message">Untuk menerima perkhidmatan selanjutnya, sila mengosongkan ruang.</string>
+
+    <string name="risk_brief_unknown">Fungsi Pemberitahuan Pendedahan belum dihidupkan</string>
+    <string name="risk_detail_unknown">Klik butang Hidupkan Fungsi Pemberitahuan Pendedahan untuk mengesahkan status risiko anda.</string>
+
+    <string name="risk_brief_normal">Tidak ada kontak dengan pesakit COVID-19</string>
+    <string name="risk_detail_normal">Sila terus mengekalkan penjarakan sosial.</string>
+
+    <string name="risk_brief_risky">Anda mempunyai kontak rapat dengan pesakit COVID-19</string>
+    <string-array name="risk_detail_risky">
+        <item>Tenang hati: Anda pernah berdekatan dengan pesakit COVID-19 bukan bermaksud anda telah dijangkit.\n</item>
+        <item>Kesihatan Awam Kendiri: Anda disyorkan agar mengamalkan Kesihatan Awam Kendiri dan memberi perhatian kepada kesihatan anda.\n</item>
+        <item>Alami masalah kesihatan: Jika anda mengesyaki gejala COVID-19, hubungi biro kesihatan tempatan atau talian pencegahan wabak \"1922\" untuk mengatur pemeriksaan selanjutnya.</item>
+    </string-array>
+    <string name="risk_detail_risky_split">:</string>
+
+    <string name="state_en_not_support">Kini fungsi Pemberitahuan Pendedahan tidak disokong pada peranti ini.</string>
+    <string name="state_hw_not_support">Perkakasan peranti ini tidak menyokong fungsi Pemberitahuan Pendedahan.</string>
+    <string name="state_user_profile_not_support">Akaun pengguna peranti ini tidak menyokong fungsi Pemberitahuan Pendedahan.</string>
+    <string name="state_not_in_allowlist">Akaun pengguna peranti ini tidak dapat mengakses.</string>
+    <string name="state_unknown">Peranti ini tidak dapat mengakses.</string>
+    <string name="state_instruction">Untuk melihat arahan lanjut, klik \"Teruskan\"</string>
+    <string name="state_instruction_next_step">Teruskan</string>
+
+    <string name="menu_barcode_scanning">Catatan kehadiran SMS 1922</string>
+    <string name="menu_about">Pengenalan App</string>
+    <string name="menu_daily_summary">Keadaan Pendedahan Harian</string>
+    <string name="menu_cancel_alert">Batalkan amaran</string>
+    <string name="menu_upload">Pesakit COVID-19 muat naik ID rawak</string>
+    <string name="menu_privacy">Terma Penggunaan dan Dasar Privasi</string>
+    <string name="menu_control">Kawalan Akses Data</string>
+    <string name="menu_faq">FAQ</string>
+    <string name="menu_hints">Petunjuk fungsi</string>
+    <string name="menu_settings">Tetapan</string>
+
+    <string name="url_privacy">https://ailabs.tw/taiwan-social-distancing-apppersonal-data-protection-note/</string>
+    <string name="url_faq">https://www.cdc.gov.tw/Category/Page/R8bAd_yiVi22CIr73qM2yw</string>
+    <string name="url_clean_cache">https://support.google.com/googleplay/answer/9037938</string>
+    <string name="url_quick_settings">https://support.google.com/android/answer/9083864</string>
+    <string name="url_hcert_apply">https://dvc.mohw.gov.tw/vapa/apply/Index.init.ctr</string>
+    <string name="url_hcert_vaccine_appointment">https://www.cdc.gov.tw/Category/List/u4l1b_gHhf9WDjhEtRmRRw</string>
+    <string name="url_hcert_faq">https://dvc.mohw.gov.tw/vapa/template/vapa/common/pdf/QA.pdf</string>
+
+    <string name="daily_summary_no_contact">Tiada</string>
+    <string name="daily_summary_less_then_2_mins">Kurang daripada 2 minit</string>
+    <string name="daily_summary_mins">%1$d minit</string>
+    <string name="daily_summary_hrs_mins">%1$d jam %2$d minit</string>
+
+    <string name="upload_confirm_title">Adakah anda COVID-19 positif?</string>
+    <string name="upload_confirm_message">Pesakit COVID-19 muat naik ID untuk mengurangkan penyebaran.</string>
+    <string name="upload_title">Muat naik ID rawak</string>
+    <string name="upload_date">Sila isikan tarikh mula dan tarikh tamat</string>
+    <string name="upload_date_start_enter_hint">Sila isikan tarikh mula</string>
+    <string name="upload_date_end_enter_hint">Sila isikan tarikh tamat</string>
+    <string name="upload_date_start_hint">Tarikh mula</string>
+    <string name="upload_date_end_hint">Tarikh tamat</string>
+    <string name="upload_tek_description">Sila masukkan kod pengesahan yang disediakan oleh CDC. Selepas diserah, ID rawak akan dimuatnaik. Data ini disimpan oleh CDC Dan akan dipadam selepas 10 hari.</string>
+    <string name="upload_success">Muat naik berjaya</string>
+    <string name="upload_fail">Muat naik gagal</string>
+    <string name="upload_fail_message_no_files">Ruangan yang terpilih tidak ada informasi untuk dimuat naik.</string>
+    <string name="upload_fail_message_invalid_code">Kod pengesahan tidak sah.</string>
+    <string name="upload_fail_message_no_granted_tek">Tekan hantar untuk memuatnaikkan ID rawak.</string>
+
+    <string name="enter_verification_code">Sila isikan nombor verifikasi anda</string>
+    <string name="enter_verification_code_hint">Sila isikan nombor verifikasi</string>
+    <string name="send_verification_code">Hantar</string>
+    <string name="send_verification_code_not_enabled">@string/risk_brief_unknown</string>
+
+    <string name="enter_phone_number">Sila masukkan nombor telefon bimbit</string>
+    <string name="enter_phone_number_hint">Sila masukkan nombor telefon bimbit</string>
+
+    <string name="request_verification_code">Minta kod pengesahan</string>
+    <string name="request_verification_code_description">Fungsi ini hanya untuk mereka yang telah dijangkiti COVID-19 untuk mendapatkan kod pengesahan.</string>
+
+    <string name="request_verification_code_success">Nombor telefon bimbit berjaya dimasukkan</string>
+    <string name="request_verification_code_success_message">Kod pengesahan akan dihantar ke telefon bimbit anda melalui SMS dalam 5 minit, cuba lagi jika anda tidak menerimanya.</string>
+    <string name="request_verification_code_fail">Nombor telefon gagal daftar</string>
+    <string name="request_verification_code_fail_message">Talian putus, cuba sebentar lagi.</string>
+    <string name="request_verification_code_fail_limit_exceeded_message">Telah melebihi limit harian, sila cuba hari esok.</string>
+    <string name="request_verification_code_fail_invalid_phone_number_message">Format nombor telefon salah.</string>
+
+    <string name="cancel_alert_confirm_title">Adakah anda hendak batalkan status amaran ini?</string>
+    <string name="cancel_alert_confirm_message">Fungsi ini digunakan untuk membatalkan amaran siasatan kes.</string>
+    <string name="cancel_alert_test_date">Sila isikan tarikh siasatan kes</string>
+    <string name="cancel_alert_test_date_hint">Sila isikan tarikh</string>
+    <string name="cancel_alert_description">Sila isikan Kod Pengesahan yang disediakan oleh biro kesihatan tempatan. Selepas dihantar, status amaran akan dibatalkan.</string>
+
+    <string name="cancel_alert_acknowledgement">Saya telah membaca dan bersetuju dengan Cara Melindungi Diri Sendiri &amp; Orang Lain.</string>
+    <string-array name="cancel_alert_intruction">
+        <item>Saya sudah buat ujian COVID-19 dan dapat keputusan negatif.\n</item>
+        <item>Saya akan perhatikan sebarang gejala COVID-19. Kalau saya alami gejala tersebut, saya akan membuat Ujian COVID-19 kendiri.\n</item>
+        <item>Kalau saya PCR positif, saya akan memakai pelitup muka dan buat PCR dengan SOP lengkap serta mengelakkan penggunaan kenderaan awam.\n</item>
+        <item>Saya telah memberitahu ahli keluarga saya mengenai penerimaan amaran \"Pemberitahuan Pendedahan.\" Mereka mesti mengambil langkah berjaga-jaga seperti kerap mencuci tangan dan memakai pelitup muka.\n</item>
+        <item>Saya akan mengelakkan perjumpaan atau aktiviti keluarga yang tidak mendesak.\n</item>
+        <item>Saya akan mengelakkan aktiviti yang tidak dapat memastikan kontak rapat dan jarak sosial.\n</item>
+        <item>Saya akan mengelakkan aktiviti dalam ruang bangunan yang tidak memakai pelitup muka.\n</item>
+    </string-array>
+
+    <string name="barcode_shortcut_label">Scan 1922</string>
+    <string name="barcode_shortcut_label_long">Scan SMS QR Code 1922</string>
+    <string name="barcode_hint_1922_invalid">Bukan catatan kehadiran QR code SMS 1922.</string>
+    <string name="barcode_hint_hcert_no_qr_code">Tidak dapat scan SVD.</string>
+    <string name="barcode_hint_hcert_invalid">QR code bagi bukan SVD.</string>
+    <string name="barcode_hint_hcert_duplicated">SVD sudah diperolehi.</string>
+    <string name="barcode_hint_hcert_expired">SVD telah tamat tempoh</string>
+    <string name="barcode_camera_permission_dialog_title">&appname; ingin menggunakan kamera anda</string>
+    <string name="barcode_camera_permission_dialog_message">&appname; ingin menggunakan kamera untuk scan catatan kehadiran QR code SMS.</string>
+    <string name="barcode_camera_permission_dialog_message_hcert">&appname; menggunakan kamera untuk scan QR code SVD.</string>
+
+    <string name="control_exposure">Perkhidmatan Pemberitahuan</string>
+    <string name="control_exposure_turn_off_title">Anda mahu berhentikan Fungsi Pemberitahuan?</string>
+    <string name="control_exposure_turn_off_detail">Anda tidak akan dimaklumkan jika anda mempunyai kontak dengan pesakit COVID-19.</string>
+    <string name="control_not_found_notification">Pemberitahuan Bebas Risiko</string>
+
+    <string name="hcert_full_name">Sijil Vaksinasi Digital (SVD)</string>
+    <string name="hcert_description">Memudahkan anda dan keluarga anda menyimpan SVD ke dalam telefon pintar secara scan QR code.</string>
+    <string name="hcert_button_add">Tambah Ruang SVD</string>
+    <string name="hcert_last_dose_date">Tarikh vaksinasi: %s</string>
+    <string name="hcert_hint">kemukakan ID semasa guna.</string>
+    <string name="hcert_delete">Alih Keluar SVD Ini</string>
+    <string name="hcert_menu_apply">Permohonan SVD</string>
+    <string name="hcert_menu_vaccine_appointment">Temujanji vaksinasi</string>
+    <string name="hcert_menu_faq">FAQ</string>
+    <string name="hcert_apply">Permohonan SVD</string>
+    <string name="hcert_import">Import SVD</string>
+
+    <string name="hcert_detail_target">Nama penyakit ini:\ </string>
+    <string name="hcert_detail_vaccine">Jenis vaksin:\ </string>
+    <string name="hcert_detail_medicinal_product">Nama vaksin:\ </string>
+    <string name="hcert_detail_authorization_holder">Nama pengeluar vaksin\ </string>
+    <string name="hcert_detail_dose">Bilangan dos vaksin:\ </string>
+    <string name="hcert_detail_date">Tarikh divaksinasi:\ </string>
+    <string name="hcert_detail_country">Negara divaksinasi:\ </string>
+    <string name="hcert_detail_certificate_issuer">SVD diisu oleh:\ </string>
+    <string name="hcert_detail_certificate_identifier">Kod SVD:\ </string>
+    <string name="hcert_detail_issue_date">Sijil dikeluar pada:\ </string>
+
+    <string name="hcert_delete_confirm_title">Adakah anda pasti mahu mengalih keluarnya?</string>
+    <string name="hcert_delete_confirm_message">Pastikah anda mahu mengalih keluar SVD %s?</string>
+    <string name="hcert_limit_reached_message">Had bilangan tercapai.</string>
+    <string name="hcert_expired">Tamat tempoh</string>
+
+    <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
+
+    <string name="notification_channel_name_foreground_service">Pengesanan dalam proses</string>
+
+    <string name="notification_provide_diagnosis_keys_title">Pemberitahuan Pendedahan</string>
+    <string name="notification_provide_diagnosis_keys_message">Pengesanan sedang dijalankan</string>
+
+    <string name="notification_channel_name">Keputusan pengesanan Kontak.</string>
+
+    <string name="notification_exposure_not_found_title">@string/notification_channel_name</string>
+    <string name="notification_exposure_not_found_message">Tiada risiko kontak</string>
+
+    <string name="notification_exposure_state_updated_title">@string/notification_channel_name</string>
+    <string name="notification_exposure_state_updated_message">Didedahkan risiko kontak COVID-19. Sila buka App untuk maklumat selanjutnya</string>
+
+    <string name="notification_service_state_updated_title">@string/notification_provide_diagnosis_keys_title</string>
+    <string name="notification_service_state_updated_message_on">Perkhidmatan Pemberitahuan Pendedahan dihidupkan</string>
+    <string name="notification_service_state_updated_message_off">Perkhidmatan diberhentikan, sila menghidupkan App untuk maklumat selanjutnya</string>
+
+    <string name="app_update_message">Versi terkini [&appname;] dimuat turun. Sila hidupkan semula App.</string>
+    <string name="app_update_restart">Menghidupkan semula</string>
+
+    <string name="feature_barcode">Tambahkan fungsi scan pada \"catatan kehadiran SMS 1922\" melalui \"tambahan baharu.\"</string>
+    <string-array name="feature_barcode_tip">
+        <item>Petua 1 Pintasan desktop:\nTekan lama ikon App di desktop, senarai pintasan akan muncul dan anda boleh menarik pintasan ke desktop!\n</item>
+        <item>Petua 2 Widget:\nTekan lama ruang kosong pada desktop, klik pilihan \"Widget\", cari \"&appname;\" dan tarik ke desktop!\n</item>
+        <item>➤ Fungsi pintasan desktop dan widget adalah sama, anda boleh pilih mana-mana satu untuk \"tambahan baharu\" :D\n</item>
+        <item>Petua 3 Tetapan Pantas:\nSelepas meleret ke bawah dari bahagian atas skrin dua kali, klik Edit (operasi berbeza sedikit untuk model telefon bimbit yang berlainan) untuk menambahkan butang tekan \"scan catatan kehadiran\" pada menu \"Tetapan Pantas.\" Untuk operasi terperinci, sila rujuk kepada Dokumen Rasmi.\n</item>
+        <item>➤ Bermula melalui \"Tetapan Pantas\" adalah lebih perlahan berbanding dengan pintasan dan widget desktop, tetapi kelebihannya ialah anda boleh memulakan fungsi scan pada bila-bila masa dengan meluncur ke bawah skrin.</item>
+    </string-array>
+    <string name="feature_barcode_tip_split">:</string>
+    <string name="feature_barcode_tip_doc">Dokumen Rasmi</string>
+    <string name="feature_daily_summary">Tambahkan \"Keadaan Pendedahan Harian\" baru.</string>
+    <string name="feature_hcert">Tambah fungsi simpan SVD</string>
+    <string name="feature_hcert_tip">SVD anda serta ahli keluarga mudah simpan dan diuruskan.</string>
+    <string name="feature_not_found_notification_control">Jika anda ingin menutup fungsi Pemberitahuan Bebas Risiko, anda boleh membuat perubahan di \"Tetapan.\"</string>
+    <string name="feature_hints">Anda boleh mendapatkan petunjuk dari menu.</string>
+
+    <string name="confirm">Disahkan</string>
+    <string name="cancel">Dibatalkan</string>
+    <string name="deny">Tidak diizinkan</string>
+    <string name="ok">OK</string>
+    <string name="yes">Ya</string>
+    <string name="no">Tidak</string>
+
+</resources>

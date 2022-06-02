@@ -6,6 +6,7 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
+import android.text.method.ScrollingMovementMethod
 import android.view.Menu
 import android.view.View
 import com.google.android.gms.nearby.exposurenotification.TemporaryExposureKey
@@ -60,6 +61,7 @@ class UploadActivity : BaseActivity() {
     // TODO: Remove or save to pref or somewhere
     private lateinit var diagnosis: DiagnosisEntity
 
+    private val descriptionText by lazy { upload_description_text }
     private val requestCodeButton by lazy { upload_request_code_button }
     private val sendButton by lazy { upload_send_button }
     private val codeText by lazy { upload_code_edit_text }
@@ -102,6 +104,8 @@ class UploadActivity : BaseActivity() {
         }
 
         currentFocus?.clearFocus()
+
+        descriptionText.movementMethod = ScrollingMovementMethod()
 
         startDateText.setOnClickListener {
             DatePickerDialog(this,

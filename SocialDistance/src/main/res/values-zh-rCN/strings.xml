@@ -60,14 +60,15 @@
     <string name="menu_control">資料權限控管</string>
     <string name="menu_faq">常見問題</string>
     <string name="menu_hints">功能提示</string>
+    <string name="menu_settings">設定</string>
 
     <string name="url_privacy">https://ailabs.tw/taiwan-social-distancing-apppersonal-data-protection-note/</string>
     <string name="url_faq">https://www.cdc.gov.tw/Category/Page/R8bAd_yiVi22CIr73qM2yw</string>
     <string name="url_clean_cache">https://support.google.com/googleplay/answer/9037938</string>
     <string name="url_quick_settings">https://support.google.com/android/answer/9083864</string>
-
-
-
+    <string name="url_hcert_apply">https://dvc.mohw.gov.tw/vapa/apply/Index.init.ctr</string>
+    <string name="url_hcert_vaccine_appointment">https://www.cdc.gov.tw/Category/List/u4l1b_gHhf9WDjhEtRmRRw</string>
+    <string name="url_hcert_faq">https://dvc.mohw.gov.tw/vapa/template/vapa/common/pdf/QA.pdf</string>
 
     <string name="daily_summary_no_contact">無</string>
     <string name="daily_summary_less_then_2_mins">接觸小於 2 分鐘</string>
@@ -82,7 +83,7 @@
     <string name="upload_date_end_enter_hint">請輸入結束日期</string>
     <string name="upload_date_start_hint">起始日期</string>
     <string name="upload_date_end_hint">結束日期</string>
-    <string name="upload_tek_description">請輸入由衛生局提供的驗證碼，送出後，會上傳您的隨機 ID，這些資料會保存在衛生福利部疾病管制署，並於 10 天後自動刪除。</string>
+    <string name="upload_tek_description">請輸入由疾管署提供的驗證碼，送出後，會上傳您的隨機 ID，這些資料會保存在衛生福利部疾病管制署，並於 10 天後自動刪除。</string>
     <string name="upload_success">上傳成功</string>
     <string name="upload_fail">上傳失敗</string>
     <string name="upload_fail_message_no_files">所選區間無資料可供上傳</string>
@@ -116,7 +117,7 @@
     <string name="cancel_alert_acknowledgement">我已詳細閱讀並同意以上衛教資訊</string>
     <string-array name="cancel_alert_intruction">
         <item>我已經自行快篩 1 次且為陰性。\n</item>
-        <item>我會注意是否有發燒、呼吸道症狀、腹瀉、嗅/味覺異常等 Covid-19 疑似症狀，若出現症狀，會自行快篩。\n</item>
+        <item>我會注意是否有發燒、呼吸道症狀、腹瀉、嗅/味覺異常等 COVID-19 疑似症狀，若出現症狀，會自行快篩。\n</item>
         <item>我如果快篩陽性，會佩戴醫用口罩就醫採檢，出門時避免搭乘大眾運輸。\n</item>
         <item>我已通知同住家人有收到「接觸通知」警示，要採取適當防護措施，例如勤洗手、戴口罩等。\n</item>
         <item>我會避免非必要的家庭聚會及拜訪。\n</item>
@@ -203,7 +204,7 @@
     <string name="feature_daily_summary">新增「每日接觸狀況」資訊頁面</string>
     <string name="feature_hcert">新增「疫苗接種數位證明」存放功能</string>
     <string name="feature_hcert_tip">讓您輕鬆存放與管理自己以及全家人的疫苗接種數位證明。</string>
-    <string name="feature_not_found_notification_control">若要關閉無風險通知功能，可以到右上方選單裡的「資料權限控管」進行設定喔~</string>
+    <string name="feature_not_found_notification_control">若要關閉無風險通知功能，可以到右上方選單裡的「設定」進行設定喔~</string>
     <string name="feature_hints">若要再次查看提示，可以點選右上方選單裡的「功能提示」選項喔~</string>
 
     <string name="confirm">確認</string>

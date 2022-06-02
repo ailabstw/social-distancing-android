@@ -17,12 +17,12 @@ android {
         applicationId "tw.gov.cdc.exposurenotifications"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 62
-        versionName "2.1.0"
+        versionCode 65
+        versionName "2.2.0"
         ndk {
             debugSymbolLevel 'FULL'
         }
-        resConfigs "zh-rTW", "zh-rCN", "in", "th", "tl", "vi"
+        resConfigs "zh-rTW", "zh-rCN", "in", "th", "tl", "vi", "ms", "my"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 

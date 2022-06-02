@@ -5,210 +5,211 @@
     <string name="app_name">&appname;</string>
 
     <string name="cdc_name_ch">衛生福利部疾病管制署</string>
-    <string name="cdc_name_translate">Taiwan Centers of Disease Control (Taiwan CDC)</string>
+    <string name="cdc_name_translate">Pusat Pengendalian dan Pencegahan Penyakit (CDC) MOHW</string>
 
-    <string name="introduction_family_title">Lindungi Anda dan Keluarga Anda</string>
-    <string name="introduction_family_description">Aplikasi Social Distancing Taiwan dikembangkan oleh Taiwan AI Labs bekerjasama dengan Executive Yuan dan Taiwan Centers for Disease Control (CDC) dengan tujuan mengurangi kemungkinan terjadinya penularan penyakit untuk melindungi Anda dan orang-orang yang Anda kasihi.</string>
+    <string name="introduction_family_title">Melindungi Anda dan Keluarga Anda</string>
+    <string name="introduction_family_description">Aplikasi Social Distancing Taiwan yang dikembangkan olehTaiwan AI Labs bersama Yuan Eksekutif dan Pusat Pengendalian dan Pencegahan Penyakit (CDC) MOHW, bertujuan  mengurangi kemungkinan penyebaran penyakit agar dapat melindungi keluarga Anda.</string>
     <string name="introduction_privacy_title">Perlindungan Privasi dan Data</string>
-    <string name="introduction_privacy_description">Pengguna tidak perlu mendaftarkan akun atau mengunggah data pribadi apapun untuk menggunakan Aplikasi Social Distancing Taiwan. Risiko tertular penyakit ditentukan oleh jarak di antara para pengguna perangkat seluler yang dihitung berdasarkan kekuatan sinyal bluetooth di antara perangkat seluler tersebut.\n\nLayanan terdesentralisasi dari aplikasi ini menyimpan secara lokal ID acak dari perangkat seluler pengguna aplikasi lain yang telah mendekat selama 14 hari terakhir. Nomor ID acak tersebut telah dianonimkan melalui mekanisme yang teliti untuk kepentingan perlindungan privasi.</string>
+    <string name="introduction_privacy_description">Pengguna tidak perlu mendaftarkan akun dan mengunggah data pribadi apapun untuk menggunakan Aplikasi Social Distancing Taiwan, hanya menggunakan kekuatan sinyal bluetooth untuk menghitung jarak di antara sesama pengguna telepon seluler.\n\nLayanan terdesentralisasi aplikasi ini menyimpan informasi ID anonim telepon seluler pengguna aplikasi lainnya yang telah berkontak erat, dan menggunakan anoniminasi informasi data dengan teknologi ketat guna melindungi privasi pengguna.</string>
     <string name="introduction_intro_title">Mengurangi Kemungkinan Penyebaran Pandemi</string>
-    <string name="introduction_intro_description">Jika pengguna aplikasi telah dikonfirmasi sebagai pembawa penyakit menular, mereka dapat memilih untuk memberitahukan ID anonim acak (yang telah disamarkan) dan sistem akan memberitahu para pengguna lainnya yang telah berada dekat dengan pengguna yang telah terkonfirmasi tentang bahaya tertular penyakit. Keseluruhan proses dilakukan secara anonim dan mendukung baik privasi data maupun kesehatan masyarakat.</string>
-
-
+    <string name="introduction_intro_description">Jika pengguna Aplikasi terkonfirmasi menderita penyakit menular, ia dapat memilih untuk memberitahukan ID anonim perangkat selular (dengan teknologi ketat sehingga tidak teridentifikasi) kepada mereka yang telah berkontak erat dengan perangkat selularnya dalam jangka waktu tertentu. Guna menjamin kesehatan masyarakat umum dengan mempertimbangan perlindungan privasi, maka keseluruhan proses dilakukan secara anonim.</string>
+    <string name="introduction_hcert_title">@string/hcert_full_name</string>
+    <string name="introduction_hcert_description">Melalui aplikasi, Anda dapat dengan mudah menyimpan, mengelola dan memperlihatkan sertifikat vaksinasi digital Anda dan anggota keluarga. Fitur QR code tersedia untuk memindai dan memverifikasi. Data Anda hanya akan tersimpan di ponsel Anda, tidak memerlukan koneksi internet dan tidak akan diunggah ke tempat lainnya.</string>
 
     <string name="start_using">Mulai!</string>
 
-    <string name="main_button_start">Aktifkan Notifikasi Paparan</string>
-    <string name="main_button_already_start">Notifikasi paparan telah AKTIF</string>
+    <string name="main_button_start">Aktifkan Notifikasi Kontak Erat</string>
+    <string name="main_button_already_start">Notifikasi kontak erat telah AKTIF</string>
 
     <string name="main_info">%1$s\n%2$s\n%3$s</string>
-    <string name="main_info_first_launch_time">Waktu aktivasi fungsi notifikasi paparan %1$s</string>
+    <string name="main_info_first_launch_time">Waktu notifikasi kontak erat diaktifkan %1$s</string>
     <string name="main_info_enable_time_percent">Rasio waktu operasi adalah %1$d%%</string>
-
+    <string name="main_info_last_check_time">Waktu pemeriksaan terakhir adalah %1$s</string>
 
     <string name="dialog_low_storage_title">Ruang penyimpanan tidak cukup</string>
-    <string name="dialog_low_storage_message">Harap kelola ruang penyimpanan untuk menerima notifikasi paparan.</string>
+    <string name="dialog_low_storage_message">Harap kelola ruang penyimpanan untuk menerima notifikasi kontak erat.</string>
 
-    <string name="risk_brief_unknown">Notifikasi Paparan TIDAK Diaktifkan</string>
-    <string name="risk_detail_unknown">Silakan aktifkan fungsi notifikasi paparan untuk mengkonfirmasi status risiko Anda.</string>
+    <string name="risk_brief_unknown">Notifikasi Kontak Erat TIDAK Diaktifkan</string>
+    <string name="risk_detail_unknown">Silakan tekan fungsi aktifkan notifikasi kontak erat untuk mengkonfirmasi status risiko Anda.</string>
 
-    <string name="risk_brief_normal">Anda tidak pernah berdekatan dengan kasus positif dalam database kami</string>
-    <string name="risk_detail_normal">Tetap menjaga jarak dengan sesama.</string>
+    <string name="risk_brief_normal">Tidak berkontak erat dengan kasus COVID-19</string>
+    <string name="risk_detail_normal">Harap tetap menjaga jarak sosial</string>
 
-    <string name="risk_brief_risky">Anda memiliki kontak langsung dengan kasus terkonfirmasi covid-19 dalam database kami</string>
+    <string name="risk_brief_risky">Berkontak erat dengan kasus COVID-19</string>
     <string-array name="risk_detail_risky">
-        <item>Silakan lakukan panggilan ke 1922 atau Departemen Kesehatan lokal untuk melaporkan kasus Anda, dan lakukan pengawasan mandiri terhadap kesehatan Anda. Kunjungi rumah sakit terdekat jika Anda merasakan gejala-gejala penyakit.</item>
-
-
+        <item>Tetap tenang: Anda teridentifikasi pernah berada dalam jarak dekat dengan kasus positif COVID-19, tetapi itu tidak berarti Anda terkonfirmasi positif.\n</item>
+        <item>Swakontrol kesehatan: Disarankan agar Anda memperhatikan kondisi dan memantau kesehatan mandiri.\n</item>
+        <item>Kondisi kesehatan: Jika gejala mencurigakan timbul, misal demam, gangguan pada saluran pernapasan, maka hubungi Dinas Kesehatan setempat atau hotline 1922 untuk mengatur pemeriksaan lebih lanjut.</item>
     </string-array>
+    <string name="risk_detail_risky_split">:</string>
 
+    <string name="state_en_not_support">Perangkat ini tidak mendukung fitur notifikasi kontak erat.</string>
+    <string name="state_hw_not_support">Perangkat keras ini tidak mendukung fitur notifikasi kontak erat.</string>
+    <string name="state_user_profile_not_support">Akun pengguna perangkat ini tidak mendukung fitur notifikasi kontak erat.</string>
+    <string name="state_not_in_allowlist">Fitur notifikasi kontak erat tidak dapat diaktifkan untuk akun pengguna di perangkat ini.</string>
+    <string name="state_unknown">Fitur notifikasi kontak erat pada perangkat untuk saat ini tidak dapat diaktifkan.</string>
+    <string name="state_instruction">Klik \"Langkah Berikutnya\", untuk instruksi lebih lanjut</string>
+    <string name="state_instruction_next_step">Langkah Berikutnya</string>
 
-
-
-
-
-
-
-
-
-
+    <string name="menu_barcode_scanning">SMS Pendataan Terpadu 1922</string>
     <string name="menu_about">Pengenalan Aplikasi</string>
-
-    <string name="menu_cancel_alert">Nonaktifkan peringatan</string>
-    <string name="menu_upload">Pasien COVID-19 Mengunggah ID Acak</string>
-    <string name="menu_privacy">IKebijakan Privasi Data</string>
-    <string name="menu_control">Pengaturan Data Pribadi</string>
-
-
+    <string name="menu_daily_summary">Situasi Kontak Erat Harian</string>
+    <string name="menu_cancel_alert">Nonaktifkan Peringatan</string>
+    <string name="menu_upload">Pasien COVID-19 Mengunggah ID Anonim</string>
+    <string name="menu_privacy">Hal Yang Harus Diperhatikan Dan Petunjuk Perlindungan Data Pribadi</string>
+    <string name="menu_control">Pengaturan Hak Data Pribadi</string>
+    <string name="menu_faq">Pertanyaan Umum</string>
+    <string name="menu_hints">Petunjuk Fitur</string>
+    <string name="menu_settings">Pengaturan</string>
 
     <string name="url_privacy">https://ailabs.tw/taiwan-social-distancing-apppersonal-data-protection-note/</string>
     <string name="url_faq">https://www.cdc.gov.tw/Category/Page/R8bAd_yiVi22CIr73qM2yw</string>
     <string name="url_clean_cache">https://support.google.com/googleplay/answer/9037938</string>
+    <string name="url_quick_settings">https://support.google.com/android/answer/9083864</string>
+    <string name="url_hcert_apply">https://dvc.mohw.gov.tw/vapa/apply/Index.init.ctr</string>
+    <string name="url_hcert_vaccine_appointment">https://www.cdc.gov.tw/Category/List/u4l1b_gHhf9WDjhEtRmRRw</string>
+    <string name="url_hcert_faq">https://dvc.mohw.gov.tw/vapa/template/vapa/common/pdf/QA.pdf</string>
 
-
-
-
-
-
-
-
-
+    <string name="daily_summary_no_contact">Tidak ada</string>
+    <string name="daily_summary_less_then_2_mins">Kontak erat kurang dari 2 menit</string>
+    <string name="daily_summary_mins">Kontak erat %1$d menit</string>
+    <string name="daily_summary_hrs_mins">Kontak erat %1$d jam %2$d menit</string>
 
     <string name="upload_confirm_title">Apakah Anda terkonfimasi sebagai pasien COVID-19?</string>
     <string name="upload_confirm_message">Unggah ID anonim Anda untuk mengurangi kemungkinan penyebaran.</string>
-    <string name="upload_title">Mengunggah ID Acak</string>
-    <string name="upload_date">Silakan masukkan tanggal awal dan akhir</string>
-    <string name="upload_date_start_enter_hint">Silakan masukkan tanggal awal</string>
-    <string name="upload_date_end_enter_hint">Silakan masukkan tanggal akhir</string>
-    <string name="upload_date_start_hint">Dari</string>
-    <string name="upload_date_end_hint">Sampai</string>
-    <string name="upload_tek_description">Silakan masukkan nomor verifikasi yang telah diberikan kepada Anda oleh Kementrian Kesehatan. Setelah mengkonfirmasi nomor verifikasi Anda, ID anonim Anda akan diunggah ke database CDC dan akan secara otomatis dihapus setelah 10 hari.</string>
+    <string name="upload_title">Mengunggah ID Anonim</string>
+    <string name="upload_date">Silakan masukkan tanggal mulai dan berakhir</string>
+    <string name="upload_date_start_enter_hint">Silakan masukkan tanggal mulai</string>
+    <string name="upload_date_end_enter_hint">Silakan masukkan tanggal berakhir</string>
+    <string name="upload_date_start_hint">Tanggal mulai</string>
+    <string name="upload_date_end_hint">Tanggal berakhir</string>
+    <string name="upload_tek_description">Silakan masukkan nomor verifikasi dari CDC. Setelah terkirim maka ID anonim Anda akan tersimpan dalam database Pusat Pengendalian dan Pencegahan Penyakit Menular (CDC) MOHW dan akan secara otomatis dihapus setelah 10 hari.</string>
     <string name="upload_success">BERHASIL mengunggah</string>
     <string name="upload_fail">GAGAL mengunggah</string>
+    <string name="upload_fail_message_no_files">Tidak ada data yang dapat diunggah dalam interval waktu yang dipilih.</string>
+    <string name="upload_fail_message_invalid_code">Nomor verifikasi tidak valid.</string>
+    <string name="upload_fail_message_no_granted_tek">Untuk mengunggah, tekan kembali kirim dan bagikan.</string>
 
-
-
-
-    <string name="enter_verification_code">Masukkan nomor verifikasi</string>
-    <string name="enter_verification_code_hint">Masukkan nomor verifikasi</string>
+    <string name="enter_verification_code">Silakan masukkan nomor verifikasi</string>
+    <string name="enter_verification_code_hint">Silakan masukkan nomor verifikasi</string>
     <string name="send_verification_code">Kirim</string>
+    <string name="send_verification_code_not_enabled">@string/risk_brief_unknown</string>
 
+    <string name="enter_phone_number">Masukkan nomor ponsel</string>
+    <string name="enter_phone_number_hint">Masukkan nomor ponsel</string>
 
+    <string name="request_verification_code">Meminta Nomor Verifikasi</string>
+    <string name="request_verification_code_description">Fitur ini tersedia bagi kasus positif COVID-19 untuk meminta nomor verifikasi. Bagi mereka yang tidak positif, tidak dapat memperoleh nomor verifikasi.</string>
 
-
-
-
-
-
-
-
-
-
-
-
+    <string name="request_verification_code_success">Nomor ponsel berhasil dimasukkan</string>
+    <string name="request_verification_code_success_message">Nomor verifikasi akan dikirim melalui SMS ke ponsel Anda. Jika Anda tidak menerimanya dalam kurun 5 menit, silakan untuk mencoba kembali.</string>
+    <string name="request_verification_code_fail">Nomor ponsel gagal dimasukkan</string>
+    <string name="request_verification_code_fail_message">Kesalahan koneksi. Silakan coba lagi nanti.</string>
+    <string name="request_verification_code_fail_limit_exceeded_message">Jumlah permintaan telah melebihi batas harian, silakan coba lagi besok.</string>
+    <string name="request_verification_code_fail_invalid_phone_number_message">Nomor ponsel yang Anda masukkan salah.</string>
 
     <string name="cancel_alert_confirm_title">Apakah Anda yakin akan menonaktifkan peringatan?</string>
-    <string name="cancel_alert_confirm_message">Fitur ini dirancang untuk menonaktifkan peringatan setelah investigasi transmisi.</string>
-    <string name="cancel_alert_test_date">Tanggal investigasi transmisi</string>
+    <string name="cancel_alert_confirm_message">Fitur ini dirancang untuk menonaktifkan peringatan setelah investigasi epidemi.</string>
+    <string name="cancel_alert_test_date">Silakan masukkan tanggal investigasi epidemi</string>
     <string name="cancel_alert_test_date_hint">Silakan masukkan tanggal</string>
-    <string name="cancel_alert_description">Silakan masukkan kode verifikasi yang disediakan oleh Kementrian Kesehatan. Status peringatan Anda akan dibatalkan setelah mengirimkannya.</string>
+    <string name="cancel_alert_description">Silakan masukkan kode verifikasi dari Dinas Kesehatan. Setelah terkirim maka status peringatan Anda akan dibatalkan.</string>
 
+    <string name="cancel_alert_acknowledgement">Saya telah membaca dan menyetujui informasi penyuluhan kesehatan di atas</string>
+    <string-array name="cancel_alert_intruction">
+        <item>Saya telah melakukan rapid test mandiri 1 kali dengan hasil negatif.\n</item>
+        <item>Saya akan memperhatikan apakah timbul gejala COVID-19 yang mencurigakan, misal demam, gangguan saluran pernapasan, diare, kelainan indra perasa dan penciuman dan lain-lain. Jika gejala di atas muncul, maka saya akan melakukan rapid test.\n</item>
+        <item>Jika hasil rapid test saya positif, maka saya akan mengenakan masker medis untuk pergi menerima pemeriksaan kesehatan lebih lanjut, serta tidak menggunakan moda transportasi umum saat keluar rumah.\n</item>
+        <item>Saya telah memberitahukan anggota keluarga yang tinggal serumah, bahwa saya telah menerima peringatan \"Notifikasi Kontak Erat\", serta harus menerapkan protokol yang relevan, seperti rajin cuci tangan, mengenakan masker dan lain-lain.\n</item>
+        <item>Saya akan menghindari kunjungan atau pertemuan keluarga yang tidak perlu.\n</item>
+        <item>Saya akan menghindari kegiatan yang dihadiri oleh partisipan yang tidak jelas dan tidak dapat menjaga jarak sosial.\n</item>
+        <item>Saya akan menghindari untuk berpartisipasi dalam aktivitas atau pekerjaan dalam ruangan yang memperbolehkan untuk melepas masker.\n</item>
+    </string-array>
 
+    <string name="barcode_shortcut_label">Memindai pendataan terpadu</string>
+    <string name="barcode_shortcut_label_long">Memindai SMS pendataan terpadu 1922</string>
+    <string name="barcode_hint_1922_invalid">Bukan SMS pendataan terpadu 1922.</string>
+    <string name="barcode_hint_hcert_no_qr_code">Failed to detect vaccination certificate QR code.</string>
+    <string name="barcode_hint_hcert_invalid">Gagal untuk mendeteksi QR code sertifikat vaksinasi digital.</string>
+    <string name="barcode_hint_hcert_duplicated">Sertifikat vaksinasi digital ini telah disimpan.</string>
+    <string name="barcode_hint_hcert_expired">Masa berlaku sertifikat vaksinasi digital ini telah berakhir.</string>
+    <string name="barcode_camera_permission_dialog_title">&appname; ingin mengakses kamera Anda</string>
+    <string name="barcode_camera_permission_dialog_message">&appname; ingin mengakses kamera Anda untuk memindai OR code SMS Pendataan Terpadu 1922.</string>
+    <string name="barcode_camera_permission_dialog_message_hcert">&appname; ingin mengakses kamera Anda untuk memindai OR code Sertifikat Vaksinasi Digital.</string>
 
+    <string name="control_exposure">Layanan Notifikasi Kontak Erat</string>
+    <string name="control_exposure_turn_off_title">Ingin mematikan notifikasi kontak erat?</string>
+    <string name="control_exposure_turn_off_detail">Jika Anda pernah kontak erat dengan pasien COVID-19, sistem tidak akan lagi mengirimkan notifikasi.</string>
+    <string name="control_not_found_notification">Notifikasi Tidak Ada Risiko</string>
 
+    <string name="hcert_full_name">Sertifikat Vaksinasi Digital</string>
+    <string name="hcert_description">Simpan sertifikat vaksinasi Anda dan anggota keluarga Anda di dalam ponsel. Tersedia sertifikat vaksinasi digital melalui fitur QR code.</string>
+    <string name="hcert_button_add">Tambahkan Sertifikat Vaksinasi Digital</string>
+    <string name="hcert_last_dose_date">Tanggal vaksinasi: %s</string>
+    <string name="hcert_hint">Saat menggunakan, harap menyertakan kartu identitas.</string>
+    <string name="hcert_delete">Hapus Sertifikat Vaksinasi Digital</string>
+    <string name="hcert_menu_apply">Pengajuan Sertifikat Vaksinasi Digital</string>
+    <string name="hcert_menu_vaccine_appointment">Reservasi Vaksinasi</string>
+    <string name="hcert_menu_faq">Pertanyaan Umum</string>
+    <string name="hcert_apply">Pengajuan Sertifikat Vaksinasi Digital</string>
+    <string name="hcert_import">Menambahkan Sertifikat Vaksinasi Digital</string>
 
+    <string name="hcert_detail_target">Nama Pencegahan Penyakit:\ </string>
+    <string name="hcert_detail_vaccine">Jenis Vaksin:\ </string>
+    <string name="hcert_detail_medicinal_product">Nama Produk:\ </string>
+    <string name="hcert_detail_authorization_holder">Merek Perusahaan:\ </string>
+    <string name="hcert_detail_dose">Dosis ke:\ </string>
+    <string name="hcert_detail_date">Tanggal Vaksinasi:\ </string>
+    <string name="hcert_detail_country">Negara Vaksinasi\ </string>
+    <string name="hcert_detail_certificate_issuer">Institusi yang Menerbitkan Sertifikat Vaksinasi Digital:\ </string>
+    <string name="hcert_detail_certificate_identifier">Nomor Sertifikasi Vaksinasi Digital:\ </string>
+    <string name="hcert_detail_issue_date">Tgl. Buat Sertifikat Digital:\ </string>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <string name="control_exposure">Layanan Notifikasi Paparan</string>
-    <string name="control_exposure_turn_off_title">Apakah Anda yakin untuk mematikan notifikasi paparan?</string>
-    <string name="control_exposure_turn_off_detail">Apabila Anda pernah kontak langsung dengan pasien terkonfirmasi covid-19, sistem tidak akan lagi mengirimkan notifikasi.</string>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <string name="hcert_delete_confirm_title">Apakah Anda yakin untuk menghapus?</string>
+    <string name="hcert_delete_confirm_message">Apakah Anda yakin untuk menghapus %s\' sertifikat vaksinasi digital?</string>
+    <string name="hcert_limit_reached_message">Jumlah telah mencapai batas maksimal.</string>
+    <string name="hcert_expired">Kedaluwarsa</string>
 
     <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
 
     <string name="notification_channel_name_foreground_service">Dalam proses…</string>
 
-    <string name="notification_provide_diagnosis_keys_title">Notifikasi Paparan</string>
-    <string name="notification_provide_diagnosis_keys_message">Perbandingan informasi kontak sedang berlangsung</string>
+    <string name="notification_provide_diagnosis_keys_title">Sedang proses pencocokan kontak erat</string>
+    <string name="notification_provide_diagnosis_keys_message">Pencocokan informasi kontak erat sedang berlangsung</string>
 
-    <string name="notification_channel_name">Hasil periksa</string>
+    <string name="notification_channel_name">Hasil pencocokan kontak erat</string>
 
     <string name="notification_exposure_not_found_title">@string/notification_channel_name</string>
-    <string name="notification_exposure_not_found_message">Tidak ada risiko tertular</string>
+    <string name="notification_exposure_not_found_message">Tidak ada risiko kontak erat</string>
 
     <string name="notification_exposure_state_updated_title">@string/notification_channel_name</string>
-    <string name="notification_exposure_state_updated_message">MUNGKIN TERTULAR: Buka aplikasi untuk informasi lebih lanjut</string>
+    <string name="notification_exposure_state_updated_message">Terdapat risiko kontak erat, silakan aktifkan aplikasi untuk pelacakan data lebih lanjut</string>
 
     <string name="notification_service_state_updated_title">@string/notification_provide_diagnosis_keys_title</string>
-    <string name="notification_service_state_updated_message_on">Notifikasi Paparan Diaktifkan</string>
-    <string name="notification_service_state_updated_message_off">Notifikasi paparan dimatikan, silakan buka aplikasi untuk informasi lebih lanjut</string>
+    <string name="notification_service_state_updated_message_on">Notifikasi Kontak Erat Telah Diaktifkan</string>
+    <string name="notification_service_state_updated_message_off">Notifikasi kontak erat telah dimatikan, silakan aktifkan aplikasi untuk informasi lebih lanjut</string>
 
     <string name="app_update_message">Aplikasi Social Distancing Taiwan terbaru telah diunduh. Silakan tutup dan buka kembali aplikasi.</string>
     <string name="app_update_restart">Mulai ulang</string>
 
+    <string name="feature_barcode">Menambahkan fitur pemindaian \"SMS pendataan terpadu 1922.\"</string>
+    <string-array name="feature_barcode_tip">
+        <item>Langkah 1 membuat pintasan di layar utama:\nTekan lama ikon aplikasi layar utama, maka akan muncul daftar pintasan layar utama. Anda dapat menarik pintasan tersebut ke layar utama Anda.\n</item>
+        <item>Langkah 2 untuk membuat widget:\nTekan lama di halaman kosong pada layar utama, pilih \"widget\", cari widget \"&appname;\", kemudian tarik ke layar utama.\n</item>
+        <item>➤ Fungsi lintasan layar utama dan widget sama, jadi cukup memilih salah satu dan tambahkan :D\n</item>
+        <item>Langkah 3 untuk pengaturan cepat:\nSetelah menggeser ke bawah dua kali dari atas layar, kemudian tekan tombol edit (pengoperasian akan berbeda tergantung jenis ponsel), dapat menambahkan tombol \"Memindai Pendataan Terpadu\" ke menu \"Pengaturan Cepat.\" Untuk lebih jelasnya, silakan merujuk pada dokumen Android Help Center.\n</item>
+        <item>➤ Mengakses dari \"Pengaturan Cepat\" akan sedikit lebih lambat dari Pintasan Layar Utama dan Widget, tetapi kelebihannya terdapat pada fitur pemindaian yang dapat diaktifkan kapan saja, hanya dengan menggeser layar ke bawah.</item>
+    </string-array>
+    <string name="feature_barcode_tip_split">:</string>
+    <string name="feature_barcode_tip_doc">Android Help Center</string>
+    <string name="feature_daily_summary">Menambahkan halaman \"Situasi kontak erat harian.\"</string>
+    <string name="feature_hcert">Menambahkan fitur penyimpanan \"Sertifikat Vaksinasi Digital\"</string>
+    <string name="feature_hcert_tip">Memungkinkan Anda untuk menyimpan dan mengelola sertifikat vaksinasi digital Anda dan anggota keluarga Anda.</string>
+    <string name="feature_not_found_notification_control">Jika ingin mematikan fitur notifikasi tidak ada risiko terpapar, maka tekan \"Pengaturan\" di menu kanan atas.</string>
+    <string name="feature_hints">Jika ingin kembali melihat petunjuk, maka tekan opsi \"Petunjuk Fitur\" di kanan atas.</string>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <string name="confirm">Konfirmasi</string>
-    <string name="cancel">Batal</string>
-
+    <string name="confirm">Kumpirmahin</string>
+    <string name="cancel">Ikansela</string>
+    <string name="deny">Tolak</string>
     <string name="ok">OK</string>
     <string name="yes">Ya</string>
     <string name="no">Tidak</string>

@@ -4,11 +4,15 @@
         android:enabled="true"
         android:icon="@mipmap/ic_barcode"
         android:shortcutId="barcode_scanning"
-        android:shortcutLongLabel="@string/barcode_shortcut_label_long"
-        android:shortcutShortLabel="@string/barcode_shortcut_label">
+        android:shortcutLongLabel="@string/hcert_full_name"
+        android:shortcutShortLabel="@string/hcert_full_name">
         <intent
             android:action="android.intent.action.VIEW"
             android:targetClass="tw.gov.cdc.exposurenotifications.activity.BarcodeScanningActivity"
-            android:targetPackage="tw.gov.cdc.exposurenotifications" />
+            android:targetPackage="tw.gov.cdc.exposurenotifications">
+            <extra
+                android:name="EXTRA_HCERT_MODE"
+                android:value="true" />
+        </intent>
     </shortcut>
 </shortcuts>

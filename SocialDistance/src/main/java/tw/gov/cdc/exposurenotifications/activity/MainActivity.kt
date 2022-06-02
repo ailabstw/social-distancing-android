@@ -111,18 +111,14 @@ class MainActivity : BaseActivity() {
             allFeatures.remove(Feature.BARCODE_V2)
         }
 
-//        if (debugNotification) {
-//            NotificationHelper.createNotificationChannelIfNeeded(NotificationHelper.NotificationType.ProvideDiagnosisKeys.channelInfo, this)
-//            NotificationHelper.createNotificationChannelIfNeeded(NotificationHelper.NotificationType.ExposureNotFound.channelInfo, this)
-//        }
         setupButton()
 
-        ExposureNotificationManager.dailySummaries.observe(this, {
+        ExposureNotificationManager.dailySummaries.observe(this) {
             updateStatus()
-        })
-        ExposureNotificationManager.state.observe(this, {
+        }
+        ExposureNotificationManager.state.observe(this) {
             updateStatus()
-        })
+        }
 
         if (PreferenceManager.isFirstTimeEnableNeeded) {
             Log.v(TAG, "need first time enable")
@@ -163,10 +159,6 @@ class MainActivity : BaseActivity() {
             gotoBarcodePage()
             true
         }
-        R.id.action_about -> {
-            startActivity(Intent(this, IntroductionActivity::class.java))
-            true
-        }
         R.id.action_daily_summary -> {
             gotoDailySummaryPage()
             true
@@ -179,21 +171,8 @@ class MainActivity : BaseActivity() {
             showUploadConfirmDialog()
             true
         }
-        R.id.action_privacy -> {
-            startActivity(WebViewActivity.getIntent(this, WebViewActivity.Page.PRIVACY))
-            true
-        }
-        R.id.action_control -> {
+        R.id.action_settings -> {
             startActivity(Intent(this, ControlActivity::class.java))
-            true
-        }
-        R.id.action_faq -> {
-            startActivity(WebViewActivity.getIntent(this, WebViewActivity.Page.FAQ))
-            true
-        }
-        R.id.action_hints -> {
-            FeaturePresentManager.resetPresented()
-            presentFeatureIfNeeded()
             true
         }
         else -> {
@@ -228,34 +207,11 @@ class MainActivity : BaseActivity() {
         }
     }
 
-//    var debugNotification = false
-//    var debugCount = 0
-
     private fun setupButton() {
         buttonHcert.setOnClickListener {
             startActivity(Intent(this, HcertActivity::class.java))
         }
         buttonStart.setOnClickListener {
-//            if (debugNotification) {
-//                when (debugCount % 5) {
-//                    0 -> {
-//                        NotificationHelper.postNotification(NotificationHelper.NotificationType.ProvideDiagnosisKeys, this, true)
-//                    }
-//                    1 -> {
-//                        NotificationHelper.postNotification(NotificationHelper.NotificationType.ExposureNotFound, this, true)
-//                    }
-//                    2 -> {
-//                        NotificationHelper.postNotification(NotificationHelper.NotificationType.ExposureStateUpdated, this, true)
-//                    }
-//                    3 -> {
-//                        NotificationHelper.postNotification(NotificationHelper.NotificationType.ServiceStateUpdated(true), this, true)
-//                    }
-//                    4 -> {
-//                        NotificationHelper.postNotification(NotificationHelper.NotificationType.ServiceStateUpdated(false), this, true)
-//                    }
-//                }
-//                debugCount ++
-//            }
             (ExposureNotificationManager.state.value as? ExposureNotificationState.NotSupport)?.also {
                 showNotSupportDialog(it.reason)
             } ?: run {

@@ -21,7 +21,7 @@ object WorkScheduler {
      *  2. When the ACTION_SERVICE_STATE_UPDATED broadcast is received with EXTRA_SERVICE_STATE equal to false.
      */
 
-    fun schedule() {
+    fun schedule(policy: ExistingPeriodicWorkPolicy) {
 
         val constraints = Constraints.Builder()
             .setRequiredNetworkType(NetworkType.CONNECTED)
@@ -36,7 +36,7 @@ object WorkScheduler {
             // Use a unique work to avoid multiple workers.
             .enqueueUniquePeriodicWork(
                 PROVIDE_KEY_WORK,
-                ExistingPeriodicWorkPolicy.KEEP, // TODO: [p0] KEEP
+                policy,
                 workRequest
             )
     }
