@@ -19,10 +19,11 @@ class AppWidgetProvider : AppWidgetProvider() {
         // Perform this loop procedure for each App Widget that belongs to this provider
         appWidgetIds.forEach { appWidgetId ->
             // Create an Intent to launch ExampleActivity
-            val pendingIntent: PendingIntent = Intent(context, BarcodeScanningActivity::class.java)
-                .let { intent ->
-                    PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_IMMUTABLE)
-                }
+            val pendingIntent: PendingIntent = Intent(context, BarcodeScanningActivity::class.java).apply {
+                putExtra(BarcodeScanningActivity.EXTRA_HCERT_MODE, true)
+            }.let { intent ->
+                PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
+            }
 
             // Get the layout for the App Widget and attach an on-click listener
             // to the button
