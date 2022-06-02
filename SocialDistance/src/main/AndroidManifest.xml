@@ -73,7 +73,7 @@
             android:label="@string/menu_cancel_alert" />
         <activity
             android:name=".activity.ControlActivity"
-            android:label="@string/menu_control" />
+            android:label="@string/menu_settings" />
         <activity
             android:name=".activity.BarcodeScanningActivity"
             android:label="@string/menu_barcode_scanning"

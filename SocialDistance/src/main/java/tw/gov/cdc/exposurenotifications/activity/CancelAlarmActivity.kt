@@ -2,13 +2,9 @@ package tw.gov.cdc.exposurenotifications.activity
 
 import android.app.AlertDialog
 import android.graphics.Paint
-import android.graphics.Paint.FontMetricsInt
 import android.os.Bundle
-import android.os.Parcel
-import android.text.ParcelableSpan
 import android.text.Spannable
 import android.text.SpannableStringBuilder
-import android.text.TextUtils
 import android.text.method.ScrollingMovementMethod
 import android.text.style.LeadingMarginSpan
 import android.text.style.LineHeightSpan

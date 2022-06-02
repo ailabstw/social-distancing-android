@@ -9,6 +9,10 @@ import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.annotation.LayoutRes
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
+import androidx.core.view.marginTop
 import androidx.viewpager.widget.PagerAdapter
 import kotlinx.android.synthetic.main.activity_introduction.*
 import kotlinx.android.synthetic.main.introduction_page.view.*
@@ -83,7 +87,7 @@ class IntroductionActivity : BaseActivity() {
 }
 
 private class ViewPagerAdapter(
-    private val baseView: Int,
+    @LayoutRes private val baseView: Int,
     private val introductions: Array<Introduction>,
     private val activity: Activity,
     private val showStartButton: Boolean
@@ -121,6 +125,9 @@ private class ViewPagerAdapter(
             startButton.visibility = View.INVISIBLE
         } else {
             startButton.visibility = View.GONE
+            (layout.textTitle.layoutParams as ConstraintLayout.LayoutParams).apply {
+                topMargin = layout.context.run { resources.getDimensionPixelSize(R.dimen.main_margin_vertical) }
+            }
         }
 
         container.addView(layout)

@@ -7,12 +7,12 @@ import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import kotlinx.android.synthetic.main.daily_summary_item_view.view.*
+import kotlinx.android.synthetic.main.item_daily_summary.view.*
 import tw.gov.cdc.exposurenotifications.activity.DailySummaryViewModel.SummaryItem
 import tw.gov.cdc.exposurenotifications.R
 
 class DailySummaryAdapter :
-    ListAdapter<SummaryItem, DailySummaryAdapter.ViewHolder>(RecordingDiffCallback()) {
+    ListAdapter<SummaryItem, DailySummaryAdapter.ViewHolder>(DailySummaryDiffCallback()) {
 
     abstract class ViewHolder(v: View) : RecyclerView.ViewHolder(v) {
         abstract fun bindTo(item: SummaryItem)
@@ -64,7 +64,7 @@ class DailySummaryAdapter :
         }
     }
 
-    class RecordingDiffCallback : DiffUtil.ItemCallback<SummaryItem>() {
+    class DailySummaryDiffCallback : DiffUtil.ItemCallback<SummaryItem>() {
         override fun areItemsTheSame(oldItem: SummaryItem, newItem: SummaryItem): Boolean =
             oldItem == newItem
 
@@ -89,7 +89,7 @@ class DailySummaryAdapter :
             override fun onCreateViewHolder(parent: ViewGroup): ViewHolder {
                 return SummaryViewHolder(
                     LayoutInflater.from(parent.context)
-                        .inflate(R.layout.daily_summary_item_view, parent, false)
+                        .inflate(R.layout.item_daily_summary, parent, false)
                 )
             }
         };

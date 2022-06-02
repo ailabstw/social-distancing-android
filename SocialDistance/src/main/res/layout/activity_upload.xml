@@ -13,16 +13,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Space
+        android:id="@+id/upload_space_1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/upload_date_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:layout_constraintVertical_weight="1" />
+
     <TextView
         android:id="@+id/upload_date_text"
         style="@style/Text"
         android:layout_marginHorizontal="@dimen/upload_margin_horizontal"
-        android:layout_marginTop="@dimen/upload_margin_top"
+        android:layout_marginTop="@dimen/upload_margin_vertical_small"
         android:text="@string/upload_date"
         app:layout_constraintBottom_toTopOf="@id/upload_date_start_edit_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@id/upload_space_1" />
 
     <EditText
         android:id="@+id/upload_date_start_edit_text"
@@ -39,10 +49,10 @@
         android:paddingVertical="@dimen/upload_edit_text_padding_vertical"
         android:textColor="@color/text"
         android:textSize="@dimen/text_size"
+        app:layout_constraintBottom_toTopOf="@id/upload_date_end_edit_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/upload_date_text"
-        app:layout_constraintVertical_bias="1" />
+        app:layout_constraintTop_toBottomOf="@id/upload_date_text" />
 
     <EditText
         android:id="@+id/upload_date_end_edit_text"
@@ -59,20 +69,31 @@
         android:paddingVertical="@dimen/upload_edit_text_padding_vertical"
         android:textColor="@color/text"
         android:textSize="@dimen/text_size"
+        app:layout_constraintBottom_toTopOf="@id/upload_space_2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/upload_date_start_edit_text"
-        app:layout_constraintVertical_bias="1" />
+        app:layout_constraintTop_toBottomOf="@id/upload_date_start_edit_text" />
+
+    <Space
+        android:id="@+id/upload_space_2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/upload_code_text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upload_date_end_edit_text"
+        app:layout_constraintVertical_weight="1" />
 
     <TextView
         android:id="@+id/upload_code_text"
         style="@style/Text"
         android:layout_marginHorizontal="@dimen/upload_margin_horizontal"
-        android:layout_marginTop="@dimen/upload_margin_vertical"
+        android:layout_marginTop="@dimen/upload_margin_vertical_small"
         android:text="@string/enter_verification_code"
+        app:layout_constraintBottom_toTopOf="@id/upload_code_edit_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/upload_date_end_edit_text" />
+        app:layout_constraintTop_toBottomOf="@id/upload_space_2" />
 
     <EditText
         android:id="@+id/upload_code_edit_text"
@@ -89,10 +110,10 @@
         android:paddingVertical="@dimen/upload_edit_text_padding_vertical"
         android:textColor="@color/text"
         android:textSize="@dimen/text_size"
+        app:layout_constraintBottom_toTopOf="@id/upload_request_code_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/upload_code_text"
-        app:layout_constraintVertical_bias="1" />
+        app:layout_constraintTop_toBottomOf="@id/upload_code_text" />
 
     <Button
         android:id="@+id/upload_request_code_button"
@@ -105,6 +126,7 @@
         android:textColor="@color/button_secondary_normal"
         app:backgroundTint="@null"
         app:layout_constrainedWidth="true"
+        app:layout_constraintBottom_toTopOf="@id/upload_description_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/upload_code_edit_text" />
@@ -114,36 +136,43 @@
         style="@style/Text"
         android:layout_height="0dp"
         android:layout_marginHorizontal="@dimen/upload_margin_horizontal"
-        android:layout_marginVertical="@dimen/upload_margin_vertical"
-        android:autoSizeMaxTextSize="@dimen/text_size"
-        android:autoSizeMinTextSize="@dimen/text_size_min"
-        android:autoSizeTextType="uniform"
+        android:layout_marginTop="@dimen/upload_margin_vertical_small"
         android:gravity="center_vertical"
+        android:minLines="3"
+        android:paddingHorizontal="4dp"
+        android:scrollbarStyle="outsideOverlay"
+        android:scrollbars="vertical"
         android:text="@string/upload_tek_description"
+        app:layout_constrainedHeight="true"
         app:layout_constraintBottom_toTopOf="@id/upload_send_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/upload_request_code_button"
-        tools:text="很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字字很多字很多字＾＿＾" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/upload_guideline"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.75" />
+        app:layout_constraintVertical_weight="12"
+        tools:text="很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字很多字字很多字很多字＾＿＾" />
 
     <Button
         android:id="@+id/upload_send_button"
         style="@style/Button.Major"
         android:layout_width="wrap_content"
         android:layout_marginHorizontal="20dp"
+        android:layout_marginVertical="@dimen/upload_margin_vertical_small"
         android:text="@string/send_verification_code"
+        app:layout_constraintBottom_toTopOf="@id/upload_space_3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/upload_description_text"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <Space
+        android:id="@+id/upload_space_3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/upload_guideline"
-        app:layout_constraintVertical_bias="0.25" />
+        app:layout_constraintTop_toBottomOf="@id/upload_send_button"
+        app:layout_constraintVertical_weight="3" />
 
     <ProgressBar
         android:id="@+id/progressBar"

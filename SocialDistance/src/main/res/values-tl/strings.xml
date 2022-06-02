@@ -7,16 +7,16 @@
     <string name="cdc_name_ch">衛生福利部疾病管制署</string>
     <string name="cdc_name_translate">Taiwan Centers for Disease Control</string>
 
-    <string name="introduction_family_title">Upang maprotektahan ka at ang iyong pamilya</string>
-    <string name="introduction_family_description">Ang Taiwan Social Distance App ay dinisenyo ng Taiwan AI Labs at Taiwan Centers for Disease Control upang makaiwas sa pag-expose sa COVID-19, at maprotektahan ang iyong pamilya.</string>
-    <string name="introduction_privacy_title">Proteksyon sa privacy at data</string>
+    <string name="introduction_family_title">Protektahan ang inyong sarili at ang inyong pamilya</string>
+    <string name="introduction_family_description">Ang Taiwan Social Distancing App ay binuo ng Taiwan Artificial Intelligence Laboratory at sa tulong ng Executive Yuan at ng Dept. of Disease Control Min. of Health and Welfare. Ang layunin ay protektahan ang iyong pamilya sa pamamagitan iwasan ang pagkakataon ng pagkalat ng sakit.</string>
+    <string name="introduction_privacy_title">Privacy at Proteksyon ng Data</string>
     <string name="introduction_privacy_description">Ang mga gumagamit ng Taiwan Social Distance App ay hindi kailangang magparehistro at mag-upload ng anumang data. Ginagamit lamang nila ang lakas ng signal ng Bluetooth sa pagitan ng mga handheld devices upang makalkula ang distansya ng bawat gumagamit.\n\nAng decentralized service na ito ay nag-iimbak ng impormasyon ng random ID ng iyong handheld devices, at gumagamit ng mahigpit na teknolohiya para makilala ang data upang maprotektahan ang privacy ng gumagamit.</string>
-    <string name="introduction_intro_title">Upang mabawasan ang pagkalat ng pandemya</string>
-    <string name="introduction_intro_description">Kung ang user ng App ay may nakakahawang sakit, puwede niyang ipadala ang random ID sa kanyang handheld device (ginagamit ang isang advanced na teknolohiya upang hindi makilala ang taong gumagamit nito), makakareceive ka ng notification kung malapit ang handheld device mo sa taong may sakit, at hindi mo rin malalaman kung sino siya upang maprotektahan ang privacy, at maprotektahan din ang kalusugan ng iba tao.</string>
+    <string name="introduction_intro_title">Mababawasan ang pagkalat COVID-19</string>
+    <string name="introduction_intro_description">Kung ang user ng app ay na-diagnose na may nakakahawang sakit, maaari niyang piliing mag-isyu ng cellphone random ID (de-identified sa mahigpit na teknolohiya). Makakatanggap ng abiso ang sinumang may malapit at matagal na kaugnayan sa pamamagitan ng kanyang cellphone. At walang paraan malaman kung sino ito, at upang maprotektahan ang kalusugan ng publiko habang isinasaalang-alang ang personal privacy.</string>
+    <string name="introduction_hcert_title">@string/hcert_full_name</string>
+    <string name="introduction_hcert_description">Maaring gamitin ang App para sa mabilis na paraan sa pagsave, pagmahala, at pagpakita ng iyong sertipiko at ng iyong pamilya.\n\nMaaring gamitin ang QR code para maiscan ng ibang organisasyon at maberika ang iyong bakuna. Ang iyong detalye ay nakasave isa iyong cellphone kung kaya\'t hindi nangangailangan na may internet.</string>
 
-
-
-    <string name="start_using">Simulan na ang paggamit!</string>
+    <string name="start_using">Simulan ang paggamit</string>
 
     <string name="main_button_start">Buksan ang Exposure Notification</string>
     <string name="main_button_already_start">Bukas na ang Exposure Notification</string>
@@ -24,7 +24,7 @@
     <string name="main_info">%1$s\n%2$s\n%3$s</string>
     <string name="main_info_first_launch_time">Oras mula ng nabuksan ang Exposure Notification %1$s</string>
     <string name="main_info_enable_time_percent">Ang ratio ng operating time ay %1$d%%</string>
-
+    <string name="main_info_last_check_time">Last checked at %1$s</string>
 
     <string name="dialog_low_storage_title">Hindi sapat ang storage</string>
     <string name="dialog_low_storage_message">Mangyaring i-check ang storage kung nais mong buksan ang Exposure Notification.</string>
@@ -32,80 +32,81 @@
     <string name="risk_brief_unknown">Hindi pa nabubuksan ang Exposure Notification</string>
     <string name="risk_detail_unknown">Mangyaring buksan ang Exposure Notification upang makumpirma ang iyong katayuan ngayon.</string>
 
-    <string name="risk_brief_normal">Hindi ka na-expose sa pasyente ng COVID-19 sa aming database</string>
-    <string name="risk_detail_normal">Mangyaring ipagtuloy ang social distancing.</string>
+    <string name="risk_brief_normal">Walang kontak sa mga kumpirmadong kaso</string>
+    <string name="risk_detail_normal">Mangyaring ipagpatuloy ang pagpapanatili ng social distancing.</string>
 
-    <string name="risk_brief_risky">Na-expose ka sa mga positibong pasyente sa aming database</string>
+    <string name="risk_brief_risky">May kontak sa isang kumpirmadong may COVID-19</string>
     <string-array name="risk_detail_risky">
-        <item>Mangyaring i-report ito sa lokal na health bureau o tawagan ang 1922 hotline. Paki obserbahan ang iyong personal na kondisyon sa kalusugan, at puntahan na ang pinaka malapit na ospital kung masama ang pakiramdam.</item>
-
-
+        <item>Manatiling kalmado: Nakilala ka bilang malapit na kontak ng isang kumpirmadong kaso ng COVID-19, ngunit HINDI nangangahulugan na ikaw ay isang kumpirmadong kaso ng COVID-19.\n</item>
+        <item>Pamamahala sa sariling kalusugan: Pinapayuhan ka namin na magsagawa ng pamamahala ng sarilng kalusugan at alamin ang inyong kalagayan.\n</item>
+        <item>Kondisyong Pangkalusugan: Kung mayroon kang lagnat o hirap sa paghinga, mangyaring makipag-ugnayan sa iyong lokal na ahensya ng pangkalusugan o tumawag sa \"1922\" para masuri ang inyong kalagayan.</item>
     </string-array>
+    <string name="risk_detail_risky_split">:</string>
 
+    <string name="state_en_not_support">Hindi sinusuportahan ang abiso sa pagkakalantad.</string>
+    <string name="state_hw_not_support">Hindi sinusuportahan ng hardware ng device na ito ang abiso sa pagkakalantad.</string>
+    <string name="state_user_profile_not_support">Hindi sinusuportahan ang abiso sa pagkakalantad para sa kasalukuyang user profile.</string>
+    <string name="state_not_in_allowlist">Ang kliyente ay wala sa aprubadong listahan ng mga kliyente.</string>
+    <string name="state_unknown">Ang kasalukuyang katayuan ay hindi makilala.</string>
+    <string name="state_instruction">Para sa karagdagang instrakyon, tingnan ang \"Susunod na hakbang.\"</string>
+    <string name="state_instruction_next_step">Susunod na hakbang</string>
 
-
-
-
-
-
-
-
-
-
+    <string name="menu_barcode_scanning">1922 SMS Contact Tracing</string>
     <string name="menu_about">Introduction ng App</string>
-
-    <string name="menu_cancel_alert">Isara ang warning notification</string>
-    <string name="menu_upload">Confirmed patients upload Anonymous ID</string>
+    <string name="menu_daily_summary">Araw Araw na Kalagayan</string>
+    <string name="menu_cancel_alert">Isara ang Warning Notification</string>
+    <string name="menu_upload">Confirmed Patients Upload Anonymous ID</string>
     <string name="menu_privacy">Privacy Policy and Terms of Use</string>
-    <string name="menu_control">Pagkontrol sa awtoridad ng data</string>
-
-
+    <string name="menu_control">Pagkontrol sa Awtoridad ng Data</string>
+    <string name="menu_faq">Mga Madalas na Katanungan</string>
+    <string name="menu_hints">Mga Pahiwatig</string>
+    <string name="menu_settings">Setting</string>
 
     <string name="url_privacy">https://ailabs.tw/taiwan-social-distancing-apppersonal-data-protection-note/</string>
     <string name="url_faq">https://www.cdc.gov.tw/Category/Page/R8bAd_yiVi22CIr73qM2yw</string>
     <string name="url_clean_cache">https://support.google.com/googleplay/answer/9037938</string>
+    <string name="url_quick_settings">https://support.google.com/android/answer/9083864</string>
+    <string name="url_hcert_apply">https://dvc.mohw.gov.tw/vapa/apply/Index.init.ctr</string>
+    <string name="url_hcert_vaccine_appointment">https://www.cdc.gov.tw/Category/List/u4l1b_gHhf9WDjhEtRmRRw</string>
+    <string name="url_hcert_faq">https://dvc.mohw.gov.tw/vapa/template/vapa/common/pdf/QA.pdf</string>
 
-
-
-
-
-
-
-
-
+    <string name="daily_summary_no_contact">Walang nakasalamuha</string>
+    <string name="daily_summary_less_then_2_mins">Walang 2 minuto</string>
+    <string name="daily_summary_mins">%1$d minuto</string>
+    <string name="daily_summary_hrs_mins">%1$d oras %2$d minuto</string>
 
     <string name="upload_confirm_title">Kumpirmado ka bang isang pasyente ng COVID-19?</string>
     <string name="upload_confirm_message">Ang function na ito ay para sa pag-upload ng mga pasyente ng random ID upang mabawasan ang posibilidad ng pagkalat ng COVID-19.</string>
-    <string name="upload_title">Mag-upload ng anonymous ID</string>
+    <string name="upload_title">Upload ng Random ID</string>
     <string name="upload_date">Mangyaring i-type ang date ng pagsisimula at pagtatapos</string>
     <string name="upload_date_start_enter_hint">Mangyaring i-type ang date ng pagsisimula</string>
     <string name="upload_date_end_enter_hint">Mangyaring i-type ang date ng pagtatapos</string>
     <string name="upload_date_start_hint">Ang date ng pagsisimula</string>
-    <string name="upload_date_end_hint">Ang date ng pagkatapos</string>
-    <string name="upload_tek_description">Mangyaring i-type ang verification code na ibinigay ng health bureau. Matapos ipadala ito, maa-upload ang iyong random ID sa database ng Taiwan Centers for Disease Control, at awtomatikong buburahin pagkalipas ng 10 araw.</string>
+    <string name="upload_date_end_hint">Petsa ng pagtatapos</string>
+    <string name="upload_tek_description">Mangyaring i-type ang verification code na ibinigay ng the Taiwan Centers for Disease Control. Matapos ipadala ito, ma-upload ang iyong random ID sa database ng CDC, at awtomatikong buburahin pagkalipas ng 10 araw.</string>
     <string name="upload_success">Matagumpay na pag-upload</string>
     <string name="upload_fail">Nabigo ang pag-upload</string>
-
-
-
+    <string name="upload_fail_message_no_files">Walang data sa pagitan ng mga petsa ng simula at katapusan.</string>
+    <string name="upload_fail_message_invalid_code">Di-wasto ang verification code.</string>
+    <string name="upload_fail_message_no_granted_tek">I-click muli ang submit upang maiupload at maibahagi.</string>
 
     <string name="enter_verification_code">Mangyaring i-type ang verification code</string>
     <string name="enter_verification_code_hint">Mangyaring i-type ang verification code</string>
     <string name="send_verification_code">Ipadala</string>
+    <string name="send_verification_code_not_enabled">@string/risk_brief_unknown</string>
 
+    <string name="enter_phone_number">Pakipasok ang numero ng telepono</string>
+    <string name="enter_phone_number_hint">Numero ng Telepono</string>
 
+    <string name="request_verification_code">Kunin ang Verification Code</string>
+    <string name="request_verification_code_description">Makakatanggap ng verification code ang kumpirmadong kaso ng COVID-19.</string>
 
-
-
-
-
-
-
-
-
-
-
-
+    <string name="request_verification_code_success">Matagumpay na naipasok ang numero ng telepono</string>
+    <string name="request_verification_code_success_message">Ipapadala sa iyo ang verification code sa pamamagitan ng SMS sa loob ng 5 minuto, pakisubukang muli kung walang natanggap.</string>
+    <string name="request_verification_code_fail">Mali ang pagpasok ng numero ng telepono</string>
+    <string name="request_verification_code_fail_message">Nagkaroon ng error sa pagkonekta, pakisubukang muli.</string>
+    <string name="request_verification_code_fail_limit_exceeded_message">Lumampas sa limitasyon ang bilang ng kahilingan, pakisubukang muli bukas.</string>
+    <string name="request_verification_code_fail_invalid_phone_number_message">Di-wasto ang numero ng telepono, pakipasok muli.</string>
 
     <string name="cancel_alert_confirm_title">Siguradong isasara ba ang warning notification?</string>
     <string name="cancel_alert_confirm_message">Ang function na ito ay para sa pagsara ng warning notification pagkatapos ng pagsisiyasat sa mga pasyente.</string>
@@ -113,60 +114,60 @@
     <string name="cancel_alert_test_date_hint">I-type ang date</string>
     <string name="cancel_alert_description">Mangyaring i-type ang verification code na ibinigay ng health bureau. Matapos ipadala ito, isasarado na ang warning notification mo.</string>
 
+    <string name="cancel_alert_acknowledgement">Nabasa ko at sinang-ayunan ko ang How to Protect Yourself &amp; Others.</string>
+    <string-array name="cancel_alert_intruction">
+        <item>Nagsagawa ako ng COVID-19 rapid test nang mag-isa, at negatibo ang resulta.\n</item>
+        <item>Babantayan ko ang katayuan ng aking kalusugan. Kung mayroon akong mga sintomas gaya ng lagnat, hirap sa paghinga, pagtatae, o pagkawala ng panlasa/pang-amoy, magsasagawa ako ng COVID-19 rapid test.\n</item>
+        <item>Kung magpositibo ako sa aking COVID-19 rapid test, magsusuot ako ng medical mask para magpa-PCR test sa isang malapit na community testing site o ospital, at hindi sasakay ng pampublikong sasakyan.\n</item>
+        <item>Inabisuhan ko ang aking pamilya na nakatanggap ako ng babala ng \"Exposure Notification\", at dapat silang gumawa ng naaangkop na pag-iingat tulad ng madalas na paghuhugas ng kamay at pagsusuot ng mask.\n</item>
+        <item>Iiwasan ko ang mga hindi kinakailangang pagtitipon at pagbisita ng pamilya.\n</item>
+        <item>Iiwasan kong makilahok sa mga aktibidad na hindi mapapanatili ang social distancing at pakikipag-ugnayan sa mga hindi kilalang tao.\n</item>
+        <item>Iiwasan kong makilahok sa mga panloob na aktibidad o trabaho kung saan hindi kinakailangan magsuot ng maskara.\n</item>
+    </string-array>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <string name="barcode_shortcut_label">1922 SMS</string>
+    <string name="barcode_shortcut_label_long">Scan 1922 QR Code</string>
+    <string name="barcode_hint_1922_invalid">Di-wasto ang 1922 SMS contact tracing QR code.</string>
+    <string name="barcode_hint_hcert_no_qr_code">Hindi ma detect ang QR code ng sertipiko ng pagbabakuna.</string>
+    <string name="barcode_hint_hcert_invalid">Hindi tama ang QR code ng sertipiko ng pagbabakuna.</string>
+    <string name="barcode_hint_hcert_duplicated">Doble ang sertipiko ng pagbabakuna.</string>
+    <string name="barcode_hint_hcert_expired">Nag-expire na sertipiko ng pagbabakuna.</string>
+    <string name="barcode_camera_permission_dialog_title">&appname; Gustong I-access ang Camera</string>
+    <string name="barcode_camera_permission_dialog_message">&appname; ginagamit ang camera para i-scan ang QR code sa pagrehistro ng 1922 SMS contact tracing.</string>
+    <string name="barcode_camera_permission_dialog_message_hcert">&appname; ginagamit ang camera upang i-scan ang QR code ng sertipiko ng pagbabakuna.</string>
 
     <string name="control_exposure">Exposure Notification Services</string>
-    <string name="control_exposure_turn_off_title">Sigurado ka bang nais mong i-off ang Exposure Notification?</string>
-    <string name="control_exposure_turn_off_detail">Hindi na magpapadala ang sistema ng notification muli kung na-expose ka na sa pasyente ng COVID-19.</string>
+    <string name="control_exposure_turn_off_title">Gusto bang i-off ang Exposure Notification?</string>
+    <string name="control_exposure_turn_off_detail">Hindi ka aabisuhan kung nakipag-ugnayan ka sa isang taong may COVID-19.</string>
+    <string name="control_not_found_notification">Notipikasyon ng walang natukoy na pagkakalantad</string>
 
+    <string name="hcert_full_name">Sertipiko ng Pagbabakuna</string>
+    <string name="hcert_description">Dalhin ang digital copy ng sertipiko ng pagbabakuna sa pamamagitan ng pag-scan sa QR code ng digital ng sertipiko ng pagbabakuna.</string>
+    <string name="hcert_button_add">Idagdag ang Sertipiko ng Pagbabakuna</string>
+    <string name="hcert_last_dose_date">Petsa ng pagbabakuna: %s</string>
+    <string name="hcert_hint">May bisa kapag may kasamang ID na galing sa gobyerno.</string>
+    <string name="hcert_delete">Alisin Itong Sertipiko ng Pagbabakuna </string>
+    <string name="hcert_menu_apply">Mag-apply Para sa Sertipiko ng Bakuna</string>
+    <string name="hcert_menu_vaccine_appointment">Pagpapareserba ng Pagbabakuna</string>
+    <string name="hcert_menu_faq">Mga Madalas na Katanungan</string>
+    <string name="hcert_apply">Mag-apply</string>
+    <string name="hcert_import">Import</string>
 
+    <string name="hcert_detail_target">Pangalan ng sakit:\ </string>
+    <string name="hcert_detail_vaccine">Uri ng bakuna:\ </string>
+    <string name="hcert_detail_medicinal_product">Produkto:\ </string>
+    <string name="hcert_detail_authorization_holder">Tagagawa:\ </string>
+    <string name="hcert_detail_dose">Dosis:\ </string>
+    <string name="hcert_detail_date">Petsa ng pagbabakuna:\ </string>
+    <string name="hcert_detail_country">Bansa ng pagbabakuna:\ </string>
+    <string name="hcert_detail_certificate_issuer">Nagbigay:\ </string>
+    <string name="hcert_detail_certificate_identifier">UVCI:\ </string>
+    <string name="hcert_detail_issue_date">Iginawad ngayong:\ </string>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <string name="hcert_delete_confirm_title">Sigurado ka bang gusto mong alisin ito?</string>
+    <string name="hcert_delete_confirm_message">Sigurado ka bang gusto mong alisin ito %s?</string>
+    <string name="hcert_limit_reached_message">Lumampas na sa limitasyon ang sertipiko ng pagbabakuna.</string>
+    <string name="hcert_expired">Expired</string>
 
     <string name="date_yyyy_mm_dd">%1$d/%2$d/%3$d</string>
 
@@ -181,34 +182,34 @@
     <string name="notification_exposure_not_found_message">Walang peligro sa pag-expose sa mga pasyente ng COVID-19</string>
 
     <string name="notification_exposure_state_updated_title">@string/notification_channel_name</string>
-    <string name="notification_exposure_state_updated_message">Maaring na-expose sa mga pasyente ng COVID-19, mangyaring buksan ang App upang makakuha ng karagdagang impormasyon</string>
+    <string name="notification_exposure_state_updated_message">May panganib ng exposure, mangyaring buksan ang app para sa karagdagang impormasyon</string>
 
     <string name="notification_service_state_updated_title">@string/notification_provide_diagnosis_keys_title</string>
     <string name="notification_service_state_updated_message_on">Bukas na ang Exposure Notification</string>
     <string name="notification_service_state_updated_message_off">Nakasara ngayon ang notification sa pag-expose sa mga pasyente ng COVID-19, mangyaring buksan ang App upang i-check ang mga impormasyon</string>
 
-    <string name="app_update_message">Na-download na ang pinaka bagong bersyon ng "Taiwan Social Distance", mangyaring buksan ulit ang App.</string>
+    <string name="app_update_message">Na-download na ang pinaka bagong bersyon ng \"&appname;\", mangyaring buksan ulit ang App.</string>
     <string name="app_update_restart">Restart</string>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <string name="feature_barcode">Bagong feature ng \"1922 SMS\" sa pag-scan ng QR code.</string>
+    <string-array name="feature_barcode_tip">
+        <item>Tip 1 Shortcut:\nPindutin nang matagal ang icon ng app sa isang Home screen, makakakuha ka ng listahan ng shortcut. Pagkatapos ay maaari mong i-drag ang shortcut na \"1922 SMS\" sa iyong Home screen.\n</item>
+        <item>Tip 2 Widget:\nPindutin nang matagal ang isang empty space sa isang Home screen at i-tap ang \"Mga Widget.\" Pagkatapos ay mahahanap mo ang widget ng \"&appname;\" na app at i-drag ito sa iyong Home screen.\n</item>
+        <item>➤ Tip 1 at Tip 2 ay parehong inirerekomenda upang idagdag ang function na ito. Piliin mo ang gusto mo :D\n</item>
+        <item>Tip 3 Mga Mabilisang Setting:\nMag-swipe pababa mula sa itaas ng iyong screen nang dalawang beses at i-tap ang button na \"I-edit.\" (Magkakaiba ang mga hakbang ng mga devices.) Pagkatapos ay idagdag ang button na \"1922 SMS\" sa \"Mga Mabilisang Setting.\" Para sa mas detalyadong instraksyon, mangyaring sumangguni sa Android Help Center.\n</item>
+        <item>➤ Bahagyang mas mabagal ang paglulunsad mula sa \"Mga Mabilisang Setting\" kaysa sa shortcut o widget, ngunit mas mabilis ang pag-scan anumang oras na mag-swipe ka pababa sa iyong screen.</item>
+    </string-array>
+    <string name="feature_barcode_tip_split">:</string>
+    <string name="feature_barcode_tip_doc">Android Help Center</string>
+    <string name="feature_daily_summary">Bagong record ng araw araw na kalagayan.</string>
+    <string name="feature_hcert">Bagong karagdagang function ng Sertipiko ng Bakuna</string>
+    <string name="feature_hcert_tip">Pamamahala ng sertipiko ng pagbabakuna para sa iyo at sa iyong mga mahal sa buhay.</string>
+    <string name="feature_not_found_notification_control">Maaari mong i-off ang No Detected Notification mula sa \"Setting.\"</string>
+    <string name="feature_hints">Maaari mong suriin muli ang mga pahiwatig mula sa menu.</string>
 
     <string name="confirm">Kumpirmahin</string>
     <string name="cancel">Ikansela</string>
-
+    <string name="deny">Tanggihan</string>
     <string name="ok">OK</string>
     <string name="yes">Oo</string>
     <string name="no">Hindi</string>

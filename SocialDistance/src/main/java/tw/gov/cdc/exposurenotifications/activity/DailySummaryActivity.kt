@@ -71,12 +71,12 @@ class DailySummaryActivity : BaseActivity() {
             layoutManager = LinearLayoutManager(this@DailySummaryActivity)
         }
 
-        ExposureNotificationManager.dailySummaries.observe(this, {
+        ExposureNotificationManager.dailySummaries.observe(this) {
             viewModel.updateItems(it)
-        })
+        }
 
-        viewModel.allItems.observe(this, {
+        viewModel.allItems.observe(this) {
             dailySummaryAdapter.submitList(it)
-        })
+        }
     }
 }
